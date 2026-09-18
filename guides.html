@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="ROSHXLAB Fitness Guides — practical guides covering training, nutrition, recovery, consistency and fitness fundamentals.">
+
+    <title>Fitness Guides — ROSHXLAB</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================
+           GUIDES PAGE
+        ========================= */
+
+        .guides-hero {
+            min-height: 72vh;
+            padding: 100px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+
+            background:
+                radial-gradient(circle at 80% 25%, #252525 0%, transparent 30%),
+                radial-gradient(circle at 20% 80%, #171717 0%, transparent 30%),
+                linear-gradient(135deg, #101010, #060606);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .guides-hero-content {
+            max-width: 850px;
+        }
+
+        .guides-hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: .92;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .guides-hero h1 span {
+            color: #aaa;
+        }
+
+        .guides-hero-text {
+            max-width: 650px;
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .guides-side {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guide-box {
+            padding: 25px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid #292929;
+            transition: .3s ease;
+        }
+
+        .guide-box:hover {
+            border-color: #555;
+            transform: translateX(-5px);
+        }
+
+        .guide-box strong {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .guide-box span {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           QUICK NAV
+        ========================= */
+
+        .guides-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid #222;
+        }
+
+        .guides-nav a {
+            padding: 28px 7%;
+            border-right: 1px solid #222;
+            color: #888;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .25s ease;
+        }
+
+        .guides-nav a:last-child {
+            border-right: none;
+        }
+
+        .guides-nav a:hover {
+            color: #fff;
+            background: #101010;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .guides-intro {
+            padding: 100px 7%;
+            border-bottom: 1px solid #222;
+        }
+
+        .guides-intro-inner {
+            max-width: 850px;
+        }
+
+        .guides-intro h2 {
+            font-size: clamp(40px, 6vw, 65px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .guides-intro p {
+            color: #999;
+            font-size: 18px;
+            max-width: 750px;
+        }
+
+
+        /* =========================
+           GUIDE SECTIONS
+        ========================= */
+
+        .guide-section {
+            padding: 110px 7%;
+            border-bottom: 1px solid #202020;
+        }
+
+        .guide-heading {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .guide-heading h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .guide-heading p {
+            color: #888;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           GUIDE CARDS
+        ========================= */
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .guide-card {
+            min-height: 330px;
+            padding: 32px;
+            background: #101010;
+            border: 1px solid #242424;
+            transition: .3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-7px);
+            border-color: #555;
+            background: #141414;
+        }
+
+        .guide-card span {
+            color: #666;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .guide-card h3 {
+            font-size: 25px;
+            line-height: 1.15;
+            margin: 22px 0 14px;
+        }
+
+        .guide-card p {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .guide-card a {
+            margin-top: auto;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .guide-card a:hover {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           FEATURE
+        ========================= */
+
+        .guide-feature {
+            padding: 120px 7%;
+
+            background:
+                radial-gradient(circle at 75% 40%, #222 0%, transparent 35%),
+                #0b0b0b;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .guide-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .guide-feature h2 {
+            font-size: clamp(45px, 6vw, 70px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .guide-feature-text {
+            color: #999;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .principle-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .principle {
+            padding: 23px;
+            border: 1px solid #292929;
+            background: rgba(255, 255, 255, .025);
+        }
+
+        .principle strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .principle span {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MYTHS
+        ========================= */
+
+        .myths {
+            padding: 110px 7%;
+            background: #0d0d0d;
+            border-bottom: 1px solid #222;
+        }
+
+        .myth-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .myth {
+            padding: 30px;
+            border: 1px solid #292929;
+            background: #101010;
+        }
+
+        .myth span {
+            color: #666;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .myth h3 {
+            margin: 15px 0 10px;
+            font-size: 22px;
+        }
+
+        .myth p {
+            color: #888;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           NOTE
+        ========================= */
+
+        .guide-note {
+            margin-top: 50px;
+            padding: 30px;
+            border-left: 2px solid #555;
+            background: #101010;
+        }
+
+        .guide-note strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .guide-note p {
+            color: #888;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .guides-cta {
+            padding: 130px 7%;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center, #202020 0%, transparent 45%),
+                #080808;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .guides-cta h2 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .guides-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #888;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .guides-hero {
+                padding: 80px 6%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .guides-hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .guides-side {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .guides-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guides-nav a {
+                border-bottom: 1px solid #222;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .myth-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-section,
+            .myths {
+                padding: 80px 6%;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .guides-hero h1 {
+                font-size: 48px;
+            }
+
+            .guides-side {
+                grid-template-columns: 1fr;
+            }
+
+            .guides-nav {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .guides-nav a {
+                padding: 22px 18px;
+            }
+
+            .guides-intro {
+                padding: 75px 6%;
+            }
+
+            .guide-card,
+            .myth {
+                padding: 25px;
+            }
+
+            .guides-cta {
+                padding: 90px 6%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            ROSHXLAB
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="guides-hero">
+
+            <div class="guides-hero-content">
+
+                <p class="eyebrow">
+                    ROSHXLAB · FITNESS KNOWLEDGE
+                </p>
+
+                <h1>
+                    Learn.<br>
+                    <span>Improve.</span>
+                </h1>
+
+                <p class="guides-hero-text">
+                    Practical fitness guides that help you
+                    understand training, nutrition, recovery
+                    and the habits behind long-term progress.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#training-guides" class="btn primary">
+                        Explore Guides →
+                    </a>
+
+                    <a href="#fitness-fundamentals" class="btn secondary">
+                        Start Here
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="guides-side">
+
+                <div class="guide-box">
+
+                    <strong>01</strong>
+
+                    <span>
+                        TRAINING
+                    </span>
+
+                </div>
+
+                <div class="guide-box">
+
+                    <strong>02</strong>
+
+                    <span>
+                        NUTRITION
+                    </span>
+
+                </div>
+
+                <div class="guide-box">
+
+                    <strong>03</strong>
+
+                    <span>
+                        RECOVERY
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK NAV -->
+
+        <section class="guides-nav">
+
+            <a href="#fitness-fundamentals">
+                Fundamentals →
+            </a>
+
+            <a href="#training-guides">
+                Training →
+            </a>
+
+            <a href="#nutrition-guides">
+                Nutrition →
+            </a>
+
+            <a href="#recovery-guides">
+                Recovery →
+            </a>
+
+        </section>
+
+
+        <!-- INTRO -->
+
+        <section class="guides-intro">
+
+            <div class="guides-intro-inner">
+
+                <p class="eyebrow">
+                    KNOWLEDGE BUILDS BETTER HABITS
+                </p>
+
+                <h2>
+                    Don't Just Train.<br>
+                    Understand Why.
+                </h2>
+
+                <p>
+                    Fitness becomes easier to navigate when
+                    you understand the basics. Learn how
+                    exercises work, how to structure training,
+                    why recovery matters and how nutrition
+                    supports an active lifestyle.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FITNESS FUNDAMENTALS -->
+
+        <section class="guide-section" id="fitness-fundamentals">
+
+            <div class="guide-heading">
+
+                <p class="eyebrow">
+                    FITNESS FUNDAMENTALS
+                </p>
+
+                <h2>
+                    Start With The Basics.
+                </h2>
+
+                <p>
+                    Build your understanding before worrying
+                    about complicated programs or advanced techniques.
+                </p>
+
+            </div>
+
+
+            <div class="guide-grid">
+
+                <article class="guide-card">
+
+                    <span>
+                        GUIDE · BEGINNER
+                    </span>
+
+                    <h3>
+                        How To Start Working Out
+                    </h3>
+
+                    <p>
+                        Learn how beginners can build a simple
+                        routine around technique, consistency
+                        and gradual progression.
+                    </p>
+
+                    <a href="how-to-start-working-out.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <article class="guide-card">
+
+                    <span>
+                        GUIDE · TRAINING
+                    </span>
+
+                    <h3>
+                        Understanding Sets & Reps
+                    </h3>
+
+                    <p>
+                        Understand what sets and repetitions
+                        mean and how they fit into a workout.
+                    </p>
+
+                    <a href="workouts.html">
+                        Explore Workouts →
+                    </a>
+
+                </article>
+
+
+                <article class="guide-card">
+
+                    <span>
+                        GUIDE · PROGRESSION
+                    </span>
+
+                    <h3>
+                        What Is Progressive Overload?
+                    </h3>
+
+                    <p>
+                        Learn how gradually increasing training
+                        demands can help you continue developing.
+                    </p>
+
+                    <a href="progressive-overload.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRAINING GUIDES -->
+
+        <section class="guide-section" id="training-guides">
+
+            <div class="guide-heading">
+
+                <p class="eyebrow">
+                    TRAINING GUIDES
+                </p>
+
+                <h2>
+                    Train With Purpose.
+                </h2>
+
+                <p>
+                    Learn how to approach different training
+                    styles and make your workouts more structured.
+                </p>
+
+            </div>
+
+
+            <div class="guide-grid">
+
+                <article class="guide-card">
+
+                    <span>
+                        TRAINING · HOME
+                    </span>
+
+                    <h3>
+                        Building A Home Workout
+                    </h3>
+
+                    <p>
+                        Learn how to combine pushing, pulling,
+                        legs and core movements with equipment
+                        you already have.
+                    </p>
+
+                    <a href="home-workouts.html">
+                        Explore Home Workouts →
+                    </a>
+
+                </article>
+
+
+                <article class="guide-card">
+
+                    <span>
+                        TRAINING · STRENGTH
+                    </span>
+
+                    <h3>
+                        Strength Training Basics
+                    </h3>
+
+                    <p>
+                        Understand technique, manageable
+                        resistance, progression and recovery.
+                    </p>
+
+                    <a href="strength-training.html">
+                        Explore Strength →
+                    </a>
+
+                </article>
+
+
+                <article class="guide-card">
+
+                    <span>
+                        TRAINING · DUMBBELLS
+                    </span>
+
+                    <h3>
+                        Training With Dumbbells
+                    </h3>
+
+                    <p>
+                        Learn the fundamentals of dumbbell
+                        training and how to use simple
+                        equipment effectively.
+                    </p>
+
+                    <a href="dumbbell-training.html">
+                        Explore Dumbbells →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ROSHXLAB APPROACH -->
+
+        <section class="guide-feature">
+
+            <div class="guide-feature-grid">
+
+                <div>
+
+                    <p class="eyebrow">
+                        THE ROSHXLAB APPROACH
+                    </p>
+
+                    <h2>
+                        Simple Principles.<br>
+                        Better Training.
+                    </h2>
+
+                    <p class="guide-feature-text">
+                        You don't need to make fitness
+                        unnecessarily complicated. Focus on
+                        good technique, gradual progress,
+                        balanced nutrition and enough recovery.
+                    </p>
+
+                </div>
+
+
+                <div class="principle-list">
+
+                    <div class="principle">
+
+                        <strong>
+                            Technique First
+                        </strong>
+
+                        <span>
+                            Learn the movement before worrying
+                            about adding more resistance.
+                        </span>
+
+                    </div>
+
+
+                    <div class="principle">
+
+                        <strong>
+                            Progress Gradually
+                        </strong>
+
+                        <span>
+                            Improve through manageable changes
+                            rather than rushing your progress.
+                        </span>
+
+                    </div>
+
+
+                    <div class="principle">
+
+                        <strong>
+                            Recover Properly
+                        </strong>
+
+                        <span>
+                            Rest, sleep and nutrition are part
+                            of training—not obstacles to it.
+                        </span>
+
+                    </div>
+
+
+                    <div class="principle">
+
+                        <strong>
+                            Stay Consistent
+                        </strong>
+
+                        <span>
+                            Sustainable habits matter more
+                            than short bursts of extreme effort.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NUTRITION GUIDES -->
+
+        <section class="guide-section" id="nutrition-guides">
+
+            <div class="guide-heading">
+
+                <p class="eyebrow">
+                    NUTRITION GUIDES
+                </p>
+
+                <h2>
+                    Understand Your Fuel.
+                </h2>
+
+                <p>
+                    Learn the basics of balanced eating and
+                    how nutrition supports an active lifestyle.
+                </p>
+
+            </div>
+
+
+            <div class="guide-grid">
+
+                <!-- PROTEIN -->
+
+                <article class="guide-card">
+
+                    <span>
+                        NUTRITION · PROTEIN
+                    </span>
+
+                    <h3>
+                        Understanding Protein
+                    </h3>
+
+                    <p>
+                        Learn what protein does in the body
+                        and discover everyday food sources.
+                    </p>
+
+                    <a href="understanding-protein.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <!-- BALANCED MEAL -->
+
+                <article class="guide-card">
+
+                    <span>
+                        NUTRITION · MEALS
+                    </span>
+
+                    <h3>
+                        Build A Balanced Meal
+                    </h3>
+
+                    <p>
+                        Understand how protein, carbohydrates,
+                        vegetables, fruit and fats can fit together.
+                    </p>
+
+                    <a href="balanced-meal.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <!-- HYDRATION -->
+
+                <article class="guide-card">
+
+                    <span>
+                        NUTRITION · HYDRATION
+                    </span>
+
+                    <h3>
+                        Hydration Basics
+                    </h3>
+
+                    <p>
+                        Learn why water matters and how hydration
+                        fits into everyday activity and exercise.
+                    </p>
+
+                    <a href="hydration-basics.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECOVERY & HABITS -->
+
+        <section class="guide-section" id="recovery-guides">
+
+            <div class="guide-heading">
+
+                <p class="eyebrow">
+                    RECOVERY & HABITS
+                </p>
+
+                <h2>
+                    Progress Happens Outside
+                    The Workout Too.
+                </h2>
+
+                <p>
+                    Training is only one part of the process.
+                    Recovery and everyday habits matter too.
+                </p>
+
+            </div>
+
+
+            <div class="guide-grid">
+
+                <!-- SLEEP -->
+
+                <article class="guide-card">
+
+                    <span>
+                        RECOVERY · SLEEP
+                    </span>
+
+                    <h3>
+                        Why Sleep Matters
+                    </h3>
+
+                    <p>
+                        Understand why quality sleep is
+                        important for everyday health,
+                        learning and recovery.
+                    </p>
+
+                    <a href="sleep-recovery.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <!-- REST -->
+
+                <article class="guide-card">
+
+                    <span>
+                        RECOVERY · REST
+                    </span>
+
+                    <h3>
+                        Why Recovery Matters
+                    </h3>
+
+                    <p>
+                        Learn why rest days and manageable
+                        training help you stay consistent.
+                    </p>
+
+                    <a href="sleep-recovery.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <!-- CONSISTENCY -->
+
+                <article class="guide-card">
+
+                    <span>
+                        HABITS · CONSISTENCY
+                    </span>
+
+                    <h3>
+                        Build Better Habits
+                    </h3>
+
+                    <p>
+                        Learn simple ways to make training,
+                        nutrition and recovery more consistent.
+                    </p>
+
+                    <a href="consistency-habits.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FITNESS MYTHS -->
+
+        <section class="myths">
+
+            <div class="guide-heading">
+
+                <p class="eyebrow">
+                    FITNESS MYTHS
+                </p>
+
+                <h2>
+                    Don't Let Fitness Myths
+                    Run Your Routine.
+                </h2>
+
+                <p>
+                    Fitness information can be confusing.
+                    Focus on evidence-based basics instead
+                    of extreme claims.
+                </p>
+
+            </div>
+
+
+            <div class="myth-grid">
+
+                <article class="myth">
+
+                    <span>
+                        MYTH · FAT LOSS
+                    </span>
+
+                    <h3>
+                        One Exercise Can't Target Body Fat
+                    </h3>
+
+                    <p>
+                        Core exercises can strengthen your
+                        abdominal muscles, but they don't
+                        selectively remove fat from one area.
+                    </p>
+
+                </article>
+
+
+                <article class="myth">
+
+                    <span>
+                        MYTH · SPEED
+                    </span>
+
+                    <h3>
+                        Faster Isn't Always Better
+                    </h3>
+
+                    <p>
+                        Rushing exercises can make technique
+                        harder to maintain. Controlled,
+                        appropriate movement is important.
+                    </p>
+
+                </article>
+
+
+                <article class="myth">
+
+                    <span>
+                        MYTH · EQUIPMENT
+                    </span>
+
+                    <h3>
+                        You Don't Need A Huge Gym
+                    </h3>
+
+                    <p>
+                        Effective training can be built around
+                        bodyweight, dumbbells and other simple
+                        equipment.
+                    </p>
+
+                </article>
+
+
+                <article class="myth">
+
+                    <span>
+                        MYTH · PERFECTION
+                    </span>
+
+                    <h3>
+                        One Bad Day Doesn't Ruin Progress
+                    </h3>
+
+                    <p>
+                        Long-term consistency matters more
+                        than being perfect every single day.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="guide-note">
+
+                <strong>
+                    ROSHXLAB Note
+                </strong>
+
+                <p>
+                    Fitness advice should be appropriate for
+                    your age, experience and circumstances.
+                    If you're unsure about exercise, nutrition
+                    or a health concern, talk with a parent
+                    or guardian and a qualified professional.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+
+        <section class="guides-cta">
+
+            <p class="eyebrow">
+                KEEP LEARNING
+            </p>
+
+            <h2>
+                Knowledge.<br>
+                Then Action.
+            </h2>
+
+            <p>
+                Understand the fundamentals, apply them
+                consistently and keep improving.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="workouts.html" class="btn primary">
+                    Start Training →
+                </a>
+
+                <a href="nutrition.html" class="btn secondary">
+                    Explore Nutrition
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ROSHXLAB
+        </div>
+
+        <p>
+            Build Better. Live Stronger.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ROSHXLAB. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

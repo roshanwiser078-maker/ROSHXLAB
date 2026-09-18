@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore ROSHXLAB fitness videos covering workouts, exercise technique, nutrition, recovery and practical fitness education.">
+
+    <title>Videos — ROSHXLAB | Build Better. Live Stronger.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* VIDEO HERO */
+
+        .video-hero {
+            min-height: 68vh;
+            padding: 110px 7%;
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 80% 30%, #252525 0%, transparent 32%),
+                linear-gradient(135deg, #101010, #060606);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .video-hero-content {
+            max-width: 850px;
+        }
+
+        .video-hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: .94;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .video-hero h1 span {
+            color: #aaa;
+        }
+
+        .video-hero p:last-child {
+            max-width: 680px;
+            color: #999;
+            font-size: 19px;
+        }
+
+        /* VIDEO SECTION */
+
+        .video-section {
+            padding: 110px 7%;
+            border-bottom: 1px solid #202020;
+        }
+
+        .video-heading {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .video-heading h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .video-heading p {
+            color: #888;
+            font-size: 17px;
+        }
+
+        /* FEATURED VIDEO */
+
+        .featured-video {
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+            min-height: 420px;
+            background: #101010;
+            border: 1px solid #292929;
+        }
+
+        .featured-placeholder {
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            background:
+                radial-gradient(circle at center, #292929 0%, transparent 55%),
+                #080808;
+
+            border-right: 1px solid #292929;
+        }
+
+        .play-circle {
+            width: 82px;
+            height: 82px;
+            border: 1px solid #555;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+            padding-left: 4px;
+        }
+
+        .featured-content {
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-content span {
+            color: #666;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .featured-content h3 {
+            font-size: 32px;
+            line-height: 1.1;
+            margin: 22px 0 15px;
+        }
+
+        .featured-content p {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            width: fit-content;
+            padding: 12px 18px;
+            border: 1px solid #444;
+            color: #aaa;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* VIDEO CARDS */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .video-card {
+            background: #101010;
+            border: 1px solid #242424;
+            overflow: hidden;
+            transition: .3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-7px);
+            border-color: #555;
+            background: #141414;
+        }
+
+        .video-thumb {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(circle at center, #252525 0%, transparent 55%),
+                #080808;
+
+            border-bottom: 1px solid #242424;
+        }
+
+        .small-play {
+            width: 58px;
+            height: 58px;
+            border: 1px solid #555;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 17px;
+            padding-left: 3px;
+        }
+
+        .video-card-content {
+            padding: 27px 30px 30px;
+        }
+
+        .video-card-content span {
+            color: #666;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .video-card-content h3 {
+            font-size: 22px;
+            line-height: 1.15;
+            margin: 18px 0 12px;
+        }
+
+        .video-card-content p {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .video-link {
+            color: #aaa;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* CATEGORIES */
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .category-box {
+            padding: 30px 25px;
+            background: #101010;
+            border: 1px solid #242424;
+            transition: .25s ease;
+        }
+
+        .category-box:hover {
+            border-color: #555;
+            transform: translateY(-4px);
+        }
+
+        .category-box strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .category-box span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* CTA */
+
+        .video-cta {
+            padding: 125px 7%;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center, #202020 0%, transparent 45%),
+                #080808;
+        }
+
+        .video-cta h2 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .video-cta > p:not(.eyebrow) {
+            max-width: 550px;
+            margin: 0 auto 30px;
+            color: #888;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .video-hero {
+                min-height: auto;
+                padding: 90px 6%;
+            }
+
+            .video-hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .video-section {
+                padding: 80px 6%;
+            }
+
+            .featured-video {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-placeholder {
+                min-height: 300px;
+                border-right: none;
+                border-bottom: 1px solid #292929;
+            }
+
+            .featured-content {
+                padding: 30px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-cta {
+                padding: 90px 6%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .video-hero h1 {
+                font-size: 48px;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-placeholder {
+                min-height: 250px;
+            }
+
+            .video-thumb {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            ROSHXLAB
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="workouts.html">Workouts</a>
+
+            <a href="nutrition.html">Nutrition</a>
+
+            <a href="guides.html">Guides</a>
+
+            <a href="blog.html">Blog</a>
+
+            <a href="videos.html">Videos</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="video-hero">
+
+            <div class="video-hero-content">
+
+                <p class="eyebrow">
+                    ROSHXLAB VIDEO
+                </p>
+
+                <h1>
+                    Watch.<br>
+                    <span>Learn. Improve.</span>
+                </h1>
+
+                <p>
+                    Practical fitness videos covering workouts,
+                    exercise technique, nutrition, recovery and
+                    better training habits.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED -->
+
+        <section class="video-section">
+
+            <div class="video-heading">
+
+                <p class="eyebrow">
+                    FEATURED
+                </p>
+
+                <h2>
+                    Start Here.
+                </h2>
+
+                <p>
+                    Learn the fundamentals before chasing
+                    complicated routines or quick fixes.
+                </p>
+
+            </div>
+
+
+            <article class="featured-video">
+
+                <div class="featured-placeholder">
+
+                    <div class="play-circle">
+                        ▶
+                    </div>
+
+                </div>
+
+
+                <div class="featured-content">
+
+                    <span>
+                        ROSHXLAB · FITNESS BASICS
+                    </span>
+
+                    <h3>
+                        Build A Better Training Foundation
+                    </h3>
+
+                    <p>
+                        A practical introduction to training,
+                        technique, consistency and recovery.
+                    </p>
+
+                    <span class="coming-soon">
+                        VIDEO COMING SOON
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- LATEST VIDEOS -->
+
+        <section class="video-section">
+
+            <div class="video-heading">
+
+                <p class="eyebrow">
+                    VIDEO LIBRARY
+                </p>
+
+                <h2>
+                    Learn By Doing.
+                </h2>
+
+                <p>
+                    Short, practical videos designed to make
+                    fitness concepts easier to understand.
+                </p>
+
+            </div>
+
+
+            <div class="video-grid">
+
+
+                <!-- VIDEO 01 -->
+
+                <article class="video-card">
+
+                    <div class="video-thumb">
+
+                        <div class="small-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                    <div class="video-card-content">
+
+                        <span>
+                            TRAINING
+                        </span>
+
+                        <h3>
+                            How To Start Working Out
+                        </h3>
+
+                        <p>
+                            Understand the basics before
+                            building your routine.
+                        </p>
+
+                        <span class="video-link">
+                            Coming Soon →
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VIDEO 02 -->
+
+                <article class="video-card">
+
+                    <div class="video-thumb">
+
+                        <div class="small-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                    <div class="video-card-content">
+
+                        <span>
+                            HOME WORKOUTS
+                        </span>
+
+                        <h3>
+                            Building An Effective Home Workout
+                        </h3>
+
+                        <p>
+                            Learn how to train effectively
+                            with simple equipment.
+                        </p>
+
+                        <span class="video-link">
+                            Coming Soon →
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VIDEO 03 -->
+
+                <article class="video-card">
+
+                    <div class="video-thumb">
+
+                        <div class="small-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                    <div class="video-card-content">
+
+                        <span>
+                            STRENGTH
+                        </span>
+
+                        <h3>
+                            Progressive Overload Explained
+                        </h3>
+
+                        <p>
+                            Understand how gradual progression
+                            supports strength development.
+                        </p>
+
+                        <span class="video-link">
+                            Coming Soon →
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VIDEO 04 -->
+
+                <article class="video-card">
+
+                    <div class="video-thumb">
+
+                        <div class="small-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                    <div class="video-card-content">
+
+                        <span>
+                            NUTRITION
+                        </span>
+
+                        <h3>
+                            Understanding Protein
+                        </h3>
+
+                        <p>
+                            Learn what protein does and how it
+                            fits into balanced meals.
+                        </p>
+
+                        <span class="video-link">
+                            Coming Soon →
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VIDEO 05 -->
+
+                <article class="video-card">
+
+                    <div class="video-thumb">
+
+                        <div class="small-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                    <div class="video-card-content">
+
+                        <span>
+                            RECOVERY
+                        </span>
+
+                        <h3>
+                            Why Recovery Matters
+                        </h3>
+
+                        <p>
+                            Understand why rest is part of
+                            productive training.
+                        </p>
+
+                        <span class="video-link">
+                            Coming Soon →
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VIDEO 06 -->
+
+                <article class="video-card">
+
+                    <div class="video-thumb">
+
+                        <div class="small-play">
+                            ▶
+                        </div>
+
+                    </div>
+
+                    <div class="video-card-content">
+
+                        <span>
+                            HABITS
+                        </span>
+
+                        <h3>
+                            Consistency Over Perfection
+                        </h3>
+
+                        <p>
+                            Build habits you can actually
+                            maintain over time.
+                        </p>
+
+                        <span class="video-link">
+                            Coming Soon →
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="video-section">
+
+            <div class="video-heading">
+
+                <p class="eyebrow">
+                    EXPLORE BY TOPIC
+                </p>
+
+                <h2>
+                    Find What You Need.
+                </h2>
+
+                <p>
+                    Explore videos by the part of fitness
+                    you want to understand better.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <div class="category-box">
+
+                    <strong>
+                        Workouts
+                    </strong>
+
+                    <span>
+                        Routines, exercises and training ideas.
+                    </span>
+
+                </div>
+
+
+                <div class="category-box">
+
+                    <strong>
+                        Technique
+                    </strong>
+
+                    <span>
+                        Learn exercise form and fundamentals.
+                    </span>
+
+                </div>
+
+
+                <div class="category-box">
+
+                    <strong>
+                        Nutrition
+                    </strong>
+
+                    <span>
+                        Simple and practical nutrition education.
+                    </span>
+
+                </div>
+
+
+                <div class="category-box">
+
+                    <strong>
+                        Recovery
+                    </strong>
+
+                    <span>
+                        Sleep, rest and sustainable training habits.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="video-cta">
+
+            <p class="eyebrow">
+                KEEP EXPLORING
+            </p>
+
+            <h2>
+                Learn More.<br>
+                Build Better.
+            </h2>
+
+            <p>
+                Explore ROSHXLAB workouts, nutrition and
+                practical fitness guides.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="workouts.html"
+                    class="btn primary"
+                >
+                    Explore Workouts →
+                </a>
+
+                <a
+                    href="guides.html"
+                    class="btn secondary"
+                >
+                    Read Guides
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ROSHXLAB
+        </div>
+
+        <p>
+            Build Better. Live Stronger.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ROSHXLAB. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

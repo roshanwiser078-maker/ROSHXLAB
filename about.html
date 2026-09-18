@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learn about ROSHXLAB — a practical fitness platform focused on training, nutrition, recovery and better habits.">
+
+    <title>About ROSHXLAB — Build Better. Live Stronger.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ABOUT PAGE */
+
+        .about-hero {
+            min-height: 72vh;
+            padding: 110px 7%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 30%, #242424 0%, transparent 32%),
+                linear-gradient(135deg, #101010, #060606);
+            border-bottom: 1px solid #222;
+        }
+
+        .about-hero-content {
+            max-width: 900px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: .94;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .about-hero h1 span {
+            color: #aaa;
+        }
+
+        .about-hero-text {
+            max-width: 700px;
+            color: #999;
+            font-size: 19px;
+        }
+
+        .about-section {
+            padding: 110px 7%;
+            border-bottom: 1px solid #202020;
+        }
+
+        .about-intro {
+            max-width: 850px;
+        }
+
+        .about-intro h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .about-intro p {
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        /* VALUES */
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 55px;
+        }
+
+        .value-card {
+            padding: 35px;
+            min-height: 270px;
+            background: #101010;
+            border: 1px solid #252525;
+            transition: .3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-7px);
+            border-color: #555;
+            background: #141414;
+        }
+
+        .value-number {
+            color: #666;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .value-card h3 {
+            font-size: 25px;
+            margin: 30px 0 14px;
+        }
+
+        .value-card p {
+            color: #888;
+            font-size: 15px;
+        }
+
+        /* APPROACH */
+
+        .about-dark {
+            background: #0d0d0d;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .approach-grid h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+
+        .approach-content p {
+            color: #999;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .approach-list {
+            border-top: 1px solid #292929;
+        }
+
+        .approach-item {
+            display: flex;
+            gap: 25px;
+            padding: 24px 0;
+            border-bottom: 1px solid #292929;
+        }
+
+        .approach-item span {
+            color: #666;
+            font-size: 12px;
+            min-width: 35px;
+        }
+
+        .approach-item strong {
+            font-size: 16px;
+        }
+
+        /* TOPICS */
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .topic-box {
+            padding: 30px 25px;
+            background: #101010;
+            border: 1px solid #242424;
+        }
+
+        .topic-box strong {
+            display: block;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .topic-box span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* TRUST */
+
+        .trust-box {
+            max-width: 900px;
+            padding: 45px;
+            margin-top: 50px;
+            background: #101010;
+            border: 1px solid #292929;
+        }
+
+        .trust-box h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .trust-box p {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .trust-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA */
+
+        .about-cta {
+            padding: 130px 7%;
+            text-align: center;
+            background:
+                radial-gradient(circle at center, #202020 0%, transparent 45%),
+                #080808;
+        }
+
+        .about-cta h2 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .about-cta > p:not(.eyebrow) {
+            max-width: 550px;
+            margin: 0 auto 30px;
+            color: #888;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .about-hero {
+                min-height: auto;
+                padding: 90px 6%;
+            }
+
+            .about-hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .about-section {
+                padding: 80px 6%;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .topic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-cta {
+                padding: 90px 6%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .about-hero h1 {
+                font-size: 48px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-box {
+                padding: 25px;
+            }
+
+            .about-cta h2 {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <a href="index.html" class="logo">ROSHXLAB</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-content">
+
+                <p class="eyebrow">
+                    ABOUT ROSHXLAB
+                </p>
+
+                <h1>
+                    Fitness<br>
+                    <span>Made Practical.</span>
+                </h1>
+
+                <p class="about-hero-text">
+                    ROSHXLAB is built around a simple idea:
+                    fitness should be easier to understand,
+                    easier to apply and sustainable in real life.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRO -->
+
+        <section class="about-section">
+
+            <div class="about-intro">
+
+                <p class="eyebrow">
+                    WHY ROSHXLAB
+                </p>
+
+                <h2>
+                    Less Confusion.<br>
+                    More Progress.
+                </h2>
+
+                <p>
+                    Fitness can feel complicated.
+                    There are endless workouts, diets,
+                    trends and conflicting advice.
+                </p>
+
+                <p>
+                    ROSHXLAB focuses on the fundamentals:
+                    training, nutrition, recovery and
+                    better everyday habits.
+                </p>
+
+                <p>
+                    The goal is not to chase shortcuts.
+                    It is to understand the basics,
+                    apply them consistently and improve
+                    over time.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VALUES -->
+
+        <section class="about-section">
+
+            <p class="eyebrow">
+                OUR PRINCIPLES
+            </p>
+
+            <div class="values-grid">
+
+                <article class="value-card">
+
+                    <span class="value-number">
+                        01 · PRACTICAL
+                    </span>
+
+                    <h3>
+                        Keep It Useful
+                    </h3>
+
+                    <p>
+                        Fitness information should help you
+                        understand what to do and why it matters.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span class="value-number">
+                        02 · CONSISTENT
+                    </span>
+
+                    <h3>
+                        Progress Takes Time
+                    </h3>
+
+                    <p>
+                        Sustainable habits and gradual progress
+                        matter more than chasing quick results.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span class="value-number">
+                        03 · FUNDAMENTALS
+                    </span>
+
+                    <h3>
+                        Master The Basics
+                    </h3>
+
+                    <p>
+                        Good technique, balanced nutrition,
+                        recovery and consistency form the foundation.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPROACH -->
+
+        <section class="about-section about-dark">
+
+            <div class="approach-grid">
+
+                <div>
+
+                    <p class="eyebrow">
+                        THE ROSHXLAB APPROACH
+                    </p>
+
+                    <h2>
+                        Build Better.<br>
+                        Live Stronger.
+                    </h2>
+
+                </div>
+
+
+                <div class="approach-content">
+
+                    <p>
+                        We organize fitness into simple,
+                        understandable pieces so you can
+                        learn and apply them without unnecessary
+                        complexity.
+                    </p>
+
+                    <div class="approach-list">
+
+                        <div class="approach-item">
+
+                            <span>01</span>
+
+                            <strong>
+                                Learn the fundamentals
+                            </strong>
+
+                        </div>
+
+
+                        <div class="approach-item">
+
+                            <span>02</span>
+
+                            <strong>
+                                Focus on good technique
+                            </strong>
+
+                        </div>
+
+
+                        <div class="approach-item">
+
+                            <span>03</span>
+
+                            <strong>
+                                Progress gradually
+                            </strong>
+
+                        </div>
+
+
+                        <div class="approach-item">
+
+                            <span>04</span>
+
+                            <strong>
+                                Give your body time to recover
+                            </strong>
+
+                        </div>
+
+
+                        <div class="approach-item">
+
+                            <span>05</span>
+
+                            <strong>
+                                Stay consistent
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHAT WE COVER -->
+
+        <section class="about-section">
+
+            <p class="eyebrow">
+                WHAT YOU'LL FIND
+            </p>
+
+            <div class="about-intro">
+
+                <h2>
+                    One Place.<br>
+                    Multiple Paths.
+                </h2>
+
+                <p>
+                    ROSHXLAB brings together practical resources
+                    for different parts of your fitness journey.
+                </p>
+
+            </div>
+
+
+            <div class="topic-grid">
+
+                <div class="topic-box">
+
+                    <strong>
+                        Workouts
+                    </strong>
+
+                    <span>
+                        Training routines and exercise guidance.
+                    </span>
+
+                </div>
+
+
+                <div class="topic-box">
+
+                    <strong>
+                        Nutrition
+                    </strong>
+
+                    <span>
+                        Simple information about balanced eating.
+                    </span>
+
+                </div>
+
+
+                <div class="topic-box">
+
+                    <strong>
+                        Guides
+                    </strong>
+
+                    <span>
+                        Practical fitness education and fundamentals.
+                    </span>
+
+                </div>
+
+
+                <div class="topic-box">
+
+                    <strong>
+                        Blog
+                    </strong>
+
+                    <span>
+                        Articles covering useful fitness topics.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHO IT IS FOR -->
+
+        <section class="about-section about-dark">
+
+            <div class="about-intro">
+
+                <p class="eyebrow">
+                    WHO IS ROSHXLAB FOR?
+                </p>
+
+                <h2>
+                    Start Where<br>
+                    You Are.
+                </h2>
+
+                <p>
+                    ROSHXLAB is designed for people who want
+                    to understand fitness and build healthier,
+                    more consistent habits.
+                </p>
+
+                <p>
+                    Whether you're completely new to training,
+                    working out at home or simply trying to
+                    improve your knowledge, the fundamentals
+                    remain the starting point.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST / RESPONSIBILITY -->
+
+        <section class="about-section">
+
+            <p class="eyebrow">
+                A RESPONSIBLE APPROACH
+            </p>
+
+            <div class="trust-box">
+
+                <h3>
+                    Fitness Is Personal.
+                </h3>
+
+                <p>
+                    Exercise, nutrition and recovery can look
+                    different for different people.
+                    ROSHXLAB focuses on general educational
+                    information rather than promising identical
+                    results for everyone.
+                </p>
+
+                <p>
+                    When you have an injury, medical condition,
+                    unusual symptoms or questions about your
+                    individual health, qualified healthcare or
+                    fitness professionals can provide
+                    personalized guidance.
+                </p>
+
+                <p>
+                    No shortcuts. No magic fixes.
+                    Just useful fundamentals and consistent work.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="about-cta">
+
+            <p class="eyebrow">
+                YOUR NEXT STEP
+            </p>
+
+            <h2>
+                Start Building<br>
+                Better.
+            </h2>
+
+            <p>
+                Explore the workouts, learn the fundamentals
+                and keep moving forward.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="workouts.html" class="btn primary">
+                    Explore Workouts →
+                </a>
+
+                <a href="guides.html" class="btn secondary">
+                    Explore Guides
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ROSHXLAB
+        </div>
+
+        <p>
+            Build Better. Live Stronger.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ROSHXLAB. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="ROSHXLAB Nutrition — practical guides to protein, carbohydrates, healthy fats, hydration and balanced eating for better training and everyday health.">
+
+    <title>Nutrition — ROSHXLAB</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           NUTRITION PAGE
+        ========================= */
+
+        .nutrition-hero {
+            min-height: 70vh;
+            padding: 100px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+
+            background:
+                radial-gradient(circle at 80% 25%, #252525 0%, transparent 30%),
+                radial-gradient(circle at 20% 80%, #171717 0%, transparent 30%),
+                linear-gradient(135deg, #101010, #060606);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .nutrition-hero-content {
+            max-width: 850px;
+        }
+
+        .nutrition-hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: .92;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .nutrition-hero h1 span {
+            color: #aaa;
+        }
+
+        .nutrition-hero-text {
+            max-width: 650px;
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .nutrition-side {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nutrition-box {
+            padding: 25px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid #292929;
+            transition: .3s ease;
+        }
+
+        .nutrition-box:hover {
+            border-color: #555;
+            transform: translateX(-5px);
+        }
+
+        .nutrition-box strong {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .nutrition-box span {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* QUICK NAV */
+
+        .nutrition-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid #222;
+        }
+
+        .nutrition-nav a {
+            padding: 28px 7%;
+            border-right: 1px solid #222;
+            color: #888;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .25s ease;
+        }
+
+        .nutrition-nav a:last-child {
+            border-right: none;
+        }
+
+        .nutrition-nav a:hover {
+            color: #fff;
+            background: #101010;
+        }
+
+        /* INTRO */
+
+        .nutrition-intro {
+            padding: 100px 7%;
+            border-bottom: 1px solid #222;
+        }
+
+        .nutrition-intro-inner {
+            max-width: 850px;
+        }
+
+        .nutrition-intro h2 {
+            font-size: clamp(40px, 6vw, 65px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .nutrition-intro p {
+            color: #999;
+            font-size: 18px;
+            max-width: 750px;
+        }
+
+        /* NUTRIENT CARDS */
+
+        .nutrition-section {
+            padding: 110px 7%;
+            border-bottom: 1px solid #202020;
+        }
+
+        .nutrition-heading {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .nutrition-heading h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .nutrition-heading p {
+            color: #888;
+            font-size: 17px;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .nutrition-card {
+            min-height: 300px;
+            padding: 32px;
+            background: #101010;
+            border: 1px solid #242424;
+            transition: .3s ease;
+        }
+
+        .nutrition-card:hover {
+            transform: translateY(-7px);
+            border-color: #555;
+            background: #141414;
+        }
+
+        .nutrition-number {
+            color: #666;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .nutrition-card h3 {
+            font-size: 27px;
+            line-height: 1.1;
+            margin: 25px 0 15px;
+        }
+
+        .nutrition-card p {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .nutrition-card ul {
+            padding-left: 18px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .nutrition-card li {
+            margin-bottom: 8px;
+        }
+
+        /* DARK FEATURE */
+
+        .nutrition-feature {
+            padding: 120px 7%;
+            background:
+                radial-gradient(circle at 75% 40%, #222 0%, transparent 35%),
+                #0b0b0b;
+            border-bottom: 1px solid #222;
+        }
+
+        .nutrition-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .nutrition-feature h2 {
+            font-size: clamp(45px, 6vw, 70px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .nutrition-feature-text {
+            color: #999;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .meal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .meal-item {
+            padding: 22px;
+            border: 1px solid #292929;
+            background: rgba(255, 255, 255, .025);
+        }
+
+        .meal-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .meal-item span {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* TRAINING NUTRITION */
+
+        .training-nutrition {
+            padding: 110px 7%;
+            border-bottom: 1px solid #222;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .training-card {
+            padding: 32px;
+            background: #101010;
+            border: 1px solid #242424;
+        }
+
+        .training-card span {
+            color: #666;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .training-card h3 {
+            font-size: 23px;
+            margin: 20px 0 12px;
+        }
+
+        .training-card p {
+            color: #888;
+            font-size: 15px;
+        }
+
+        /* MISTAKES */
+
+        .mistakes {
+            padding: 110px 7%;
+            background: #0d0d0d;
+            border-bottom: 1px solid #222;
+        }
+
+        .mistake-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .mistake {
+            padding: 30px;
+            border: 1px solid #292929;
+            background: #101010;
+        }
+
+        .mistake span {
+            color: #666;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .mistake h3 {
+            margin: 15px 0 10px;
+            font-size: 22px;
+        }
+
+        .mistake p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* NOTE */
+
+        .nutrition-note {
+            margin-top: 50px;
+            padding: 30px;
+            border-left: 2px solid #555;
+            background: #101010;
+        }
+
+        .nutrition-note strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .nutrition-note p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .nutrition-cta {
+            padding: 130px 7%;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center, #202020 0%, transparent 45%),
+                #080808;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .nutrition-cta h2 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .nutrition-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #888;
+            font-size: 17px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nutrition-hero {
+                padding: 80px 6%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nutrition-hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .nutrition-side {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .nutrition-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nutrition-nav a {
+                border-bottom: 1px solid #222;
+            }
+
+            .nutrition-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mistake-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-section,
+            .training-nutrition,
+            .mistakes {
+                padding: 80px 6%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .nutrition-hero h1 {
+                font-size: 48px;
+            }
+
+            .nutrition-side {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-nav {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nutrition-nav a {
+                padding: 22px 18px;
+            }
+
+            .nutrition-intro {
+                padding: 75px 6%;
+            }
+
+            .nutrition-card,
+            .training-card,
+            .mistake {
+                padding: 25px;
+            }
+
+            .nutrition-cta {
+                padding: 90px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <a href="index.html" class="logo">ROSHXLAB</a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="nutrition-hero">
+
+            <div class="nutrition-hero-content">
+
+                <p class="eyebrow">
+                    ROSHXLAB · NUTRITION
+                </p>
+
+                <h1>
+                    Fuel Your<br>
+                    <span>Progress.</span>
+                </h1>
+
+                <p class="nutrition-hero-text">
+                    Learn the fundamentals of nutrition,
+                    build balanced meals and understand
+                    how food supports training, recovery
+                    and everyday health.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#nutrition-basics" class="btn primary">
+                        Explore Nutrition →
+                    </a>
+
+                    <a href="#training-fuel" class="btn secondary">
+                        Training Fuel
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="nutrition-side">
+
+                <div class="nutrition-box">
+
+                    <strong>01</strong>
+
+                    <span>
+                        PROTEIN
+                    </span>
+
+                </div>
+
+                <div class="nutrition-box">
+
+                    <strong>02</strong>
+
+                    <span>
+                        CARBS
+                    </span>
+
+                </div>
+
+                <div class="nutrition-box">
+
+                    <strong>03</strong>
+
+                    <span>
+                        HYDRATION
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK NAV -->
+
+        <section class="nutrition-nav">
+
+            <a href="#nutrition-basics">
+                Nutrition Basics →
+            </a>
+
+            <a href="#macros">
+                Macronutrients →
+            </a>
+
+            <a href="#balanced-meals">
+                Balanced Meals →
+            </a>
+
+            <a href="#training-fuel">
+                Training Fuel →
+            </a>
+
+        </section>
+
+
+        <!-- INTRO -->
+
+        <section class="nutrition-intro">
+
+            <div class="nutrition-intro-inner">
+
+                <p class="eyebrow">
+                    START WITH THE FUNDAMENTALS
+                </p>
+
+                <h2>
+                    Good Nutrition<br>
+                    Doesn't Need To Be Complicated.
+                </h2>
+
+                <p>
+                    Nutrition is about giving your body the
+                    energy and nutrients it needs to learn,
+                    move, train, recover and stay healthy.
+                    Focus on consistent, balanced habits
+                    instead of chasing extreme diets or
+                    complicated rules.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MACROS -->
+
+        <section class="nutrition-section" id="macros">
+
+            <div class="nutrition-heading">
+
+                <p class="eyebrow">
+                    THE BIG THREE
+                </p>
+
+                <h2>
+                    Understand Your Macros.
+                </h2>
+
+                <p>
+                    Protein, carbohydrates and fats each
+                    have different roles in a balanced diet.
+                </p>
+
+            </div>
+
+
+            <div class="nutrition-grid">
+
+
+                <!-- PROTEIN -->
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        01 · PROTEIN
+                    </span>
+
+                    <h3>
+                        Protein
+                    </h3>
+
+                    <p>
+                        Protein helps your body build and
+                        repair tissues and supports many
+                        important body functions.
+                    </p>
+
+                    <ul>
+
+                        <li>Eggs</li>
+                        <li>Milk and dairy</li>
+                        <li>Dal and beans</li>
+                        <li>Chana and peanuts</li>
+                        <li>Paneer and soy foods</li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- CARBS -->
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        02 · CARBOHYDRATES
+                    </span>
+
+                    <h3>
+                        Carbohydrates
+                    </h3>
+
+                    <p>
+                        Carbohydrates are an important
+                        source of energy, especially when
+                        you're active.
+                    </p>
+
+                    <ul>
+
+                        <li>Rice</li>
+                        <li>Roti</li>
+                        <li>Oats</li>
+                        <li>Potatoes</li>
+                        <li>Fruits</li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- FATS -->
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        03 · FATS
+                    </span>
+
+                    <h3>
+                        Healthy Fats
+                    </h3>
+
+                    <p>
+                        Dietary fats help support normal
+                        body functions and help your body
+                        absorb certain vitamins.
+                    </p>
+
+                    <ul>
+
+                        <li>Peanuts</li>
+                        <li>Nuts and seeds</li>
+                        <li>Egg yolks</li>
+                        <li>Nut butters</li>
+                        <li>Healthy cooking oils</li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- NUTRITION BASICS -->
+
+        <section class="nutrition-section" id="nutrition-basics">
+
+            <div class="nutrition-heading">
+
+                <p class="eyebrow">
+                    NUTRITION BASICS
+                </p>
+
+                <h2>
+                    Build A Better Foundation.
+                </h2>
+
+                <p>
+                    Start with habits you can actually
+                    maintain instead of trying to make
+                    everything perfect.
+                </p>
+
+            </div>
+
+
+            <div class="nutrition-grid">
+
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        01 · VARIETY
+                    </span>
+
+                    <h3>
+                        Eat A Variety
+                    </h3>
+
+                    <p>
+                        Different foods provide different
+                        nutrients. Include a mix of grains,
+                        fruits, vegetables and protein foods.
+                    </p>
+
+                </article>
+
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        02 · REGULARITY
+                    </span>
+
+                    <h3>
+                        Eat Regularly
+                    </h3>
+
+                    <p>
+                        Regular balanced meals can help
+                        provide steady energy throughout
+                        your day.
+                    </p>
+
+                </article>
+
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        03 · HYDRATION
+                    </span>
+
+                    <h3>
+                        Stay Hydrated
+                    </h3>
+
+                    <p>
+                        Water is essential for normal body
+                        functions and becomes especially
+                        important when you're active.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- BALANCED MEALS -->
+
+        <section class="nutrition-feature" id="balanced-meals">
+
+            <div class="nutrition-feature-grid">
+
+
+                <div>
+
+                    <p class="eyebrow">
+                        BUILD YOUR PLATE
+                    </p>
+
+                    <h2>
+                        Make Meals<br>
+                        More Balanced.
+                    </h2>
+
+                    <p class="nutrition-feature-text">
+                        A balanced meal can combine a
+                        protein source, carbohydrate-rich
+                        food, vegetables or fruit and a
+                        source of healthy fats. The exact
+                        combination can change based on
+                        your preferences, culture, appetite
+                        and activity.
+                    </p>
+
+                </div>
+
+
+                <div class="meal-list">
+
+                    <div class="meal-item">
+
+                        <strong>
+                            Protein
+                        </strong>
+
+                        <span>
+                            Eggs, dal, beans, paneer, soy foods
+                        </span>
+
+                    </div>
+
+
+                    <div class="meal-item">
+
+                        <strong>
+                            Carbohydrates
+                        </strong>
+
+                        <span>
+                            Rice, roti, oats, potatoes, fruit
+                        </span>
+
+                    </div>
+
+
+                    <div class="meal-item">
+
+                        <strong>
+                            Vegetables & Fruit
+                        </strong>
+
+                        <span>
+                            Add variety and different colours
+                        </span>
+
+                    </div>
+
+
+                    <div class="meal-item">
+
+                        <strong>
+                            Healthy Fats
+                        </strong>
+
+                        <span>
+                            Nuts, seeds, peanuts and suitable oils
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRAINING FUEL -->
+
+        <section class="training-nutrition" id="training-fuel">
+
+            <div class="nutrition-heading">
+
+                <p class="eyebrow">
+                    NUTRITION & TRAINING
+                </p>
+
+                <h2>
+                    Fuel Your Workouts.
+                </h2>
+
+                <p>
+                    Your training and nutrition work together.
+                    Focus on enough food, hydration and recovery.
+                </p>
+
+            </div>
+
+
+            <div class="training-grid">
+
+
+                <article class="training-card">
+
+                    <span>
+                        BEFORE TRAINING
+                    </span>
+
+                    <h3>
+                        Have Some Fuel
+                    </h3>
+
+                    <p>
+                        If you're hungry before training,
+                        a familiar meal or snack containing
+                        carbohydrates and some protein can
+                        provide useful energy.
+                    </p>
+
+                </article>
+
+
+                <article class="training-card">
+
+                    <span>
+                        AFTER TRAINING
+                    </span>
+
+                    <h3>
+                        Eat & Recover
+                    </h3>
+
+                    <p>
+                        Have a normal balanced meal after
+                        training. Include protein, carbohydrates
+                        and fluids to support recovery.
+                    </p>
+
+                </article>
+
+
+                <article class="training-card">
+
+                    <span>
+                        THROUGHOUT THE DAY
+                    </span>
+
+                    <h3>
+                        Stay Consistent
+                    </h3>
+
+                    <p>
+                        Daily nutrition matters more than
+                        trying to find one perfect meal
+                        before or after a workout.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- HYDRATION -->
+
+        <section class="nutrition-section">
+
+            <div class="nutrition-heading">
+
+                <p class="eyebrow">
+                    HYDRATION
+                </p>
+
+                <h2>
+                    Don't Forget Water.
+                </h2>
+
+                <p>
+                    Hydration supports normal body functions
+                    and is particularly important during
+                    physical activity and hot weather.
+                </p>
+
+            </div>
+
+
+            <div class="nutrition-grid">
+
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        01 · DAILY
+                    </span>
+
+                    <h3>
+                        Drink Regularly
+                    </h3>
+
+                    <p>
+                        Keep water available and drink
+                        regularly throughout the day.
+                        Your needs can vary with activity,
+                        weather and individual factors.
+                    </p>
+
+                </article>
+
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        02 · TRAINING
+                    </span>
+
+                    <h3>
+                        Hydrate Around Exercise
+                    </h3>
+
+                    <p>
+                        Drink water before, during and
+                        after exercise according to thirst
+                        and the conditions you're training in.
+                    </p>
+
+                </article>
+
+
+                <article class="nutrition-card">
+
+                    <span class="nutrition-number">
+                        03 · SIMPLE
+                    </span>
+
+                    <h3>
+                        Keep It Simple
+                    </h3>
+
+                    <p>
+                        For ordinary workouts, plain water
+                        is often a practical choice. You
+                        don't need fancy drinks for every session.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMON MISTAKES -->
+
+        <section class="mistakes">
+
+            <div class="nutrition-heading">
+
+                <p class="eyebrow">
+                    AVOID THE EXTREMES
+                </p>
+
+                <h2>
+                    Common Nutrition Mistakes.
+                </h2>
+
+                <p>
+                    Fitness should support your health,
+                    not turn food into something to fear.
+                </p>
+
+            </div>
+
+
+            <div class="mistake-grid">
+
+
+                <article class="mistake">
+
+                    <span>
+                        01 · EXTREME DIETS
+                    </span>
+
+                    <h3>
+                        Don't Crash Diet
+                    </h3>
+
+                    <p>
+                        Extreme restriction can make it
+                        harder to get the energy and
+                        nutrients your growing body needs.
+                    </p>
+
+                </article>
+
+
+                <article class="mistake">
+
+                    <span>
+                        02 · ONE FOOD
+                    </span>
+
+                    <h3>
+                        Don't Chase Magic Foods
+                    </h3>
+
+                    <p>
+                        No single food can replace a
+                        varied, balanced eating pattern.
+                    </p>
+
+                </article>
+
+
+                <article class="mistake">
+
+                    <span>
+                        03 · SUPPLEMENTS
+                    </span>
+
+                    <h3>
+                        Food Comes First
+                    </h3>
+
+                    <p>
+                        Build your everyday eating habits
+                        first. Supplements are not a shortcut
+                        to good nutrition.
+                    </p>
+
+                </article>
+
+
+                <article class="mistake">
+
+                    <span>
+                        04 · PERFECTION
+                    </span>
+
+                    <h3>
+                        Don't Aim For Perfect
+                    </h3>
+
+                    <p>
+                        One meal doesn't define your health.
+                        Focus on consistent habits over time.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="nutrition-note">
+
+                <strong>
+                    ROSHXLAB Note
+                </strong>
+
+                <p>
+                    Nutrition needs can vary with age,
+                    activity, health and individual circumstances.
+                    If you're unsure about your nutrition,
+                    speak with a parent or guardian and a
+                    qualified healthcare or nutrition professional.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+
+        <section class="nutrition-cta">
+
+            <p class="eyebrow">
+                YOUR NEXT STEP
+            </p>
+
+            <h2>
+                Eat Better.<br>
+                Train Better.
+            </h2>
+
+            <p>
+                Learn the fundamentals, build sustainable
+                habits and keep improving one step at a time.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="workouts.html" class="btn primary">
+                    Explore Workouts →
+                </a>
+
+                <a href="guides.html" class="btn secondary">
+                    Read Fitness Guides
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ROSHXLAB
+        </div>
+
+        <p>
+            Build Better. Live Stronger.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ROSHXLAB. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="ROSHXLAB Dumbbell Training — learn dumbbell fundamentals, exercises, workouts and simple progression for effective home training.">
+
+    <title>Dumbbell Training — ROSHXLAB</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* DUMBBELL QUICK BOXES */
+
+        .dumbbell-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 45px;
+            width: 100%;
+        }
+
+        .dumbbell-box {
+            display: block;
+            padding: 28px;
+            background: #101010;
+            border: 1px solid #292929;
+            transition: 0.25s ease;
+        }
+
+        .dumbbell-box:hover {
+            transform: translateY(-5px);
+            border-color: #666;
+            background: #151515;
+        }
+
+        .dumbbell-box span {
+            color: #666;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .dumbbell-box h3 {
+            margin-top: 12px;
+            font-size: 21px;
+        }
+
+        .dumbbell-box p {
+            color: #777;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+
+        /* WATCH BUTTON */
+
+        .watch-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #0b0b0b;
+            color: #fff;
+            border: 1px solid #444;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        .watch-link:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+
+        /* INFO PANEL */
+
+        .info-panel {
+            padding: 35px;
+            background: #101010;
+            border: 1px solid #292929;
+        }
+
+        .info-panel h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .info-panel p {
+            color: #888;
+            max-width: 800px;
+            font-size: 16px;
+        }
+
+
+        /* WORKOUT PLAN */
+
+        .plan-card {
+            min-height: 300px;
+        }
+
+        .plan-card ul {
+            margin: 18px 0 0 18px;
+            color: #888;
+        }
+
+        .plan-card li {
+            margin-bottom: 8px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .dumbbell-boxes {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        ROSHXLAB
+    </a>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="guides.html">Guides</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            ROSHXLAB · DUMBBELL TRAINING
+        </p>
+
+        <h1>
+            Train With<br>
+            <span>Dumbbells.</span>
+        </h1>
+
+        <p class="hero-text">
+            Learn how to use dumbbells effectively — from
+            choosing manageable resistance to mastering
+            exercises and building a simple training routine.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#exercises" class="btn primary">
+                Explore Exercises →
+            </a>
+
+            <a href="#workouts" class="btn secondary">
+                View Workouts
+            </a>
+
+        </div>
+
+
+        <!-- QUICK BOXES -->
+
+        <div class="dumbbell-boxes">
+
+            <a href="#basics" class="dumbbell-box">
+
+                <span>01</span>
+
+                <h3>
+                    Dumbbell Basics
+                </h3>
+
+                <p>
+                    Learn the fundamentals before training.
+                </p>
+
+            </a>
+
+
+            <a href="#exercises" class="dumbbell-box">
+
+                <span>02</span>
+
+                <h3>
+                    20 Exercises
+                </h3>
+
+                <p>
+                    Upper body, lower body and full-body movements.
+                </p>
+
+            </a>
+
+
+            <a href="#workouts" class="dumbbell-box">
+
+                <span>03</span>
+
+                <h3>
+                    Workout Plans
+                </h3>
+
+                <p>
+                    Simple routines built around dumbbells.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- DUMBBELL BASICS -->
+<!-- ========================= -->
+
+<section class="section" id="basics">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            01 · DUMBBELL BASICS
+        </p>
+
+        <h2>
+            Master The<br>
+            Basics.
+        </h2>
+
+        <p>
+            Good dumbbell training starts with control,
+            comfortable resistance and consistent technique.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <article class="card">
+
+            <span>01 · WEIGHT</span>
+
+            <h3>
+                Choose Manageable Weight
+            </h3>
+
+            <p>
+                Start with a resistance that allows you
+                to perform the movement with good control.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <span>02 · CONTROL</span>
+
+            <h3>
+                Control Every Rep
+            </h3>
+
+            <p>
+                Avoid rushing. Use a controlled movement
+                through a comfortable range.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <span>03 · PROGRESSION</span>
+
+            <h3>
+                Progress Gradually
+            </h3>
+
+            <p>
+                Improve your technique first, then gradually
+                increase repetitions or resistance.
+            </p>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="info-panel" style="margin-top:25px;">
+
+        <h3>
+            Technique Comes First
+        </h3>
+
+        <p>
+            A heavier dumbbell is not automatically better.
+            Choose a manageable load and focus on performing
+            each repetition with control. If you cannot
+            maintain good technique, reduce the difficulty.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- UPPER BODY -->
+<!-- ========================= -->
+
+<section class="section dark-section" id="exercises">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            02 · UPPER BODY
+        </p>
+
+        <h2>
+            10 Upper<br>
+            Body Exercises.
+        </h2>
+
+        <p>
+            Build your dumbbell foundation with pushing,
+            pulling and arm movements.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- 01 -->
+
+        <article class="card">
+
+            <span>UPPER · 01</span>
+
+            <h3>
+                Dumbbell Floor Press
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Press the dumbbells upward while keeping
+                your movement controlled.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="card">
+
+            <span>UPPER · 02</span>
+
+            <h3>
+                One-Arm Dumbbell Row
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 each side
+            </p>
+
+            <p>
+                Pull the dumbbell toward your torso while
+                keeping your back controlled.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="card">
+
+            <span>UPPER · 03</span>
+
+            <h3>
+                Dumbbell Shoulder Press
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Press the dumbbells overhead without
+                rushing the movement.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="card">
+
+            <span>UPPER · 04</span>
+
+            <h3>
+                Dumbbell Lateral Raise
+            </h3>
+
+            <p>
+                2 sets · 10–15 reps
+            </p>
+
+            <p>
+                Raise the dumbbells with controlled movement
+                and avoid using momentum.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="card">
+
+            <span>UPPER · 05</span>
+
+            <h3>
+                Rear-Delt Dumbbell Fly
+            </h3>
+
+            <p>
+                2 sets · 10–15 reps
+            </p>
+
+            <p>
+                Hinge comfortably and move the dumbbells
+                outward with control.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="card">
+
+            <span>UPPER · 06</span>
+
+            <h3>
+                Dumbbell Curl
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Keep your elbows relatively stable while
+                curling the dumbbells.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 07 -->
+
+        <article class="card">
+
+            <span>UPPER · 07</span>
+
+            <h3>
+                Hammer Curl
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Keep a neutral grip and use controlled
+                movement throughout the repetition.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 08 -->
+
+        <article class="card">
+
+            <span>UPPER · 08</span>
+
+            <h3>
+                Dumbbell Overhead Triceps Extension
+            </h3>
+
+            <p>
+                2 sets · 8–12 reps
+            </p>
+
+            <p>
+                Lower the dumbbell carefully behind your
+                head and extend smoothly.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 09 -->
+
+        <article class="card">
+
+            <span>UPPER · 09</span>
+
+            <h3>
+                Dumbbell Front Raise
+            </h3>
+
+            <p>
+                2 sets · 10–12 reps
+            </p>
+
+            <p>
+                Raise the dumbbells in front with a
+                controlled range of motion.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 10 -->
+
+        <article class="card">
+
+            <span>UPPER · 10</span>
+
+            <h3>
+                Dumbbell Pullover
+            </h3>
+
+            <p>
+                2 sets · 8–12 reps
+            </p>
+
+            <p>
+                Move the dumbbell slowly while keeping
+                the movement comfortable and controlled.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- LOWER BODY -->
+<!-- ========================= -->
+
+<section class="section" id="lower-body">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            03 · LOWER BODY
+        </p>
+
+        <h2>
+            10 Lower<br>
+            Body Exercises.
+        </h2>
+
+        <p>
+            Use dumbbells to add manageable resistance
+            to basic lower-body movements.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- 11 -->
+
+        <article class="card">
+
+            <span>LOWER · 01</span>
+
+            <h3>
+                Goblet Squat
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Hold one dumbbell close to your chest
+                and squat with control.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 12 -->
+
+        <article class="card">
+
+            <span>LOWER · 02</span>
+
+            <h3>
+                Dumbbell Romanian Deadlift
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Keep the dumbbells close to your legs
+                while hinging through your hips.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 13 -->
+
+        <article class="card">
+
+            <span>LOWER · 03</span>
+
+            <h3>
+                Dumbbell Reverse Lunge
+            </h3>
+
+            <p>
+                2 sets · 6–10 each side
+            </p>
+
+            <p>
+                Step backward carefully while keeping
+                your balance and control.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 14 -->
+
+        <article class="card">
+
+            <span>LOWER · 04</span>
+
+            <h3>
+                Dumbbell Split Squat
+            </h3>
+
+            <p>
+                2 sets · 6–10 each side
+            </p>
+
+            <p>
+                Maintain a stable stance and lower
+                under control.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 15 -->
+
+        <article class="card">
+
+            <span>LOWER · 05</span>
+
+            <h3>
+                Dumbbell Step-Up
+            </h3>
+
+            <p>
+                2 sets · 6–10 each side
+            </p>
+
+            <p>
+                Use a low, stable step and drive upward
+                with controlled movement.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 16 -->
+
+        <article class="card">
+
+            <span>LOWER · 06</span>
+
+            <h3>
+                Dumbbell Sumo Squat
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Use a comfortable stance and keep
+                the dumbbell controlled.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 17 -->
+
+        <article class="card">
+
+            <span>LOWER · 07</span>
+
+            <h3>
+                Dumbbell Hip Thrust
+            </h3>
+
+            <p>
+                2–3 sets · 8–12 reps
+            </p>
+
+            <p>
+                Place the dumbbell securely and lift
+                your hips with controlled movement.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 18 -->
+
+        <article class="card">
+
+            <span>LOWER · 08</span>
+
+            <h3>
+                Dumbbell Calf Raise
+            </h3>
+
+            <p>
+                2–3 sets · 10–15 reps
+            </p>
+
+            <p>
+                Hold manageable dumbbells and raise
+                your heels slowly.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 19 -->
+
+        <article class="card">
+
+            <span>LOWER · 09</span>
+
+            <h3>
+                Dumbbell Walking Lunge
+            </h3>
+
+            <p>
+                2 sets · 6–10 each side
+            </p>
+
+            <p>
+                Take controlled steps and maintain
+                balance throughout the movement.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+        <!-- 20 -->
+
+        <article class="card">
+
+            <span>LOWER · 10</span>
+
+            <h3>
+                Dumbbell Suitcase Squat
+            </h3>
+
+            <p>
+                2 sets · 8–12 reps
+            </p>
+
+            <p>
+                Hold the dumbbell at your side and
+                squat while keeping your torso controlled.
+            </p>
+
+            <a href="#" class="watch-link">
+                ▶ Watch How-To →
+            </a>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- WORKOUT PLANS -->
+<!-- ========================= -->
+
+<section class="section dark-section" id="workouts">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            04 · DUMBBELL WORKOUTS
+        </p>
+
+        <h2>
+            Choose Your<br>
+            Workout.
+        </h2>
+
+        <p>
+            You don't need to perform all 20 exercises.
+            Choose a routine that matches your current level.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- BEGINNER -->
+
+        <article class="card plan-card">
+
+            <span>PLAN · BEGINNER</span>
+
+            <h3>
+                Simple Full Body
+            </h3>
+
+            <p>
+                2–3 sessions per week
+            </p>
+
+            <ul>
+
+                <li>Goblet Squat</li>
+                <li>Dumbbell Floor Press</li>
+                <li>One-Arm Dumbbell Row</li>
+                <li>Dumbbell Romanian Deadlift</li>
+                <li>Dumbbell Shoulder Press</li>
+                <li>Dumbbell Curl</li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- UPPER -->
+
+        <article class="card plan-card">
+
+            <span>PLAN · UPPER BODY</span>
+
+            <h3>
+                Dumbbell Upper
+            </h3>
+
+            <p>
+                Focus on upper-body movements
+            </p>
+
+            <ul>
+
+                <li>Floor Press</li>
+                <li>One-Arm Row</li>
+                <li>Shoulder Press</li>
+                <li>Lateral Raise</li>
+                <li>Hammer Curl</li>
+                <li>Triceps Extension</li>
+
+            </ul>
+
+        </article>
+
+
+        <!-- LOWER -->
+
+        <article class="card plan-card">
+
+            <span>PLAN · LOWER BODY</span>
+
+            <h3>
+                Dumbbell Lower
+            </h3>
+
+            <p>
+                Focus on lower-body movements
+            </p>
+
+            <ul>
+
+                <li>Goblet Squat</li>
+                <li>Romanian Deadlift</li>
+                <li>Reverse Lunge</li>
+                <li>Split Squat</li>
+                <li>Hip Thrust</li>
+                <li>Calf Raise</li>
+
+            </ul>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PROGRESSION -->
+<!-- ========================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            05 · PROGRESSION
+        </p>
+
+        <h2>
+            Make Training<br>
+            Harder Slowly.
+        </h2>
+
+        <p>
+            Progress doesn't always mean immediately
+            picking up heavier dumbbells.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <article class="card">
+
+            <span>01</span>
+
+            <h3>
+                Improve Technique
+            </h3>
+
+            <p>
+                Make each repetition controlled and
+                consistent before increasing difficulty.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <span>02</span>
+
+            <h3>
+                Add Repetitions
+            </h3>
+
+            <p>
+                When an exercise becomes comfortable,
+                gradually work toward the upper end
+                of your target range.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <span>03</span>
+
+            <h3>
+                Increase Resistance
+            </h3>
+
+            <p>
+                Once your current resistance feels manageable,
+                a small increase can provide a new challenge.
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SAFETY + RECOVERY -->
+<!-- ========================= -->
+
+<section class="section dark-section">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            TRAIN SMART
+        </p>
+
+        <h2>
+            Train.<br>
+            Recover.<br>
+            Repeat.
+        </h2>
+
+        <p>
+            Consistent training works best when it is
+            balanced with recovery.
+        </p>
+
+    </div>
+
+
+    <div class="info-panel">
+
+        <h3>
+            Keep Your Training Sustainable
+        </h3>
+
+        <p>
+            Use manageable resistance, prioritize good form,
+            take rest days and avoid trying to progress too
+            quickly. If an exercise causes pain, stop and
+            seek guidance from a qualified adult or fitness
+            professional.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- FINAL CTA -->
+
+<section class="cta">
+
+    <p class="eyebrow">
+        ROSHXLAB · DUMBBELL TRAINING
+    </p>
+
+    <h2>
+        One Pair.<br>
+        Many Possibilities.
+    </h2>
+
+    <p>
+        Learn the movements. Build consistency.
+        Progress gradually.
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="workouts.html" class="btn primary">
+            Explore All Workouts →
+        </a>
+
+        <a href="beginner-workout.html" class="btn secondary">
+            Beginner Training
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        ROSHXLAB
+    </div>
+
+    <p>
+        Build Better. Live Stronger.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="guides.html">Guides</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 ROSHXLAB. All rights reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>hxhjhzxyajhsdhuajj
+sahdhbjaxyubnsa
+sdshadygwsma

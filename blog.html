@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="ROSHXLAB Blog — practical fitness articles covering training, nutrition, recovery, habits and fitness fundamentals.">
+
+    <title>Blog — ROSHXLAB</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           BLOG PAGE
+        ========================= */
+
+        .blog-hero {
+            min-height: 72vh;
+            padding: 100px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+
+            background:
+                radial-gradient(circle at 80% 25%, #252525 0%, transparent 30%),
+                radial-gradient(circle at 20% 80%, #171717 0%, transparent 30%),
+                linear-gradient(135deg, #101010, #060606);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .blog-hero-content {
+            max-width: 850px;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: .92;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .blog-hero h1 span {
+            color: #aaa;
+        }
+
+        .blog-hero-text {
+            max-width: 650px;
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .blog-side {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .blog-box {
+            padding: 25px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid #292929;
+            transition: .3s ease;
+        }
+
+        .blog-box:hover {
+            border-color: #555;
+            transform: translateX(-5px);
+        }
+
+        .blog-box strong {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .blog-box span {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* CATEGORY NAV */
+
+        .blog-nav {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border-bottom: 1px solid #222;
+        }
+
+        .blog-nav a {
+            padding: 27px 6%;
+            border-right: 1px solid #222;
+            color: #888;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .25s ease;
+        }
+
+        .blog-nav a:last-child {
+            border-right: none;
+        }
+
+        .blog-nav a:hover {
+            color: #fff;
+            background: #101010;
+        }
+
+        /* INTRO */
+
+        .blog-intro {
+            padding: 100px 7%;
+            border-bottom: 1px solid #222;
+        }
+
+        .blog-intro-inner {
+            max-width: 850px;
+        }
+
+        .blog-intro h2 {
+            font-size: clamp(40px, 6vw, 65px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .blog-intro p {
+            color: #999;
+            font-size: 18px;
+            max-width: 750px;
+        }
+
+        /* BLOG SECTIONS */
+
+        .blog-section {
+            padding: 110px 7%;
+            border-bottom: 1px solid #202020;
+        }
+
+        .blog-heading {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .blog-heading h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .blog-heading p {
+            color: #888;
+            font-size: 17px;
+        }
+
+        /* ARTICLE CARDS */
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .article-card {
+            min-height: 370px;
+            padding: 32px;
+            background: #101010;
+            border: 1px solid #242424;
+            transition: .3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-7px);
+            border-color: #555;
+            background: #141414;
+        }
+
+        .article-category {
+            color: #666;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .article-number {
+            color: #555;
+            font-size: 12px;
+            margin-top: 18px;
+        }
+
+        .article-card h3 {
+            font-size: 25px;
+            line-height: 1.15;
+            margin: 18px 0 14px;
+        }
+
+        .article-card p {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .article-meta {
+            color: #555;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .article-card a {
+            margin-top: auto;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .article-card a:hover {
+            color: #aaa;
+        }
+
+        /* FEATURED ARTICLE */
+
+        .featured-blog {
+            padding: 120px 7%;
+
+            background:
+                radial-gradient(circle at 75% 40%, #222 0%, transparent 35%),
+                #0b0b0b;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .featured-label {
+            color: #777;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .featured-blog h2 {
+            font-size: clamp(45px, 6vw, 72px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .featured-text {
+            color: #999;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .featured-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .featured-item {
+            padding: 22px;
+            border: 1px solid #292929;
+            background: rgba(255, 255, 255, .025);
+        }
+
+        .featured-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .featured-item span {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* MYTH SECTION */
+
+        .myths-section {
+            padding: 110px 7%;
+            background: #0d0d0d;
+            border-bottom: 1px solid #222;
+        }
+
+        .myth-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .myth-card {
+            padding: 30px;
+            background: #101010;
+            border: 1px solid #292929;
+            transition: .3s ease;
+        }
+
+        .myth-card:hover {
+            border-color: #555;
+            transform: translateY(-5px);
+        }
+
+        .myth-card span {
+            color: #666;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .myth-card h3 {
+            font-size: 22px;
+            margin: 16px 0 10px;
+        }
+
+        .myth-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* BLOG NOTE */
+
+        .blog-note {
+            margin-top: 50px;
+            padding: 30px;
+            border-left: 2px solid #555;
+            background: #101010;
+        }
+
+        .blog-note strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .blog-note p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .blog-cta {
+            padding: 130px 7%;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center, #202020 0%, transparent 45%),
+                #080808;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .blog-cta h2 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .blog-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #888;
+            font-size: 17px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .blog-hero {
+                padding: 80px 6%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .blog-hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .blog-side {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .blog-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-nav a {
+                border-bottom: 1px solid #222;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .myth-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-section,
+            .myths-section {
+                padding: 80px 6%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .blog-hero h1 {
+                font-size: 48px;
+            }
+
+            .blog-side {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-nav {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .blog-nav a {
+                padding: 22px 18px;
+            }
+
+            .blog-intro {
+                padding: 75px 6%;
+            }
+
+            .article-card,
+            .myth-card {
+                padding: 25px;
+            }
+
+            .blog-cta {
+                padding: 90px 6%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            ROSHXLAB
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="blog-hero">
+
+            <div class="blog-hero-content">
+
+                <p class="eyebrow">
+                    ROSHXLAB · FITNESS BLOG
+                </p>
+
+                <h1>
+                    Read.<br>
+                    <span>Learn.</span>
+                </h1>
+
+                <p class="blog-hero-text">
+                    Practical fitness articles covering
+                    training, nutrition, recovery, habits
+                    and the fundamentals behind sustainable progress.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#latest" class="btn primary">
+                        Explore Articles →
+                    </a>
+
+                    <a href="#fitness-myths" class="btn secondary">
+                        Fitness Myths
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="blog-side">
+
+                <div class="blog-box">
+
+                    <strong>01</strong>
+
+                    <span>
+                        TRAINING
+                    </span>
+
+                </div>
+
+                <div class="blog-box">
+
+                    <strong>02</strong>
+
+                    <span>
+                        NUTRITION
+                    </span>
+
+                </div>
+
+                <div class="blog-box">
+
+                    <strong>03</strong>
+
+                    <span>
+                        RECOVERY
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORY NAV -->
+
+        <section class="blog-nav">
+
+            <a href="#training">
+                Training →
+            </a>
+
+            <a href="#nutrition">
+                Nutrition →
+            </a>
+
+            <a href="#recovery">
+                Recovery →
+            </a>
+
+            <a href="#habits">
+                Habits →
+            </a>
+
+            <a href="#fitness-myths">
+                Myths →
+            </a>
+
+        </section>
+
+
+        <!-- INTRO -->
+
+        <section class="blog-intro">
+
+            <div class="blog-intro-inner">
+
+                <p class="eyebrow">
+                    PRACTICAL FITNESS KNOWLEDGE
+                </p>
+
+                <h2>
+                    Less Noise.<br>
+                    More Useful Information.
+                </h2>
+
+                <p>
+                    The ROSHXLAB Blog is built around simple,
+                    practical fitness education. No miracle
+                    promises. No unnecessary complexity.
+                    Just useful concepts you can understand
+                    and apply.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED -->
+
+        <section class="featured-blog">
+
+            <div class="featured-grid">
+
+
+                <div>
+
+                    <p class="featured-label">
+                        FEATURED ARTICLE
+                    </p>
+
+                    <h2>
+                        How To Build
+                        A Better Workout Routine
+                    </h2>
+
+                    <p class="featured-text">
+                        A good workout routine doesn't need
+                        to be complicated. Learn how to think
+                        about movement patterns, technique,
+                        progression and recovery when building
+                        your training plan.
+                    </p>
+
+                    <a href="guides.html" class="btn primary">
+                        Read The Guide →
+                    </a>
+
+                </div>
+
+
+                <div class="featured-list">
+
+                    <div class="featured-item">
+
+                        <strong>
+                            Training
+                        </strong>
+
+                        <span>
+                            Build a routine around your goals
+                            and available equipment.
+                        </span>
+
+                    </div>
+
+
+                    <div class="featured-item">
+
+                        <strong>
+                            Technique
+                        </strong>
+
+                        <span>
+                            Learn movements before chasing
+                            heavier resistance or more volume.
+                        </span>
+
+                    </div>
+
+
+                    <div class="featured-item">
+
+                        <strong>
+                            Progression
+                        </strong>
+
+                        <span>
+                            Improve gradually instead of trying
+                            to change everything at once.
+                        </span>
+
+                    </div>
+
+
+                    <div class="featured-item">
+
+                        <strong>
+                            Recovery
+                        </strong>
+
+                        <span>
+                            Rest and sleep are part of the
+                            training process.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LATEST ARTICLES -->
+
+        <section class="blog-section" id="latest">
+
+            <div class="blog-heading">
+
+                <p class="eyebrow">
+                    LATEST FROM ROSHXLAB
+                </p>
+
+                <h2>
+                    Start Reading.
+                </h2>
+
+                <p>
+                    Explore practical topics designed to
+                    make fitness easier to understand.
+                </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        TRAINING
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 01
+                    </span>
+
+                    <h3>
+                        How To Start Working Out
+                    </h3>
+
+                    <p>
+                        A simple introduction to training,
+                        technique, consistency and recovery
+                        for beginners.
+                    </p>
+
+                    <div class="article-meta">
+                        Beginner · 5 min read
+                    </div>
+
+                    <a href="how-to-start-working-out.html">
+    Read Article →
+</a>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        TRAINING
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 02
+                    </span>
+
+                    <h3>
+                        What Is Progressive Overload?
+                    </h3>
+
+                    <p>
+                        Understand how gradual changes in
+                        training can help you keep progressing.
+                    </p>
+
+                    <div class="article-meta">
+                        Training · 6 min read
+                    </div>
+
+                    <a href="progressive-overload.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        NUTRITION
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 03
+                    </span>
+
+                    <h3>
+                        Understanding Protein
+                    </h3>
+
+                    <p>
+                        Learn what protein does and discover
+                        practical food sources for everyday meals.
+                    </p>
+
+                    <div class="article-meta">
+                        Nutrition · 5 min read
+                    </div>
+
+                  <a href="understanding-protein.html">Read Article →</a>
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- TRAINING ARTICLES -->
+
+        <section class="blog-section" id="training">
+
+            <div class="blog-heading">
+
+                <p class="eyebrow">
+                    TRAINING
+                </p>
+
+                <h2>
+                    Train Smarter.
+                </h2>
+
+                <p>
+                    Learn the principles behind effective,
+                    manageable training.
+                </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        TRAINING · HOME
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 04
+                    </span>
+
+                    <h3>
+                        Can Home Workouts Be Effective?
+                    </h3>
+
+                    <p>
+                        Explore how bodyweight exercises,
+                        dumbbells and simple equipment can
+                        support a structured routine.
+                    </p>
+
+                    <div class="article-meta">
+                        Home Fitness · 5 min read
+                    </div>
+
+                    <a href="home-workouts.html">
+                        Explore →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        TRAINING · DUMBBELLS
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 05
+                    </span>
+
+                    <h3>
+                        Getting Started With Dumbbells
+                    </h3>
+
+                    <p>
+                        Learn basic dumbbell training principles,
+                        technique and gradual progression.
+                    </p>
+
+                    <div class="article-meta">
+                        Dumbbells · 6 min read
+                    </div>
+
+                    <a href="dumbbell-training.html">
+                        Explore →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        TRAINING · STRENGTH
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 06
+                    </span>
+
+                    <h3>
+                        Strength Training Basics
+                    </h3>
+
+                    <p>
+                        Understand resistance, movement quality,
+                        progression and recovery.
+                    </p>
+
+                    <div class="article-meta">
+                        Strength · 6 min read
+                    </div>
+
+                    <a href="strength-training.html">
+                        Explore →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- NUTRITION ARTICLES -->
+
+        <section class="blog-section" id="nutrition">
+
+            <div class="blog-heading">
+
+                <p class="eyebrow">
+                    NUTRITION
+                </p>
+
+                <h2>
+                    Fuel Your Progress.
+                </h2>
+
+                <p>
+                    Practical nutrition information without
+                    extreme diets or unnecessary complexity.
+                </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        NUTRITION · BASICS
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 07
+                    </span>
+
+                    <h3>
+                        How To Build A Balanced Meal
+                    </h3>
+
+                    <p>
+                        Learn how protein, carbohydrates,
+                        vegetables, fruit and fats can fit
+                        into everyday meals.
+                    </p>
+
+                    <div class="article-meta">
+                        Nutrition · 5 min read
+                    </div>
+
+                    <a href="nutrition.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        NUTRITION · HYDRATION
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 08
+                    </span>
+
+                    <h3>
+                        Why Hydration Matters
+                    </h3>
+
+                    <p>
+                        Understand the role of water in
+                        everyday health and physical activity.
+                    </p>
+
+                    <div class="article-meta">
+                        Hydration · 4 min read
+                    </div>
+
+                    <a href="nutrition.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        NUTRITION · BASICS
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 09
+                    </span>
+
+                    <h3>
+                        Carbohydrates Explained
+                    </h3>
+
+                    <p>
+                        Learn why carbohydrates are an
+                        important source of energy for active people.
+                    </p>
+
+                    <div class="article-meta">
+                        Nutrition · 5 min read
+                    </div>
+
+                    <a href="nutrition.html">
+                        Read Article →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- RECOVERY -->
+
+        <section class="blog-section" id="recovery">
+
+            <div class="blog-heading">
+
+                <p class="eyebrow">
+                    RECOVERY
+                </p>
+
+                <h2>
+                    Recovery Is Training Too.
+                </h2>
+
+                <p>
+                    Learn why rest, sleep and manageable training
+                    matter for long-term consistency.
+                </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        RECOVERY · SLEEP
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 10
+                    </span>
+
+                    <h3>
+                        Why Sleep Matters
+                    </h3>
+
+                    <p>
+                        Explore why sleep is important for
+                        everyday health, learning and recovery.
+                    </p>
+
+                    <div class="article-meta">
+                        Recovery · 5 min read
+                    </div>
+
+                    <a href="sleep-recovery.html">
+    Read Article →
+</a>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        RECOVERY · REST
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 11
+                    </span>
+
+                    <h3>
+                        Why Rest Days Matter
+                    </h3>
+
+                    <p>
+                        Understand why recovery days can be
+                        part of a sustainable training routine.
+                    </p>
+
+                    <div class="article-meta">
+                        Recovery · 4 min read
+                    </div>
+
+                    <a href="sleep-recovery.html">
+    Read Article →
+</a>
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        RECOVERY · CONSISTENCY
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 12
+                    </span>
+
+                    <h3>
+                        Consistency Over Perfection
+                    </h3>
+
+                    <p>
+                        Learn why sustainable habits matter
+                        more than trying to train perfectly every day.
+                    </p>
+
+                    <div class="article-meta">
+                        Habits · 5 min read
+                    </div>
+
+                   <a href="consistency-habits.html">
+    Read Article →
+</a>
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- HABITS -->
+
+        <section class="blog-section" id="habits">
+
+            <div class="blog-heading">
+
+                <p class="eyebrow">
+                    HABITS & PROGRESS
+                </p>
+
+                <h2>
+                    Small Actions.<br>
+                    Long-Term Change.
+                </h2>
+
+                <p>
+                    Build habits that can fit into your actual
+                    life instead of relying on motivation alone.
+                </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        HABITS
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 13
+                    </span>
+
+                    <h3>
+                        How To Stay Consistent
+                    </h3>
+
+                    <p>
+                        Create a routine that makes training
+                        easier to repeat week after week.
+                    </p>
+
+                    <div class="article-meta">
+                        Habits · 5 min read
+                    </div>
+
+                    <a href="guides.html">
+                        Coming Soon →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        PROGRESS
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 14
+                    </span>
+
+                    <h3>
+                        How To Track Progress
+                    </h3>
+
+                    <p>
+                        Learn simple ways to monitor your
+                        training without obsessing over numbers.
+                    </p>
+
+                    <div class="article-meta">
+                        Progress · 5 min read
+                    </div>
+
+                    <a href="guides.html">
+                        Coming Soon →
+                    </a>
+
+                </article>
+
+
+                <article class="article-card">
+
+                    <span class="article-category">
+                        MINDSET
+                    </span>
+
+                    <span class="article-number">
+                        ARTICLE 15
+                    </span>
+
+                    <h3>
+                        Motivation vs Discipline
+                    </h3>
+
+                    <p>
+                        Understand why building routines can
+                        help when motivation naturally changes.
+                    </p>
+
+                    <div class="article-meta">
+                        Mindset · 5 min read
+                    </div>
+
+                    <a href="guides.html">
+                        Coming Soon →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FITNESS MYTHS -->
+
+        <section class="myths-section" id="fitness-myths">
+
+            <div class="blog-heading">
+
+                <p class="eyebrow">
+                    FITNESS MYTHS
+                </p>
+
+                <h2>
+                    Question The Hype.
+                </h2>
+
+                <p>
+                    Fitness information is full of shortcuts
+                    and exaggerated claims. Start with the basics.
+                </p>
+
+            </div>
+
+
+            <div class="myth-grid">
+
+
+                <article class="myth-card">
+
+                    <span>
+                        MYTH 01
+                    </span>
+
+                    <h3>
+                        You Can Spot-Reduce Fat
+                    </h3>
+
+                    <p>
+                        Training a particular muscle does not
+                        selectively remove body fat from that area.
+                    </p>
+
+                </article>
+
+
+                <article class="myth-card">
+
+                    <span>
+                        MYTH 02
+                    </span>
+
+                    <h3>
+                        More Training Is Always Better
+                    </h3>
+
+                    <p>
+                        Training needs to be balanced with
+                        recovery. More isn't automatically better.
+                    </p>
+
+                </article>
+
+
+                <article class="myth-card">
+
+                    <span>
+                        MYTH 03
+                    </span>
+
+                    <h3>
+                        You Need Expensive Equipment
+                    </h3>
+
+                    <p>
+                        Effective exercise can be built around
+                        bodyweight movements and simple equipment.
+                    </p>
+
+                </article>
+
+
+                <article class="myth-card">
+
+                    <span>
+                        MYTH 04
+                    </span>
+
+                    <h3>
+                        One Food Changes Everything
+                    </h3>
+
+                    <p>
+                        Long-term nutrition is about overall
+                        eating patterns, not a single magic food.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="blog-note">
+
+                <strong>
+                    ROSHXLAB Note
+                </strong>
+
+                <p>
+                    Fitness information should be appropriate
+                    for your age, experience and individual
+                    circumstances. For health or nutrition
+                    concerns, speak with a parent or guardian
+                    and a qualified professional.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="blog-cta">
+
+            <p class="eyebrow">
+                KEEP BUILDING
+            </p>
+
+            <h2>
+                Learn More.<br>
+                Move Better.
+            </h2>
+
+            <p>
+                Explore the ROSHXLAB guides, nutrition resources
+                and workouts to keep building your knowledge.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="guides.html" class="btn primary">
+                    Explore Guides →
+                </a>
+
+                <a href="workouts.html" class="btn secondary">
+                    Start Training
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ROSHXLAB
+        </div>
+
+        <p>
+            Build Better. Live Stronger.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ROSHXLAB. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

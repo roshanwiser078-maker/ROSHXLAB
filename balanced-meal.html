@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learn how to build a balanced meal with protein, carbohydrates, vegetables, healthy fats and hydration.">
+
+    <title>Build A Balanced Meal — ROSHXLAB</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 6%;
+            background: rgba(8, 8, 8, 0.94);
+            border-bottom: 1px solid #202020;
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .article-hero {
+            padding: 110px 8% 80px;
+            max-width: 1100px;
+            margin: auto;
+            border-bottom: 1px solid #202020;
+        }
+
+        .eyebrow {
+            color: #8f8f8f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            max-width: 900px;
+            margin-bottom: 30px;
+        }
+
+        .article-hero h1 span {
+            color: #8d8d8d;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            color: #aaa;
+            font-size: 19px;
+        }
+
+        .article {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 8%;
+        }
+
+        .article-section {
+            margin-bottom: 80px;
+        }
+
+        .article-section h2 {
+            font-size: 36px;
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+        }
+
+        .article-section h3 {
+            font-size: 22px;
+            margin: 30px 0 10px;
+        }
+
+        .article-section p {
+            color: #b8b8b8;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .meal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .meal-card {
+            background: #101010;
+            border: 1px solid #242424;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .meal-card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+
+        .meal-card span {
+            display: block;
+            color: #777;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .meal-card h3 {
+            margin: 0 0 10px;
+            font-size: 23px;
+        }
+
+        .meal-card p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .example {
+            margin-top: 30px;
+            padding: 32px;
+            background: #111;
+            border-left: 3px solid #777;
+        }
+
+        .example strong {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .example p {
+            margin: 0;
+        }
+
+        .important {
+            padding: 35px;
+            background: #151515;
+            border: 1px solid #292929;
+            margin-top: 30px;
+        }
+
+        .important strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 100px 8%;
+            background: #111;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .cta h2 {
+            font-size: clamp(40px, 7vw, 72px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border: 1px solid #444;
+            margin: 5px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn.primary {
+            background: #f5f5f5;
+            color: #080808;
+            border-color: #f5f5f5;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            padding: 55px 6%;
+            text-align: center;
+            border-top: 1px solid #202020;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .footer-links a {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 5%;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 10px 14px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .article-hero {
+                padding: 75px 7% 60px;
+            }
+
+            .article-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .article {
+                padding: 60px 7%;
+            }
+
+            .article-section h2 {
+                font-size: 29px;
+            }
+
+            .meal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                padding: 70px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <a href="index.html" class="logo">ROSHXLAB</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="article-hero">
+
+        <p class="eyebrow">NUTRITION · FUNDAMENTALS</p>
+
+        <h1>
+            Build A <span>Balanced Meal.</span>
+        </h1>
+
+        <p class="hero-description">
+            A simple way to combine protein, carbohydrates,
+            vegetables or fruit, healthy fats and fluids into
+            a meal that supports everyday energy and activity.
+        </p>
+
+    </section>
+
+
+    <!-- ARTICLE -->
+    <main class="article">
+
+
+        <!-- INTRO -->
+        <section class="article-section">
+
+            <p class="eyebrow">THE BASIC IDEA</p>
+
+            <h2>A balanced meal doesn't need to be complicated.</h2>
+
+            <p>
+                Good nutrition is less about creating a perfect
+                plate and more about eating a variety of foods
+                regularly.
+            </p>
+
+            <p>
+                A useful meal usually combines several food groups
+                so your body gets different nutrients and enough
+                energy to support school, training, daily activities
+                and normal growth.
+            </p>
+
+        </section>
+
+
+        <!-- FOUR PARTS -->
+        <section class="article-section">
+
+            <p class="eyebrow">BUILD YOUR MEAL</p>
+
+            <h2>Think in food groups.</h2>
+
+            <div class="meal-grid">
+
+                <article class="meal-card">
+
+                    <span>01 · PROTEIN</span>
+
+                    <h3>Protein Foods</h3>
+
+                    <p>
+                        Protein foods can include eggs, dal,
+                        beans, chickpeas, paneer, soy foods,
+                        fish, chicken and other protein-rich foods.
+                    </p>
+
+                </article>
+
+
+                <article class="meal-card">
+
+                    <span>02 · CARBOHYDRATES</span>
+
+                    <h3>Energy Foods</h3>
+
+                    <p>
+                        Rice, roti, oats, potatoes, fruits and
+                        other carbohydrate-rich foods can provide
+                        energy for school, exercise and daily life.
+                    </p>
+
+                </article>
+
+
+                <article class="meal-card">
+
+                    <span>03 · PLANTS</span>
+
+                    <h3>Vegetables & Fruit</h3>
+
+                    <p>
+                        Add vegetables or fruit for vitamins,
+                        minerals, fiber and variety. Different
+                        colors can help you eat a wider range
+                        of foods.
+                    </p>
+
+                </article>
+
+
+                <article class="meal-card">
+
+                    <span>04 · FATS & FLUIDS</span>
+
+                    <h3>Healthy Fats + Water</h3>
+
+                    <p>
+                        Nuts, seeds and other nutritious fat
+                        sources can fit into meals, while water
+                        helps support normal hydration.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXAMPLES -->
+        <section class="article-section">
+
+            <p class="eyebrow">SIMPLE EXAMPLES</p>
+
+            <h2>What can a balanced meal look like?</h2>
+
+            <div class="example">
+
+                <strong>Example 01 · Indian meal</strong>
+
+                <p>
+                    Dal + rice or roti + mixed vegetables +
+                    fruit + water.
+                </p>
+
+            </div>
+
+
+            <div class="example">
+
+                <strong>Example 02 · Simple workout meal</strong>
+
+                <p>
+                    Eggs or paneer + roti + vegetables +
+                    fruit + water.
+                </p>
+
+            </div>
+
+
+            <div class="example">
+
+                <strong>Example 03 · Vegetarian option</strong>
+
+                <p>
+                    Chickpeas or dal + rice/roti +
+                    vegetables + nuts or seeds + water.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROTEIN -->
+        <section class="article-section">
+
+            <p class="eyebrow">PROTEIN</p>
+
+            <h2>Don't forget the protein source.</h2>
+
+            <p>
+                Protein is one important part of a balanced diet.
+                It supports normal growth and helps your body
+                maintain and repair tissues.
+            </p>
+
+            <p>
+                You don't need to rely on supplements to include
+                protein. Everyday foods such as eggs, milk, paneer,
+                dal, beans, chickpeas, soy foods, nuts, seeds,
+                fish and chicken can all contribute.
+            </p>
+
+        </section>
+
+
+        <!-- CARBS -->
+        <section class="article-section">
+
+            <p class="eyebrow">CARBOHYDRATES</p>
+
+            <h2>Carbohydrates are not the enemy.</h2>
+
+            <p>
+                Carbohydrates are an important source of energy.
+                They can be especially useful around active days
+                and workouts.
+            </p>
+
+            <p>
+                Rice, roti, oats, potatoes, fruits and other
+                carbohydrate-containing foods can all fit into
+                a balanced eating pattern.
+            </p>
+
+        </section>
+
+
+        <!-- VARIETY -->
+        <section class="article-section">
+
+            <p class="eyebrow">VARIETY</p>
+
+            <h2>Change your foods regularly.</h2>
+
+            <p>
+                You don't have to eat the exact same meal every
+                day. Different foods provide different nutrients,
+                so variety makes your overall diet more flexible.
+            </p>
+
+            <p>
+                Try changing your vegetables, fruits, protein
+                sources and carbohydrate sources throughout
+                the week.
+            </p>
+
+        </section>
+
+
+        <!-- TRAINING -->
+        <section class="article-section">
+
+            <p class="eyebrow">TRAINING & FOOD</p>
+
+            <h2>Your meals should support your activity.</h2>
+
+            <p>
+                If you train regularly, your body needs enough
+                energy and nutrients to support activity as well
+                as normal growth and recovery.
+            </p>
+
+            <p>
+                A balanced meal can be useful before or after
+                training, depending on your schedule and appetite.
+                There is no need to make nutrition unnecessarily
+                complicated.
+            </p>
+
+        </section>
+
+
+        <!-- HYDRATION -->
+        <section class="article-section">
+
+            <p class="eyebrow">HYDRATION</p>
+
+            <h2>Keep water part of the routine.</h2>
+
+            <p>
+                Water is a simple everyday drink choice. Keep
+                water available during school, workouts and
+                other daily activities.
+            </p>
+
+        </section>
+
+
+        <!-- IMPORTANT -->
+        <section class="article-section">
+
+            <div class="important">
+
+                <strong>One important reminder</strong>
+
+                <p>
+                    A balanced meal is not about eating as little
+                    as possible or following strict food rules.
+                    Especially during the teenage years, your body
+                    is still growing and needs adequate nutrition.
+                </p>
+
+                <p>
+                    Focus on variety, regular meals, nutritious
+                    foods and enough energy for your daily life.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ROSHXLAB NOTE -->
+        <section class="article-section">
+
+            <p class="eyebrow">ROSHXLAB NOTE</p>
+
+            <h2>Keep nutrition practical.</h2>
+
+            <p>
+                You don't need a perfect meal every time.
+                Build better habits by making nutritious choices
+                more often and learning how different foods fit
+                into your routine.
+            </p>
+
+            <p>
+                If you have specific nutrition concerns, medical
+                conditions, allergies or questions about your
+                individual needs, talk with a parent or guardian
+                and a qualified healthcare professional.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <p class="eyebrow">KEEP LEARNING</p>
+
+        <h2>
+            Fuel Your<br>
+            Progress.
+        </h2>
+
+        <p>
+            Learn the basics of nutrition and build habits
+            that support your training and everyday life.
+        </p>
+
+        <a href="nutrition.html" class="btn primary">
+            Explore Nutrition →
+        </a>
+
+        <a href="guides.html" class="btn">
+            Back To Guides
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">ROSHXLAB</div>
+
+        <p>Build Better. Live Stronger.</p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="guides.html">Guides</a>
+            <a href="blog.html">Blog</a>
+            <a href="videos.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ROSHXLAB. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
