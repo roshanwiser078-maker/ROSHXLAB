@@ -5,302 +5,779 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Contact ROSHXLAB for questions, feedback and fitness content suggestions.">
+    <title>Contact ROSHXLAB — Fitness Questions, Feedback & Ideas</title>
 
-    <title>Contact ROSHXLAB — Build Better. Live Stronger.</title>
+    <meta name="description"
+        content="Contact ROSHXLAB for fitness questions, website feedback, content ideas and general suggestions about training, nutrition and fitness education.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ROSHXLAB">
+
+    <link rel="canonical" href="contact.html">
+
+    <meta property="og:title"
+        content="Contact ROSHXLAB — Fitness Questions, Feedback & Ideas">
+    <meta property="og:description"
+        content="Get in touch with ROSHXLAB for fitness questions, feedback, content ideas and general suggestions.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ROSHXLAB">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* CONTACT PAGE */
+        /* =========================================================
+           ROSHXLAB — PREMIUM CONTACT PAGE
+        ========================================================= */
 
-        .contact-hero {
-            min-height: 65vh;
-            padding: 110px 7%;
+        .contact-premium-page {
+            --cp-lime: #caff8a;
+            --cp-lime-soft: #e0ffbd;
+            --cp-bg: #070807;
+            --cp-panel: #0d100d;
+            --cp-panel-2: #111511;
+            --cp-border: rgba(202, 255, 138, .15);
+            --cp-border-soft: rgba(255, 255, 255, .08);
+            --cp-white: #f3f6f0;
+            --cp-muted: #8d938b;
+            background: var(--cp-bg);
+        }
+
+        .contact-premium-page *,
+        .contact-premium-page *::before,
+        .contact-premium-page *::after {
+            box-sizing: border-box;
+        }
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .contact-premium-page nav a[href="contact.html"] {
+            color: var(--cp-lime);
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .cp-hero {
+            position: relative;
+            min-height: 75vh;
+            padding: 95px 7%;
             display: flex;
             align-items: center;
+            overflow: hidden;
             background:
-                radial-gradient(circle at 80% 30%, #242424 0%, transparent 32%),
-                linear-gradient(135deg, #101010, #060606);
-            border-bottom: 1px solid #222;
+                radial-gradient(circle at 80% 30%,
+                    rgba(202, 255, 138, .13),
+                    transparent 28%),
+                radial-gradient(circle at 15% 85%,
+                    rgba(202, 255, 138, .045),
+                    transparent 30%),
+                #070807;
+            border-bottom: 1px solid var(--cp-border-soft);
         }
 
-        .contact-hero-content {
-            max-width: 850px;
+        .cp-hero::before {
+            content: "";
+            position: absolute;
+            width: 560px;
+            height: 560px;
+            right: -200px;
+            top: -210px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .065);
+            filter: blur(95px);
+            pointer-events: none;
         }
 
-        .contact-hero h1 {
-            font-size: clamp(55px, 8vw, 100px);
-            line-height: .94;
-            letter-spacing: -5px;
-            margin-bottom: 30px;
-        }
-
-        .contact-hero h1 span {
-            color: #aaa;
-        }
-
-        .contact-hero p:last-child {
-            max-width: 650px;
-            color: #999;
-            font-size: 19px;
-        }
-
-        .contact-section {
-            padding: 110px 7%;
-            border-bottom: 1px solid #202020;
-        }
-
-        .contact-grid {
+        .cp-hero-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1450px;
+            margin: auto;
             display: grid;
-            grid-template-columns: .8fr 1.2fr;
-            gap: 70px;
+            grid-template-columns: 1.05fr .85fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cp-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: var(--cp-lime);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+        }
+
+        .cp-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--cp-lime);
+            box-shadow: 0 0 12px rgba(202, 255, 138, .7);
+        }
+
+        .cp-hero h1 {
+            margin: 0 0 30px;
+            font-size: clamp(60px, 8vw, 110px);
+            line-height: .88;
+            letter-spacing: -6px;
+            font-weight: 900;
+            color: var(--cp-white);
+        }
+
+        .cp-hero h1 span {
+            display: inline-block;
+            color: transparent;
+            background: linear-gradient(
+                90deg,
+                var(--cp-lime),
+                #ffffff 75%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .cp-hero-text {
+            max-width: 670px;
+            margin: 0;
+            color: #a0a69e;
+            font-size: 19px;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           HERO PANEL
+        ========================================================= */
+
+        .cp-hero-panel {
+            position: relative;
+            padding: 34px;
+            border: 1px solid var(--cp-border);
+            border-radius: 25px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(202, 255, 138, .06),
+                    rgba(255, 255, 255, .012)
+                ),
+                var(--cp-panel);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .4),
+                0 0 55px rgba(202, 255, 138, .025);
+            overflow: hidden;
+        }
+
+        .cp-hero-panel::after {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            right: -90px;
+            bottom: -90px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .09);
+            filter: blur(40px);
+        }
+
+        .cp-panel-label {
+            position: relative;
+            z-index: 2;
+            color: var(--cp-lime);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .cp-panel-title {
+            position: relative;
+            z-index: 2;
+            color: var(--cp-white);
+            font-size: 29px;
+            line-height: 1.1;
+            letter-spacing: -.9px;
+            margin-bottom: 14px;
+        }
+
+        .cp-panel-text {
+            position: relative;
+            z-index: 2;
+            color: #858b83;
+            font-size: 14px;
+            line-height: 1.75;
+            margin-bottom: 27px;
+        }
+
+        .cp-panel-line {
+            position: relative;
+            z-index: 2;
+            height: 1px;
+            background: var(--cp-border-soft);
+            margin-bottom: 21px;
+        }
+
+        .cp-panel-points {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            gap: 13px;
+        }
+
+        .cp-panel-point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #c5cbc2;
+            font-size: 13px;
+        }
+
+        .cp-panel-point::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            flex: 0 0 7px;
+            border-radius: 50%;
+            background: var(--cp-lime);
+            box-shadow: 0 0 12px rgba(202, 255, 138, .65);
+        }
+
+        /* =========================================================
+           MAIN CONTACT SECTION
+        ========================================================= */
+
+        .cp-section {
+            padding: 115px 7%;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .cp-container {
+            width: 100%;
+            max-width: 1450px;
+            margin: auto;
+        }
+
+        .cp-main-grid {
+            display: grid;
+            grid-template-columns: .78fr 1.22fr;
+            gap: 75px;
             align-items: start;
         }
 
-        .contact-info h2 {
-            font-size: clamp(40px, 5vw, 60px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
+        /* =========================================================
+           CONTACT INFO
+        ========================================================= */
+
+        .cp-info h2 {
+            margin: 0 0 23px;
+            font-size: clamp(44px, 5vw, 66px);
+            line-height: .94;
+            letter-spacing: -4px;
+            color: var(--cp-white);
         }
 
-        .contact-info > p {
-            color: #888;
-            font-size: 17px;
-            margin-bottom: 35px;
+        .cp-info h2 span {
+            color: transparent;
+            background: linear-gradient(
+                90deg,
+                var(--cp-lime),
+                #ffffff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
-        .contact-points {
-            border-top: 1px solid #292929;
+        .cp-info-description {
+            max-width: 530px;
+            color: var(--cp-muted);
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0 0 38px;
         }
 
-        .contact-point {
-            padding: 22px 0;
-            border-bottom: 1px solid #292929;
+        .cp-info-list {
+            border-top: 1px solid var(--cp-border-soft);
         }
 
-        .contact-point span {
+        .cp-info-item {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 17px;
+            padding: 23px 0;
+            border-bottom: 1px solid var(--cp-border-soft);
+        }
+
+        .cp-info-number {
+            color: var(--cp-lime);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .cp-info-item strong {
             display: block;
-            color: #666;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            color: #e9ece6;
+            font-size: 15px;
             margin-bottom: 6px;
         }
 
-        .contact-point strong {
-            font-size: 16px;
-        }
-
-        /* FORM */
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            padding: 35px;
-            background: #101010;
-            border: 1px solid #292929;
-        }
-
-        .contact-form h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .contact-form > p {
-            color: #777;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-
-        .contact-form label {
-            color: #aaa;
+        .cp-info-item span {
+            display: block;
+            color: #777e76;
             font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           FORM CARD
+        ========================================================= */
+
+        .cp-form-card {
+            position: relative;
+            padding: 42px;
+            border: 1px solid var(--cp-border);
+            border-radius: 25px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(202, 255, 138, .05),
+                    rgba(255, 255, 255, .012)
+                ),
+                var(--cp-panel);
+            box-shadow:
+                0 30px 75px rgba(0, 0, 0, .35);
+            overflow: hidden;
+        }
+
+        .cp-form-card::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            right: -120px;
+            top: -120px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .075);
+            filter: blur(45px);
+        }
+
+        .cp-form-heading {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .cp-form-heading small {
+            display: block;
+            color: var(--cp-lime);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 11px;
+        }
+
+        .cp-form-heading h3 {
+            margin: 0;
+            color: var(--cp-white);
+            font-size: 31px;
+            letter-spacing: -1px;
+        }
+
+        .cp-form {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            gap: 18px;
+        }
+
+        .cp-field {
+            display: grid;
+            gap: 8px;
+        }
+
+        .cp-field label {
+            color: #aab0a7;
+            font-size: 12px;
             font-weight: 700;
-            margin-top: 8px;
+            letter-spacing: .4px;
         }
 
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
+        .cp-field input,
+        .cp-field select,
+        .cp-field textarea {
             width: 100%;
-            padding: 15px;
-            background: #080808;
-            color: #fff;
-            border: 1px solid #303030;
+            padding: 15px 16px;
+            border: 1px solid rgba(255, 255, 255, .09);
+            border-radius: 12px;
             outline: none;
-            font-family: inherit;
+            background: #090b09;
+            color: #e9ede7;
+            font: inherit;
             font-size: 14px;
-            transition: .25s ease;
+            transition:
+                border-color .25s ease,
+                background .25s ease,
+                box-shadow .25s ease,
+                transform .25s ease;
         }
 
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            border-color: #777;
-            background: #0d0d0d;
+        .cp-field input::placeholder,
+        .cp-field textarea::placeholder {
+            color: #565c55;
         }
 
-        .contact-form textarea {
-            min-height: 150px;
+        .cp-field input:focus,
+        .cp-field select:focus,
+        .cp-field textarea:focus {
+            border-color: rgba(202, 255, 138, .55);
+            background: #0b0e0b;
+            box-shadow:
+                0 0 0 3px rgba(202, 255, 138, .055),
+                0 0 25px rgba(202, 255, 138, .035);
+        }
+
+        .cp-field textarea {
+            min-height: 155px;
             resize: vertical;
         }
 
-        .contact-form select {
-            appearance: auto;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: #555;
-        }
-
-        .contact-form button {
-            border: none;
+        .cp-field select {
             cursor: pointer;
-            margin-top: 12px;
-            font-family: inherit;
         }
 
-        .form-note {
-            color: #555 !important;
-            font-size: 12px !important;
-            margin: 5px 0 0 !important;
+        .cp-submit {
+            width: 100%;
+            margin-top: 4px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            padding: 16px 20px;
+            background: var(--cp-lime);
+            color: #0a0c09;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 800;
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                background .25s ease;
         }
 
-        /* FAQ */
-
-        .faq-section {
-            padding: 110px 7%;
-            background: #0d0d0d;
-            border-bottom: 1px solid #202020;
+        .cp-submit:hover {
+            transform: translateY(-3px);
+            background: var(--cp-lime-soft);
+            box-shadow:
+                0 12px 30px rgba(202, 255, 138, .15);
         }
 
-        .faq-heading {
-            max-width: 700px;
-            margin-bottom: 50px;
-        }
-
-        .faq-heading h2 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
-        }
-
-        .faq-heading p {
-            color: #888;
-            font-size: 17px;
-        }
-
-        .faq-list {
-            max-width: 950px;
-        }
-
-        .faq-item {
-            padding: 28px 0;
-            border-top: 1px solid #292929;
-        }
-
-        .faq-item:last-child {
-            border-bottom: 1px solid #292929;
-        }
-
-        .faq-item h3 {
-            font-size: 19px;
-            margin-bottom: 10px;
-        }
-
-        .faq-item p {
-            color: #888;
-            font-size: 15px;
-            max-width: 800px;
-        }
-
-        /* CTA */
-
-        .contact-cta {
-            padding: 120px 7%;
+        .cp-form-note {
+            margin: 2px 0 0;
+            color: #555c54;
+            font-size: 11px;
+            line-height: 1.6;
             text-align: center;
+        }
+
+        /* =========================================================
+           FAQ
+        ========================================================= */
+
+        .cp-faq-section {
+            padding: 115px 7%;
             background:
-                radial-gradient(circle at center, #202020 0%, transparent 45%),
-                #080808;
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(202, 255, 138, .055),
+                    transparent 25%
+                ),
+                #090b09;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
         }
 
-        .contact-cta h2 {
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: .95;
+        .cp-faq-heading {
+            max-width: 760px;
+            margin-bottom: 55px;
+        }
+
+        .cp-faq-heading h2 {
+            margin: 0 0 20px;
+            font-size: clamp(45px, 6vw, 72px);
+            line-height: .94;
             letter-spacing: -4px;
-            margin-bottom: 25px;
+            color: var(--cp-white);
         }
 
-        .contact-cta > p:not(.eyebrow) {
-            max-width: 550px;
-            margin: 0 auto 30px;
-            color: #888;
+        .cp-faq-heading h2 span {
+            color: transparent;
+            background: linear-gradient(
+                90deg,
+                var(--cp-lime),
+                #ffffff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
-        /* MOBILE */
+        .cp-faq-heading > p:not(.cp-eyebrow) {
+            color: #858b83;
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0;
+        }
 
-        @media (max-width: 850px) {
+        .cp-faq-list {
+            max-width: 1000px;
+        }
 
-            .contact-hero {
-                min-height: auto;
-                padding: 90px 6%;
-            }
+        .cp-faq-item {
+            padding: 29px 0;
+            border-top: 1px solid var(--cp-border-soft);
+            transition: padding-left .25s ease;
+        }
 
-            .contact-hero h1 {
-                font-size: 58px;
-                letter-spacing: -3px;
-            }
+        .cp-faq-item:last-child {
+            border-bottom: 1px solid var(--cp-border-soft);
+        }
 
-            .contact-section {
-                padding: 80px 6%;
-            }
+        .cp-faq-item:hover {
+            padding-left: 10px;
+        }
 
-            .contact-grid {
+        .cp-faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            color: #e8ece5;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .cp-faq-question::after {
+            content: "+";
+            flex: 0 0 auto;
+            color: var(--cp-lime);
+            font-size: 23px;
+            font-weight: 300;
+        }
+
+        .cp-faq-item p {
+            max-width: 850px;
+            margin: 13px 0 0;
+            color: #7f857d;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cp-cta {
+            position: relative;
+            padding: 140px 7%;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at center 35%,
+                    rgba(202, 255, 138, .12),
+                    transparent 28%
+                ),
+                #070807;
+        }
+
+        .cp-cta::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 250px;
+            left: 50%;
+            bottom: -180px;
+            transform: translateX(-50%);
+            background: rgba(202, 255, 138, .06);
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+
+        .cp-cta h2 {
+            position: relative;
+            margin: 0 0 25px;
+            font-size: clamp(50px, 7vw, 90px);
+            line-height: .9;
+            letter-spacing: -5px;
+            color: var(--cp-white);
+        }
+
+        .cp-cta h2 span {
+            color: transparent;
+            background: linear-gradient(
+                90deg,
+                var(--cp-lime),
+                #ffffff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .cp-cta-description {
+            position: relative;
+            max-width: 570px;
+            margin: 0 auto 35px;
+            color: #858b83;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .cp-cta-buttons {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            .cp-hero-inner {
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
 
-            .faq-section {
-                padding: 80px 6%;
+            .cp-hero-panel {
+                max-width: 650px;
             }
 
-            .contact-cta {
-                padding: 90px 6%;
+            .cp-main-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+            .cp-info-description {
+                max-width: 700px;
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 750px) {
 
-            .contact-hero h1 {
-                font-size: 48px;
+            .cp-hero {
+                min-height: auto;
+                padding: 75px 6% 70px;
             }
 
-            .contact-form {
+            .cp-hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .cp-hero-text {
+                font-size: 16px;
+            }
+
+            .cp-hero-panel {
+                padding: 28px;
+            }
+
+            .cp-section {
+                padding: 80px 6%;
+            }
+
+            .cp-info h2 {
+                font-size: 48px;
+                letter-spacing: -3px;
+            }
+
+            .cp-form-card {
+                padding: 28px;
+                border-radius: 20px;
+            }
+
+            .cp-faq-section {
+                padding: 80px 6%;
+            }
+
+            .cp-faq-heading h2 {
+                font-size: 49px;
+                letter-spacing: -3px;
+            }
+
+            .cp-cta {
+                padding: 95px 6%;
+            }
+
+            .cp-cta h2 {
+                font-size: 56px;
+                letter-spacing: -3px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .cp-hero {
+                padding-top: 65px;
+            }
+
+            .cp-hero h1 {
+                font-size: 49px;
+            }
+
+            .cp-hero-panel {
+                padding: 24px;
+            }
+
+            .cp-panel-title {
+                font-size: 25px;
+            }
+
+            .cp-info h2 {
+                font-size: 42px;
+            }
+
+            .cp-form-card {
                 padding: 22px;
             }
 
-            .contact-form input,
-            .contact-form textarea,
-            .contact-form select {
+            .cp-form-heading h3 {
+                font-size: 27px;
+            }
+
+            .cp-faq-heading h2 {
+                font-size: 42px;
+            }
+
+            .cp-faq-question {
                 font-size: 16px;
+            }
+
+            .cp-cta h2 {
+                font-size: 48px;
             }
         }
     </style>
 </head>
 
-<body>
+<body class="contact-premium-page">
 
-    <!-- NAVBAR -->
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
 
     <header>
-
-        <a href="index.html" class="logo">ROSHXLAB</a>
+        <a href="index.html" class="logo">
+            ROSHXLAB
+        </a>
 
         <nav>
             <a href="index.html">Home</a>
@@ -310,288 +787,383 @@
             <a href="blog.html">Blog</a>
             <a href="videos.html">Videos</a>
             <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
-
     </header>
-
 
     <main>
 
-        <!-- HERO -->
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-        <section class="contact-hero">
+        <section class="cp-hero">
 
-            <div class="contact-hero-content">
+            <div class="cp-hero-inner">
 
-                <p class="eyebrow">
-                    GET IN TOUCH
-                </p>
+                <div>
 
-                <h1>
-                    Let's<br>
-                    <span>Connect.</span>
-                </h1>
-
-                <p>
-                    Have feedback, a question or an idea for
-                    ROSHXLAB? We'd love to hear from you.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-
-        <section class="contact-section">
-
-            <div class="contact-grid">
-
-                <!-- INFO -->
-
-                <div class="contact-info">
-
-                    <p class="eyebrow">
-                        CONTACT ROSHXLAB
+                    <p class="cp-eyebrow">
+                        ROSHXLAB · GET IN TOUCH
                     </p>
 
-                    <h2>
-                        Have Something<br>
-                        To Share?
-                    </h2>
+                    <h1>
+                        Let's<br>
+                        <span>Connect.</span>
+                    </h1>
 
-                    <p>
-                        Whether you found something useful,
-                        spotted something that needs improving
-                        or have an idea for future content,
-                        your feedback helps ROSHXLAB grow.
+                    <p class="cp-hero-text">
+                        Have feedback, a question or an idea for
+                        ROSHXLAB? We'd love to hear from you.
                     </p>
 
+                </div>
 
-                    <div class="contact-points">
+                <div class="cp-hero-panel">
 
-                        <div class="contact-point">
+                    <div class="cp-panel-label">
+                        OPEN CONVERSATION
+                    </div>
 
-                            <span>
-                                TOPIC
-                            </span>
+                    <div class="cp-panel-title">
+                        Have something worth sharing?
+                    </div>
 
-                            <strong>
-                                Fitness Questions
-                            </strong>
+                    <p class="cp-panel-text">
+                        Your questions, feedback and ideas can help
+                        shape what ROSHXLAB builds next.
+                    </p>
 
+                    <div class="cp-panel-line"></div>
+
+                    <div class="cp-panel-points">
+
+                        <div class="cp-panel-point">
+                            Fitness questions
                         </div>
 
-
-                        <div class="contact-point">
-
-                            <span>
-                                FEEDBACK
-                            </span>
-
-                            <strong>
-                                Website & Content
-                            </strong>
-
+                        <div class="cp-panel-point">
+                            Website feedback
                         </div>
 
+                        <div class="cp-panel-point">
+                            Content ideas
+                        </div>
 
-                        <div class="contact-point">
-
-                            <span>
-                                IDEAS
-                            </span>
-
-                            <strong>
-                                Articles & Videos
-                            </strong>
-
+                        <div class="cp-panel-point">
+                            General suggestions
                         </div>
 
                     </div>
 
                 </div>
 
+            </div>
 
-                <!-- FORM -->
+        </section>
 
-                <form class="contact-form">
+        <!-- =====================================================
+             CONTACT AREA
+        ====================================================== -->
 
-                    <h3>
-                        Send A Message
-                    </h3>
+        <section class="cp-section">
 
-                    <p>
-                        Fill in the details below.
-                    </p>
+            <div class="cp-container">
 
+                <div class="cp-main-grid">
 
-                    <label for="name">
-                        Name
-                    </label>
+                    <!-- INFO -->
 
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                    >
+                    <div class="cp-info">
 
+                        <p class="cp-eyebrow">
+                            CONTACT ROSHXLAB
+                        </p>
 
-                    <label for="email">
-                        Email
-                    </label>
+                        <h2>
+                            Have Something<br>
+                            To <span>Share?</span>
+                        </h2>
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                    >
+                        <p class="cp-info-description">
+                            Whether you found something useful,
+                            spotted something that needs improving
+                            or have an idea for future content,
+                            your feedback helps ROSHXLAB grow.
+                        </p>
 
+                        <div class="cp-info-list">
 
-                    <label for="topic">
-                        Topic
-                    </label>
+                            <div class="cp-info-item">
 
-                    <select id="topic" name="topic">
+                                <div class="cp-info-number">
+                                    01
+                                </div>
 
-                        <option value="">
-                            Select a topic
-                        </option>
+                                <div>
+                                    <strong>
+                                        Fitness Questions
+                                    </strong>
 
-                        <option>
-                            Fitness Question
-                        </option>
+                                    <span>
+                                        General questions about training,
+                                        nutrition and fitness fundamentals.
+                                    </span>
+                                </div>
 
-                        <option>
-                            Website Feedback
-                        </option>
+                            </div>
 
-                        <option>
-                            Content Idea
-                        </option>
+                            <div class="cp-info-item">
 
-                        <option>
-                            Other
-                        </option>
+                                <div class="cp-info-number">
+                                    02
+                                </div>
 
-                    </select>
+                                <div>
+                                    <strong>
+                                        Website & Content
+                                    </strong>
 
+                                    <span>
+                                        Feedback that can make the ROSHXLAB
+                                        experience more useful.
+                                    </span>
+                                </div>
 
-                    <label for="message">
-                        Message
-                    </label>
+                            </div>
 
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Write your message..."
-                    ></textarea>
+                            <div class="cp-info-item">
 
+                                <div class="cp-info-number">
+                                    03
+                                </div>
 
-                    <button
-                        type="submit"
-                        class="btn primary"
-                    >
-                        Send Message →
-                    </button>
+                                <div>
+                                    <strong>
+                                        Articles & Videos
+                                    </strong>
 
-                    <p class="form-note">
-                        Contact form functionality will be connected
-                        when the website backend is set up.
-                    </p>
+                                    <span>
+                                        Suggest topics you'd like to see
+                                        covered in future content.
+                                    </span>
+                                </div>
 
-                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FORM -->
+
+                    <div class="cp-form-card">
+
+                        <div class="cp-form-heading">
+
+                            <small>
+                                SEND A MESSAGE
+                            </small>
+
+                            <h3>
+                                Let's Hear From You.
+                            </h3>
+
+                        </div>
+
+                        <form class="cp-form">
+
+                            <div class="cp-field">
+
+                                <label for="name">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="cp-field">
+
+                                <label for="email">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="cp-field">
+
+                                <label for="topic">
+                                    Topic
+                                </label>
+
+                                <select
+                                    id="topic"
+                                    name="topic"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select a topic
+                                    </option>
+
+                                    <option value="fitness-question">
+                                        Fitness Question
+                                    </option>
+
+                                    <option value="website-feedback">
+                                        Website Feedback
+                                    </option>
+
+                                    <option value="content-idea">
+                                        Content Idea
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="cp-field">
+
+                                <label for="message">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Write your message..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="cp-submit"
+                            >
+                                Send Message →
+                            </button>
+
+                            <p class="cp-form-note">
+                                Contact form functionality will be connected
+                                when the website backend is set up.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
 
+        <!-- =====================================================
+             FAQ
+        ====================================================== -->
 
-        <!-- FAQ -->
+        <section class="cp-faq-section">
 
-        <section class="faq-section">
+            <div class="cp-container">
 
-            <div class="faq-heading">
+                <div class="cp-faq-heading">
 
-                <p class="eyebrow">
-                    QUICK ANSWERS
-                </p>
+                    <p class="cp-eyebrow">
+                        QUICK ANSWERS
+                    </p>
 
-                <h2>
-                    Before You<br>
-                    Message Us.
-                </h2>
-
-                <p>
-                    Here are a few common questions about ROSHXLAB.
-                </p>
-
-            </div>
-
-
-            <div class="faq-list">
-
-                <div class="faq-item">
-
-                    <h3>
-                        Is ROSHXLAB a personal training service?
-                    </h3>
+                    <h2>
+                        Before You<br>
+                        <span>Message Us.</span>
+                    </h2>
 
                     <p>
-                        No. ROSHXLAB is an educational fitness
-                        platform providing general information
-                        about training, nutrition, recovery and habits.
+                        Here are a few common questions about ROSHXLAB.
                     </p>
 
                 </div>
 
+                <div class="cp-faq-list">
 
-                <div class="faq-item">
+                    <article class="cp-faq-item">
 
-                    <h3>
-                        Can ROSHXLAB create a personal workout plan?
-                    </h3>
+                        <div class="cp-faq-question">
+                            Is ROSHXLAB a personal training service?
+                        </div>
 
-                    <p>
-                        ROSHXLAB content focuses on general guidance.
-                        Individual training needs can vary, especially
-                        with injuries, medical conditions or other
-                        personal considerations.
-                    </p>
+                        <p>
+                            No. ROSHXLAB is an educational fitness
+                            platform providing general information
+                            about training, nutrition, recovery and habits.
+                        </p>
 
-                </div>
+                    </article>
 
+                    <article class="cp-faq-item">
 
-                <div class="faq-item">
+                        <div class="cp-faq-question">
+                            Can ROSHXLAB create a personal workout plan?
+                        </div>
 
-                    <h3>
-                        Can I suggest a topic?
-                    </h3>
+                        <p>
+                            ROSHXLAB content focuses on general guidance.
+                            Individual training needs can vary, especially
+                            with injuries, medical conditions or other
+                            personal considerations.
+                        </p>
 
-                    <p>
-                        Yes. Content suggestions are welcome.
-                        You can use the contact form to share an
-                        article, workout or fitness topic you'd like
-                        to see covered.
-                    </p>
+                    </article>
 
-                </div>
+                    <article class="cp-faq-item">
 
+                        <div class="cp-faq-question">
+                            Can I suggest a topic?
+                        </div>
 
-                <div class="faq-item">
+                        <p>
+                            Yes. Content suggestions are welcome.
+                            You can use the contact form to share an
+                            article, workout or fitness topic you'd like
+                            to see covered.
+                        </p>
 
-                    <h3>
-                        Will the contact form send messages immediately?
-                    </h3>
+                    </article>
 
-                    <p>
-                        The current form is a visual front-end form.
-                        A backend or form service will need to be
-                        connected before messages are actually delivered.
-                    </p>
+                    <article class="cp-faq-item">
+
+                        <div class="cp-faq-question">
+                            Will the contact form send messages immediately?
+                        </div>
+
+                        <p>
+                            The current form is a visual front-end form.
+                            A backend or form service will need to be
+                            connected before messages are actually delivered.
+                        </p>
+
+                    </article>
 
                 </div>
 
@@ -599,26 +1171,27 @@
 
         </section>
 
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
 
-        <!-- CTA -->
+        <section class="cp-cta">
 
-        <section class="contact-cta">
-
-            <p class="eyebrow">
+            <p class="cp-eyebrow">
                 KEEP EXPLORING
             </p>
 
             <h2>
                 Keep Learning.<br>
-                Keep Building.
+                <span>Keep Building.</span>
             </h2>
 
-            <p>
+            <p class="cp-cta-description">
                 Explore ROSHXLAB's workouts and fitness guides
                 while we continue building the platform.
             </p>
 
-            <div class="hero-buttons">
+            <div class="cp-cta-buttons">
 
                 <a
                     href="workouts.html"
@@ -640,8 +1213,9 @@
 
     </main>
 
-
-    <!-- FOOTER -->
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
 
     <footer>
 
