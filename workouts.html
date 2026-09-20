@@ -23,7 +23,7 @@
 
 
     <!-- =========================
-         SOCIAL SHARING / OPEN GRAPH
+         SOCIAL SHARING
     ========================= -->
 
     <meta property="og:title"
@@ -236,7 +236,7 @@
 
 
         /* =========================
-           IMAGE
+           IMAGE CONTAINER
         ========================= */
 
         .workout-library-premium .card-image {
@@ -247,8 +247,21 @@
             height: 100%;
 
             overflow: hidden;
+
+            background: #101010;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+
+        /* =========================
+           WORKOUT CARD IMAGE
+           
+           IMPORTANT:
+           contain = NO CROPPING
+           ========================= */
 
         .workout-library-premium .card-image img {
             width: 100%;
@@ -256,21 +269,35 @@
 
             display: block;
 
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center center;
+
+            background: #101010;
+
+            filter:
+                brightness(.88)
+                contrast(1.04);
 
             transition:
-                transform .6s ease,
-                filter .6s ease;
+                filter .35s ease;
         }
 
 
+        /* =========================
+           HOVER
+           
+           No zoom so image never
+           cuts the head/body.
+        ========================= */
+
         .workout-library-premium .card.visual-card:hover
         .card-image img {
-            transform: scale(1.06);
+
+            transform: none;
 
             filter:
-                brightness(.78)
-                contrast(1.05);
+                brightness(.98)
+                contrast(1.06);
         }
 
 
@@ -287,10 +314,12 @@
             background:
                 linear-gradient(
                     180deg,
-                    rgba(0,0,0,.08) 0%,
-                    rgba(0,0,0,.20) 35%,
-                    rgba(0,0,0,.92) 100%
+                    rgba(0,0,0,.02) 0%,
+                    rgba(0,0,0,.10) 38%,
+                    rgba(0,0,0,.94) 100%
                 );
+
+            pointer-events: none;
         }
 
 
@@ -599,7 +628,6 @@
 
             .workout-hero-premium {
                 grid-template-columns: 1fr;
-
                 min-height: 75vh;
             }
 
@@ -617,7 +645,6 @@
 
             .workout-approach-premium .split-section {
                 grid-template-columns: 1fr;
-
                 gap: 40px;
             }
 
@@ -643,7 +670,6 @@
 
             .workout-hero-premium h1 {
                 font-size: 58px;
-
                 letter-spacing: -4px;
             }
 
@@ -661,20 +687,19 @@
             .workout-library-premium
             .section-heading h2 {
                 font-size: 45px;
-
                 letter-spacing: -3px;
             }
 
 
             .workout-library-premium
             .card.visual-card {
-                min-height: 370px;
+                min-height: 400px;
             }
 
 
             .workout-library-premium
             .card.visual-card:first-child {
-                min-height: 400px;
+                min-height: 430px;
             }
 
 
@@ -697,7 +722,6 @@
 
             .workout-approach-premium h2 {
                 font-size: 47px;
-
                 letter-spacing: -3px;
             }
 
@@ -709,7 +733,6 @@
 
             .workout-cta-premium h2 {
                 font-size: 50px;
-
                 letter-spacing: -3px;
             }
 
@@ -725,20 +748,19 @@
 
             .workout-hero-premium h1 {
                 font-size: 48px;
-
                 letter-spacing: -3px;
             }
 
 
             .workout-library-premium
             .card.visual-card {
-                min-height: 350px;
+                min-height: 380px;
             }
 
 
             .workout-library-premium
             .card.visual-card:first-child {
-                min-height: 370px;
+                min-height: 400px;
             }
 
 
@@ -844,8 +866,6 @@
 
             </div>
 
-
-            <!-- Original image kept for structure -->
 
             <div class="hero-image">
 
