@@ -2,24 +2,789 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="ROSHXLAB workouts — home workouts, strength training, muscle building and beginner fitness routines.">
+    <!-- =========================
+         SEO
+    ========================= -->
 
-    <title>Workouts — ROSHXLAB</title>
+    <title>Workouts — Home, Strength & Muscle Building | ROSHXLAB</title>
+
+    <meta name="description"
+        content="Explore ROSHXLAB workouts including home workouts, strength training, muscle building, beginner routines, dumbbell training and core fitness.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="ROSHXLAB">
+
+    <link rel="canonical" href="workouts.html">
+
+
+    <!-- =========================
+         SOCIAL SHARING / OPEN GRAPH
+    ========================= -->
+
+    <meta property="og:title"
+        content="Workouts — Home, Strength & Muscle Building | ROSHXLAB">
+
+    <meta property="og:description"
+        content="Explore practical home workouts, strength training, muscle building, beginner routines, dumbbell training and core fitness with ROSHXLAB.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="ROSHXLAB">
+
+    <meta property="og:image" content="images/workout-hero.jpg">
+
 
     <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =========================================================
+           ROSHXLAB WORKOUTS — PREMIUM CINEMATIC EDITION
+        ========================================================= */
+
+
+        /* =========================
+           PREMIUM WORKOUT HERO
+        ========================= */
+
+        .workout-hero-premium {
+            min-height: 78vh;
+            padding: 90px 7% 80px;
+
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 55px;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,7,7,.98) 0%,
+                    rgba(5,7,7,.92) 38%,
+                    rgba(5,7,7,.52) 72%,
+                    rgba(5,7,7,.25) 100%
+                ),
+                url("images/workout-hero.jpg") center/cover no-repeat;
+
+            border-bottom: 1px solid #292929;
+        }
+
+
+        .workout-hero-premium::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(126,255,175,.10),
+                    transparent 32%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .workout-hero-premium .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+
+
+        .workout-hero-premium h1 {
+            font-size: clamp(58px, 8vw, 105px);
+            line-height: .88;
+            letter-spacing: -6px;
+            margin: 18px 0 28px;
+        }
+
+
+        .workout-hero-premium h1 span {
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #9affbd
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .workout-hero-premium .hero-text {
+            max-width: 610px;
+            color: #a7a7a7;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        .workout-hero-premium .hero-image {
+            display: none;
+        }
+
+
+        /* =========================
+           WORKOUT LIBRARY
+        ========================= */
+
+        .workout-library-premium {
+            padding: 115px 7%;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(120,255,170,.045),
+                    transparent 35%
+                ),
+                #080909;
+
+            border-bottom: 1px solid #292929;
+        }
+
+
+        .workout-library-premium .section-heading {
+            max-width: 850px;
+            margin-bottom: 55px;
+        }
+
+
+        .workout-library-premium .section-heading h2 {
+            font-size: clamp(45px, 6vw, 72px);
+            line-height: .94;
+            letter-spacing: -4px;
+            margin: 18px 0 22px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #bcbcbc 65%,
+                #8dffb1
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .workout-library-premium .section-heading p:last-child {
+            color: #888;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 680px;
+        }
+
+
+        /* =========================
+           WORKOUT CARD GRID
+        ========================= */
+
+        .workout-library-premium .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+
+        /* =========================
+           PREMIUM IMAGE CARDS
+        ========================= */
+
+        .workout-library-premium .card.visual-card {
+            position: relative;
+
+            min-height: 390px;
+
+            padding: 0;
+
+            overflow: hidden;
+
+            background: #101010;
+
+            border: 1px solid #292929;
+
+            border-radius: 4px;
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                box-shadow .35s ease;
+        }
+
+
+        .workout-library-premium .card.visual-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #555;
+
+            box-shadow:
+                0 22px 55px rgba(0,0,0,.42);
+        }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .workout-library-premium .card-image {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+        }
+
+
+        .workout-library-premium .card-image img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform .6s ease,
+                filter .6s ease;
+        }
+
+
+        .workout-library-premium .card.visual-card:hover
+        .card-image img {
+            transform: scale(1.06);
+
+            filter:
+                brightness(.78)
+                contrast(1.05);
+        }
+
+
+        /* =========================
+           IMAGE OVERLAY
+        ========================= */
+
+        .workout-library-premium .card-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.08) 0%,
+                    rgba(0,0,0,.20) 35%,
+                    rgba(0,0,0,.92) 100%
+                );
+        }
+
+
+        /* =========================
+           CARD CONTENT
+        ========================= */
+
+        .workout-library-premium .card-content {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 34px;
+
+            z-index: 2;
+        }
+
+
+        .workout-library-premium .card-content span {
+            display: inline-block;
+
+            color: #9affbd;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 13px;
+        }
+
+
+        .workout-library-premium .card-content h3 {
+            color: #fff;
+
+            font-size: clamp(25px, 3vw, 34px);
+
+            line-height: 1.05;
+
+            margin: 0 0 12px;
+
+            letter-spacing: -1px;
+        }
+
+
+        .workout-library-premium .card-content p {
+            max-width: 510px;
+
+            color: #b4b4b4;
+
+            font-size: 14px;
+
+            line-height: 1.65;
+
+            margin: 0 0 18px;
+        }
+
+
+        .workout-library-premium .card-content a {
+            color: #fff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            text-decoration: none;
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 7px;
+
+            transition: .25s ease;
+        }
+
+
+        .workout-library-premium .card-content a:hover {
+            color: #9affbd;
+            transform: translateX(4px);
+        }
+
+
+        /* =========================
+           LARGE FEATURE CARD
+        ========================= */
+
+        .workout-library-premium
+        .card.visual-card:first-child {
+            grid-column: span 2;
+            min-height: 470px;
+        }
+
+
+        .workout-library-premium
+        .card.visual-card:first-child
+        .card-content {
+            max-width: 650px;
+        }
+
+
+        .workout-library-premium
+        .card.visual-card:first-child
+        .card-content h3 {
+            font-size: clamp(30px, 4vw, 46px);
+        }
+
+
+        /* =========================
+           APPROACH SECTION
+        ========================= */
+
+        .workout-approach-premium {
+            position: relative;
+
+            padding: 120px 7%;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,6,6,.97) 0%,
+                    rgba(5,6,6,.88) 42%,
+                    rgba(5,6,6,.56) 100%
+                ),
+                url("images/strength-training.jpg") center/cover no-repeat;
+
+            border-bottom: 1px solid #292929;
+        }
+
+
+        .workout-approach-premium::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(126,255,175,.08),
+                    transparent 32%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .workout-approach-premium .split-section {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .workout-approach-premium h2 {
+            font-size: clamp(46px, 6vw, 75px);
+
+            line-height: .93;
+
+            letter-spacing: -4px;
+
+            margin: 18px 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #9affbd
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .workout-approach-premium .split-section > div:last-child p {
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .workout-approach-premium .text-link {
+            color: #fff;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: .25s ease;
+        }
+
+
+        .workout-approach-premium .text-link:hover {
+            color: #9affbd;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .workout-cta-premium {
+            position: relative;
+
+            padding: 135px 7%;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.93),
+                    rgba(5,5,5,.72)
+                ),
+                url("images/home-workout.jpg") center/cover no-repeat;
+
+            border-bottom: 1px solid #292929;
+        }
+
+
+        .workout-cta-premium::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(142,255,181,.10),
+                    transparent 38%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .workout-cta-premium > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .workout-cta-premium h2 {
+            font-size: clamp(52px, 7vw, 88px);
+
+            line-height: .9;
+
+            letter-spacing: -5px;
+
+            margin: 18px 0 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #bdbdbd,
+                    #9affbd
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .workout-cta-premium > p:not(.eyebrow) {
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .workout-hero-premium {
+                grid-template-columns: 1fr;
+
+                min-height: 75vh;
+            }
+
+
+            .workout-library-premium .cards {
+                grid-template-columns: 1fr;
+            }
+
+
+            .workout-library-premium
+            .card.visual-card:first-child {
+                grid-column: auto;
+            }
+
+
+            .workout-approach-premium .split-section {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .workout-hero-premium {
+                min-height: 78vh;
+
+                padding: 75px 6%;
+
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(5,7,7,.94),
+                        rgba(5,7,7,.70)
+                    ),
+                    url("images/workout-hero.jpg") center/cover no-repeat;
+            }
+
+
+            .workout-hero-premium h1 {
+                font-size: 58px;
+
+                letter-spacing: -4px;
+            }
+
+
+            .workout-hero-premium .hero-text {
+                font-size: 16px;
+            }
+
+
+            .workout-library-premium {
+                padding: 80px 6%;
+            }
+
+
+            .workout-library-premium
+            .section-heading h2 {
+                font-size: 45px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .workout-library-premium
+            .card.visual-card {
+                min-height: 370px;
+            }
+
+
+            .workout-library-premium
+            .card.visual-card:first-child {
+                min-height: 400px;
+            }
+
+
+            .workout-library-premium
+            .card-content {
+                padding: 27px;
+            }
+
+
+            .workout-library-premium
+            .card-content h3 {
+                font-size: 27px;
+            }
+
+
+            .workout-approach-premium {
+                padding: 85px 6%;
+            }
+
+
+            .workout-approach-premium h2 {
+                font-size: 47px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .workout-cta-premium {
+                padding: 95px 6%;
+            }
+
+
+            .workout-cta-premium h2 {
+                font-size: 50px;
+
+                letter-spacing: -3px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .workout-hero-premium {
+                padding: 65px 6%;
+            }
+
+
+            .workout-hero-premium h1 {
+                font-size: 48px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .workout-library-premium
+            .card.visual-card {
+                min-height: 350px;
+            }
+
+
+            .workout-library-premium
+            .card.visual-card:first-child {
+                min-height: 370px;
+            }
+
+
+            .workout-library-premium
+            .card-content {
+                padding: 23px;
+            }
+
+
+            .workout-library-premium
+            .card-content p {
+                font-size: 13px;
+            }
+
+
+            .workout-approach-premium h2 {
+                font-size: 42px;
+            }
+
+
+            .workout-cta-premium h2 {
+                font-size: 45px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
     <header>
-        <a href="index.html" class="logo">ROSHXLAB</a>
+
+        <a href="index.html" class="logo">
+            ROSHXLAB
+        </a>
 
         <nav>
+
             <a href="index.html">Home</a>
             <a href="workouts.html">Workouts</a>
             <a href="nutrition.html">Nutrition</a>
@@ -28,18 +793,26 @@
             <a href="videos.html">Videos</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+
         </nav>
+
     </header>
 
 
     <main>
 
-        <!-- HERO -->
-        <section class="hero">
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="workout-hero-premium">
 
             <div class="hero-content">
 
-                <p class="eyebrow">ROSHXLAB · TRAIN WITH PURPOSE</p>
+                <p class="eyebrow">
+                    ROSHXLAB · TRAIN WITH PURPOSE
+                </p>
 
                 <h1>
                     Find Your<br>
@@ -53,11 +826,17 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#workout-library" class="btn primary">
+                    <a
+                        href="#workout-library"
+                        class="btn primary"
+                    >
                         Explore Workouts →
                     </a>
 
-                    <a href="guides.html" class="btn secondary">
+                    <a
+                        href="guides.html"
+                        class="btn secondary"
+                    >
                         Fitness Guides
                     </a>
 
@@ -65,24 +844,39 @@
 
             </div>
 
+
+            <!-- Original image kept for structure -->
+
             <div class="hero-image">
 
-                <img src="images/hero.png"
-                    alt="ROSHXLAB workout training">
+                <img
+                    src="images/workout-hero.jpg"
+                    alt="ROSHXLAB home workout and strength training"
+                >
 
             </div>
 
         </section>
 
 
-        <!-- WORKOUT LIBRARY -->
-        <section class="section" id="workout-library">
+        <!-- =========================
+             WORKOUT LIBRARY
+        ========================= -->
+
+        <section
+            class="workout-library-premium"
+            id="workout-library"
+        >
 
             <div class="section-heading">
 
-                <p class="eyebrow">WORKOUT LIBRARY</p>
+                <p class="eyebrow">
+                    WORKOUT LIBRARY
+                </p>
 
-                <h2>Train Your Way.</h2>
+                <h2>
+                    Train Your Way.
+                </h2>
 
                 <p>
                     Choose a training style based on your goals,
@@ -95,190 +889,261 @@
             <div class="cards">
 
 
-                <!-- HOME WORKOUT -->
+                <!-- 01 · HOME WORKOUT -->
+
                 <article class="card visual-card">
 
                     <div class="card-image">
 
-                        <img src="images/home-workout.jpg"
-                            alt="Home workout">
+                        <img
+                            src="images/home-workout.jpg"
+                            alt="Home workout with minimal equipment"
+                        >
 
                     </div>
 
                     <div class="card-content">
 
-                        <span>01 · HOME</span>
+                        <span>
+                            01 · HOME
+                        </span>
 
-                        <h3>Home Workouts</h3>
+                        <h3>
+                            Home Workouts
+                        </h3>
 
                         <p>
                             Effective workouts you can do at home
                             with minimal equipment.
                         </p>
 
-                        <a href="home-workouts.html">Explore →</a>
+                        <a href="home-workouts.html">
+                            Explore →
+                        </a>
 
                     </div>
 
                 </article>
 
 
-                <!-- FULL BODY -->
+                <!-- 02 · FULL BODY -->
+
                 <article class="card visual-card">
 
                     <div class="card-image">
 
-                        <img src="images/full-body.png"
-                            alt="Full body workout">
+                        <img
+                            src="images/full-body.png"
+                            alt="Full body workout training"
+                        >
 
                     </div>
 
                     <div class="card-content">
 
-                        <span>02 · FULL BODY</span>
+                        <span>
+                            02 · FULL BODY
+                        </span>
 
-                        <h3>Full Body Workout</h3>
+                        <h3>
+                            Full Body Workout
+                        </h3>
 
                         <p>
                             Train multiple muscle groups with
                             balanced full-body sessions.
                         </p>
 
-                        <a href="full-body.html">Explore →</a>
+                        <a href="full-body.html">
+                            Explore →
+                        </a>
 
                     </div>
 
                 </article>
 
 
-                <!-- STRENGTH -->
+                <!-- 03 · STRENGTH -->
+
                 <article class="card visual-card">
 
                     <div class="card-image">
 
-                        <img src="images/strength-training.jpg"
-                            alt="Strength training">
+                        <img
+                            src="images/strength-training.jpg"
+                            alt="Strength training workout"
+                        >
 
                     </div>
 
                     <div class="card-content">
 
-                        <span>03 · STRENGTH</span>
+                        <span>
+                            03 · STRENGTH
+                        </span>
 
-                        <h3>Strength Training</h3>
+                        <h3>
+                            Strength Training
+                        </h3>
 
                         <p>
                             Learn the fundamentals of controlled
                             and progressive strength training.
                         </p>
 
-                        <a href="strength-training.html">Explore →</a>
+                        <a href="strength-training.html">
+                            Explore →
+                        </a>
 
                     </div>
 
                 </article>
 
 
-                <!-- MUSCLE BUILDING -->
+                <!-- 04 · MUSCLE -->
+
                 <article class="card visual-card">
 
                     <div class="card-image">
 
-                        <img src="images/muscle-building.png"
-                            alt="Muscle building workout">
+                        <img
+                            src="images/muscle-building.png"
+                            alt="Muscle building workout training"
+                        >
 
                     </div>
 
                     <div class="card-content">
 
-                        <span>04 · MUSCLE</span>
+                        <span>
+                            04 · MUSCLE
+                        </span>
 
-                        <h3>Muscle Building</h3>
+                        <h3>
+                            Muscle Building
+                        </h3>
 
                         <p>
                             Understand the training principles
                             behind building muscle over time.
                         </p>
 
-                        <a href="muscle-building.html">Explore →</a>
+                        <a href="muscle-building.html">
+                            Explore →
+                        </a>
 
                     </div>
 
                 </article>
 
 
-                <!-- BEGINNER -->
+                <!-- 05 · BEGINNER -->
+
                 <article class="card visual-card">
 
                     <div class="card-image">
 
-                        <img src="images/beginner-workout.png"
-                            alt="Beginner workout">
+                        <img
+                            src="images/beginner-workout.png"
+                            alt="Beginner workout routine"
+                        >
 
                     </div>
 
                     <div class="card-content">
 
-                        <span>05 · BEGINNER</span>
+                        <span>
+                            05 · BEGINNER
+                        </span>
 
-                        <h3>Beginner Workout</h3>
+                        <h3>
+                            Beginner Workout
+                        </h3>
 
                         <p>
                             Simple training ideas for starting
                             your fitness journey.
                         </p>
 
-                        <!-- FIXED LINK -->
-                        <a href="beginner-workout.html">Explore →</a>
+                        <a href="beginner-workout.html">
+                            Explore →
+                        </a>
 
                     </div>
 
                 </article>
 
 
-                <!-- DUMBBELL -->
+                <!-- 06 · DUMBBELLS -->
+
                 <article class="card visual-card">
 
                     <div class="card-image">
 
-                        <img src="images/dumbbell-training.png"
-                            alt="Dumbbell training">
+                        <img
+                            src="images/dumbbell-training.png"
+                            alt="Dumbbell strength training workout"
+                        >
 
                     </div>
 
                     <div class="card-content">
 
-                        <span>06 · DUMBBELLS</span>
+                        <span>
+                            06 · DUMBBELLS
+                        </span>
 
-                        <h3>Dumbbell Training</h3>
+                        <h3>
+                            Dumbbell Training
+                        </h3>
 
                         <p>
                             Build strength with practical dumbbell
                             exercises and routines.
                         </p>
 
-                        <a href="dumbbell-training.html">Explore →</a>
+                        <a href="dumbbell-training.html">
+                            Explore →
+                        </a>
 
                     </div>
 
                 </article>
 
 
-                <!-- CORE & FITNESS -->
-                <article class="card">
+                <!-- 07 · CORE & FITNESS -->
 
-                    <span>07 · CORE & FITNESS</span>
+                <article class="card visual-card">
 
-                    <h3>Belly Fat & Core Fitness</h3>
+                    <div class="card-image">
 
-                    <p>
-                        Learn the basics of core training,
-                        healthy habits and overall fitness.
-                    </p>
+                        <img
+                            src="images/core-workout.jpg"
+                            alt="Core workout and fitness training"
+                        >
 
-                    <a href="belly-fat-core.html">
-                        Explore →
-                    </a>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>
+                            07 · CORE & FITNESS
+                        </span>
+
+                        <h3>
+                            Belly Fat & Core Fitness
+                        </h3>
+
+                        <p>
+                            Learn the basics of core training,
+                            healthy habits and overall fitness.
+                        </p>
+
+                        <a href="belly-fat-core.html">
+                            Explore →
+                        </a>
+
+                    </div>
 
                 </article>
 
@@ -288,14 +1153,19 @@
         </section>
 
 
-        <!-- ROSHXLAB APPROACH -->
-        <section class="section dark-section">
+        <!-- =========================
+             ROSHXLAB APPROACH
+        ========================= -->
+
+        <section class="workout-approach-premium">
 
             <div class="split-section">
 
                 <div>
 
-                    <p class="eyebrow">THE ROSHXLAB APPROACH</p>
+                    <p class="eyebrow">
+                        THE ROSHXLAB APPROACH
+                    </p>
 
                     <h2>
                         Train Smart.<br>
@@ -303,6 +1173,7 @@
                     </h2>
 
                 </div>
+
 
                 <div>
 
@@ -312,7 +1183,10 @@
                         proper nutrition and enough recovery.
                     </p>
 
-                    <a href="guides.html" class="text-link">
+                    <a
+                        href="guides.html"
+                        class="text-link"
+                    >
                         Learn the Fundamentals →
                     </a>
 
@@ -323,10 +1197,15 @@
         </section>
 
 
-        <!-- CTA -->
-        <section class="cta">
+        <!-- =========================
+             CTA
+        ========================= -->
 
-            <p class="eyebrow">YOUR NEXT STEP</p>
+        <section class="workout-cta-premium">
+
+            <p class="eyebrow">
+                YOUR NEXT STEP
+            </p>
 
             <h2>
                 Start<br>
@@ -340,11 +1219,17 @@
 
             <div class="hero-buttons">
 
-                <a href="nutrition.html" class="btn primary">
+                <a
+                    href="nutrition.html"
+                    class="btn primary"
+                >
                     Explore Nutrition →
                 </a>
 
-                <a href="index.html" class="btn secondary">
+                <a
+                    href="index.html"
+                    class="btn secondary"
+                >
                     Back to Home
                 </a>
 
@@ -352,15 +1237,23 @@
 
         </section>
 
+
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
-        <div class="footer-logo">ROSHXLAB</div>
+        <div class="footer-logo">
+            ROSHXLAB
+        </div>
 
-        <p>Build Better. Live Stronger.</p>
+        <p>
+            Build Better. Live Stronger.
+        </p>
 
         <div class="footer-links">
 
@@ -381,5 +1274,7 @@
 
     </footer>
 
+
 </body>
+
 </html>
