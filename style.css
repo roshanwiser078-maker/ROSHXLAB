@@ -1,10 +1,13 @@
 /* =========================================================
    ROSHXLAB — GLOBAL STYLES
    Build Better. Live Stronger.
+   Responsive Edition
    ========================================================= */
 
 
-/* ================= RESET ================= */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -14,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -21,6 +25,12 @@ body {
     background: #080808;
     color: #fff;
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -28,7 +38,16 @@ a {
     color: inherit;
 }
 
-img {
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+section,
+header,
+footer,
+main {
     max-width: 100%;
 }
 
@@ -43,14 +62,18 @@ header {
     z-index: 1000;
 
     min-height: 74px;
-    padding: 0 7%;
+    width: 100%;
+
+    padding: 0 clamp(20px, 7vw, 120px);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     background: rgba(8, 8, 8, 0.94);
+
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     border-bottom: 1px solid #222;
 
@@ -60,16 +83,20 @@ header {
 .logo {
     flex-shrink: 0;
 
-    font-size: 27px;
+    font-size: clamp(23px, 2vw, 30px);
     font-weight: 900;
     letter-spacing: -1.5px;
+
+    white-space: nowrap;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 25px;
+
+    gap: clamp(14px, 1.8vw, 28px);
+
     margin-left: auto;
 }
 
@@ -77,8 +104,11 @@ nav a {
     position: relative;
 
     color: #999;
-    font-size: 14px;
+
+    font-size: clamp(12px, 1vw, 15px);
     font-weight: 500;
+
+    white-space: nowrap;
 
     transition: color 0.25s ease;
 }
@@ -112,15 +142,19 @@ nav a:hover::after {
    ========================================================= */
 
 .hero {
+    width: 100%;
+
     min-height: 76vh;
 
-    padding: 80px 7%;
+    padding:
+        clamp(55px, 7vw, 110px)
+        clamp(20px, 7vw, 120px);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 70px;
+    gap: clamp(35px, 5vw, 80px);
 
     background:
         radial-gradient(
@@ -142,13 +176,14 @@ nav a:hover::after {
 
 .hero-content {
     flex: 1;
+    min-width: 0;
     max-width: 760px;
 }
 
 .eyebrow {
     color: #888;
 
-    font-size: 12px;
+    font-size: clamp(10px, 0.8vw, 13px);
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -159,11 +194,11 @@ nav a:hover::after {
 .hero h1 {
     max-width: 760px;
 
-    font-size: clamp(64px, 7vw, 104px);
+    font-size: clamp(52px, 7vw, 104px);
 
     line-height: 0.92;
 
-    letter-spacing: -5px;
+    letter-spacing: clamp(-5px, -0.4vw, -3px);
 
     margin-bottom: 28px;
 }
@@ -177,7 +212,7 @@ nav a:hover::after {
 
     color: #999;
 
-    font-size: 17px;
+    font-size: clamp(15px, 1.2vw, 18px);
 
     line-height: 1.7;
 
@@ -201,9 +236,11 @@ nav a:hover::after {
 .btn {
     display: inline-block;
 
-    padding: 14px 24px;
+    padding:
+        clamp(12px, 1vw, 15px)
+        clamp(18px, 1.6vw, 26px);
 
-    font-size: 14px;
+    font-size: clamp(12px, 0.9vw, 15px);
     font-weight: 700;
 
     border: 1px solid transparent;
@@ -226,9 +263,7 @@ nav a:hover::after {
 
 .secondary {
     background: transparent;
-
     border-color: #444;
-
     color: #fff;
 }
 
@@ -243,7 +278,7 @@ nav a:hover::after {
    ========================================================= */
 
 .hero-side {
-    width: 230px;
+    width: min(230px, 20vw);
 
     display: flex;
     flex-direction: column;
@@ -252,7 +287,7 @@ nav a:hover::after {
 }
 
 .hero-box {
-    padding: 22px;
+    padding: clamp(17px, 1.5vw, 24px);
 
     background: rgba(255, 255, 255, 0.03);
 
@@ -276,7 +311,8 @@ nav a:hover::after {
 .hero-box p {
     margin-top: 8px;
 
-    font-size: 14px;
+    font-size: clamp(12px, 0.9vw, 15px);
+
     font-weight: 700;
 
     letter-spacing: 1.5px;
@@ -288,9 +324,16 @@ nav a:hover::after {
    ========================================================= */
 
 .hero-image {
-    flex: 0 0 auto;
+    flex: 0 1 620px;
 
     width: min(46vw, 620px);
+
+    /*
+       Don't force the image into a fixed crop.
+       The container remains responsive.
+    */
+
+    min-width: 0;
 
     aspect-ratio: 16 / 9;
 
@@ -298,10 +341,18 @@ nav a:hover::after {
 
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #101010;
+
     border: 1px solid #292929;
+
     border-radius: 4px;
 
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55);
 }
 
 .hero-image img {
@@ -310,18 +361,35 @@ nav a:hover::after {
 
     display: block;
 
-    object-fit: cover;
+    /*
+       IMPORTANT:
+       contain = complete image stays visible.
+       No head/body/subject gets cut.
+    */
+
+    object-fit: contain;
     object-position: center;
+
+    background: #101010;
 
     filter:
         grayscale(15%)
         contrast(1.05);
 
-    transition: transform 0.6s ease;
+    transition:
+        filter 0.35s ease;
 }
 
 .hero-image:hover img {
-    transform: scale(1.04);
+    /*
+       Removed zoom because zoom can crop image edges.
+    */
+
+    transform: none;
+
+    filter:
+        grayscale(5%)
+        contrast(1.05);
 }
 
 .hero-image::after {
@@ -333,9 +401,9 @@ nav a:hover::after {
     background:
         linear-gradient(
             90deg,
-            rgba(8, 8, 8, 0.20),
+            rgba(8, 8, 8, 0.12),
             transparent 45%,
-            rgba(0, 0, 0, 0.12)
+            rgba(0, 0, 0, 0.08)
         );
 
     pointer-events: none;
@@ -348,6 +416,7 @@ nav a:hover::after {
 
 .stats {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
 
     border-top: 1px solid #222;
@@ -357,7 +426,9 @@ nav a:hover::after {
 .stats div {
     min-height: 105px;
 
-    padding: 26px 7%;
+    padding:
+        26px
+        clamp(18px, 7vw, 120px);
 
     display: flex;
     flex-direction: column;
@@ -373,7 +444,8 @@ nav a:hover::after {
 .stats strong {
     display: block;
 
-    font-size: 28px;
+    font-size: clamp(22px, 2vw, 30px);
+
     line-height: 1;
 
     margin-bottom: 8px;
@@ -382,7 +454,7 @@ nav a:hover::after {
 .stats span {
     color: #777;
 
-    font-size: 13px;
+    font-size: clamp(11px, 0.9vw, 14px);
 }
 
 
@@ -391,7 +463,11 @@ nav a:hover::after {
    ========================================================= */
 
 .section {
-    padding: 95px 7%;
+    width: 100%;
+
+    padding:
+        clamp(70px, 7vw, 120px)
+        clamp(20px, 7vw, 120px);
 
     border-bottom: 1px solid #202020;
 }
@@ -408,11 +484,11 @@ nav a:hover::after {
 
 .section-heading h2,
 .split-section h2 {
-    font-size: clamp(48px, 6vw, 70px);
+    font-size: clamp(42px, 6vw, 72px);
 
     line-height: 0.96;
 
-    letter-spacing: -3.5px;
+    letter-spacing: clamp(-3.5px, -0.3vw, -2px);
 
     margin-bottom: 20px;
 }
@@ -420,7 +496,7 @@ nav a:hover::after {
 .section-heading > p:last-child {
     color: #888;
 
-    font-size: 17px;
+    font-size: clamp(15px, 1.2vw, 18px);
 
     line-height: 1.7;
 }
@@ -433,15 +509,16 @@ nav a:hover::after {
 .cards {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: clamp(14px, 1.4vw, 20px);
 }
 
 .card {
+    min-width: 0;
     min-height: 280px;
 
-    padding: 32px;
+    padding: clamp(24px, 2vw, 34px);
 
     background: #101010;
 
@@ -465,13 +542,14 @@ nav a:hover::after {
     color: #666;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 2px;
 }
 
 .card h3 {
-    font-size: 25px;
+    font-size: clamp(21px, 1.8vw, 27px);
 
     line-height: 1.15;
 
@@ -481,7 +559,7 @@ nav a:hover::after {
 .card p {
     color: #888;
 
-    font-size: 15px;
+    font-size: clamp(13px, 1vw, 16px);
 
     line-height: 1.65;
 
@@ -492,7 +570,8 @@ nav a:hover::after {
 .text-link {
     color: #fff;
 
-    font-size: 14px;
+    font-size: clamp(12px, 0.9vw, 15px);
+
     font-weight: 700;
 
     transition: color 0.25s ease;
@@ -516,9 +595,14 @@ nav a:hover::after {
 
 .card-image {
     width: 100%;
-    height: 220px;
+
+    height: clamp(200px, 18vw, 280px);
 
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background: #101010;
 }
@@ -529,21 +613,37 @@ nav a:hover::after {
 
     display: block;
 
+    /*
+       Complete image visible.
+       Prevents head/subject cropping.
+    */
+
     object-fit: contain;
+    object-position: center;
 
     background: #101010;
 
     filter: grayscale(20%);
 
-    transition: transform 0.5s ease;
+    transition:
+        filter 0.35s ease;
 }
 
 .visual-card:hover .card-image img {
-    transform: scale(1.05);
+    /*
+       No scale because scale can cut image edges.
+    */
+
+    transform: none;
+
+    filter:
+        grayscale(5%)
+        brightness(.92);
 }
 
 .card-content {
-    padding: 26px 30px 30px;
+    padding:
+        clamp(22px, 2vw, 30px);
 }
 
 .card-content h3 {
@@ -558,9 +658,9 @@ nav a:hover::after {
 .split-section {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-    gap: 70px;
+    gap: clamp(40px, 6vw, 80px);
 
     align-items: center;
 }
@@ -572,7 +672,7 @@ nav a:hover::after {
 .split-section > div:last-child p {
     color: #999;
 
-    font-size: 17px;
+    font-size: clamp(15px, 1.2vw, 18px);
 
     line-height: 1.75;
 
@@ -589,9 +689,11 @@ nav a:hover::after {
 
     display: grid;
 
-    grid-template-columns: 0.75fr 1.25fr;
+    grid-template-columns:
+        minmax(0, 0.75fr)
+        minmax(0, 1.25fr);
 
-    gap: 55px;
+    gap: clamp(35px, 5vw, 65px);
 
     align-items: center;
 }
@@ -601,7 +703,7 @@ nav a:hover::after {
 }
 
 .nutrition-text h2 {
-    font-size: clamp(48px, 6vw, 72px);
+    font-size: clamp(44px, 6vw, 74px);
 
     line-height: 0.96;
 
@@ -613,7 +715,7 @@ nav a:hover::after {
 .nutrition-text > p:not(.eyebrow) {
     color: #999;
 
-    font-size: 17px;
+    font-size: clamp(15px, 1.2vw, 18px);
 
     line-height: 1.75;
 
@@ -623,25 +725,44 @@ nav a:hover::after {
 .nutrition-image {
     width: 100%;
 
+    min-width: 0;
+
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #101010;
 
     border: 1px solid #292929;
 }
 
 .nutrition-image img {
     width: 100%;
+    height: auto;
+
+    /*
+       Keep the entire nutrition image visible.
+    */
 
     aspect-ratio: 16 / 9;
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 
-    transition: transform 0.5s ease;
+    background: #101010;
+
+    transition:
+        filter 0.35s ease;
 }
 
 .nutrition-image:hover img {
-    transform: scale(1.03);
+    transform: none;
+
+    filter: brightness(.94);
 }
 
 
@@ -650,7 +771,9 @@ nav a:hover::after {
    ========================================================= */
 
 .cta {
-    padding: 115px 7%;
+    padding:
+        clamp(80px, 8vw, 140px)
+        clamp(20px, 7vw, 120px);
 
     text-align: center;
 
@@ -666,11 +789,11 @@ nav a:hover::after {
 }
 
 .cta h2 {
-    font-size: clamp(52px, 7vw, 82px);
+    font-size: clamp(48px, 7vw, 88px);
 
     line-height: 0.94;
 
-    letter-spacing: -4px;
+    letter-spacing: clamp(-4px, -0.35vw, -2px);
 
     margin-bottom: 25px;
 }
@@ -691,13 +814,18 @@ nav a:hover::after {
    ========================================================= */
 
 footer {
-    padding: 55px 7%;
+    width: 100%;
+
+    padding:
+        55px
+        clamp(20px, 7vw, 120px);
 
     text-align: center;
 }
 
 .footer-logo {
-    font-size: 26px;
+    font-size: clamp(23px, 2vw, 28px);
+
     font-weight: 900;
 
     margin-bottom: 8px;
@@ -717,7 +845,7 @@ footer p {
 
     flex-wrap: wrap;
 
-    gap: 24px;
+    gap: clamp(14px, 1.8vw, 26px);
 
     margin: 25px 0;
 }
@@ -745,11 +873,12 @@ footer p {
 
 .contact-form {
     display: flex;
+
     flex-direction: column;
 
     gap: 12px;
 
-    padding: 35px;
+    padding: clamp(22px, 3vw, 38px);
 
     background: #101010;
 
@@ -760,6 +889,7 @@ footer p {
     color: #aaa;
 
     font-size: 13px;
+
     font-weight: 700;
 
     margin-top: 8px;
@@ -780,6 +910,7 @@ footer p {
     outline: none;
 
     font-family: inherit;
+
     font-size: 14px;
 
     transition:
@@ -830,6 +961,7 @@ footer p {
     color: #fff;
 
     font-size: 13px;
+
     font-weight: 700;
 
     letter-spacing: 0.3px;
@@ -853,31 +985,70 @@ footer p {
 
 
 /* =========================================================
-   MOBILE — TABLET
+   LARGE DESKTOP / TV
    ========================================================= */
 
-@media (max-width: 1000px) {
+@media (min-width: 1600px) {
 
     header {
-        padding: 0 5%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .hero,
+    .section,
+    footer {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .hero {
+        gap: 90px;
+    }
+
+    .hero-image {
+        width: min(45vw, 760px);
+    }
+
+    .section-heading {
+        max-width: 850px;
+    }
+
+    .cards {
+        gap: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    header {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     nav {
-        gap: 18px;
+        gap: 16px;
     }
 
     nav a {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .hero {
         gap: 40px;
+
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .hero h1 {
-        font-size: clamp(56px, 7vw, 78px);
-
-        letter-spacing: -4px;
+        font-size: clamp(52px, 7vw, 78px);
     }
 
     .hero-image {
@@ -888,25 +1059,29 @@ footer p {
         width: 200px;
     }
 
-    .cards {
-        gap: 15px;
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
-    .card {
-        padding: 27px;
+    .cards {
+        gap: 15px;
     }
 
     .nutrition-layout {
         gap: 35px;
     }
+
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
    ========================================================= */
 
 @media (max-width: 850px) {
+
+    /* NAVBAR */
 
     header {
         min-height: auto;
@@ -940,13 +1115,16 @@ footer p {
     .hero {
         min-height: auto;
 
-        padding: 75px 6% 70px;
+        padding:
+            70px
+            6%
+            65px;
 
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: stretch;
 
-        gap: 45px;
+        gap: 42px;
     }
 
     .hero-content {
@@ -956,7 +1134,7 @@ footer p {
     .hero h1 {
         max-width: 650px;
 
-        font-size: clamp(52px, 11vw, 76px);
+        font-size: clamp(48px, 11vw, 76px);
 
         letter-spacing: -4px;
     }
@@ -967,25 +1145,44 @@ footer p {
         font-size: 16px;
     }
 
+    /*
+       MOBILE HERO IMAGE
+       Keep complete image visible.
+    */
+
     .hero-image {
         width: 100%;
 
+        max-width: 100%;
+
         aspect-ratio: 16 / 9;
+
+        margin: 0 auto;
     }
+
+    .hero-image img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+
+    /* HERO SIDE */
 
     .hero-side {
         width: 100%;
 
         display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 12px;
     }
 
 
     /* STATS */
 
     .stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .stats div {
@@ -1000,7 +1197,9 @@ footer p {
     /* SECTIONS */
 
     .section {
-        padding: 80px 6%;
+        padding:
+            75px
+            6%;
     }
 
     .section-heading {
@@ -1009,7 +1208,7 @@ footer p {
 
     .section-heading h2,
     .split-section h2 {
-        font-size: clamp(44px, 10vw, 64px);
+        font-size: clamp(42px, 10vw, 64px);
 
         letter-spacing: -3px;
     }
@@ -1023,6 +1222,32 @@ footer p {
 
     .card {
         min-height: 250px;
+    }
+
+
+    /*
+       MOBILE CARD IMAGE
+       Never crop the image.
+    */
+
+    .card-image {
+        height: clamp(220px, 55vw, 360px);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        object-position: center;
+
+        transform: none !important;
     }
 
 
@@ -1053,13 +1278,37 @@ footer p {
 
     .nutrition-image {
         width: 100%;
+
+        min-height: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+    .nutrition-image img {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        object-fit: contain;
+
+        object-position: center;
+
+        transform: none !important;
     }
 
 
     /* CTA */
 
     .cta {
-        padding: 90px 6%;
+        padding:
+            90px
+            6%;
     }
 
     .cta h2 {
@@ -1072,6 +1321,7 @@ footer p {
     .contact-form {
         padding: 25px;
     }
+
 }
 
 
@@ -1101,9 +1351,12 @@ footer p {
     /* HERO */
 
     .hero {
-        padding: 65px 5% 60px;
+        padding:
+            60px
+            5%
+            55px;
 
-        gap: 35px;
+        gap: 32px;
     }
 
     .hero h1 {
@@ -1130,8 +1383,24 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    /*
+       Full image stays visible on small phones.
+    */
+
     .hero-image {
-        aspect-ratio: 16 / 9;
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        background: #101010;
+    }
+
+    .hero-image img {
+        object-fit: contain;
+
+        object-position: center;
+
+        transform: none !important;
     }
 
 
@@ -1157,7 +1426,9 @@ footer p {
     /* SECTION */
 
     .section {
-        padding: 70px 5%;
+        padding:
+            65px
+            5%;
     }
 
     .section-heading h2,
@@ -1180,11 +1451,24 @@ footer p {
     }
 
     .card-image {
-        height: 210px;
+        height: 250px;
+
+        background: #101010;
+    }
+
+    .card-image img {
+        object-fit: contain;
+
+        object-position: center;
+
+        transform: none !important;
     }
 
     .card-content {
-        padding: 24px 25px 28px;
+        padding:
+            24px
+            25px
+            28px;
     }
 
     .card h3 {
@@ -1204,11 +1488,33 @@ footer p {
         letter-spacing: -2.5px;
     }
 
+    .nutrition-image {
+        width: 100%;
+
+        background: #101010;
+    }
+
+    .nutrition-image img {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 4 / 3;
+
+        object-fit: contain;
+
+        object-position: center;
+
+        transform: none !important;
+    }
+
 
     /* CTA */
 
     .cta {
-        padding: 80px 5%;
+        padding:
+            80px
+            5%;
     }
 
     .cta h2 {
@@ -1233,10 +1539,69 @@ footer p {
     /* FOOTER */
 
     footer {
-        padding: 50px 5%;
+        padding:
+            50px
+            5%;
     }
 
     .footer-links {
         gap: 18px;
     }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-heading h2,
+    .split-section h2,
+    .nutrition-text h2 {
+        font-size: 39px;
+    }
+
+    .hero-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .card-image {
+        height: 230px;
+    }
+
+    .stats strong {
+        font-size: 21px;
+    }
+
+    .stats span {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+
 }
