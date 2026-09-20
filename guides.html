@@ -1,469 +1,993 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="ROSHXLAB Fitness Guides — practical guides covering training, nutrition, recovery, consistency and fitness fundamentals.">
+    <title>Fitness Guides — Training, Nutrition & Recovery | ROSHXLAB</title>
 
-    <title>Fitness Guides — ROSHXLAB</title>
+    <meta name="description"
+        content="Explore practical ROSHXLAB fitness guides covering workouts, training, progressive overload, nutrition, protein, hydration, recovery, sleep and healthy fitness habits.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="ROSHXLAB">
+
+    <link rel="canonical" href="guides.html">
+
+    <meta property="og:title"
+        content="Fitness Guides — Training, Nutrition & Recovery | ROSHXLAB">
+
+    <meta property="og:description"
+        content="Practical fitness guides covering training, nutrition, recovery, consistency and fitness fundamentals with ROSHXLAB.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="ROSHXLAB">
+
+    <meta property="og:image" content="images/guide-front.webp">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
 
-        /* =========================
-           GUIDES PAGE
-        ========================= */
+        /* =========================================================
+           ROSHXLAB GUIDES — PREMIUM DESIGN
+        ========================================================= */
 
-        .guides-hero {
-            min-height: 72vh;
-            padding: 100px 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
+        .guides-page {
+            background: #050505 !important;
+            color: #f5f5f5 !important;
+            overflow-x: hidden;
+        }
+
+        .guides-page *,
+        .guides-page *::before,
+        .guides-page *::after {
+            box-sizing: border-box;
+        }
+
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .guides-page header {
+            position: relative !important;
+            z-index: 20 !important;
+            background: rgba(5, 5, 5, 0.82) !important;
+            backdrop-filter: blur(18px) !important;
+            -webkit-backdrop-filter: blur(18px) !important;
+            border-bottom: 1px solid rgba(200, 255, 138, 0.12) !important;
+        }
+
+        .guides-page header .logo {
+            color: #d9ffb7 !important;
+            text-shadow: 0 0 22px rgba(190, 255, 120, 0.28) !important;
+        }
+
+        .guides-page header nav a {
+            color: #999 !important;
+            transition: color .25s ease, text-shadow .25s ease !important;
+        }
+
+        .guides-page header nav a:hover {
+            color: #d9ffb7 !important;
+            text-shadow: 0 0 14px rgba(200, 255, 138, .35) !important;
+        }
+
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .guides-page .guides-hero {
+            min-height: 88vh !important;
+            position: relative !important;
+            overflow: hidden !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 110px 7% !important;
 
             background:
-                radial-gradient(circle at 80% 25%, #252525 0%, transparent 30%),
-                radial-gradient(circle at 20% 80%, #171717 0%, transparent 30%),
-                linear-gradient(135deg, #101010, #060606);
-
-            border-bottom: 1px solid #222;
+                linear-gradient(
+                    90deg,
+                    rgba(3, 3, 3, .96) 0%,
+                    rgba(3, 3, 3, .82) 42%,
+                    rgba(3, 3, 3, .48) 72%,
+                    rgba(3, 3, 3, .82) 100%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.15),
+                    rgba(0,0,0,.88)
+                ),
+                url("images/guide-front.webp") center / cover no-repeat !important;
         }
 
-        .guides-hero-content {
-            max-width: 850px;
+        .guides-page .guides-hero::before {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            left: -180px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            background: radial-gradient(
+                circle,
+                rgba(190,255,120,.17),
+                transparent 68%
+            );
+
+            filter: blur(25px);
+            pointer-events: none;
         }
 
-        .guides-hero h1 {
-            font-size: clamp(55px, 8vw, 100px);
-            line-height: .92;
-            letter-spacing: -5px;
-            margin-bottom: 30px;
+        .guides-page .guides-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    transparent 55%,
+                    rgba(200,255,138,.06) 100%
+                ),
+                linear-gradient(
+                    0deg,
+                    #050505 0%,
+                    transparent 25%
+                );
+
+            pointer-events: none;
         }
 
-        .guides-hero h1 span {
-            color: #aaa;
+        .guides-page .guides-hero-content {
+            position: relative !important;
+            z-index: 3 !important;
+            width: min(760px, 100%) !important;
         }
 
-        .guides-hero-text {
-            max-width: 650px;
-            color: #999;
-            font-size: 18px;
-            margin-bottom: 35px;
+        .guides-page .guides-eyebrow {
+            margin: 0 0 22px !important;
+            color: #b9ff75 !important;
+            font-size: 13px !important;
+            font-weight: 800 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
         }
 
-        .guides-side {
-            width: 280px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .guides-page .guides-hero h1 {
+            margin: 0 !important;
+            color: #ffffff !important;
+            font-size: clamp(64px, 9vw, 125px) !important;
+            line-height: .86 !important;
+            letter-spacing: -7px !important;
+            font-weight: 900 !important;
         }
 
-        .guide-box {
-            padding: 25px;
-            background: rgba(255, 255, 255, .03);
-            border: 1px solid #292929;
-            transition: .3s ease;
+        .guides-page .guides-hero h1 span {
+            display: inline-block !important;
+
+            background: linear-gradient(
+                90deg,
+                #c8ff8a,
+                #efffdc,
+                #aaff61
+            ) !important;
+
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+
+            filter: drop-shadow(
+                0 0 22px rgba(190,255,110,.22)
+            ) !important;
         }
 
-        .guide-box:hover {
-            border-color: #555;
-            transform: translateX(-5px);
-        }
-
-        .guide-box strong {
-            display: block;
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-
-        .guide-box span {
-            color: #777;
-            font-size: 12px;
-            letter-spacing: 2px;
-            font-weight: 700;
+        .guides-page .guides-hero-text {
+            max-width: 650px !important;
+            margin: 32px 0 0 !important;
+            color: #c2c2c2 !important;
+            font-size: 18px !important;
+            line-height: 1.8 !important;
         }
 
 
-        /* =========================
+
+        /* =========================================================
+           HERO BUTTONS
+        ========================================================= */
+
+        .guides-page .guides-buttons {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 14px !important;
+            margin-top: 34px !important;
+        }
+
+        .guides-page .guides-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 52px !important;
+            padding: 0 25px !important;
+            border-radius: 999px !important;
+            font-size: 14px !important;
+            font-weight: 800 !important;
+            text-decoration: none !important;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                background .25s ease !important;
+        }
+
+        .guides-page .guides-btn.primary {
+            color: #071006 !important;
+
+            background: linear-gradient(
+                135deg,
+                #d9ffb7,
+                #9eff50
+            ) !important;
+
+            box-shadow:
+                0 0 30px rgba(180,255,100,.16),
+                inset 0 1px 0 rgba(255,255,255,.45) !important;
+        }
+
+        .guides-page .guides-btn.secondary {
+            color: #d9ffb7 !important;
+            background: rgba(255,255,255,.045) !important;
+            border: 1px solid rgba(200,255,138,.25) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .guides-page .guides-btn:hover {
+            transform: translateY(-3px) !important;
+        }
+
+        .guides-page .guides-btn.primary:hover {
+            box-shadow:
+                0 0 40px rgba(180,255,100,.28),
+                inset 0 1px 0 rgba(255,255,255,.5) !important;
+        }
+
+
+
+        /* =========================================================
+           HERO SIDE BOXES
+        ========================================================= */
+
+        .guides-page .guides-hero-boxes {
+            position: absolute !important;
+            z-index: 4 !important;
+            right: 7% !important;
+            bottom: 85px !important;
+            display: flex !important;
+            gap: 12px !important;
+        }
+
+        .guides-page .hero-box {
+            min-width: 135px !important;
+            padding: 18px 18px !important;
+            background: rgba(10,10,10,.66) !important;
+            border: 1px solid rgba(200,255,138,.15) !important;
+            border-radius: 18px !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35) !important;
+        }
+
+        .guides-page .hero-box small {
+            display: block !important;
+            margin-bottom: 7px !important;
+            color: #8d8d8d !important;
+            font-size: 10px !important;
+            font-weight: 800 !important;
+            letter-spacing: 2px !important;
+        }
+
+        .guides-page .hero-box strong {
+            color: #d9ffb7 !important;
+            font-size: 14px !important;
+            letter-spacing: 1px !important;
+        }
+
+
+
+        /* =========================================================
            QUICK NAV
-        ========================= */
+        ========================================================= */
 
-        .guides-nav {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-bottom: 1px solid #222;
+        .guides-page .guides-quick {
+            position: relative !important;
+            z-index: 5 !important;
+            display: flex !important;
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+            padding: 25px 7% !important;
+            background: #080808 !important;
+            border-top: 1px solid rgba(255,255,255,.05) !important;
+            border-bottom: 1px solid rgba(200,255,138,.10) !important;
         }
 
-        .guides-nav a {
-            padding: 28px 7%;
-            border-right: 1px solid #222;
-            color: #888;
-            font-size: 14px;
-            font-weight: 700;
-            transition: .25s ease;
-            text-decoration: none;
+        .guides-page .guides-quick a {
+            padding: 12px 19px !important;
+            color: #9c9c9c !important;
+            background: rgba(255,255,255,.035) !important;
+            border: 1px solid rgba(255,255,255,.08) !important;
+            border-radius: 999px !important;
+            font-size: 12px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+
+            transition:
+                color .25s ease,
+                border-color .25s ease,
+                background .25s ease,
+                transform .25s ease !important;
         }
 
-        .guides-nav a:last-child {
-            border-right: none;
+        .guides-page .guides-quick a:hover {
+            color: #d9ffb7 !important;
+            background: rgba(200,255,138,.07) !important;
+            border-color: rgba(200,255,138,.28) !important;
+            transform: translateY(-2px) !important;
         }
 
-        .guides-nav a:hover {
-            color: #fff;
-            background: #101010;
-        }
 
 
-        /* =========================
+        /* =========================================================
            INTRO
-        ========================= */
+        ========================================================= */
 
-        .guides-intro {
-            padding: 100px 7%;
-            border-bottom: 1px solid #222;
+        .guides-page .guides-intro {
+            padding: 120px 7% 90px !important;
+            text-align: center !important;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(180,255,100,.08),
+                    transparent 38%
+                ),
+                #050505 !important;
         }
 
-        .guides-intro-inner {
-            max-width: 850px;
+        .guides-page .guides-intro .mini-label {
+            margin: 0 0 16px !important;
+            color: #b9ff75 !important;
+            font-size: 12px !important;
+            font-weight: 800 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
         }
 
-        .guides-intro h2 {
-            font-size: clamp(40px, 6vw, 65px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
+        .guides-page .guides-intro h2 {
+            max-width: 900px !important;
+            margin: 0 auto 22px !important;
+            color: #ffffff !important;
+            font-size: clamp(42px, 6vw, 78px) !important;
+            line-height: .95 !important;
+            letter-spacing: -4px !important;
+            font-weight: 900 !important;
         }
 
-        .guides-intro p {
-            color: #999;
-            font-size: 18px;
-            max-width: 750px;
-        }
-
-
-        /* =========================
-           GUIDE SECTIONS
-        ========================= */
-
-        .guide-section {
-            padding: 110px 7%;
-            border-bottom: 1px solid #202020;
-        }
-
-        .guide-heading {
-            max-width: 750px;
-            margin-bottom: 55px;
-        }
-
-        .guide-heading h2 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
-        }
-
-        .guide-heading p {
-            color: #888;
-            font-size: 17px;
+        .guides-page .guides-intro p {
+            max-width: 650px !important;
+            margin: auto !important;
+            color: #909090 !important;
+            font-size: 17px !important;
+            line-height: 1.8 !important;
         }
 
 
-        /* =========================
+
+        /* =========================================================
+           GENERAL SECTION
+        ========================================================= */
+
+        .guides-page .guides-section {
+            position: relative !important;
+            padding: 105px 7% !important;
+            background: #080808 !important;
+            border-top: 1px solid rgba(255,255,255,.045) !important;
+        }
+
+        .guides-page .guides-section.dark {
+            background: #050505 !important;
+        }
+
+        .guides-page .guides-section::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            left: -220px;
+            top: 20%;
+
+            background: radial-gradient(
+                circle,
+                rgba(180,255,100,.07),
+                transparent 70%
+            );
+
+            pointer-events: none;
+        }
+
+        .guides-page .guides-section-heading {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            margin-bottom: 45px;
+        }
+
+        .guides-page .section-label {
+            margin: 0 0 14px !important;
+            color: #b9ff75 !important;
+            font-size: 11px !important;
+            font-weight: 900 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
+        }
+
+        .guides-page .guides-section-heading h2 {
+            margin: 0 0 16px !important;
+            color: #ffffff !important;
+            font-size: clamp(40px, 5vw, 65px) !important;
+            line-height: .98 !important;
+            letter-spacing: -3px !important;
+            font-weight: 900 !important;
+        }
+
+        .guides-page .guides-section-heading p {
+            margin: 0 !important;
+            color: #8e8e8e !important;
+            font-size: 16px !important;
+            line-height: 1.75 !important;
+        }
+
+
+
+        /* =========================================================
            GUIDE CARDS
-        ========================= */
+        ========================================================= */
 
-        .guide-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+        .guides-page .guide-grid {
+            position: relative;
+            z-index: 2;
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 18px !important;
         }
 
-        .guide-card {
-            min-height: 330px;
-            padding: 32px;
-            background: #101010;
-            border: 1px solid #242424;
-            transition: .3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .guide-card:hover {
-            transform: translateY(-7px);
-            border-color: #555;
-            background: #141414;
-        }
-
-        .guide-card span {
-            color: #666;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .guide-card h3 {
-            font-size: 25px;
-            line-height: 1.15;
-            margin: 22px 0 14px;
-        }
-
-        .guide-card p {
-            color: #888;
-            font-size: 15px;
-            margin-bottom: 25px;
-        }
-
-        .guide-card a {
-            margin-top: auto;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .guide-card a:hover {
-            color: #aaa;
-        }
-
-
-        /* =========================
-           FEATURE
-        ========================= */
-
-        .guide-feature {
-            padding: 120px 7%;
+        .guides-page .guide-card {
+            position: relative !important;
+            overflow: hidden !important;
+            min-height: 255px !important;
+            padding: 30px !important;
 
             background:
-                radial-gradient(circle at 75% 40%, #222 0%, transparent 35%),
-                #0b0b0b;
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.018)
+                ) !important;
 
-            border-bottom: 1px solid #222;
+            border: 1px solid rgba(255,255,255,.09) !important;
+            border-radius: 24px !important;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.22) !important;
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease,
+                background .3s ease !important;
         }
 
-        .guide-feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 90px;
-            align-items: center;
+        .guides-page .guide-card::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            right: -70px;
+            top: -70px;
+
+            background: radial-gradient(
+                circle,
+                rgba(190,255,120,.14),
+                transparent 70%
+            );
+
+            pointer-events: none;
         }
 
-        .guide-feature h2 {
-            font-size: clamp(45px, 6vw, 70px);
-            line-height: .95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
+        .guides-page .guide-card:hover {
+            transform: translateY(-7px) !important;
+            border-color: rgba(200,255,138,.27) !important;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(200,255,138,.075),
+                    rgba(255,255,255,.02)
+                ) !important;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.4),
+                0 0 35px rgba(180,255,100,.06) !important;
         }
 
-        .guide-feature-text {
-            color: #999;
-            font-size: 17px;
-            line-height: 1.8;
+        .guides-page .guide-number {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 42px !important;
+            height: 42px !important;
+            margin-bottom: 28px !important;
+
+            color: #081006 !important;
+            background: #c8ff8a !important;
+            border-radius: 12px !important;
+
+            font-size: 12px !important;
+            font-weight: 900 !important;
+
+            box-shadow:
+                0 0 22px rgba(190,255,100,.16) !important;
         }
 
-        .principle-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .guides-page .guide-card h3 {
+            margin: 0 0 13px !important;
+            color: #ffffff !important;
+            font-size: 23px !important;
+            line-height: 1.15 !important;
+            font-weight: 850 !important;
         }
 
-        .principle {
-            padding: 23px;
-            border: 1px solid #292929;
-            background: rgba(255, 255, 255, .025);
+        .guides-page .guide-card p {
+            margin: 0 0 25px !important;
+            color: #999 !important;
+            font-size: 14px !important;
+            line-height: 1.7 !important;
         }
 
-        .principle strong {
-            display: block;
-            margin-bottom: 5px;
+        .guides-page .guide-card a {
+            color: #c8ff8a !important;
+            font-size: 13px !important;
+            font-weight: 800 !important;
+            text-decoration: none !important;
         }
 
-        .principle span {
-            color: #777;
-            font-size: 14px;
+        .guides-page .guide-card a:hover {
+            color: #efffdc !important;
         }
 
 
-        /* =========================
+
+        /* =========================================================
+           APPROACH
+        ========================================================= */
+
+        .guides-page .approach-section {
+            position: relative !important;
+            overflow: hidden !important;
+            padding: 120px 7% !important;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.97),
+                    rgba(5,5,5,.84)
+                ),
+                url("images/guide-front.webp") center / cover no-repeat !important;
+        }
+
+        .guides-page .approach-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: radial-gradient(
+                circle at 70% 50%,
+                rgba(190,255,110,.09),
+                transparent 45%
+            );
+
+            pointer-events: none;
+        }
+
+        .guides-page .approach-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .guides-page .approach-title {
+            max-width: 750px;
+            margin-bottom: 45px;
+        }
+
+        .guides-page .approach-title h2 {
+            margin: 0;
+            color: #fff !important;
+            font-size: clamp(42px, 6vw, 72px) !important;
+            line-height: .95 !important;
+            letter-spacing: -4px !important;
+            font-weight: 900 !important;
+        }
+
+        .guides-page .approach-title h2 span {
+            color: #c8ff8a !important;
+            text-shadow:
+                0 0 28px rgba(190,255,100,.18) !important;
+        }
+
+        .guides-page .approach-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+            gap: 14px !important;
+        }
+
+        .guides-page .approach-card {
+            padding: 28px 24px !important;
+            background: rgba(10,10,10,.66) !important;
+            border: 1px solid rgba(200,255,138,.13) !important;
+            border-radius: 20px !important;
+            backdrop-filter: blur(14px) !important;
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease !important;
+        }
+
+        .guides-page .approach-card:hover {
+            transform: translateY(-5px) !important;
+            border-color: rgba(200,255,138,.3) !important;
+        }
+
+        .guides-page .approach-card strong {
+            display: block !important;
+            margin-bottom: 10px !important;
+            color: #d9ffb7 !important;
+            font-size: 17px !important;
+        }
+
+        .guides-page .approach-card p {
+            margin: 0 !important;
+            color: #888 !important;
+            font-size: 13px !important;
+            line-height: 1.65 !important;
+        }
+
+
+
+        /* =========================================================
            MYTHS
-        ========================= */
+        ========================================================= */
 
-        .myths {
-            padding: 110px 7%;
-            background: #0d0d0d;
-            border-bottom: 1px solid #222;
+        .guides-page .myth-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 16px !important;
         }
 
-        .myth-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+        .guides-page .myth-card {
+            position: relative !important;
+            padding: 28px !important;
+            background: #0b0b0b !important;
+            border: 1px solid rgba(255,255,255,.07) !important;
+            border-radius: 20px !important;
         }
 
-        .myth {
-            padding: 30px;
-            border: 1px solid #292929;
-            background: #101010;
+        .guides-page .myth-card::before {
+            content: "MYTH";
+            display: inline-block;
+            margin-bottom: 16px !important;
+            padding: 6px 10px !important;
+
+            color: #111 !important;
+            background: #c8ff8a !important;
+
+            border-radius: 999px !important;
+
+            font-size: 9px !important;
+            font-weight: 900 !important;
+            letter-spacing: 1.5px !important;
         }
 
-        .myth span {
-            color: #666;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .myth h3 {
-            margin: 15px 0 10px;
-            font-size: 22px;
-        }
-
-        .myth p {
-            color: #888;
-            font-size: 14px;
+        .guides-page .myth-card h3 {
+            margin: 0 !important;
+            color: #f1f1f1 !important;
+            font-size: 18px !important;
+            line-height: 1.35 !important;
         }
 
 
-        /* =========================
+
+        /* =========================================================
            NOTE
-        ========================= */
+        ========================================================= */
 
-        .guide-note {
-            margin-top: 50px;
-            padding: 30px;
-            border-left: 2px solid #555;
-            background: #101010;
-        }
-
-        .guide-note strong {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .guide-note p {
-            color: #888;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .guides-cta {
-            padding: 130px 7%;
-            text-align: center;
+        .guides-page .guides-note {
+            max-width: 850px !important;
+            margin: 0 auto !important;
+            padding: 35px !important;
 
             background:
-                radial-gradient(circle at center, #202020 0%, transparent 45%),
-                #080808;
+                linear-gradient(
+                    135deg,
+                    rgba(200,255,138,.09),
+                    rgba(255,255,255,.025)
+                ) !important;
 
-            border-bottom: 1px solid #222;
+            border: 1px solid rgba(200,255,138,.16) !important;
+            border-radius: 24px !important;
+            text-align: center !important;
         }
 
-        .guides-cta h2 {
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: .95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
+        .guides-page .guides-note strong {
+            display: block !important;
+            margin-bottom: 12px !important;
+            color: #d9ffb7 !important;
+            font-size: 18px !important;
         }
 
-        .guides-cta p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            color: #888;
-            font-size: 17px;
+        .guides-page .guides-note p {
+            margin: 0 !important;
+            color: #999 !important;
+            font-size: 14px !important;
+            line-height: 1.8 !important;
         }
 
 
-        /* =========================
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .guides-page .guides-cta {
+            position: relative !important;
+            overflow: hidden !important;
+            padding: 135px 7% !important;
+            text-align: center !important;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(180,255,100,.12),
+                    transparent 35%
+                ),
+                #060606 !important;
+
+            border-top: 1px solid rgba(255,255,255,.05) !important;
+            border-bottom: 1px solid rgba(255,255,255,.05) !important;
+        }
+
+        .guides-page .guides-cta h2 {
+            margin: 0 0 20px !important;
+            color: #ffffff !important;
+            font-size: clamp(48px, 7vw, 88px) !important;
+            line-height: .92 !important;
+            letter-spacing: -5px !important;
+            font-weight: 900 !important;
+        }
+
+        .guides-page .guides-cta h2 span {
+            color: #c8ff8a !important;
+            text-shadow:
+                0 0 35px rgba(190,255,100,.18) !important;
+        }
+
+        .guides-page .guides-cta p {
+            max-width: 600px !important;
+            margin: 0 auto 32px !important;
+            color: #888 !important;
+            font-size: 16px !important;
+            line-height: 1.75 !important;
+        }
+
+        .guides-page .guides-cta-buttons {
+            display: flex !important;
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+            gap: 12px !important;
+        }
+
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .guides-page footer {
+            background: #030303 !important;
+            border-top: 1px solid rgba(200,255,138,.08) !important;
+        }
+
+        .guides-page footer,
+        .guides-page footer p,
+        .guides-page footer a {
+            color: #777 !important;
+        }
+
+        .guides-page footer a:hover {
+            color: #c8ff8a !important;
+        }
+
+
+
+        /* =========================================================
            MOBILE
-        ========================= */
+        ========================================================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
 
-            .guides-hero {
-                padding: 80px 6%;
-                flex-direction: column;
-                align-items: flex-start;
+            .guides-page .guides-hero {
+                min-height: 820px !important;
+                padding: 100px 6% 160px !important;
+
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(3,3,3,.68),
+                        rgba(3,3,3,.96)
+                    ),
+                    url("images/guide-front.webp") center / cover no-repeat !important;
             }
 
-            .guides-hero h1 {
-                font-size: 58px;
-                letter-spacing: -3px;
+            .guides-page .guides-hero h1 {
+                font-size: clamp(58px, 14vw, 88px) !important;
+                letter-spacing: -5px !important;
             }
 
-            .guides-side {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+            .guides-page .guides-hero-boxes {
+                position: absolute !important;
+                left: 6% !important;
+                right: 6% !important;
+                bottom: 45px !important;
+
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
             }
 
-            .guides-nav {
-                grid-template-columns: repeat(2, 1fr);
+            .guides-page .hero-box {
+                min-width: 0 !important;
+                padding: 14px !important;
             }
 
-            .guides-nav a {
-                border-bottom: 1px solid #222;
+            .guides-page .hero-box strong {
+                font-size: 11px !important;
             }
 
-            .guide-grid {
-                grid-template-columns: 1fr;
+            .guides-page .guide-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             }
 
-            .guide-feature-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .guides-page .approach-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             }
-
-            .myth-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .guide-section,
-            .myths {
-                padding: 80px 6%;
-            }
-
         }
 
 
-        @media (max-width: 500px) {
 
-            .guides-hero h1 {
-                font-size: 48px;
+        @media (max-width: 600px) {
+
+            .guides-page .guides-hero {
+                min-height: 760px !important;
+                padding: 85px 6% 155px !important;
             }
 
-            .guides-side {
-                grid-template-columns: 1fr;
+            .guides-page .guides-eyebrow {
+                font-size: 10px !important;
+                letter-spacing: 2px !important;
             }
 
-            .guides-nav {
-                grid-template-columns: 1fr 1fr;
+            .guides-page .guides-hero h1 {
+                font-size: 58px !important;
+                letter-spacing: -3.5px !important;
             }
 
-            .guides-nav a {
-                padding: 22px 18px;
+            .guides-page .guides-hero-text {
+                font-size: 15px !important;
+                line-height: 1.7 !important;
             }
 
-            .guides-intro {
-                padding: 75px 6%;
+            .guides-page .guides-buttons {
+                flex-direction: column !important;
             }
 
-            .guide-card,
-            .myth {
-                padding: 25px;
+            .guides-page .guides-btn {
+                width: 100% !important;
             }
 
-            .guides-cta {
-                padding: 90px 6%;
+            .guides-page .guides-hero-boxes {
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 7px !important;
             }
 
+            .guides-page .hero-box {
+                padding: 12px 8px !important;
+                border-radius: 13px !important;
+            }
+
+            .guides-page .hero-box small {
+                font-size: 7px !important;
+                letter-spacing: 1px !important;
+            }
+
+            .guides-page .hero-box strong {
+                font-size: 9px !important;
+            }
+
+            .guides-page .guides-quick {
+                justify-content: flex-start !important;
+                overflow-x: auto !important;
+                flex-wrap: nowrap !important;
+                padding: 18px 6% !important;
+            }
+
+            .guides-page .guides-quick a {
+                flex: 0 0 auto !important;
+            }
+
+            .guides-page .guides-intro,
+            .guides-page .guides-section,
+            .guides-page .approach-section {
+                padding: 80px 6% !important;
+            }
+
+            .guides-page .guides-intro h2,
+            .guides-page .guides-section-heading h2,
+            .guides-page .approach-title h2 {
+                font-size: 43px !important;
+                letter-spacing: -2.5px !important;
+            }
+
+            .guides-page .guide-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .guides-page .guide-card {
+                min-height: 0 !important;
+                padding: 25px !important;
+            }
+
+            .guides-page .approach-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .guides-page .myth-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .guides-page .guides-note {
+                padding: 27px 21px !important;
+            }
+
+            .guides-page .guides-cta {
+                padding: 95px 6% !important;
+            }
+
+            .guides-page .guides-cta h2 {
+                font-size: 52px !important;
+                letter-spacing: -3px !important;
+            }
         }
 
     </style>
@@ -471,10 +995,14 @@
 </head>
 
 
-<body>
+
+<body class="guides-page">
 
 
-    <!-- NAVBAR -->
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
 
     <header>
 
@@ -485,12 +1013,19 @@
         <nav>
 
             <a href="index.html">Home</a>
+
             <a href="workouts.html">Workouts</a>
+
             <a href="nutrition.html">Nutrition</a>
+
             <a href="guides.html">Guides</a>
+
             <a href="blog.html">Blog</a>
+
             <a href="videos.html">Videos</a>
+
             <a href="about.html">About</a>
+
             <a href="contact.html">Contact</a>
 
         </nav>
@@ -498,16 +1033,20 @@
     </header>
 
 
+
     <main>
 
 
-        <!-- HERO -->
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
         <section class="guides-hero">
 
             <div class="guides-hero-content">
 
-                <p class="eyebrow">
+                <p class="guides-eyebrow">
                     ROSHXLAB · FITNESS KNOWLEDGE
                 </p>
 
@@ -517,18 +1056,20 @@
                 </h1>
 
                 <p class="guides-hero-text">
-                    Practical fitness guides that help you
-                    understand training, nutrition, recovery
-                    and the habits behind long-term progress.
+                    Practical fitness guides that help you understand
+                    training, nutrition, recovery and the habits behind
+                    long-term progress.
                 </p>
 
-                <div class="hero-buttons">
+                <div class="guides-buttons">
 
-                    <a href="#training-guides" class="btn primary">
+                    <a href="#training-guides"
+                       class="guides-btn primary">
                         Explore Guides →
                     </a>
 
-                    <a href="#fitness-fundamentals" class="btn secondary">
+                    <a href="#fitness-fundamentals"
+                       class="guides-btn secondary">
                         Start Here
                     </a>
 
@@ -537,35 +1078,32 @@
             </div>
 
 
-            <div class="guides-side">
 
-                <div class="guide-box">
+            <div class="guides-hero-boxes">
 
-                    <strong>01</strong>
+                <div class="hero-box">
 
-                    <span>
-                        TRAINING
-                    </span>
+                    <small>01</small>
 
-                </div>
-
-                <div class="guide-box">
-
-                    <strong>02</strong>
-
-                    <span>
-                        NUTRITION
-                    </span>
+                    <strong>TRAINING</strong>
 
                 </div>
 
-                <div class="guide-box">
 
-                    <strong>03</strong>
+                <div class="hero-box">
 
-                    <span>
-                        RECOVERY
-                    </span>
+                    <small>02</small>
+
+                    <strong>NUTRITION</strong>
+
+                </div>
+
+
+                <div class="hero-box">
+
+                    <small>03</small>
+
+                    <strong>RECOVERY</strong>
 
                 </div>
 
@@ -574,64 +1112,68 @@
         </section>
 
 
-        <!-- QUICK NAV -->
 
-        <section class="guides-nav">
+        <!-- =====================================================
+             QUICK NAV
+        ====================================================== -->
+
+        <div class="guides-quick">
 
             <a href="#fitness-fundamentals">
-                Fundamentals →
+                Fundamentals
             </a>
 
             <a href="#training-guides">
-                Training →
+                Training
             </a>
 
             <a href="#nutrition-guides">
-                Nutrition →
+                Nutrition
             </a>
 
             <a href="#recovery-guides">
-                Recovery →
+                Recovery
             </a>
 
-        </section>
+        </div>
 
 
-        <!-- INTRO -->
+
+        <!-- =====================================================
+             INTRO
+        ====================================================== -->
 
         <section class="guides-intro">
 
-            <div class="guides-intro-inner">
+            <p class="mini-label">
+                KNOWLEDGE BEFORE ACTION
+            </p>
 
-                <p class="eyebrow">
-                    KNOWLEDGE BUILDS BETTER HABITS
-                </p>
+            <h2>
+                Don't Just Train.<br>
+                Understand Why.
+            </h2>
 
-                <h2>
-                    Don't Just Train.<br>
-                    Understand Why.
-                </h2>
-
-                <p>
-                    Fitness becomes easier to navigate when
-                    you understand the basics. Learn how
-                    exercises work, how to structure training,
-                    why recovery matters and how nutrition
-                    supports an active lifestyle.
-                </p>
-
-            </div>
+            <p>
+                Better fitness decisions start with understanding the basics.
+                Learn how training, nutrition, recovery and consistency work
+                together instead of simply following random advice.
+            </p>
 
         </section>
 
 
-        <!-- FITNESS FUNDAMENTALS -->
 
-        <section class="guide-section" id="fitness-fundamentals">
+        <!-- =====================================================
+             FITNESS FUNDAMENTALS
+        ====================================================== -->
 
-            <div class="guide-heading">
+        <section class="guides-section dark"
+                 id="fitness-fundamentals">
 
-                <p class="eyebrow">
+            <div class="guides-section-heading">
+
+                <p class="section-label">
                     FITNESS FUNDAMENTALS
                 </p>
 
@@ -640,22 +1182,21 @@
                 </h2>
 
                 <p>
-                    Build your understanding before worrying
-                    about complicated programs or advanced techniques.
+                    Build a strong foundation by understanding the concepts
+                    that make your workouts more effective.
                 </p>
 
             </div>
 
 
+
             <div class="guide-grid">
 
 
-                <!-- START WORKING OUT -->
-
                 <article class="guide-card">
 
-                    <span>
-                        GUIDE · BEGINNER
+                    <span class="guide-number">
+                        01
                     </span>
 
                     <h3>
@@ -663,24 +1204,22 @@
                     </h3>
 
                     <p>
-                        Learn how beginners can build a simple
-                        routine around technique, consistency
-                        and gradual progression.
+                        Learn how beginners can start training,
+                        build a routine and stay consistent.
                     </p>
 
                     <a href="how-to-start-working-out.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- SETS & REPS -->
 
                 <article class="guide-card">
 
-                    <span>
-                        GUIDE · TRAINING
+                    <span class="guide-number">
+                        02
                     </span>
 
                     <h3>
@@ -688,23 +1227,22 @@
                     </h3>
 
                     <p>
-                        Understand what sets and repetitions
-                        mean and how they fit into a workout.
+                        Understand sets, repetitions and how they
+                        fit into a structured workout.
                     </p>
 
                     <a href="sets-reps.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- PROGRESSIVE OVERLOAD -->
 
                 <article class="guide-card">
 
-                    <span>
-                        GUIDE · PROGRESSION
+                    <span class="guide-number">
+                        03
                     </span>
 
                     <h3>
@@ -712,28 +1250,33 @@
                     </h3>
 
                     <p>
-                        Learn how gradually increasing training
-                        demands can help you continue developing.
+                        Learn why gradual progression matters when
+                        you want to become stronger over time.
                     </p>
 
                     <a href="progressive-overload.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- TRAINING GUIDES -->
 
-        <section class="guide-section" id="training-guides">
+        <!-- =====================================================
+             TRAINING
+        ====================================================== -->
 
-            <div class="guide-heading">
+        <section class="guides-section"
+                 id="training-guides">
 
-                <p class="eyebrow">
+            <div class="guides-section-heading">
+
+                <p class="section-label">
                     TRAINING GUIDES
                 </p>
 
@@ -742,22 +1285,21 @@
                 </h2>
 
                 <p>
-                    Learn how to approach different training
-                    styles and make your workouts more structured.
+                    Understand different training approaches and choose
+                    methods that fit your experience and available equipment.
                 </p>
 
             </div>
 
 
+
             <div class="guide-grid">
 
 
-                <!-- HOME WORKOUT -->
-
                 <article class="guide-card">
 
-                    <span>
-                        TRAINING · HOME
+                    <span class="guide-number">
+                        01
                     </span>
 
                     <h3>
@@ -765,24 +1307,22 @@
                     </h3>
 
                     <p>
-                        Learn how to combine pushing, pulling,
-                        legs and core movements with equipment
-                        you already have.
+                        Learn how to create practical home workouts
+                        using the equipment you already have.
                     </p>
 
                     <a href="home-workouts.html">
-                        Explore Home Workouts →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- STRENGTH -->
 
                 <article class="guide-card">
 
-                    <span>
-                        TRAINING · STRENGTH
+                    <span class="guide-number">
+                        02
                     </span>
 
                     <h3>
@@ -790,23 +1330,22 @@
                     </h3>
 
                     <p>
-                        Understand technique, manageable
-                        resistance, progression and recovery.
+                        Understand controlled strength training,
+                        technique and gradual progression.
                     </p>
 
                     <a href="strength-training.html">
-                        Explore Strength →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- DUMBBELLS -->
 
                 <article class="guide-card">
 
-                    <span>
-                        TRAINING · DUMBBELLS
+                    <span class="guide-number">
+                        03
                     </span>
 
                     <h3>
@@ -814,106 +1353,107 @@
                     </h3>
 
                     <p>
-                        Learn the fundamentals of dumbbell
-                        training and how to use simple
-                        equipment effectively.
+                        Learn how dumbbells can be used for effective
+                        full-body strength training.
                     </p>
 
                     <a href="dumbbell-training.html">
-                        Explore Dumbbells →
+                        Read Guide →
                     </a>
 
                 </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- ROSHXLAB APPROACH -->
 
-        <section class="guide-feature">
+        <!-- =====================================================
+             ROSHXLAB APPROACH
+        ====================================================== -->
 
-            <div class="guide-feature-grid">
+        <section class="approach-section">
 
-                <div>
+            <div class="approach-inner">
 
-                    <p class="eyebrow">
-                        THE ROSHXLAB APPROACH
+                <div class="approach-title">
+
+                    <p class="section-label">
+                        ROSHXLAB APPROACH
                     </p>
 
                     <h2>
-                        Simple Principles.<br>
-                        Better Training.
+                        Train Smart.<br>
+                        <span>Stay Consistent.</span>
                     </h2>
-
-                    <p class="guide-feature-text">
-                        You don't need to make fitness
-                        unnecessarily complicated. Focus on
-                        good technique, gradual progress,
-                        balanced nutrition and enough recovery.
-                    </p>
 
                 </div>
 
 
-                <div class="principle-list">
+
+                <div class="approach-grid">
 
 
-                    <div class="principle">
+                    <div class="approach-card">
 
                         <strong>
                             Technique First
                         </strong>
 
-                        <span>
-                            Learn the movement before worrying
-                            about adding more resistance.
-                        </span>
+                        <p>
+                            Learn movements properly before chasing
+                            heavier weights or more repetitions.
+                        </p>
 
                     </div>
 
 
-                    <div class="principle">
+
+                    <div class="approach-card">
 
                         <strong>
                             Progress Gradually
                         </strong>
 
-                        <span>
-                            Improve through manageable changes
-                            rather than rushing your progress.
-                        </span>
+                        <p>
+                            Improve step by step instead of trying
+                            to change everything at once.
+                        </p>
 
                     </div>
 
 
-                    <div class="principle">
+
+                    <div class="approach-card">
 
                         <strong>
                             Recover Properly
                         </strong>
 
-                        <span>
-                            Rest, sleep and nutrition are part
-                            of training—not obstacles to it.
-                        </span>
+                        <p>
+                            Training is only one part of progress.
+                            Recovery gives your body time to adapt.
+                        </p>
 
                     </div>
 
 
-                    <div class="principle">
+
+                    <div class="approach-card">
 
                         <strong>
                             Stay Consistent
                         </strong>
 
-                        <span>
-                            Sustainable habits matter more
-                            than short bursts of extreme effort.
-                        </span>
+                        <p>
+                            Sustainable habits matter more than
+                            occasional extreme effort.
+                        </p>
 
                     </div>
+
 
                 </div>
 
@@ -922,37 +1462,40 @@
         </section>
 
 
-        <!-- NUTRITION GUIDES -->
 
-        <section class="guide-section" id="nutrition-guides">
+        <!-- =====================================================
+             NUTRITION
+        ====================================================== -->
 
-            <div class="guide-heading">
+        <section class="guides-section dark"
+                 id="nutrition-guides">
 
-                <p class="eyebrow">
+            <div class="guides-section-heading">
+
+                <p class="section-label">
                     NUTRITION GUIDES
                 </p>
 
                 <h2>
-                    Understand Your Fuel.
+                    Eat To Support Your Goals.
                 </h2>
 
                 <p>
-                    Learn the basics of balanced eating and
-                    how nutrition supports an active lifestyle.
+                    Learn simple nutrition fundamentals without unnecessary
+                    complexity or extreme approaches.
                 </p>
 
             </div>
 
 
+
             <div class="guide-grid">
 
 
-                <!-- PROTEIN -->
-
                 <article class="guide-card">
 
-                    <span>
-                        NUTRITION · PROTEIN
+                    <span class="guide-number">
+                        01
                     </span>
 
                     <h3>
@@ -960,23 +1503,22 @@
                     </h3>
 
                     <p>
-                        Learn what protein does in the body
-                        and discover everyday food sources.
+                        Learn what protein does and why it is an
+                        important part of a balanced diet.
                     </p>
 
                     <a href="understanding-protein.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- BALANCED MEAL -->
 
                 <article class="guide-card">
 
-                    <span>
-                        NUTRITION · MEALS
+                    <span class="guide-number">
+                        02
                     </span>
 
                     <h3>
@@ -984,23 +1526,22 @@
                     </h3>
 
                     <p>
-                        Understand how protein, carbohydrates,
-                        vegetables, fruit and fats can fit together.
+                        Understand how different food groups can
+                        come together in a balanced meal.
                     </p>
 
                     <a href="balanced-meal.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- HYDRATION -->
 
                 <article class="guide-card">
 
-                    <span>
-                        NUTRITION · HYDRATION
+                    <span class="guide-number">
+                        03
                     </span>
 
                     <h3>
@@ -1008,53 +1549,56 @@
                     </h3>
 
                     <p>
-                        Learn why water matters and how hydration
-                        fits into everyday activity and exercise.
+                        Learn why regular hydration matters during
+                        normal daily life and physical activity.
                     </p>
 
                     <a href="hydration-basics.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- RECOVERY & HABITS -->
 
-        <section class="guide-section" id="recovery-guides">
+        <!-- =====================================================
+             RECOVERY
+        ====================================================== -->
 
-            <div class="guide-heading">
+        <section class="guides-section"
+                 id="recovery-guides">
 
-                <p class="eyebrow">
+            <div class="guides-section-heading">
+
+                <p class="section-label">
                     RECOVERY & HABITS
                 </p>
 
                 <h2>
-                    Progress Happens Outside
-                    The Workout Too.
+                    Progress Happens Beyond The Workout.
                 </h2>
 
                 <p>
-                    Training is only one part of the process.
-                    Recovery and everyday habits matter too.
+                    Recovery, sleep and consistent habits all play a role
+                    in building a sustainable fitness routine.
                 </p>
 
             </div>
 
 
+
             <div class="guide-grid">
 
 
-                <!-- SLEEP -->
-
                 <article class="guide-card">
 
-                    <span>
-                        RECOVERY · SLEEP
+                    <span class="guide-number">
+                        01
                     </span>
 
                     <h3>
@@ -1062,24 +1606,22 @@
                     </h3>
 
                     <p>
-                        Understand why quality sleep is
-                        important for everyday health,
-                        learning and recovery.
+                        Understand why quality sleep is an important
+                        part of everyday recovery.
                     </p>
 
                     <a href="sleep-recovery.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- REST -->
 
                 <article class="guide-card">
 
-                    <span>
-                        RECOVERY · REST
+                    <span class="guide-number">
+                        02
                     </span>
 
                     <h3>
@@ -1087,23 +1629,22 @@
                     </h3>
 
                     <p>
-                        Learn why rest days and manageable
-                        training help you stay consistent.
+                        Learn why your body needs time between
+                        demanding training sessions.
                     </p>
 
                     <a href="sleep-recovery.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
 
 
-                <!-- CONSISTENCY -->
 
                 <article class="guide-card">
 
-                    <span>
-                        HABITS · CONSISTENCY
+                    <span class="guide-number">
+                        03
                     </span>
 
                     <h3>
@@ -1111,147 +1652,114 @@
                     </h3>
 
                     <p>
-                        Learn simple ways to make training,
-                        nutrition and recovery more consistent.
+                        Learn practical ways to make healthy
+                        routines easier to maintain.
                     </p>
 
                     <a href="consistency-habits.html">
-                        Read Article →
+                        Read Guide →
                     </a>
 
                 </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- FITNESS MYTHS -->
 
-        <section class="myths">
+        <!-- =====================================================
+             FITNESS MYTHS
+        ====================================================== -->
 
-            <div class="guide-heading">
+        <section class="guides-section dark">
 
-                <p class="eyebrow">
+            <div class="guides-section-heading">
+
+                <p class="section-label">
                     FITNESS MYTHS
                 </p>
 
                 <h2>
-                    Don't Let Fitness Myths
-                    Run Your Routine.
+                    Keep Fitness Simple.
                 </h2>
 
                 <p>
-                    Fitness information can be confusing.
-                    Focus on evidence-based basics instead
-                    of extreme claims.
+                    A few important reminders can help you avoid
+                    unrealistic expectations and unnecessary confusion.
                 </p>
 
             </div>
+
 
 
             <div class="myth-grid">
 
 
-                <!-- MYTH 1 -->
-
-                <article class="myth">
-
-                    <span>
-                        MYTH · FAT LOSS
-                    </span>
+                <div class="myth-card">
 
                     <h3>
                         One Exercise Can't Target Body Fat
                     </h3>
 
-                    <p>
-                        Core exercises can strengthen your
-                        abdominal muscles, but they don't
-                        selectively remove fat from one area.
-                    </p>
-
-                </article>
+                </div>
 
 
-                <!-- MYTH 2 -->
 
-                <article class="myth">
-
-                    <span>
-                        MYTH · SPEED
-                    </span>
+                <div class="myth-card">
 
                     <h3>
                         Faster Isn't Always Better
                     </h3>
 
-                    <p>
-                        Rushing exercises can make technique
-                        harder to maintain. Controlled,
-                        appropriate movement is important.
-                    </p>
-
-                </article>
+                </div>
 
 
-                <!-- MYTH 3 -->
 
-                <article class="myth">
-
-                    <span>
-                        MYTH · EQUIPMENT
-                    </span>
+                <div class="myth-card">
 
                     <h3>
                         You Don't Need A Huge Gym
                     </h3>
 
-                    <p>
-                        Effective training can be built around
-                        bodyweight, dumbbells and other simple
-                        equipment.
-                    </p>
-
-                </article>
+                </div>
 
 
-                <!-- MYTH 4 -->
 
-                <article class="myth">
-
-                    <span>
-                        MYTH · PERFECTION
-                    </span>
+                <div class="myth-card">
 
                     <h3>
                         One Bad Day Doesn't Ruin Progress
                     </h3>
 
-                    <p>
-                        Long-term consistency matters more
-                        than being perfect every single day.
-                    </p>
+                </div>
 
-                </article>
 
             </div>
 
+        </section>
 
-            <!-- NOTE -->
 
-            <div class="guide-note">
+
+        <!-- =====================================================
+             ROSHXLAB NOTE
+        ====================================================== -->
+
+        <section class="guides-section">
+
+            <div class="guides-note">
 
                 <strong>
-                    ROSHXLAB Note
+                    A Note From ROSHXLAB
                 </strong>
 
                 <p>
-                    Fitness advice should be appropriate for
-                    your age, experience and circumstances.
-                    If you're unsure about exercise, nutrition
-                    or a health concern, talk with a parent
-                    or guardian and a qualified professional.
+                    Fitness advice should always consider your age,
+                    experience, health, goals and personal circumstances.
+                    If you have a medical condition, injury, or concerns
+                    about exercise or nutrition, speak with a parent or
+                    guardian and a qualified health or fitness professional.
                 </p>
 
             </div>
@@ -1259,71 +1767,89 @@
         </section>
 
 
-        <!-- FINAL CTA -->
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
 
         <section class="guides-cta">
 
-            <p class="eyebrow">
-                KEEP LEARNING
-            </p>
-
             <h2>
                 Knowledge.<br>
-                Then Action.
+                <span>Then Action.</span>
             </h2>
 
             <p>
-                Understand the fundamentals, apply them
-                consistently and keep improving.
+                Learn the basics, choose your direction and start building
+                better habits one step at a time.
             </p>
 
-            <div class="hero-buttons">
 
-                <a href="workouts.html" class="btn primary">
+
+            <div class="guides-cta-buttons">
+
+                <a href="workouts.html"
+                   class="guides-btn primary">
                     Start Training →
                 </a>
 
-                <a href="nutrition.html" class="btn secondary">
-                    Explore Nutrition
+                <a href="nutrition.html"
+                   class="guides-btn secondary">
+                    Explore Nutrition →
                 </a>
 
             </div>
 
         </section>
 
+
+
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
 
     <footer>
 
-        <div class="footer-logo">
-            ROSHXLAB
+        <div>
+
+            <a href="index.html" class="logo">
+                ROSHXLAB
+            </a>
+
+            <p>
+                Build Better. Live Stronger.
+            </p>
+
         </div>
 
-        <p>
-            Build Better. Live Stronger.
-        </p>
 
-        <div class="footer-links">
+
+        <nav>
 
             <a href="index.html">Home</a>
+
             <a href="workouts.html">Workouts</a>
+
             <a href="nutrition.html">Nutrition</a>
+
             <a href="guides.html">Guides</a>
+
             <a href="blog.html">Blog</a>
+
             <a href="videos.html">Videos</a>
+
             <a href="about.html">About</a>
+
             <a href="contact.html">Contact</a>
 
-        </div>
-
-        <p class="copyright">
-            © 2026 ROSHXLAB. All rights reserved.
-        </p>
+        </nav>
 
     </footer>
+
 
 
 </body>
