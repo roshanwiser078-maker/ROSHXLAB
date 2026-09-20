@@ -2,354 +2,868 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Explore ROSHXLAB fitness videos covering workouts, exercise technique, nutrition, recovery and practical fitness education.">
+        content="Explore ROSHXLAB fitness videos covering workouts, exercise technique, strength training, nutrition, recovery and practical fitness education.">
 
-    <title>Videos — ROSHXLAB | Build Better. Live Stronger.</title>
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="ROSHXLAB">
+
+    <title>Fitness Videos — Workouts, Training & Nutrition | ROSHXLAB</title>
+
+    <link rel="canonical" href="videos.html">
+
+    <meta property="og:title"
+        content="Fitness Videos — Workouts, Training & Nutrition | ROSHXLAB">
+
+    <meta property="og:description"
+        content="Watch practical ROSHXLAB fitness videos covering workouts, exercise technique, strength training, nutrition, recovery and better training habits.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="ROSHXLAB">
+
+    <meta property="og:image" content="images/video-front.jpg">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* VIDEO HERO */
 
-        .video-hero {
-            min-height: 68vh;
-            padding: 110px 7%;
-            display: flex;
+        /* =========================================================
+           ROSHXLAB PREMIUM VIDEOS
+           Scoped to .videos-premium-page
+        ========================================================= */
+
+        .videos-premium-page {
+            background:
+                radial-gradient(circle at 10% 10%, rgba(202,255,139,.035), transparent 28%),
+                radial-gradient(circle at 90% 50%, rgba(202,255,139,.025), transparent 30%),
+                #070707 !important;
+            color: #fff !important;
+        }
+
+        .videos-premium-page * {
+            box-sizing: border-box;
+        }
+
+        .videos-premium-page a {
+            text-decoration: none;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .vp-hero {
+            position: relative;
+            min-height: 82vh;
+            padding: 110px 7% 90px;
+            display: grid;
+            grid-template-columns: 1fr .8fr;
             align-items: center;
+            gap: 70px;
+            overflow: hidden;
 
             background:
-                radial-gradient(circle at 80% 30%, #252525 0%, transparent 32%),
-                linear-gradient(135deg, #101010, #060606);
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.98) 0%,
+                    rgba(5,5,5,.88) 45%,
+                    rgba(5,5,5,.45) 100%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.15),
+                    rgba(0,0,0,.82)
+                ),
+                url("images/video-front.jpg");
 
-            border-bottom: 1px solid #222;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
-        .video-hero-content {
-            max-width: 850px;
+        .vp-hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -180px;
+            top: -180px;
+            border-radius: 50%;
+            background: rgba(202,255,139,.09);
+            filter: blur(100px);
+            pointer-events: none;
         }
 
-        .video-hero h1 {
-            font-size: clamp(55px, 8vw, 100px);
-            line-height: .94;
-            letter-spacing: -5px;
-            margin-bottom: 30px;
+        .vp-hero::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 230px;
+            left: 4%;
+            bottom: -100px;
+            background: rgba(202,255,139,.06);
+            filter: blur(90px);
+            pointer-events: none;
         }
 
-        .video-hero h1 span {
-            color: #aaa;
+        .vp-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
         }
 
-        .video-hero p:last-child {
-            max-width: 680px;
-            color: #999;
-            font-size: 19px;
+        .vp-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #caff8b !important;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin: 0 0 25px;
         }
 
-        /* VIDEO SECTION */
-
-        .video-section {
-            padding: 110px 7%;
-            border-bottom: 1px solid #202020;
+        .vp-eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: #caff8b;
+            box-shadow: 0 0 12px rgba(202,255,139,.8);
         }
 
-        .video-heading {
-            max-width: 750px;
-            margin-bottom: 55px;
+        .vp-hero h1 {
+            margin: 0 0 30px;
+            font-size: clamp(62px, 8vw, 115px) !important;
+            line-height: .84 !important;
+            letter-spacing: -7px !important;
+            font-weight: 900 !important;
+            color: #fff !important;
         }
 
-        .video-heading h2 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
+        .vp-hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff 0%,
+                    #caff8b 55%,
+                    #9fe55e 100%
+                );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
         }
 
-        .video-heading p {
-            color: #888;
-            font-size: 17px;
+        .vp-hero-text {
+            max-width: 650px;
+            margin: 0 0 32px;
+            color: #aaa !important;
+            font-size: 18px;
+            line-height: 1.8;
         }
 
-        /* FEATURED VIDEO */
+        /* =========================================================
+           HERO VIDEO PANEL
+        ========================================================= */
 
-        .featured-video {
-            display: grid;
-            grid-template-columns: 1.25fr .75fr;
-            min-height: 420px;
-            background: #101010;
-            border: 1px solid #292929;
-        }
+        .vp-hero-video {
+            position: relative;
+            z-index: 2;
+            min-height: 470px;
+            border: 1px solid rgba(255,255,255,.11);
+            border-radius: 24px;
+            overflow: hidden;
 
-        .featured-placeholder {
-            min-height: 420px;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.05),
+                    rgba(0,0,0,.72)
+                ),
+                url("images/video-front.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            box-shadow:
+                0 35px 90px rgba(0,0,0,.4),
+                inset 0 0 80px rgba(202,255,139,.035);
+
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-
-            background:
-                radial-gradient(circle at center, #292929 0%, transparent 55%),
-                #080808;
-
-            border-right: 1px solid #292929;
         }
 
-        .play-circle {
-            width: 82px;
-            height: 82px;
-            border: 1px solid #555;
+        .vp-hero-video::before {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 17px;
+            pointer-events: none;
+        }
+
+        .vp-big-play {
+            position: relative;
+            z-index: 2;
+            width: 92px;
+            height: 92px;
             border-radius: 50%;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            font-size: 25px;
-            padding-left: 4px;
+            padding-left: 5px;
+            font-size: 26px;
+
+            color: #090909;
+            background: #caff8b;
+            box-shadow:
+                0 0 0 10px rgba(202,255,139,.08),
+                0 0 50px rgba(202,255,139,.25);
+
+            transition: .35s ease;
         }
 
-        .featured-content {
-            padding: 45px;
+        .vp-hero-video:hover .vp-big-play {
+            transform: scale(1.08);
+            box-shadow:
+                0 0 0 14px rgba(202,255,139,.08),
+                0 0 70px rgba(202,255,139,.3);
+        }
+
+        .vp-video-label {
+            position: absolute;
+            left: 25px;
+            bottom: 23px;
+            z-index: 2;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .vp-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .vp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0 24px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
+            transition: .3s ease;
+        }
+
+        .vp-btn-primary {
+            background: #caff8b !important;
+            color: #080808 !important;
+            box-shadow: 0 0 30px rgba(202,255,139,.12);
+        }
+
+        .vp-btn-primary:hover {
+            transform: translateY(-3px);
+            background: #dcffad !important;
+            box-shadow: 0 12px 40px rgba(202,255,139,.2);
+        }
+
+        .vp-btn-secondary {
+            color: #fff !important;
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(255,255,255,.12);
+            backdrop-filter: blur(12px);
+        }
+
+        .vp-btn-secondary:hover {
+            transform: translateY(-3px);
+            color: #caff8b !important;
+            border-color: rgba(202,255,139,.3);
+        }
+
+        /* =========================================================
+           VIDEO SECTIONS
+        ========================================================= */
+
+        .vp-section {
+            position: relative;
+            padding: 115px 7%;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            overflow: hidden;
+        }
+
+        .vp-section:nth-of-type(even) {
+            background: #090909;
+        }
+
+        .vp-section::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -150px;
+            top: 100px;
+            border-radius: 50%;
+            background: rgba(202,255,139,.035);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .vp-heading {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            margin-bottom: 55px;
+        }
+
+        .vp-heading h2 {
+            margin: 0 0 20px;
+            font-size: clamp(45px, 6vw, 75px) !important;
+            line-height: .94 !important;
+            letter-spacing: -5px !important;
+            font-weight: 900 !important;
+        }
+
+        .vp-heading p:last-child {
+            max-width: 680px;
+            color: #858585 !important;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           FEATURED VIDEO
+        ========================================================= */
+
+        .vp-featured {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            min-height: 450px;
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.045),
+                    rgba(255,255,255,.01)
+                );
+
+            box-shadow: 0 25px 80px rgba(0,0,0,.28);
+        }
+
+        .vp-featured-visual {
+            position: relative;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.05),
+                    rgba(0,0,0,.78)
+                ),
+                url("images/video-front.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            border-right: 1px solid rgba(255,255,255,.09);
+        }
+
+        .vp-featured-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(202,255,139,.12),
+                    transparent 35%
+                );
+            pointer-events: none;
+        }
+
+        .vp-play-large {
+            position: relative;
+            z-index: 2;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 5px;
+
+            background: rgba(202,255,139,.92);
+            color: #090909;
+            font-size: 24px;
+
+            box-shadow:
+                0 0 0 12px rgba(202,255,139,.07),
+                0 0 60px rgba(202,255,139,.18);
+        }
+
+        .vp-featured-tag {
+            position: absolute;
+            left: 27px;
+            top: 25px;
+            z-index: 2;
+            padding: 9px 13px;
+            border-radius: 999px;
+            background: rgba(5,5,5,.65);
+            border: 1px solid rgba(255,255,255,.12);
+            backdrop-filter: blur(10px);
+            color: #caff8b;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+        .vp-featured-content {
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .featured-content span {
-            color: #666;
-            font-size: 11px;
-            font-weight: 700;
+        .vp-featured-content > span:first-child {
+            color: #caff8b !important;
+            font-size: 10px;
+            font-weight: 900;
             letter-spacing: 2px;
         }
 
-        .featured-content h3 {
-            font-size: 32px;
-            line-height: 1.1;
-            margin: 22px 0 15px;
+        .vp-featured-content h3 {
+            margin: 20px 0 15px;
+            font-size: 34px !important;
+            line-height: 1.05 !important;
+            font-weight: 900 !important;
         }
 
-        .featured-content p {
-            color: #888;
+        .vp-featured-content p {
+            margin: 0 0 28px;
+            color: #858585 !important;
             font-size: 15px;
-            margin-bottom: 28px;
+            line-height: 1.75;
         }
 
-        .coming-soon {
-            display: inline-block;
+        .vp-coming {
+            display: inline-flex;
             width: fit-content;
-            padding: 12px 18px;
-            border: 1px solid #444;
+            padding: 11px 16px;
+            border: 1px solid rgba(202,255,139,.18);
+            border-radius: 999px;
             color: #aaa;
-            font-size: 13px;
-            font-weight: 700;
+            background: rgba(202,255,139,.025);
+            font-size: 11px;
+            font-weight: 800;
         }
 
-        /* VIDEO CARDS */
+        /* =========================================================
+           VIDEO GRID
+        ========================================================= */
 
-        .video-grid {
+        .vp-video-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 17px;
         }
 
-        .video-card {
-            background: #101010;
-            border: 1px solid #242424;
+        .vp-video-card {
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,.085);
+            border-radius: 19px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.04),
+                    rgba(255,255,255,.012)
+                );
+            transition: .35s ease;
+        }
+
+        .vp-video-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(202,255,139,.28);
+            box-shadow: 0 25px 65px rgba(0,0,0,.28);
+        }
+
+        .vp-thumb {
+            height: 225px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.1),
+                    rgba(0,0,0,.75)
+                ),
+                url("images/video-front.jpg");
+
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .vp-thumb::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(202,255,139,.025);
             transition: .3s ease;
         }
 
-        .video-card:hover {
-            transform: translateY(-7px);
-            border-color: #555;
-            background: #141414;
+        .vp-video-card:hover .vp-thumb::after {
+            background: rgba(202,255,139,.08);
         }
 
-        .video-thumb {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background:
-                radial-gradient(circle at center, #252525 0%, transparent 55%),
-                #080808;
-
-            border-bottom: 1px solid #242424;
-        }
-
-        .small-play {
-            width: 58px;
-            height: 58px;
-            border: 1px solid #555;
+        .vp-small-play {
+            position: relative;
+            z-index: 2;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-size: 17px;
             padding-left: 3px;
+
+            background: rgba(8,8,8,.72);
+            border: 1px solid rgba(202,255,139,.45);
+            color: #caff8b;
+            backdrop-filter: blur(10px);
+
+            transition: .3s ease;
         }
 
-        .video-card-content {
-            padding: 27px 30px 30px;
+        .vp-video-card:hover .vp-small-play {
+            transform: scale(1.08);
+            background: #caff8b;
+            color: #080808;
         }
 
-        .video-card-content span {
-            color: #666;
+        .vp-card-content {
+            padding: 27px 28px 30px;
+        }
+
+        .vp-card-category {
+            color: #caff8b !important;
             font-size: 10px;
-            font-weight: 700;
+            font-weight: 900;
             letter-spacing: 2px;
         }
 
-        .video-card-content h3 {
-            font-size: 22px;
-            line-height: 1.15;
-            margin: 18px 0 12px;
+        .vp-card-content h3 {
+            margin: 17px 0 12px;
+            font-size: 22px !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
         }
 
-        .video-card-content p {
-            color: #888;
+        .vp-card-content p {
+            margin: 0 0 20px;
+            color: #818181 !important;
             font-size: 14px;
-            margin-bottom: 20px;
+            line-height: 1.65;
         }
 
-        .video-link {
-            color: #aaa;
-            font-size: 13px;
-            font-weight: 700;
+        .vp-video-link {
+            color: #fff !important;
+            font-size: 12px;
+            font-weight: 800;
         }
 
-        /* CATEGORIES */
+        .vp-video-link:hover {
+            color: #caff8b !important;
+        }
 
-        .category-grid {
+        /* =========================================================
+           TOPIC CATEGORIES
+        ========================================================= */
+
+        .vp-category-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-top: 50px;
         }
 
-        .category-box {
-            padding: 30px 25px;
-            background: #101010;
-            border: 1px solid #242424;
-            transition: .25s ease;
+        .vp-category {
+            min-height: 190px;
+            padding: 28px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.045),
+                    rgba(255,255,255,.012)
+                );
+
+            transition: .3s ease;
         }
 
-        .category-box:hover {
-            border-color: #555;
-            transform: translateY(-4px);
+        .vp-category:hover {
+            transform: translateY(-6px);
+            border-color: rgba(202,255,139,.28);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(202,255,139,.065),
+                    rgba(255,255,255,.012)
+                );
         }
 
-        .category-box strong {
+        .vp-category-number {
+            color: #555;
+            font-size: 11px;
+            font-weight: 800;
+            margin-bottom: auto;
+        }
+
+        .vp-category strong {
             display: block;
-            font-size: 18px;
             margin-bottom: 8px;
+            font-size: 19px;
         }
 
-        .category-box span {
+        .vp-category span {
             color: #777;
             font-size: 13px;
+            line-height: 1.6;
         }
 
-        /* CTA */
+        /* =========================================================
+           CTA
+        ========================================================= */
 
-        .video-cta {
-            padding: 125px 7%;
+        .vp-cta {
+            position: relative;
+            padding: 140px 7%;
             text-align: center;
+            overflow: hidden;
 
             background:
-                radial-gradient(circle at center, #202020 0%, transparent 45%),
-                #080808;
+                radial-gradient(
+                    circle at center,
+                    rgba(202,255,139,.09),
+                    transparent 31%
+                ),
+                #070707;
+
+            border-bottom: 1px solid rgba(255,255,255,.07);
         }
 
-        .video-cta h2 {
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: .95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
+        .vp-cta::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            background: rgba(202,255,139,.035);
+            filter: blur(100px);
         }
 
-        .video-cta > p:not(.eyebrow) {
-            max-width: 550px;
-            margin: 0 auto 30px;
-            color: #888;
+        .vp-cta-content {
+            position: relative;
+            z-index: 2;
         }
 
-        /* MOBILE */
+        .vp-cta h2 {
+            margin: 0 0 25px;
+            font-size: clamp(52px, 7vw, 92px) !important;
+            line-height: .9 !important;
+            letter-spacing: -6px !important;
+            font-weight: 900 !important;
+        }
 
-        @media (max-width: 850px) {
+        .vp-cta p:not(.vp-eyebrow) {
+            max-width: 580px;
+            margin: 0 auto 32px;
+            color: #858585 !important;
+            font-size: 17px;
+            line-height: 1.7;
+        }
 
-            .video-hero {
+        .vp-cta .vp-buttons {
+            justify-content: center;
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .vp-hero {
+                grid-template-columns: 1fr;
                 min-height: auto;
-                padding: 90px 6%;
+                padding: 100px 6% 80px;
+                gap: 45px;
             }
 
-            .video-hero h1 {
-                font-size: 58px;
-                letter-spacing: -3px;
+            .vp-hero-video {
+                min-height: 430px;
             }
 
-            .video-section {
-                padding: 80px 6%;
-            }
-
-            .featured-video {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-placeholder {
-                min-height: 300px;
-                border-right: none;
-                border-bottom: 1px solid #292929;
-            }
-
-            .featured-content {
-                padding: 30px;
-            }
-
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .category-grid {
+            .vp-video-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .video-cta {
-                padding: 90px 6%;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .video-hero h1 {
-                font-size: 48px;
+            .vp-category-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .category-grid {
+            .vp-featured {
                 grid-template-columns: 1fr;
             }
 
-            .featured-placeholder {
-                min-height: 250px;
-            }
-
-            .video-thumb {
-                height: 200px;
+            .vp-featured-visual {
+                min-height: 350px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,.09);
             }
         }
+
+        @media (max-width: 720px) {
+
+            .vp-hero {
+                padding: 80px 6% 65px;
+            }
+
+            .vp-hero h1 {
+                font-size: 61px !important;
+                letter-spacing: -4px !important;
+            }
+
+            .vp-hero-text {
+                font-size: 16px;
+            }
+
+            .vp-hero-video {
+                min-height: 330px;
+            }
+
+            .vp-section {
+                padding: 80px 6%;
+            }
+
+            .vp-heading h2 {
+                letter-spacing: -3px !important;
+            }
+
+            .vp-video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vp-featured-content {
+                padding: 32px;
+            }
+
+            .vp-category-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .vp-cta {
+                padding: 95px 6%;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .vp-hero h1 {
+                font-size: 50px !important;
+            }
+
+            .vp-eyebrow {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
+
+            .vp-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .vp-btn {
+                width: 100%;
+            }
+
+            .vp-hero-video {
+                min-height: 280px;
+                border-radius: 18px;
+            }
+
+            .vp-big-play {
+                width: 75px;
+                height: 75px;
+                font-size: 22px;
+            }
+
+            .vp-heading h2 {
+                font-size: 43px !important;
+            }
+
+            .vp-featured-content h3 {
+                font-size: 27px !important;
+            }
+
+            .vp-featured-visual {
+                min-height: 260px;
+            }
+
+            .vp-category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vp-cta h2 {
+                font-size: 50px !important;
+                letter-spacing: -4px !important;
+            }
+        }
+
     </style>
+
 </head>
 
-
-<body>
-
-    <!-- NAVBAR -->
+<body class="videos-premium-page">
 
     <header>
 
@@ -360,36 +874,26 @@
         <nav>
 
             <a href="index.html">Home</a>
-
             <a href="workouts.html">Workouts</a>
-
             <a href="nutrition.html">Nutrition</a>
-
             <a href="guides.html">Guides</a>
-
             <a href="blog.html">Blog</a>
-
             <a href="videos.html">Videos</a>
-
             <a href="about.html">About</a>
-
             <a href="contact.html">Contact</a>
 
         </nav>
 
     </header>
 
-
     <main>
 
-        <!-- HERO -->
+        <section class="vp-hero">
 
-        <section class="video-hero">
+            <div class="vp-hero-content">
 
-            <div class="video-hero-content">
-
-                <p class="eyebrow">
-                    ROSHXLAB VIDEO
+                <p class="vp-eyebrow">
+                    ROSHXLAB · VIDEO LIBRARY
                 </p>
 
                 <h1>
@@ -397,24 +901,47 @@
                     <span>Learn. Improve.</span>
                 </h1>
 
-                <p>
+                <p class="vp-hero-text">
                     Practical fitness videos covering workouts,
                     exercise technique, nutrition, recovery and
                     better training habits.
                 </p>
 
+                <div class="vp-buttons">
+
+                    <a href="#video-library"
+                        class="vp-btn vp-btn-primary">
+                        Explore Videos →
+                    </a>
+
+                    <a href="#topics"
+                        class="vp-btn vp-btn-secondary">
+                        Explore Topics
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="vp-hero-video">
+
+                <div class="vp-big-play">
+                    ▶
+                </div>
+
+                <div class="vp-video-label">
+                    ROSHXLAB · FITNESS VIDEO LIBRARY
+                </div>
+
             </div>
 
         </section>
 
+        <section class="vp-section">
 
-        <!-- FEATURED -->
+            <div class="vp-heading">
 
-        <section class="video-section">
-
-            <div class="video-heading">
-
-                <p class="eyebrow">
+                <p class="vp-eyebrow">
                     FEATURED
                 </p>
 
@@ -429,19 +956,21 @@
 
             </div>
 
+            <article class="vp-featured">
 
-            <article class="featured-video">
+                <div class="vp-featured-visual">
 
-                <div class="featured-placeholder">
+                    <div class="vp-featured-tag">
+                        FEATURED VIDEO
+                    </div>
 
-                    <div class="play-circle">
+                    <div class="vp-play-large">
                         ▶
                     </div>
 
                 </div>
 
-
-                <div class="featured-content">
+                <div class="vp-featured-content">
 
                     <span>
                         ROSHXLAB · FITNESS BASICS
@@ -456,7 +985,7 @@
                         technique, consistency and recovery.
                     </p>
 
-                    <span class="coming-soon">
+                    <span class="vp-coming">
                         VIDEO COMING SOON
                     </span>
 
@@ -466,14 +995,11 @@
 
         </section>
 
+        <section class="vp-section" id="video-library">
 
-        <!-- LATEST VIDEOS -->
+            <div class="vp-heading">
 
-        <section class="video-section">
-
-            <div class="video-heading">
-
-                <p class="eyebrow">
+                <p class="vp-eyebrow">
                     VIDEO LIBRARY
                 </p>
 
@@ -488,25 +1014,21 @@
 
             </div>
 
+            <div class="vp-video-grid">
 
-            <div class="video-grid">
+                <article class="vp-video-card">
 
+                    <div class="vp-thumb">
 
-                <!-- VIDEO 01 -->
-
-                <article class="video-card">
-
-                    <div class="video-thumb">
-
-                        <div class="small-play">
+                        <div class="vp-small-play">
                             ▶
                         </div>
 
                     </div>
 
-                    <div class="video-card-content">
+                    <div class="vp-card-content">
 
-                        <span>
+                        <span class="vp-card-category">
                             TRAINING
                         </span>
 
@@ -519,7 +1041,7 @@
                             building your routine.
                         </p>
 
-                        <span class="video-link">
+                        <span class="vp-video-link">
                             Coming Soon →
                         </span>
 
@@ -527,22 +1049,19 @@
 
                 </article>
 
+                <article class="vp-video-card">
 
-                <!-- VIDEO 02 -->
+                    <div class="vp-thumb">
 
-                <article class="video-card">
-
-                    <div class="video-thumb">
-
-                        <div class="small-play">
+                        <div class="vp-small-play">
                             ▶
                         </div>
 
                     </div>
 
-                    <div class="video-card-content">
+                    <div class="vp-card-content">
 
-                        <span>
+                        <span class="vp-card-category">
                             HOME WORKOUTS
                         </span>
 
@@ -555,7 +1074,7 @@
                             with simple equipment.
                         </p>
 
-                        <span class="video-link">
+                        <span class="vp-video-link">
                             Coming Soon →
                         </span>
 
@@ -563,22 +1082,19 @@
 
                 </article>
 
+                <article class="vp-video-card">
 
-                <!-- VIDEO 03 -->
+                    <div class="vp-thumb">
 
-                <article class="video-card">
-
-                    <div class="video-thumb">
-
-                        <div class="small-play">
+                        <div class="vp-small-play">
                             ▶
                         </div>
 
                     </div>
 
-                    <div class="video-card-content">
+                    <div class="vp-card-content">
 
-                        <span>
+                        <span class="vp-card-category">
                             STRENGTH
                         </span>
 
@@ -591,7 +1107,7 @@
                             supports strength development.
                         </p>
 
-                        <span class="video-link">
+                        <span class="vp-video-link">
                             Coming Soon →
                         </span>
 
@@ -599,22 +1115,19 @@
 
                 </article>
 
+                <article class="vp-video-card">
 
-                <!-- VIDEO 04 -->
+                    <div class="vp-thumb">
 
-                <article class="video-card">
-
-                    <div class="video-thumb">
-
-                        <div class="small-play">
+                        <div class="vp-small-play">
                             ▶
                         </div>
 
                     </div>
 
-                    <div class="video-card-content">
+                    <div class="vp-card-content">
 
-                        <span>
+                        <span class="vp-card-category">
                             NUTRITION
                         </span>
 
@@ -627,7 +1140,7 @@
                             fits into balanced meals.
                         </p>
 
-                        <span class="video-link">
+                        <span class="vp-video-link">
                             Coming Soon →
                         </span>
 
@@ -635,22 +1148,19 @@
 
                 </article>
 
+                <article class="vp-video-card">
 
-                <!-- VIDEO 05 -->
+                    <div class="vp-thumb">
 
-                <article class="video-card">
-
-                    <div class="video-thumb">
-
-                        <div class="small-play">
+                        <div class="vp-small-play">
                             ▶
                         </div>
 
                     </div>
 
-                    <div class="video-card-content">
+                    <div class="vp-card-content">
 
-                        <span>
+                        <span class="vp-card-category">
                             RECOVERY
                         </span>
 
@@ -663,7 +1173,7 @@
                             productive training.
                         </p>
 
-                        <span class="video-link">
+                        <span class="vp-video-link">
                             Coming Soon →
                         </span>
 
@@ -671,22 +1181,19 @@
 
                 </article>
 
+                <article class="vp-video-card">
 
-                <!-- VIDEO 06 -->
+                    <div class="vp-thumb">
 
-                <article class="video-card">
-
-                    <div class="video-thumb">
-
-                        <div class="small-play">
+                        <div class="vp-small-play">
                             ▶
                         </div>
 
                     </div>
 
-                    <div class="video-card-content">
+                    <div class="vp-card-content">
 
-                        <span>
+                        <span class="vp-card-category">
                             HABITS
                         </span>
 
@@ -699,7 +1206,7 @@
                             maintain over time.
                         </p>
 
-                        <span class="video-link">
+                        <span class="vp-video-link">
                             Coming Soon →
                         </span>
 
@@ -711,14 +1218,11 @@
 
         </section>
 
+        <section class="vp-section" id="topics">
 
-        <!-- CATEGORIES -->
+            <div class="vp-heading">
 
-        <section class="video-section">
-
-            <div class="video-heading">
-
-                <p class="eyebrow">
+                <p class="vp-eyebrow">
                     EXPLORE BY TOPIC
                 </p>
 
@@ -733,10 +1237,13 @@
 
             </div>
 
+            <div class="vp-category-grid">
 
-            <div class="category-grid">
+                <div class="vp-category">
 
-                <div class="category-box">
+                    <span class="vp-category-number">
+                        01
+                    </span>
 
                     <strong>
                         Workouts
@@ -748,8 +1255,11 @@
 
                 </div>
 
+                <div class="vp-category">
 
-                <div class="category-box">
+                    <span class="vp-category-number">
+                        02
+                    </span>
 
                     <strong>
                         Technique
@@ -761,8 +1271,11 @@
 
                 </div>
 
+                <div class="vp-category">
 
-                <div class="category-box">
+                    <span class="vp-category-number">
+                        03
+                    </span>
 
                     <strong>
                         Nutrition
@@ -774,8 +1287,11 @@
 
                 </div>
 
+                <div class="vp-category">
 
-                <div class="category-box">
+                    <span class="vp-category-number">
+                        04
+                    </span>
 
                     <strong>
                         Recovery
@@ -791,49 +1307,43 @@
 
         </section>
 
+        <section class="vp-cta">
 
-        <!-- CTA -->
+            <div class="vp-cta-content">
 
-        <section class="video-cta">
+                <p class="vp-eyebrow">
+                    KEEP EXPLORING
+                </p>
 
-            <p class="eyebrow">
-                KEEP EXPLORING
-            </p>
+                <h2>
+                    Learn More.<br>
+                    Build Better.
+                </h2>
 
-            <h2>
-                Learn More.<br>
-                Build Better.
-            </h2>
+                <p>
+                    Explore ROSHXLAB workouts, nutrition and
+                    practical fitness guides.
+                </p>
 
-            <p>
-                Explore ROSHXLAB workouts, nutrition and
-                practical fitness guides.
-            </p>
+                <div class="vp-buttons">
 
-            <div class="hero-buttons">
+                    <a href="workouts.html"
+                        class="vp-btn vp-btn-primary">
+                        Explore Workouts →
+                    </a>
 
-                <a
-                    href="workouts.html"
-                    class="btn primary"
-                >
-                    Explore Workouts →
-                </a>
+                    <a href="guides.html"
+                        class="vp-btn vp-btn-secondary">
+                        Read Guides
+                    </a>
 
-                <a
-                    href="guides.html"
-                    class="btn secondary"
-                >
-                    Read Guides
-                </a>
+                </div>
 
             </div>
 
         </section>
 
     </main>
-
-
-    <!-- FOOTER -->
 
     <footer>
 
