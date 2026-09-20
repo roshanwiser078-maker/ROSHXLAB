@@ -2,32 +2,82 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="ROSHXLAB — practical workouts, nutrition and fitness guides to help you train consistently and keep improving.">
+    <!-- =========================
+         SEO
+    ========================= -->
 
-    <title>ROSHXLAB — Build Better. Live Stronger.</title>
+    <title>ROSHXLAB — Workouts, Nutrition & Fitness Guides</title>
+
+    <meta name="description"
+        content="ROSHXLAB provides practical workouts, simple nutrition advice and fitness guides to help you train smarter and build better habits.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="ROSHXLAB">
+
+    <!-- =========================
+         SOCIAL SHARING
+    ========================= -->
+
+    <meta property="og:title"
+        content="ROSHXLAB — Workouts, Nutrition & Fitness Guides">
+
+    <meta property="og:description"
+        content="Practical workouts, simple nutrition and useful fitness knowledge for real life.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="ROSHXLAB">
+
+    <!-- =========================
+         PAGE
+    ========================= -->
+
+    <link rel="canonical" href="index.html">
 
     <link rel="stylesheet" href="style.css">
 
+
     <style>
+
         /* =========================================================
-           ROSHXLAB HOME PAGE
-           RESPONSIVE IMAGE-SAFE VERSION
+           ROSHXLAB HOME — PREMIUM CINEMATIC EDITION
         ========================================================= */
 
-        .home-page {
-            background: #070707;
+        main {
+            overflow: hidden;
         }
+
+        .eyebrow {
+            color: #91aa92 !important;
+            letter-spacing: 2.5px;
+        }
+
+        .section-heading h2,
+        .nutrition-text h2,
+        .cta h2 {
+            color: #fff;
+        }
+
+        .section-heading h2 span,
+        .nutrition-text h2 span,
+        .cta h2 span {
+            color: #aab8aa;
+        }
+
 
         /* =========================================================
            HERO
         ========================================================= */
 
-        .home-page .hero {
-            min-height: 78vh;
+        .hero {
+            min-height: 78vh !important;
+
             position: relative;
             overflow: hidden;
 
@@ -35,393 +85,911 @@
             grid-template-columns: 1fr 1.15fr;
             align-items: stretch;
 
-            background: #080808;
-            border-bottom: 1px solid #252b27;
-        }
-
-        .home-page .hero-content {
-            position: relative;
-            z-index: 2;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            padding: 90px 7%;
             background:
                 linear-gradient(
                     90deg,
-                    rgba(7, 7, 7, 1) 0%,
-                    rgba(7, 7, 7, .97) 75%,
-                    rgba(7, 7, 7, .72) 100%
-                );
+                    rgba(3,5,5,.98) 0%,
+                    rgba(3,5,5,.94) 34%,
+                    rgba(3,5,5,.55) 62%,
+                    rgba(3,5,5,.10) 100%
+                ),
+                url("images/hero.jpg") center center / cover no-repeat !important;
+
+            border-bottom: 1px solid #252b27;
         }
 
-        .home-page .hero-image {
-            position: relative;
-
-            width: 100%;
-            min-width: 0;
-            min-height: 520px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-
-            background: #101010;
-        }
-
-        .home-page .hero-image img {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: contain;
-            object-position: center;
-
-            background: #101010;
-
-            transform: none !important;
-        }
-
-        .home-page .hero-image::after {
+        .hero::after {
             content: "";
+
             position: absolute;
             inset: 0;
 
             background:
                 linear-gradient(
-                    90deg,
-                    rgba(7, 7, 7, .85) 0%,
-                    rgba(7, 7, 7, .2) 35%,
-                    transparent 65%
+                    180deg,
+                    rgba(0,0,0,.30),
+                    transparent 35%,
+                    rgba(0,0,0,.65)
                 );
 
             pointer-events: none;
         }
 
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 760px;
+
+            padding: 110px 0 100px 7%;
+
+            align-self: center;
+        }
+
+
         /* =========================================================
-           WORKOUT LIBRARY
+           HERO — PREMIUM FRONT TEXT
         ========================================================= */
 
-        .home-page .workout-library {
-            background: #080808;
-        }
+        .hero-content .eyebrow {
+            position: relative;
 
-        .home-page .workout-library .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .home-page .workout-library .visual-card {
-            overflow: hidden;
-            background: #0d0d0d;
-            border: 1px solid #252525;
-        }
-
-        .home-page .workout-library .card-image {
-            width: 100%;
-            height: 270px;
-
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
 
-            overflow: hidden;
+            padding-left: 17px;
+            margin-bottom: 24px !important;
 
-            background: #101010;
+            color: #9eaf9f !important;
+
+            font-size: 10px !important;
+            font-weight: 700 !important;
+
+            letter-spacing: 3px !important;
+            text-transform: uppercase;
+
+            text-shadow:
+                0 0 18px rgba(126,160,130,.18);
         }
 
-        .home-page .workout-library .card-image img {
-            width: 100%;
-            height: 100%;
+        .hero-content .eyebrow::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: #9bb49c;
+
+            box-shadow:
+                0 0 8px rgba(155,180,156,.75),
+                0 0 18px rgba(155,180,156,.25);
+        }
+
+
+        /* =========================================================
+           MAIN HERO TITLE
+        ========================================================= */
+
+        .hero h1 {
+            position: relative;
+
+            margin: 0 0 30px !important;
+
+            font-size: clamp(68px, 8vw, 116px) !important;
+
+            line-height: .84 !important;
+
+            letter-spacing: -6px !important;
+
+            font-weight: 900 !important;
+
+            text-transform: uppercase;
+
+            color: #eef2ee !important;
+
+            text-shadow:
+                0 12px 45px rgba(0,0,0,.45);
+        }
+
+
+        /* =========================================================
+           PREMIUM GREEN WORD
+        ========================================================= */
+
+        .hero h1 span {
+            position: relative;
+
+            display: inline-block;
+
+            color: #9eb49f !important;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c4d3c4 0%,
+                    #a7bca8 35%,
+                    #829882 70%,
+                    #647764 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            text-shadow: none;
+        }
+
+
+        /* =========================================================
+           SUBTLE GREEN GLOW
+        ========================================================= */
+
+        .hero h1 span::after {
+            content: "";
+
+            position: absolute;
+
+            left: 4%;
+            right: 4%;
+            bottom: 4px;
+
+            height: 18px;
+
+            background: rgba(119,153,121,.12);
+
+            filter: blur(22px);
+
+            z-index: -1;
+        }
+
+
+        /* =========================================================
+           HERO DESCRIPTION
+        ========================================================= */
+
+        .hero-text {
+            max-width: 590px;
+
+            margin-bottom: 32px !important;
+
+            color: #a8b0a8 !important;
+
+            font-size: 17px !important;
+
+            line-height: 1.75 !important;
+
+            letter-spacing: .1px;
+
+            text-shadow:
+                0 3px 20px rgba(0,0,0,.45);
+        }
+
+
+        .hero-image {
+            display: none !important;
+        }
+
+
+        /* =========================================================
+           PREMIUM BUTTONS
+        ========================================================= */
+
+        .btn.primary {
+            background: #f2f4f1 !important;
+            color: #090b0a !important;
+
+            border: 1px solid #f2f4f1 !important;
+        }
+
+        .btn.primary:hover {
+            background: #a7b9a7 !important;
+            border-color: #a7b9a7 !important;
+
+            color: #050605 !important;
+        }
+
+        .btn.secondary {
+            border-color: #59645b !important;
+
+            color: #e5e8e4 !important;
+
+            background: rgba(5,8,6,.28) !important;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .btn.secondary:hover {
+            border-color: #a7b9a7 !important;
+
+            color: #fff !important;
+
+            background: rgba(120,150,120,.10) !important;
+        }
+
+
+        /* =========================================================
+           QUICK STATS
+        ========================================================= */
+
+        .stats {
+            background:
+                linear-gradient(
+                    90deg,
+                    #080b09,
+                    #101512,
+                    #080b09
+                ) !important;
+
+            border-top: 1px solid #202721;
+            border-bottom: 1px solid #202721;
+        }
+
+        .stats div {
+            border-color: #283029 !important;
+        }
+
+        .stats strong {
+            color: #dfe5df !important;
+        }
+
+        .stats span {
+            color: #819081 !important;
+        }
+
+
+        /* =========================================================
+           GENERAL PREMIUM SECTIONS
+        ========================================================= */
+
+        .section {
+            position: relative;
+
+            padding: 105px 7% !important;
+
+            background: #070908 !important;
+
+            border-bottom: 1px solid #202520;
+        }
+
+        .section-heading {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 760px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(45px, 6vw, 72px) !important;
+
+            line-height: .94 !important;
+
+            letter-spacing: -4px !important;
+        }
+
+        .section-heading > p:last-child {
+            color: #8f968f !important;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           WORKOUT CARDS
+        ========================================================= */
+
+        .visual-cards {
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 55px;
+        }
+
+        .visual-card {
+            position: relative !important;
+
+            min-height: 390px !important;
+
+            overflow: hidden !important;
+
+            background: #0c100e !important;
+
+            border: 1px solid #29312b !important;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.25);
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+        }
+
+        .visual-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #536454 !important;
+        }
+
+        .visual-card .card-image {
+            position: absolute !important;
+
+            inset: 0 !important;
+
+            width: 100% !important;
+            height: 100% !important;
+
+            z-index: 0;
+        }
+
+        .visual-card .card-image::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,7,6,.96) 0%,
+                    rgba(5,7,6,.78) 42%,
+                    rgba(5,7,6,.18) 100%
+                ),
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.70),
+                    transparent 65%
+                );
+        }
+
+        .visual-card .card-image img {
+            width: 100% !important;
+            height: 100% !important;
+
+            object-fit: cover !important;
+
+            object-position: center !important;
 
             display: block;
 
-            object-fit: contain;
-            object-position: center;
-
-            background: #101010;
-
-            transform: none !important;
-            transition: filter .3s ease;
+            transition: transform .6s ease;
         }
 
-        .home-page .workout-library .visual-card:hover .card-image img {
-            transform: none !important;
-            filter: brightness(.9);
+        .visual-card:hover .card-image img {
+            transform: scale(1.04);
         }
+
+        .visual-card .card-content {
+            position: relative;
+
+            z-index: 2;
+
+            height: 100%;
+
+            min-height: 390px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding: 34px !important;
+        }
+
+        .visual-card .card-content > span {
+            color: #91a791 !important;
+
+            font-size: 10px !important;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .visual-card .card-content h3 {
+            color: #fff !important;
+
+            font-size: 31px !important;
+
+            line-height: 1.05;
+
+            margin: 12px 0 !important;
+        }
+
+        .visual-card .card-content p {
+            color: #b1b5b1 !important;
+
+            max-width: 430px;
+
+            line-height: 1.65;
+        }
+
+        .visual-card .card-content a {
+            color: #e8eee8 !important;
+
+            margin-top: 12px;
+        }
+
+        .visual-card .card-content a:hover {
+            color: #9db49d !important;
+        }
+
 
         /* =========================================================
-           APPROACH SECTION
+           NUTRITION SECTION
         ========================================================= */
 
-        .home-page .dark-section {
-            position: relative;
-            overflow: hidden;
+        .dark-section {
+            position: relative !important;
 
-            background: #0a0a0a;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
+            padding: 0 !important;
+
+            min-height: 560px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,6,5,.97) 0%,
+                    rgba(4,6,5,.88) 35%,
+                    rgba(4,6,5,.45) 68%,
+                    rgba(4,6,5,.12) 100%
+                ),
+                url("images/nutrition-hero.webp") center / cover no-repeat !important;
+
+            border-bottom: 1px solid #252b27;
         }
 
-        .home-page .dark-section::before {
+        .nutrition-layout {
+            min-height: 560px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            padding: 100px 7%;
+        }
+
+        .nutrition-text {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 650px;
+        }
+
+        .nutrition-text h2 {
+            font-size: clamp(48px, 6vw, 78px) !important;
+
+            line-height: .92 !important;
+
+            letter-spacing: -5px !important;
+
+            margin: 18px 0 25px !important;
+        }
+
+        .nutrition-text p:not(.eyebrow) {
+            color: #a3aaa3 !important;
+
+            max-width: 560px;
+
+            font-size: 17px;
+
+            line-height: 1.75;
+        }
+
+        .nutrition-image {
+            display: none !important;
+        }
+
+        .text-link {
+            display: inline-block;
+
+            margin-top: 22px;
+
+            color: #e4ebe4 !important;
+
+            font-weight: 700;
+
+            border-bottom: 1px solid #647664;
+
+            padding-bottom: 7px;
+        }
+
+        .text-link:hover {
+            color: #9db59d !important;
+
+            border-color: #9db59d;
+        }
+
+
+        /* =========================================================
+           GUIDES
+        ========================================================= */
+
+        .section:nth-of-type(4) {
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(102,130,105,.09),
+                    transparent 28%
+                ),
+                #080a09 !important;
+        }
+
+        .section:nth-of-type(4) .cards {
+            margin-top: 55px;
+        }
+
+        .section:nth-of-type(4) .card {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20,25,21,.96),
+                    rgba(9,11,10,.98)
+                ) !important;
+
+            border: 1px solid #29312b !important;
+
+            transition: .3s ease;
+        }
+
+        .section:nth-of-type(4) .card:hover {
+            transform: translateY(-6px);
+
+            border-color: #607060 !important;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(28,36,29,.98),
+                    rgba(9,11,10,.98)
+                ) !important;
+        }
+
+        .section:nth-of-type(4) .card span {
+            color: #879d88 !important;
+        }
+
+        .section:nth-of-type(4) .card h3 {
+            color: #f4f6f4 !important;
+        }
+
+        .section:nth-of-type(4) .card p {
+            color: #8e968f !important;
+        }
+
+        .section:nth-of-type(4) .card a {
+            color: #dce4dc !important;
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .cta {
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 570px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 110px 7% !important;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(3,5,4,.94),
+                    rgba(3,5,4,.65),
+                    rgba(3,5,4,.82)
+                ),
+                url("images/core-workout.jpg") center / cover no-repeat !important;
+
+            border-bottom: 1px solid #252b27;
+        }
+
+        .cta::after {
             content: "";
+
             position: absolute;
+
             inset: 0;
 
             background:
                 radial-gradient(
-                    circle at 80% 50%,
-                    rgba(170, 255, 100, .06),
-                    transparent 35%
+                    circle at center,
+                    rgba(125,155,125,.13),
+                    transparent 42%
                 );
 
             pointer-events: none;
         }
 
-        .home-page .dark-section > * {
+        .cta > * {
             position: relative;
-            z-index: 1;
+
+            z-index: 2;
         }
 
+        .cta h2 {
+            font-size: clamp(52px, 7vw, 88px) !important;
+
+            line-height: .91 !important;
+
+            letter-spacing: -5px !important;
+        }
+
+        .cta > p:not(.eyebrow) {
+            color: #a3aaa3 !important;
+
+            max-width: 620px;
+
+            line-height: 1.7;
+        }
+
+
         /* =========================================================
-           CTA
+           FOOTER
         ========================================================= */
 
-        .home-page .cta {
-            position: relative;
-            overflow: hidden;
+        footer {
+            background:
+                linear-gradient(
+                    180deg,
+                    #080b09,
+                    #050605
+                ) !important;
 
-            min-height: 500px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 100px 7%;
-
-            background: #080808;
-            border-bottom: 1px solid #222;
+            border-top: 1px solid #202720;
         }
 
-        .home-page .cta-image {
-            width: min(900px, 100%);
-            margin: 40px auto 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #101010;
-            overflow: hidden;
+        .footer-logo {
+            color: #f0f3f0 !important;
         }
 
-        .home-page .cta-image img {
-            width: 100%;
-            height: auto;
-
-            display: block;
-
-            object-fit: contain;
-            object-position: center;
-
-            transform: none !important;
+        footer > p {
+            color: #768076 !important;
         }
+
+        .footer-links a {
+            color: #828b83 !important;
+        }
+
+        .footer-links a:hover {
+            color: #a8bba8 !important;
+        }
+
 
         /* =========================================================
-           TABLET
+           RESPONSIVE
         ========================================================= */
 
         @media (max-width: 950px) {
 
-            .home-page .hero {
+            .hero {
+                min-height: 700px !important;
+
                 grid-template-columns: 1fr;
-                min-height: auto;
-            }
 
-            .home-page .hero-content {
-                padding: 80px 6%;
-                order: 1;
-            }
+                background-position: 65% center !important;
 
-            .home-page .hero-image {
-                order: 2;
-
-                width: 100%;
-                min-height: 430px;
-                aspect-ratio: 16 / 9;
-            }
-
-            .home-page .hero-image img {
-                width: 100%;
-                height: 100%;
-
-                object-fit: contain;
-                object-position: center;
-            }
-
-            .home-page .hero-image::after {
                 background:
                     linear-gradient(
-                        180deg,
-                        rgba(7, 7, 7, .15),
-                        transparent 35%,
-                        rgba(7, 7, 7, .25)
-                    );
+                        90deg,
+                        rgba(3,5,5,.97),
+                        rgba(3,5,5,.70),
+                        rgba(3,5,5,.32)
+                    ),
+                    url("images/hero.jpg") center / cover no-repeat !important;
             }
 
-            .home-page .workout-library .cards {
-                grid-template-columns: repeat(2, 1fr);
+            .hero-content {
+                padding: 100px 7%;
+                align-self: center;
             }
 
-            .home-page .workout-library .card-image {
-                height: 300px;
+            .nutrition-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .dark-section {
+                background-position: center !important;
+            }
+
+            .visual-card {
+                min-height: 360px !important;
+            }
+
+            .visual-card .card-content {
+                min-height: 360px;
             }
         }
 
-        /* =========================================================
-           MOBILE
-        ========================================================= */
 
         @media (max-width: 700px) {
 
-            .home-page .hero-content {
-                padding: 70px 6%;
+            .hero {
+                min-height: 680px !important;
+
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(3,5,5,.92) 0%,
+                        rgba(3,5,5,.66) 55%,
+                        rgba(3,5,5,.94) 100%
+                    ),
+                    url("images/hero.jpg") center / cover no-repeat !important;
             }
 
-            .home-page .hero-image {
-                min-height: 0;
-                width: 100%;
-                aspect-ratio: 4 / 3;
+            .hero-content {
+                padding: 85px 6% 70px;
             }
 
-            .home-page .hero-image img {
-                width: 100%;
-                height: 100%;
+            .hero-content .eyebrow {
+                margin-bottom: 20px !important;
 
-                object-fit: contain;
-                object-position: center;
+                font-size: 9px !important;
 
-                transform: none !important;
+                letter-spacing: 2.4px !important;
             }
 
-            .home-page .workout-library .cards {
-                grid-template-columns: 1fr;
-                gap: 18px;
+            .hero h1 {
+                font-size: 57px !important;
+
+                line-height: .86 !important;
+
+                letter-spacing: -4px !important;
             }
 
-            .home-page .workout-library .card-image {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 4 / 3;
+            .hero-text {
+                font-size: 16px !important;
 
-                min-height: 0;
+                line-height: 1.65 !important;
             }
 
-            .home-page .workout-library .card-image img {
-                width: 100%;
-                height: 100%;
-
-                object-fit: contain;
-                object-position: center;
-
-                transform: none !important;
+            .section {
+                padding: 80px 6% !important;
             }
 
-            .home-page .cta {
-                min-height: 420px;
-                padding: 85px 6%;
+            .section-heading h2 {
+                font-size: 45px !important;
+
+                letter-spacing: -3px !important;
+            }
+
+            .visual-card {
+                min-height: 340px !important;
+            }
+
+            .visual-card .card-content {
+                min-height: 340px;
+
+                padding: 27px !important;
+            }
+
+            .visual-card .card-content h3 {
+                font-size: 27px !important;
+            }
+
+            .nutrition-layout {
+                min-height: 620px;
+
+                padding: 80px 6%;
+            }
+
+            .dark-section {
+                min-height: 620px;
+
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(4,6,5,.90),
+                        rgba(4,6,5,.60),
+                        rgba(4,6,5,.94)
+                    ),
+                    url("images/nutrition-hero.webp") center / cover no-repeat !important;
+            }
+
+            .nutrition-text h2 {
+                font-size: 48px !important;
+
+                letter-spacing: -3px !important;
+            }
+
+            .cta {
+                min-height: 540px;
+
+                padding: 90px 6% !important;
+            }
+
+            .cta h2 {
+                font-size: 50px !important;
+
+                letter-spacing: -3px !important;
             }
         }
 
-        /* =========================================================
-           SMALL PHONE
-        ========================================================= */
 
         @media (max-width: 480px) {
 
-            .home-page .hero-content {
-                padding: 60px 6%;
+            .hero {
+                min-height: 650px !important;
             }
 
-            .home-page .hero-image {
+            .hero h1 {
+                font-size: 47px !important;
+
+                line-height: .88 !important;
+
+                letter-spacing: -3px !important;
+            }
+
+            .hero-content .eyebrow {
+                font-size: 8px !important;
+
+                letter-spacing: 2px !important;
+            }
+
+            .hero-buttons {
+                flex-wrap: wrap;
+            }
+
+            .hero-buttons .btn {
                 width: 100%;
-                aspect-ratio: 4 / 3;
 
-                min-height: 0;
-
-                background: #101010;
+                text-align: center;
             }
 
-            .home-page .hero-image img {
-                width: 100%;
-                height: 100%;
-
-                object-fit: contain;
-                object-position: center;
-
-                transform: none !important;
+            .visual-card {
+                min-height: 330px !important;
             }
 
-            .home-page .workout-library .card-image {
-                width: 100%;
-                height: auto;
-
-                aspect-ratio: 4 / 3;
-
-                background: #101010;
+            .visual-card .card-content {
+                min-height: 330px;
             }
 
-            .home-page .workout-library .card-image img {
-                width: 100%;
-                height: 100%;
-
-                object-fit: contain;
-                object-position: center;
-
-                transform: none !important;
+            .nutrition-text h2 {
+                font-size: 43px !important;
             }
 
-            .home-page .cta {
-                padding: 75px 6%;
-            }
-
-            .home-page .cta-image {
-                width: 100%;
+            .cta h2 {
+                font-size: 46px !important;
             }
         }
 
-        /* =========================================================
-           VERY SMALL PHONE
-        ========================================================= */
-
-        @media (max-width: 360px) {
-
-            .home-page .hero-image {
-                aspect-ratio: 1 / 1;
-            }
-
-            .home-page .workout-library .card-image {
-                aspect-ratio: 1 / 1;
-            }
-        }
     </style>
+
 </head>
 
 
-<body class="home-page">
+<body>
 
-    <!-- =========================================================
+
+    <!-- =========================
          NAVBAR
-    ========================================================= -->
+    ========================= -->
 
     <header>
 
@@ -430,6 +998,7 @@
         </a>
 
         <nav>
+
             <a href="index.html">Home</a>
             <a href="workouts.html">Workouts</a>
             <a href="nutrition.html">Nutrition</a>
@@ -438,6 +1007,7 @@
             <a href="videos.html">Videos</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+
         </nav>
 
     </header>
@@ -445,36 +1015,43 @@
 
     <main>
 
-        <!-- =====================================================
+
+        <!-- =========================
              HERO
-        ====================================================== -->
+        ========================= -->
 
         <section class="hero">
 
             <div class="hero-content">
 
                 <p class="eyebrow">
-                    ROSHXLAB · TRAIN WITH PURPOSE
+                    ROSHXLAB · FITNESS MADE PRACTICAL
                 </p>
 
                 <h1>
-                    Find Your<br>
-                    <span>Training.</span>
+                    Build Your<br>
+                    <span>Stronger</span> Self.
                 </h1>
 
                 <p class="hero-text">
-                    Practical workouts designed to help you train
-                    consistently, build strength and keep improving.
+                    Practical workouts, simple nutrition and useful
+                    fitness knowledge — built for real life.
                 </p>
 
                 <div class="hero-buttons">
 
-                    <a href="#workout-library" class="btn primary">
+                    <a
+                        href="workouts.html"
+                        class="btn primary"
+                    >
                         Explore Workouts →
                     </a>
 
-                    <a href="guides.html" class="btn secondary">
-                        Fitness Guides
+                    <a
+                        href="guides.html"
+                        class="btn secondary"
+                    >
+                        Explore Guides
                     </a>
 
                 </div>
@@ -485,8 +1062,8 @@
             <div class="hero-image">
 
                 <img
-                    src="images/workout-hero.jpg"
-                    alt="ROSHXLAB workout training"
+                    src="images/hero.jpg"
+                    alt="ROSHXLAB fitness training"
                 >
 
             </div>
@@ -494,41 +1071,71 @@
         </section>
 
 
-        <!-- =====================================================
-             WORKOUT LIBRARY
-        ====================================================== -->
+        <!-- =========================
+             QUICK STATS
+        ========================= -->
 
-        <section class="section workout-library" id="workout-library">
+        <section class="stats">
+
+            <div>
+                <strong>01</strong>
+                <span>Training</span>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <span>Nutrition</span>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <span>Recovery</span>
+            </div>
+
+            <div>
+                <strong>04</strong>
+                <span>Better Habits</span>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WORKOUTS
+        ========================= -->
+
+        <section class="section">
 
             <div class="section-heading">
 
                 <p class="eyebrow">
-                    WORKOUT LIBRARY
+                    TRAIN WITH PURPOSE
                 </p>
 
                 <h2>
-                    Train Your Way.
+                    Find Your Training.
                 </h2>
 
                 <p>
-                    Choose a training style based on your goals,
-                    experience and available equipment.
+                    Choose a training style that fits your goals,
+                    experience and equipment.
                 </p>
 
             </div>
 
 
-            <div class="cards">
+            <div class="cards visual-cards">
 
-                <!-- 01 -->
+
+                <!-- HOME -->
 
                 <article class="card visual-card">
 
                     <div class="card-image">
 
                         <img
-                            src="images/home-workout.jpg"
-                            alt="Home workout"
+                            src="images/home-workout.png"
+                            alt="Home workout training"
                         >
 
                     </div>
@@ -544,11 +1151,11 @@
                         </h3>
 
                         <p>
-                            Effective workouts you can do at home
+                            Effective training you can do at home
                             with minimal equipment.
                         </p>
 
-                        <a href="home-workouts.html">
+                        <a href="workouts.html">
                             Explore →
                         </a>
 
@@ -557,51 +1164,14 @@
                 </article>
 
 
-                <!-- 02 -->
+                <!-- STRENGTH -->
 
                 <article class="card visual-card">
 
                     <div class="card-image">
 
                         <img
-                            src="images/full-body.png"
-                            alt="Full body workout"
-                        >
-
-                    </div>
-
-                    <div class="card-content">
-
-                        <span>
-                            02 · FULL BODY
-                        </span>
-
-                        <h3>
-                            Full Body Workout
-                        </h3>
-
-                        <p>
-                            Train multiple muscle groups with
-                            balanced full-body sessions.
-                        </p>
-
-                        <a href="full-body.html">
-                            Explore →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 03 -->
-
-                <article class="card visual-card">
-
-                    <div class="card-image">
-
-                        <img
-                            src="images/strength-training.jpg"
+                            src="images/strength-training.png"
                             alt="Strength training"
                         >
 
@@ -610,7 +1180,7 @@
                     <div class="card-content">
 
                         <span>
-                            03 · STRENGTH
+                            02 · STRENGTH
                         </span>
 
                         <h3>
@@ -618,11 +1188,11 @@
                         </h3>
 
                         <p>
-                            Learn the fundamentals of controlled
-                            and progressive strength training.
+                            Learn the fundamentals of progressive
+                            strength training.
                         </p>
 
-                        <a href="strength-training.html">
+                        <a href="workouts.html">
                             Explore →
                         </a>
 
@@ -631,15 +1201,15 @@
                 </article>
 
 
-                <!-- 04 -->
+                <!-- BEGINNER -->
 
                 <article class="card visual-card">
 
                     <div class="card-image">
 
                         <img
-                            src="images/muscle-building.png"
-                            alt="Muscle building workout"
+                            src="images/beginner-training.webp"
+                            alt="Beginner fitness training"
                         >
 
                     </div>
@@ -647,19 +1217,19 @@
                     <div class="card-content">
 
                         <span>
-                            04 · MUSCLE
+                            03 · BEGINNER
                         </span>
 
                         <h3>
-                            Muscle Building
+                            Start Training
                         </h3>
 
                         <p>
-                            Understand the training principles
-                            behind building muscle over time.
+                            Simple routines and guidance for
+                            starting your fitness journey.
                         </p>
 
-                        <a href="muscle-building.html">
+                        <a href="workouts.html">
                             Explore →
                         </a>
 
@@ -667,166 +1237,160 @@
 
                 </article>
 
-
-                <!-- 05 -->
-
-                <article class="card visual-card">
-
-                    <div class="card-image">
-
-                        <img
-                            src="images/beginner-workout.png"
-                            alt="Beginner workout"
-                        >
-
-                    </div>
-
-                    <div class="card-content">
-
-                        <span>
-                            05 · BEGINNER
-                        </span>
-
-                        <h3>
-                            Beginner Workout
-                        </h3>
-
-                        <p>
-                            Simple training ideas for starting
-                            your fitness journey.
-                        </p>
-
-                        <a href="beginner-workout.html">
-                            Explore →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 06 -->
-
-                <article class="card visual-card">
-
-                    <div class="card-image">
-
-                        <img
-                            src="images/dumbbell-training.png"
-                            alt="Dumbbell training"
-                        >
-
-                    </div>
-
-                    <div class="card-content">
-
-                        <span>
-                            06 · DUMBBELLS
-                        </span>
-
-                        <h3>
-                            Dumbbell Training
-                        </h3>
-
-                        <p>
-                            Build strength with practical dumbbell
-                            exercises and routines.
-                        </p>
-
-                        <a href="dumbbell-training.html">
-                            Explore →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 07 -->
-
-                <article class="card visual-card">
-
-                    <div class="card-image">
-
-                        <img
-                            src="images/core-workout.jpg"
-                            alt="Core fitness workout"
-                        >
-
-                    </div>
-
-                    <div class="card-content">
-
-                        <span>
-                            07 · CORE & FITNESS
-                        </span>
-
-                        <h3>
-                            Belly Fat & Core Fitness
-                        </h3>
-
-                        <p>
-                            Learn the basics of core training,
-                            healthy habits and overall fitness.
-                        </p>
-
-                        <a href="belly-fat-core.html">
-                            Explore →
-                        </a>
-
-                    </div>
-
-                </article>
 
             </div>
 
         </section>
 
 
-        <!-- =====================================================
-             ROSHXLAB APPROACH
-        ====================================================== -->
+        <!-- =========================
+             NUTRITION
+        ========================= -->
 
         <section class="section dark-section">
 
-            <div class="split-section">
+            <div class="nutrition-layout">
 
-                <div>
+                <div class="nutrition-text">
 
                     <p class="eyebrow">
-                        THE ROSHXLAB APPROACH
+                        FUEL YOUR PROGRESS
                     </p>
 
                     <h2>
-                        Train Smart.<br>
-                        Stay Consistent.
+                        Eat Better.<br>
+                        <span>Train Better.</span>
                     </h2>
 
-                </div>
-
-
-                <div>
-
                     <p>
-                        Fitness doesn't need to be complicated.
-                        Focus on good movement, progressive training,
-                        proper nutrition and enough recovery.
+                        Understand the basics of protein,
+                        carbohydrates, fats, hydration and
+                        balanced meals.
                     </p>
 
-                    <a href="guides.html" class="text-link">
-                        Learn the Fundamentals →
+                    <a
+                        href="nutrition.html"
+                        class="text-link"
+                    >
+                        Explore Nutrition →
                     </a>
 
                 </div>
 
+
+                <div class="nutrition-image">
+
+                    <img
+                        src="images/nutrition-hero.webp"
+                        alt="ROSHXLAB nutrition and healthy meal"
+                    >
+
+                </div>
+
             </div>
 
         </section>
 
 
-        <!-- =====================================================
-             CTA
-        ====================================================== -->
+        <!-- =========================
+             GUIDES
+        ========================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    LEARN & IMPROVE
+                </p>
+
+                <h2>
+                    Fitness Knowledge.
+                </h2>
+
+                <p>
+                    Clear and practical information without
+                    unnecessary confusion.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <article class="card">
+
+                    <span>
+                        GUIDE · TRAINING
+                    </span>
+
+                    <h3>
+                        How to Start Working Out
+                    </h3>
+
+                    <p>
+                        A practical starting point for beginners.
+                    </p>
+
+                    <a href="guides.html">
+                        Read Guide →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <span>
+                        GUIDE · RECOVERY
+                    </span>
+
+                    <h3>
+                        Why Recovery Matters
+                    </h3>
+
+                    <p>
+                        Learn why rest and recovery belong
+                        in every training plan.
+                    </p>
+
+                    <a href="guides.html">
+                        Read Guide →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <span>
+                        GUIDE · HABITS
+                    </span>
+
+                    <h3>
+                        Build Better Habits
+                    </h3>
+
+                    <p>
+                        Simple ways to become more consistent.
+                    </p>
+
+                    <a href="guides.html">
+                        Read Guide →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL CTA
+        ========================= -->
 
         <section class="cta">
 
@@ -835,35 +1399,42 @@
             </p>
 
             <h2>
-                Start<br>
-                Training.
+                Build Better.<br>
+                <span>Live Stronger.</span>
             </h2>
 
             <p>
-                Choose a workout. Learn the basics.
+                Train with purpose. Learn the fundamentals.
                 Keep improving.
             </p>
 
             <div class="hero-buttons">
 
-                <a href="nutrition.html" class="btn primary">
-                    Explore Nutrition →
+                <a
+                    href="workouts.html"
+                    class="btn primary"
+                >
+                    Start Training →
                 </a>
 
-                <a href="workouts.html" class="btn secondary">
-                    All Workouts
+                <a
+                    href="about.html"
+                    class="btn secondary"
+                >
+                    About ROSHXLAB
                 </a>
 
             </div>
 
         </section>
 
+
     </main>
 
 
-    <!-- =========================================================
+    <!-- =========================
          FOOTER
-    ========================================================== -->
+    ========================= -->
 
     <footer>
 
@@ -893,6 +1464,7 @@
         </p>
 
     </footer>
+
 
 </body>
 
