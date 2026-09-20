@@ -5,511 +5,1069 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="ROSHXLAB Nutrition — practical guides to protein, carbohydrates, healthy fats, hydration and balanced eating for better training and everyday health.">
+    <title>Nutrition — Protein, Macros & Healthy Eating | ROSHXLAB</title>
 
-    <title>Nutrition — ROSHXLAB</title>
+    <meta name="description"
+        content="Learn practical nutrition fundamentals with ROSHXLAB. Explore protein, carbohydrates, healthy fats, hydration, balanced meals and nutrition for training and everyday health.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ROSHXLAB">
+
+    <link rel="canonical" href="nutrition.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Nutrition — Protein, Macros & Healthy Eating | ROSHXLAB">
+
+    <meta property="og:description"
+        content="Practical nutrition guides covering protein, carbohydrates, healthy fats, hydration, balanced meals and training nutrition.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ROSHXLAB">
+    <meta property="og:image" content="images/nutrition-hero.webp">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* =========================
-           NUTRITION PAGE
-        ========================= */
+        /* =========================================================
+           ROSHXLAB NUTRITION — PREMIUM V2
+        ========================================================= */
 
-        .nutrition-hero {
-            min-height: 70vh;
-            padding: 100px 7%;
+        .nutrition-page {
+            --np-bg: #070707;
+            --np-panel: rgba(16,16,16,.78);
+            --np-panel-strong: rgba(12,12,12,.92);
+            --np-border: rgba(255,255,255,.10);
+            --np-border-hover: rgba(196,255,150,.30);
+            --np-text: #f4f4f4;
+            --np-muted: #969696;
+            --np-soft: #c2c2c2;
+            --np-accent: #caff9b;
+            --np-accent-2: #8dff55;
+
+            background: var(--np-bg);
+            color: var(--np-text);
+            overflow-x: hidden;
+        }
+
+        .nutrition-page *,
+        .nutrition-page *::before,
+        .nutrition-page *::after {
+            box-sizing: border-box;
+        }
+
+        .nutrition-page .np-section {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #242424;
+        }
+
+        .nutrition-page .np-section-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .nutrition-page .np-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .nutrition-page .np-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HERO */
+
+        .nutrition-page .nutrition-hero {
+            position: relative;
+            min-height: 780px;
+            padding: 110px 7% 85px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 60px;
+            overflow: hidden;
+            border-bottom: 1px solid #292929;
+        }
 
+        .nutrition-page .nutrition-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url("images/nutrition-hero.webp") center right / cover no-repeat;
+            transform: scale(1.03);
+            z-index: 0;
+        }
+
+        .nutrition-page .nutrition-hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
             background:
-                radial-gradient(circle at 80% 25%, #252525 0%, transparent 30%),
-                radial-gradient(circle at 20% 80%, #171717 0%, transparent 30%),
-                linear-gradient(135deg, #101010, #060606);
-
-            border-bottom: 1px solid #222;
+                radial-gradient(circle at 78% 42%, rgba(190,255,130,.13), transparent 25%),
+                linear-gradient(
+                    90deg,
+                    rgba(4,4,4,.99) 0%,
+                    rgba(4,4,4,.95) 28%,
+                    rgba(4,4,4,.70) 57%,
+                    rgba(4,4,4,.28) 100%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.18),
+                    rgba(0,0,0,.76)
+                );
         }
 
-        .nutrition-hero-content {
-            max-width: 850px;
+        .nutrition-page .nutrition-hero-content {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
         }
 
-        .nutrition-hero h1 {
-            font-size: clamp(55px, 8vw, 100px);
-            line-height: .92;
-            letter-spacing: -5px;
-            margin-bottom: 30px;
+        .nutrition-page .nutrition-hero-main {
+            max-width: 760px;
         }
 
-        .nutrition-hero h1 span {
-            color: #aaa;
+        .nutrition-page .eyebrow {
+            color: #8e8e8e;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
-        .nutrition-hero-text {
-            max-width: 650px;
-            color: #999;
+        .nutrition-page .nutrition-hero h1 {
+            margin: 20px 0 28px;
+            font-size: clamp(58px, 8vw, 100px);
+            line-height: .86;
+            letter-spacing: -6px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 0 20px 60px rgba(0,0,0,.55);
+        }
+
+        .nutrition-page .nutrition-hero h1 span {
+            display: inline-block;
+            color: #a7a7a7;
+        }
+
+        .nutrition-page .nutrition-hero-text {
+            max-width: 640px;
+            margin: 0 0 35px;
+            color: #b1b1b1;
             font-size: 18px;
-            margin-bottom: 35px;
+            line-height: 1.75;
         }
 
-        .nutrition-side {
-            width: 280px;
+        /* BUTTONS */
+
+        .nutrition-page .hero-buttons {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 12px;
         }
 
-        .nutrition-box {
-            padding: 25px;
-            background: rgba(255, 255, 255, .03);
-            border: 1px solid #292929;
-            transition: .3s ease;
+        .nutrition-page .hero-buttons .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 20px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            transition:
+                background .25s ease,
+                color .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
         }
 
-        .nutrition-box:hover {
-            border-color: #555;
-            transform: translateX(-5px);
+        .nutrition-page .hero-buttons .btn.primary {
+            color: #050505;
+            background: var(--np-accent);
+            border: 1px solid var(--np-accent);
+            box-shadow: 0 10px 35px rgba(180,255,120,.12);
         }
 
-        .nutrition-box strong {
-            display: block;
-            font-size: 28px;
-            margin-bottom: 5px;
+        .nutrition-page .hero-buttons .btn.primary:hover {
+            background: #e1ffc4;
+            border-color: #e1ffc4;
+            box-shadow: 0 14px 40px rgba(180,255,120,.20);
         }
 
-        .nutrition-box span {
-            color: #777;
-            font-size: 12px;
+        .nutrition-page .hero-buttons .btn.secondary {
+            color: #ddd;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .nutrition-page .hero-buttons .btn.secondary:hover {
+            color: #fff;
+            background: rgba(255,255,255,.08);
+            border-color: rgba(255,255,255,.28);
+        }
+
+        /* HERO DATA */
+
+        .nutrition-page .nutrition-side {
+            margin-top: 65px;
+            max-width: 760px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 12px;
+        }
+
+        .nutrition-page .nutrition-box {
+            min-height: 125px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(145deg,rgba(24,24,24,.82),rgba(7,7,7,.72));
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 14px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 55px rgba(0,0,0,.30);
+            transition:
+                background .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .nutrition-page .nutrition-box:hover {
+            background: linear-gradient(145deg,rgba(35,35,35,.88),rgba(8,8,8,.78));
+            border-color: var(--np-border-hover);
+            box-shadow: 0 24px 65px rgba(0,0,0,.42);
+        }
+
+        .nutrition-page .nutrition-box strong {
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .nutrition-page .nutrition-box span {
+            color: #909090;
+            font-size: 11px;
+            font-weight: 800;
             letter-spacing: 2px;
-            font-weight: 700;
         }
 
         /* QUICK NAV */
 
-        .nutrition-nav {
+        .nutrition-page .nutrition-nav {
+            position: relative;
+            z-index: 5;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-bottom: 1px solid #222;
+            grid-template-columns: repeat(4,1fr);
+            background: #090909;
+            border-bottom: 1px solid #292929;
         }
 
-        .nutrition-nav a {
-            padding: 28px 7%;
-            border-right: 1px solid #222;
-            color: #888;
-            font-size: 14px;
-            font-weight: 700;
-            transition: .25s ease;
+        .nutrition-page .nutrition-nav a {
+            padding: 23px 7%;
+            color: #858585;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            border-right: 1px solid #292929;
+            transition:
+                color .25s ease,
+                background .25s ease;
         }
 
-        .nutrition-nav a:last-child {
+        .nutrition-page .nutrition-nav a:last-child {
             border-right: none;
         }
 
-        .nutrition-nav a:hover {
+        .nutrition-page .nutrition-nav a:hover {
             color: #fff;
-            background: #101010;
+            background: #111;
         }
 
         /* INTRO */
 
-        .nutrition-intro {
-            padding: 100px 7%;
-            border-bottom: 1px solid #222;
+        .nutrition-page .nutrition-intro {
+            padding: 125px 7%;
+            background:
+                radial-gradient(
+                    circle at 78% 45%,
+                    rgba(190,255,130,.055),
+                    transparent 30%
+                ),
+                #080808;
+            border-bottom: 1px solid #292929;
         }
 
-        .nutrition-intro-inner {
-            max-width: 850px;
+        .nutrition-page .nutrition-intro-inner {
+            max-width: 880px;
+            margin: 0 auto;
         }
 
-        .nutrition-intro h2 {
-            font-size: clamp(40px, 6vw, 65px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
+        .nutrition-page .nutrition-intro h2 {
+            margin: 18px 0 26px;
+            font-size: clamp(44px,6vw,72px);
+            line-height: .94;
+            letter-spacing: -4px;
+            text-transform: uppercase;
         }
 
-        .nutrition-intro p {
+        .nutrition-page .nutrition-intro p:last-child {
+            max-width: 780px;
             color: #999;
-            font-size: 18px;
-            max-width: 750px;
-        }
-
-        /* NUTRIENT CARDS */
-
-        .nutrition-section {
-            padding: 110px 7%;
-            border-bottom: 1px solid #202020;
-        }
-
-        .nutrition-heading {
-            max-width: 750px;
-            margin-bottom: 55px;
-        }
-
-        .nutrition-heading h2 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
-        }
-
-        .nutrition-heading p {
-            color: #888;
             font-size: 17px;
+            line-height: 1.85;
         }
 
-        .nutrition-grid {
+        /* HEADINGS */
+
+        .nutrition-page .nutrition-heading {
+            max-width: 780px;
+            margin-bottom: 55px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nutrition-page .nutrition-heading h2 {
+            margin: 17px 0 20px;
+            font-size: clamp(45px,6vw,72px);
+            line-height: .94;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+        }
+
+        .nutrition-page .nutrition-heading p:last-child {
+            color: #999;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        /* MACROS */
+
+        .nutrition-page .nutrition-section {
+            padding: 125px 7%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .nutrition-page .nutrition-section-bg {
+            background: url("images/nutrition-macros.webp") center / cover no-repeat;
+        }
+
+        .nutrition-page .nutrition-section-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(4,4,4,.92),
+                rgba(4,4,4,.79)
+            );
+        }
+
+        .nutrition-page .nutrition-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(3,1fr);
+            gap: 14px;
         }
 
-        .nutrition-card {
-            min-height: 300px;
-            padding: 32px;
-            background: #101010;
-            border: 1px solid #242424;
-            transition: .3s ease;
+        .nutrition-page .nutrition-card {
+            min-height: 350px;
+            padding: 34px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                145deg,
+                rgba(22,22,22,.88),
+                rgba(7,7,7,.82)
+            );
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 16px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 20px 55px rgba(0,0,0,.24);
+            transition:
+                background .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
         }
 
-        .nutrition-card:hover {
-            transform: translateY(-7px);
-            border-color: #555;
-            background: #141414;
+        .nutrition-page .nutrition-card::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            right: -90px;
+            top: -90px;
+            background: radial-gradient(
+                circle,
+                rgba(200,255,150,.13),
+                transparent 68%
+            );
+            pointer-events: none;
         }
 
-        .nutrition-number {
-            color: #666;
-            font-size: 12px;
+        .nutrition-page .nutrition-card:hover {
+            background: linear-gradient(
+                145deg,
+                rgba(29,29,29,.94),
+                rgba(8,8,8,.87)
+            );
+            border-color: var(--np-border-hover);
+            box-shadow: 0 25px 70px rgba(0,0,0,.38);
+        }
+
+        .nutrition-page .nutrition-number {
+            color: #8a8a8a;
+            font-size: 10px;
+            font-weight: 800;
             letter-spacing: 2px;
-            font-weight: 700;
         }
 
-        .nutrition-card h3 {
-            font-size: 27px;
-            line-height: 1.1;
-            margin: 25px 0 15px;
+        .nutrition-page .nutrition-card h3 {
+            margin: 24px 0 15px;
+            font-size: 30px;
+            line-height: 1;
         }
 
-        .nutrition-card p {
-            color: #888;
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        .nutrition-card ul {
-            padding-left: 18px;
+        .nutrition-page .nutrition-card p,
+        .nutrition-page .nutrition-card ul {
             color: #999;
             font-size: 14px;
+            line-height: 1.7;
         }
 
-        .nutrition-card li {
-            margin-bottom: 8px;
+        .nutrition-page .nutrition-card ul {
+            margin-top: 22px;
+            padding-left: 18px;
+            color: #c0c0c0;
         }
 
-        /* DARK FEATURE */
-
-        .nutrition-feature {
-            padding: 120px 7%;
-            background:
-                radial-gradient(circle at 75% 40%, #222 0%, transparent 35%),
-                #0b0b0b;
-            border-bottom: 1px solid #222;
+        .nutrition-page .nutrition-card li {
+            margin-bottom: 7px;
         }
 
-        .nutrition-feature-grid {
+        /* FOUNDATION */
+
+        .nutrition-page .nutrition-foundation {
+            padding: 125px 7%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .nutrition-page .foundation-bg {
+            background: url("images/nutrition-balanced.webp") center / cover no-repeat;
+        }
+
+        .nutrition-page .foundation-overlay {
+            background: linear-gradient(
+                90deg,
+                rgba(4,4,4,.97),
+                rgba(4,4,4,.79) 60%,
+                rgba(4,4,4,.48)
+            );
+        }
+
+        .nutrition-page .foundation-grid {
+            position: relative;
+            z-index: 2;
+            max-width: 1250px;
+            margin: auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 90px;
+            gap: 75px;
             align-items: center;
         }
 
-        .nutrition-feature h2 {
-            font-size: clamp(45px, 6vw, 70px);
-            line-height: .95;
+        .nutrition-page .foundation-content h2,
+        .nutrition-page .nutrition-feature h2 {
+            margin: 18px 0 25px;
+            font-size: clamp(46px,6vw,72px);
+            line-height: .94;
             letter-spacing: -4px;
-            margin-bottom: 25px;
+            text-transform: uppercase;
         }
 
-        .nutrition-feature-text {
+        .nutrition-page .foundation-content > p,
+        .nutrition-page .nutrition-feature-text {
+            max-width: 620px;
             color: #999;
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.8;
         }
 
-        .meal-list {
-            display: flex;
-            flex-direction: column;
+        .nutrition-page .foundation-list,
+        .nutrition-page .meal-list {
+            display: grid;
             gap: 12px;
         }
 
-        .meal-item {
-            padding: 22px;
-            border: 1px solid #292929;
-            background: rgba(255, 255, 255, .025);
+        .nutrition-page .foundation-item,
+        .nutrition-page .meal-item {
+            padding: 25px;
+            background: linear-gradient(
+                145deg,
+                rgba(12,12,12,.86),
+                rgba(5,5,5,.75)
+            );
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 14px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition:
+                background .25s ease,
+                border-color .25s ease;
         }
 
-        .meal-item strong {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 16px;
+        .nutrition-page .foundation-item:hover,
+        .nutrition-page .meal-item:hover {
+            background: linear-gradient(
+                145deg,
+                rgba(26,26,26,.92),
+                rgba(7,7,7,.80)
+            );
+            border-color: var(--np-border-hover);
         }
 
-        .meal-item span {
+        .nutrition-page .foundation-item span,
+        .nutrition-page .training-card span,
+        .nutrition-page .hydration-card span,
+        .nutrition-page .mistake span {
             color: #777;
-            font-size: 14px;
-        }
-
-        /* TRAINING NUTRITION */
-
-        .training-nutrition {
-            padding: 110px 7%;
-            border-bottom: 1px solid #222;
-        }
-
-        .training-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .training-card {
-            padding: 32px;
-            background: #101010;
-            border: 1px solid #242424;
-        }
-
-        .training-card span {
-            color: #666;
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 800;
             letter-spacing: 2px;
         }
 
-        .training-card h3 {
-            font-size: 23px;
-            margin: 20px 0 12px;
+        .nutrition-page .foundation-item h3 {
+            margin: 10px 0;
+            font-size: 22px;
         }
 
-        .training-card p {
+        .nutrition-page .foundation-item p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        /* BALANCED MEALS */
+
+        .nutrition-page .nutrition-feature {
+            padding: 125px 7%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .nutrition-page .feature-bg {
+            background: url("images/nutrition-balanced.webp") center / cover no-repeat;
+        }
+
+        .nutrition-page .feature-overlay {
+            background: linear-gradient(
+                90deg,
+                rgba(4,4,4,.98),
+                rgba(4,4,4,.82) 50%,
+                rgba(4,4,4,.48)
+            );
+        }
+
+        .nutrition-page .nutrition-feature-grid {
+            position: relative;
+            z-index: 2;
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 75px;
+            align-items: center;
+        }
+
+        .nutrition-page .meal-list {
+            gap: 10px;
+        }
+
+        .nutrition-page .meal-item strong {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .nutrition-page .meal-item span {
             color: #888;
+            font-size: 14px;
+        }
+
+        /* TRAINING */
+
+        .nutrition-page .training-nutrition {
+            padding: 115px 7%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .nutrition-page .training-bg {
+            background: url("images/nutrition-training-fuel.webp") center / cover no-repeat;
+        }
+
+        .nutrition-page .training-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(4,4,4,.94),
+                rgba(4,4,4,.80)
+            );
+        }
+
+        .nutrition-page .training-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 14px;
+        }
+
+        .nutrition-page .training-card {
+            min-height: 310px;
+            padding: 32px;
+            background: linear-gradient(
+                145deg,
+                rgba(17,17,17,.89),
+                rgba(6,6,6,.82)
+            );
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 16px;
+            backdrop-filter: blur(13px);
+            -webkit-backdrop-filter: blur(13px);
+            transition:
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+        .nutrition-page .training-card:hover {
+            background: linear-gradient(
+                145deg,
+                rgba(28,28,28,.94),
+                rgba(7,7,7,.85)
+            );
+            border-color: var(--np-border-hover);
+        }
+
+        .nutrition-page .training-card h3 {
+            margin: 20px 0 13px;
+            font-size: 25px;
+        }
+
+        .nutrition-page .training-card p {
+            color: #999;
             font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* HYDRATION */
+
+        .nutrition-page .hydration-section {
+            padding: 125px 7%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .nutrition-page .hydration-bg {
+            background: url("images/nutrition-hydration.webp") center / cover no-repeat;
+        }
+
+        .nutrition-page .hydration-overlay {
+            background: linear-gradient(
+                90deg,
+                rgba(4,4,4,.97),
+                rgba(4,4,4,.76)
+            );
+        }
+
+        .nutrition-page .hydration-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 14px;
+        }
+
+        .nutrition-page .hydration-card {
+            min-height: 285px;
+            padding: 35px;
+            background: linear-gradient(
+                145deg,
+                rgba(10,10,10,.88),
+                rgba(5,5,5,.76)
+            );
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 16px;
+            backdrop-filter: blur(13px);
+            -webkit-backdrop-filter: blur(13px);
+            transition:
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+        .nutrition-page .hydration-card:hover {
+            background: linear-gradient(
+                145deg,
+                rgba(27,27,27,.92),
+                rgba(6,6,6,.82)
+            );
+            border-color: var(--np-border-hover);
+        }
+
+        .nutrition-page .hydration-card h3 {
+            margin: 22px 0 14px;
+            font-size: 27px;
+        }
+
+        .nutrition-page .hydration-card p {
+            color: #999;
+            font-size: 15px;
+            line-height: 1.7;
         }
 
         /* MISTAKES */
 
-        .mistakes {
-            padding: 110px 7%;
-            background: #0d0d0d;
-            border-bottom: 1px solid #222;
+        .nutrition-page .mistakes {
+            padding: 115px 7%;
+            border-bottom: 1px solid #292929;
         }
 
-        .mistake-grid {
+        .nutrition-page .mistakes-bg {
+            background: url("images/nutrition-mistakes.webp") center / cover no-repeat;
+        }
+
+        .nutrition-page .mistakes-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(4,4,4,.95),
+                rgba(4,4,4,.84)
+            );
+        }
+
+        .nutrition-page .mistake-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(4,1fr);
+            gap: 14px;
         }
 
-        .mistake {
+        .nutrition-page .mistake {
+            min-height: 280px;
             padding: 30px;
-            border: 1px solid #292929;
-            background: #101010;
+            background: linear-gradient(
+                145deg,
+                rgba(16,16,16,.90),
+                rgba(6,6,6,.80)
+            );
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 16px;
+            backdrop-filter: blur(13px);
+            -webkit-backdrop-filter: blur(13px);
+            transition:
+                background .25s ease,
+                border-color .25s ease;
         }
 
-        .mistake span {
-            color: #666;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
+        .nutrition-page .mistake:hover {
+            background: linear-gradient(
+                145deg,
+                rgba(28,28,28,.94),
+                rgba(7,7,7,.85)
+            );
+            border-color: var(--np-border-hover);
         }
 
-        .mistake h3 {
-            margin: 15px 0 10px;
-            font-size: 22px;
+        .nutrition-page .mistake h3 {
+            margin: 18px 0 12px;
+            font-size: 21px;
         }
 
-        .mistake p {
-            color: #888;
+        .nutrition-page .mistake p {
+            color: #999;
             font-size: 14px;
+            line-height: 1.7;
         }
 
         /* NOTE */
 
-        .nutrition-note {
-            margin-top: 50px;
-            padding: 30px;
-            border-left: 2px solid #555;
-            background: #101010;
+        .nutrition-page .nutrition-note {
+            position: relative;
+            z-index: 2;
+            margin-top: 35px;
+            padding: 27px;
+            background: rgba(10,10,10,.80);
+            border: 1px solid rgba(255,255,255,.11);
+            border-left: 2px solid var(--np-accent);
+            border-radius: 13px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
-        .nutrition-note strong {
+        .nutrition-page .nutrition-note strong {
             display: block;
             margin-bottom: 8px;
         }
 
-        .nutrition-note p {
-            color: #888;
+        .nutrition-page .nutrition-note p {
+            color: #999;
             font-size: 14px;
+            line-height: 1.7;
         }
 
         /* CTA */
 
-        .nutrition-cta {
-            padding: 130px 7%;
+        .nutrition-page .nutrition-cta {
+            position: relative;
+            overflow: hidden;
+            padding: 145px 7%;
             text-align: center;
-
-            background:
-                radial-gradient(circle at center, #202020 0%, transparent 45%),
-                #080808;
-
             border-bottom: 1px solid #222;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(190,255,130,.12),
+                    transparent 28%
+                ),
+                #080808;
         }
 
-        .nutrition-cta h2 {
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: .95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
+        .nutrition-page .nutrition-cta::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background: radial-gradient(
+                circle,
+                rgba(190,255,130,.08),
+                transparent 68%
+            );
+            pointer-events: none;
         }
 
-        .nutrition-cta p {
+        .nutrition-page .nutrition-cta > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .nutrition-page .nutrition-cta h2 {
+            margin: 18px 0 25px;
+            font-size: clamp(52px,7vw,88px);
+            line-height: .90;
+            letter-spacing: -5px;
+            text-transform: uppercase;
+        }
+
+        .nutrition-page .nutrition-cta > p:not(.eyebrow) {
             max-width: 600px;
             margin: 0 auto 30px;
             color: #888;
             font-size: 17px;
+            line-height: 1.7;
         }
 
-        /* MOBILE */
+        .nutrition-page .nutrition-cta .hero-buttons {
+            justify-content: center;
+        }
 
-        @media (max-width: 850px) {
+        /* RESPONSIVE */
 
-            .nutrition-hero {
-                padding: 80px 6%;
-                flex-direction: column;
-                align-items: flex-start;
+        @media (max-width:1050px) {
+            .nutrition-page .nutrition-hero {
+                min-height: auto;
+                padding-top: 105px;
+                padding-bottom: 80px;
             }
 
-            .nutrition-hero h1 {
-                font-size: 58px;
+            .nutrition-page .foundation-grid,
+            .nutrition-page .nutrition-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+            .nutrition-page .mistake-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (max-width:850px) {
+            .nutrition-page .nutrition-hero {
+                padding: 85px 6% 70px;
+            }
+
+            .nutrition-page .nutrition-hero-bg {
+                background-position: 65% center;
+            }
+
+            .nutrition-page .nutrition-hero-overlay {
+                background: linear-gradient(
+                    180deg,
+                    rgba(4,4,4,.91),
+                    rgba(4,4,4,.80)
+                );
+            }
+
+            .nutrition-page .nutrition-hero h1 {
+                font-size: 62px;
+                letter-spacing: -4px;
+            }
+
+            .nutrition-page .nutrition-side {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .nutrition-page .nutrition-box {
+                min-height: 95px;
+            }
+
+            .nutrition-page .nutrition-nav {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .nutrition-page .nutrition-grid,
+            .nutrition-page .training-grid,
+            .nutrition-page .hydration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-page .nutrition-intro,
+            .nutrition-page .nutrition-section,
+            .nutrition-page .nutrition-foundation,
+            .nutrition-page .nutrition-feature,
+            .nutrition-page .training-nutrition,
+            .nutrition-page .hydration-section,
+            .nutrition-page .mistakes {
+                padding: 85px 6%;
+            }
+
+            .nutrition-page .nutrition-heading h2,
+            .nutrition-page .nutrition-feature h2,
+            .nutrition-page .foundation-content h2 {
+                letter-spacing: -3px;
+            }
+        }
+
+        @media (max-width:550px) {
+            .nutrition-page .nutrition-hero {
+                padding: 72px 6% 65px;
+            }
+
+            .nutrition-page .nutrition-hero-bg {
+                background-position: 62% center;
+            }
+
+            .nutrition-page .nutrition-hero h1 {
+                font-size: 48px;
                 letter-spacing: -3px;
             }
 
-            .nutrition-side {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+            .nutrition-page .nutrition-hero-text {
+                font-size: 16px;
+                line-height: 1.7;
             }
 
-            .nutrition-nav {
-                grid-template-columns: repeat(2, 1fr);
+            .nutrition-page .nutrition-nav {
+                grid-template-columns: 1fr;
             }
 
-            .nutrition-nav a {
+            .nutrition-page .nutrition-nav a {
+                padding: 20px 6%;
+                border-right: none;
                 border-bottom: 1px solid #222;
             }
 
-            .nutrition-grid {
-                grid-template-columns: 1fr;
+            .nutrition-page .nutrition-intro {
+                padding: 70px 6%;
             }
 
-            .nutrition-feature-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .nutrition-page .nutrition-intro h2,
+            .nutrition-page .nutrition-heading h2,
+            .nutrition-page .nutrition-feature h2,
+            .nutrition-page .foundation-content h2 {
+                font-size: 42px;
             }
 
-            .training-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mistake-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nutrition-section,
-            .training-nutrition,
-            .mistakes {
-                padding: 80px 6%;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .nutrition-hero h1 {
-                font-size: 48px;
-            }
-
-            .nutrition-side {
-                grid-template-columns: 1fr;
-            }
-
-            .nutrition-nav {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .nutrition-nav a {
-                padding: 22px 18px;
-            }
-
-            .nutrition-intro {
-                padding: 75px 6%;
-            }
-
-            .nutrition-card,
-            .training-card,
-            .mistake {
+            .nutrition-page .nutrition-card,
+            .nutrition-page .training-card,
+            .nutrition-page .hydration-card,
+            .nutrition-page .mistake {
+                min-height: auto;
                 padding: 25px;
             }
 
-            .nutrition-cta {
+            .nutrition-page .mistake-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-page .nutrition-cta {
                 padding: 90px 6%;
+            }
+
+            .nutrition-page .nutrition-cta h2 {
+                font-size: 48px;
+                letter-spacing: -3px;
+            }
+
+            .nutrition-page .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nutrition-page .hero-buttons .btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 
-<body>
+<body class="nutrition-page">
 
-    <!-- NAVBAR -->
+<header>
+    <a href="index.html" class="logo">ROSHXLAB</a>
 
-    <header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="guides.html">Guides</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-        <a href="index.html" class="logo">ROSHXLAB</a>
+<main>
 
-        <nav>
+    <!-- HERO -->
 
-            <a href="index.html">Home</a>
-            <a href="workouts.html">Workouts</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="guides.html">Guides</a>
-            <a href="blog.html">Blog</a>
-            <a href="videos.html">Videos</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+    <section class="nutrition-hero">
 
-        </nav>
+        <div class="nutrition-hero-bg"></div>
+        <div class="nutrition-hero-overlay"></div>
 
-    </header>
+        <div class="nutrition-hero-content">
 
-
-    <main>
-
-
-        <!-- HERO -->
-
-        <section class="nutrition-hero">
-
-            <div class="nutrition-hero-content">
+            <div class="nutrition-hero-main">
 
                 <p class="eyebrow">
                     ROSHXLAB · NUTRITION
                 </p>
 
                 <h1>
-                    Fuel Your<br>
-                    <span>Progress.</span>
+                    Good Food.<br>
+                    <span>Better Progress.</span>
                 </h1>
 
                 <p class="nutrition-hero-text">
@@ -521,7 +1079,7 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#nutrition-basics" class="btn primary">
+                    <a href="#macros" class="btn primary">
                         Explore Nutrition →
                     </a>
 
@@ -533,104 +1091,95 @@
 
             </div>
 
-
             <div class="nutrition-side">
 
                 <div class="nutrition-box">
-
                     <strong>01</strong>
-
-                    <span>
-                        PROTEIN
-                    </span>
-
+                    <span>PROTEIN</span>
                 </div>
 
                 <div class="nutrition-box">
-
                     <strong>02</strong>
-
-                    <span>
-                        CARBS
-                    </span>
-
+                    <span>CARBOHYDRATES</span>
                 </div>
 
                 <div class="nutrition-box">
-
                     <strong>03</strong>
-
-                    <span>
-                        HYDRATION
-                    </span>
-
+                    <span>HEALTHY FATS</span>
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- QUICK NAV -->
+    <!-- QUICK NAV -->
 
-        <section class="nutrition-nav">
+    <section class="nutrition-nav">
 
-            <a href="#nutrition-basics">
-                Nutrition Basics →
-            </a>
+        <a href="#nutrition-basics">
+            Nutrition Basics →
+        </a>
 
-            <a href="#macros">
-                Macronutrients →
-            </a>
+        <a href="#macros">
+            Macronutrients →
+        </a>
 
-            <a href="#balanced-meals">
-                Balanced Meals →
-            </a>
+        <a href="#balanced-meals">
+            Balanced Meals →
+        </a>
 
-            <a href="#training-fuel">
-                Training Fuel →
-            </a>
+        <a href="#training-fuel">
+            Training Fuel →
+        </a>
 
-        </section>
-
-
-        <!-- INTRO -->
-
-        <section class="nutrition-intro">
-
-            <div class="nutrition-intro-inner">
-
-                <p class="eyebrow">
-                    START WITH THE FUNDAMENTALS
-                </p>
-
-                <h2>
-                    Good Nutrition<br>
-                    Doesn't Need To Be Complicated.
-                </h2>
-
-                <p>
-                    Nutrition is about giving your body the
-                    energy and nutrients it needs to learn,
-                    move, train, recover and stay healthy.
-                    Focus on consistent, balanced habits
-                    instead of chasing extreme diets or
-                    complicated rules.
-                </p>
-
-            </div>
-
-        </section>
+    </section>
 
 
-        <!-- MACROS -->
+    <!-- INTRO -->
 
-        <section class="nutrition-section" id="macros">
+    <section class="nutrition-intro">
+
+        <div class="nutrition-intro-inner">
+
+            <p class="eyebrow">
+                THE FOUNDATION
+            </p>
+
+            <h2>
+                Good Nutrition<br>
+                Doesn't Need To Be Complicated.
+            </h2>
+
+            <p>
+                Nutrition is about giving your body the
+                energy and nutrients it needs to learn,
+                move, train, recover and stay healthy.
+                Focus on consistent, balanced habits
+                instead of chasing extreme diets or
+                complicated rules.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MACROS -->
+
+    <section class="nutrition-section np-section" id="macros">
+
+        <div class="nutrition-section-bg np-section-bg"></div>
+        <div class="nutrition-section-overlay np-overlay"></div>
+
+        <div class="np-content">
 
             <div class="nutrition-heading">
 
                 <p class="eyebrow">
-                    THE BIG THREE
+                    THE 3 MACRONUTRIENTS
                 </p>
 
                 <h2>
@@ -644,11 +1193,7 @@
 
             </div>
 
-
             <div class="nutrition-grid">
-
-
-                <!-- PROTEIN -->
 
                 <article class="nutrition-card">
 
@@ -656,9 +1201,7 @@
                         01 · PROTEIN
                     </span>
 
-                    <h3>
-                        Protein
-                    </h3>
+                    <h3>Protein</h3>
 
                     <p>
                         Protein helps your body build and
@@ -667,19 +1210,15 @@
                     </p>
 
                     <ul>
-
                         <li>Eggs</li>
                         <li>Milk and dairy</li>
                         <li>Dal and beans</li>
                         <li>Chana and peanuts</li>
                         <li>Paneer and soy foods</li>
-
                     </ul>
 
                 </article>
 
-
-                <!-- CARBS -->
 
                 <article class="nutrition-card">
 
@@ -687,9 +1226,7 @@
                         02 · CARBOHYDRATES
                     </span>
 
-                    <h3>
-                        Carbohydrates
-                    </h3>
+                    <h3>Carbohydrates</h3>
 
                     <p>
                         Carbohydrates are an important
@@ -698,19 +1235,15 @@
                     </p>
 
                     <ul>
-
                         <li>Rice</li>
                         <li>Roti</li>
                         <li>Oats</li>
                         <li>Potatoes</li>
                         <li>Fruits</li>
-
                     </ul>
 
                 </article>
 
-
-                <!-- FATS -->
 
                 <article class="nutrition-card">
 
@@ -718,9 +1251,7 @@
                         03 · FATS
                     </span>
 
-                    <h3>
-                        Healthy Fats
-                    </h3>
+                    <h3>Healthy Fats</h3>
 
                     <p>
                         Dietary fats help support normal
@@ -729,35 +1260,40 @@
                     </p>
 
                     <ul>
-
                         <li>Peanuts</li>
                         <li>Nuts and seeds</li>
                         <li>Egg yolks</li>
                         <li>Nut butters</li>
                         <li>Healthy cooking oils</li>
-
                     </ul>
 
                 </article>
 
-
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- NUTRITION BASICS -->
+    <!-- NUTRITION BASICS -->
 
-        <section class="nutrition-section" id="nutrition-basics">
+    <section class="nutrition-foundation np-section" id="nutrition-basics">
 
-            <div class="nutrition-heading">
+        <div class="foundation-bg np-section-bg"></div>
+        <div class="foundation-overlay np-overlay"></div>
+
+        <div class="foundation-grid np-content">
+
+            <div class="foundation-content">
 
                 <p class="eyebrow">
                     NUTRITION BASICS
                 </p>
 
                 <h2>
-                    Build A Better Foundation.
+                    Build A Better<br>
+                    Foundation.
                 </h2>
 
                 <p>
@@ -769,18 +1305,13 @@
             </div>
 
 
-            <div class="nutrition-grid">
+            <div class="foundation-list">
 
+                <div class="foundation-item">
 
-                <article class="nutrition-card">
+                    <span>01 · VARIETY</span>
 
-                    <span class="nutrition-number">
-                        01 · VARIETY
-                    </span>
-
-                    <h3>
-                        Eat A Variety
-                    </h3>
+                    <h3>Eat A Variety</h3>
 
                     <p>
                         Different foods provide different
@@ -788,18 +1319,14 @@
                         fruits, vegetables and protein foods.
                     </p>
 
-                </article>
+                </div>
 
 
-                <article class="nutrition-card">
+                <div class="foundation-item">
 
-                    <span class="nutrition-number">
-                        02 · REGULARITY
-                    </span>
+                    <span>02 · REGULARITY</span>
 
-                    <h3>
-                        Eat Regularly
-                    </h3>
+                    <h3>Eat Regularly</h3>
 
                     <p>
                         Regular balanced meals can help
@@ -807,18 +1334,14 @@
                         your day.
                     </p>
 
-                </article>
+                </div>
 
 
-                <article class="nutrition-card">
+                <div class="foundation-item">
 
-                    <span class="nutrition-number">
-                        03 · HYDRATION
-                    </span>
+                    <span>03 · HYDRATION</span>
 
-                    <h3>
-                        Stay Hydrated
-                    </h3>
+                    <h3>Stay Hydrated</h3>
 
                     <p>
                         Water is essential for normal body
@@ -826,108 +1349,93 @@
                         important when you're active.
                     </p>
 
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- BALANCED MEALS -->
-
-        <section class="nutrition-feature" id="balanced-meals">
-
-            <div class="nutrition-feature-grid">
-
-
-                <div>
-
-                    <p class="eyebrow">
-                        BUILD YOUR PLATE
-                    </p>
-
-                    <h2>
-                        Make Meals<br>
-                        More Balanced.
-                    </h2>
-
-                    <p class="nutrition-feature-text">
-                        A balanced meal can combine a
-                        protein source, carbohydrate-rich
-                        food, vegetables or fruit and a
-                        source of healthy fats. The exact
-                        combination can change based on
-                        your preferences, culture, appetite
-                        and activity.
-                    </p>
-
-                </div>
-
-
-                <div class="meal-list">
-
-                    <div class="meal-item">
-
-                        <strong>
-                            Protein
-                        </strong>
-
-                        <span>
-                            Eggs, dal, beans, paneer, soy foods
-                        </span>
-
-                    </div>
-
-
-                    <div class="meal-item">
-
-                        <strong>
-                            Carbohydrates
-                        </strong>
-
-                        <span>
-                            Rice, roti, oats, potatoes, fruit
-                        </span>
-
-                    </div>
-
-
-                    <div class="meal-item">
-
-                        <strong>
-                            Vegetables & Fruit
-                        </strong>
-
-                        <span>
-                            Add variety and different colours
-                        </span>
-
-                    </div>
-
-
-                    <div class="meal-item">
-
-                        <strong>
-                            Healthy Fats
-                        </strong>
-
-                        <span>
-                            Nuts, seeds, peanuts and suitable oils
-                        </span>
-
-                    </div>
-
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- TRAINING FUEL -->
+    <!-- BALANCED MEALS -->
 
-        <section class="training-nutrition" id="training-fuel">
+    <section class="nutrition-feature np-section" id="balanced-meals">
+
+        <div class="feature-bg np-section-bg"></div>
+        <div class="feature-overlay np-overlay"></div>
+
+        <div class="nutrition-feature-grid np-content">
+
+            <div>
+
+                <p class="eyebrow">
+                    BUILD YOUR PLATE
+                </p>
+
+                <h2>
+                    Make Meals<br>
+                    More Balanced.
+                </h2>
+
+                <p class="nutrition-feature-text">
+                    A balanced meal can combine a
+                    protein source, carbohydrate-rich
+                    food, vegetables or fruit and a
+                    source of healthy fats. The exact
+                    combination can change based on
+                    your preferences, culture, appetite
+                    and activity.
+                </p>
+
+            </div>
+
+
+            <div class="meal-list">
+
+                <div class="meal-item">
+                    <strong>Protein</strong>
+                    <span>
+                        Eggs, dal, beans, paneer, soy foods
+                    </span>
+                </div>
+
+                <div class="meal-item">
+                    <strong>Carbohydrates</strong>
+                    <span>
+                        Rice, roti, oats, potatoes, fruit
+                    </span>
+                </div>
+
+                <div class="meal-item">
+                    <strong>Vegetables & Fruit</strong>
+                    <span>
+                        Add variety and different colours
+                    </span>
+                </div>
+
+                <div class="meal-item">
+                    <strong>Healthy Fats</strong>
+                    <span>
+                        Nuts, seeds, peanuts and suitable oils
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAINING FUEL -->
+
+    <section class="training-nutrition np-section" id="training-fuel">
+
+        <div class="training-bg np-section-bg"></div>
+        <div class="training-overlay np-overlay"></div>
+
+        <div class="np-content">
 
             <div class="nutrition-heading">
 
@@ -949,12 +1457,9 @@
 
             <div class="training-grid">
 
-
                 <article class="training-card">
 
-                    <span>
-                        BEFORE TRAINING
-                    </span>
+                    <span>BEFORE TRAINING</span>
 
                     <h3>
                         Have Some Fuel
@@ -972,9 +1477,7 @@
 
                 <article class="training-card">
 
-                    <span>
-                        AFTER TRAINING
-                    </span>
+                    <span>AFTER TRAINING</span>
 
                     <h3>
                         Eat & Recover
@@ -982,8 +1485,9 @@
 
                     <p>
                         Have a normal balanced meal after
-                        training. Include protein, carbohydrates
-                        and fluids to support recovery.
+                        training. Include protein,
+                        carbohydrates and fluids to support
+                        recovery.
                     </p>
 
                 </article>
@@ -991,9 +1495,7 @@
 
                 <article class="training-card">
 
-                    <span>
-                        THROUGHOUT THE DAY
-                    </span>
+                    <span>THROUGHOUT THE DAY</span>
 
                     <h3>
                         Stay Consistent
@@ -1007,15 +1509,21 @@
 
                 </article>
 
-
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- HYDRATION -->
+    <!-- HYDRATION -->
 
-        <section class="nutrition-section">
+    <section class="hydration-section np-section">
+
+        <div class="hydration-bg np-section-bg"></div>
+        <div class="hydration-overlay np-overlay"></div>
+
+        <div class="np-content">
 
             <div class="nutrition-heading">
 
@@ -1036,14 +1544,11 @@
             </div>
 
 
-            <div class="nutrition-grid">
+            <div class="hydration-grid">
 
+                <article class="hydration-card">
 
-                <article class="nutrition-card">
-
-                    <span class="nutrition-number">
-                        01 · DAILY
-                    </span>
+                    <span>01 · DAILY</span>
 
                     <h3>
                         Drink Regularly
@@ -1059,11 +1564,9 @@
                 </article>
 
 
-                <article class="nutrition-card">
+                <article class="hydration-card">
 
-                    <span class="nutrition-number">
-                        02 · TRAINING
-                    </span>
+                    <span>02 · TRAINING</span>
 
                     <h3>
                         Hydrate Around Exercise
@@ -1078,11 +1581,9 @@
                 </article>
 
 
-                <article class="nutrition-card">
+                <article class="hydration-card">
 
-                    <span class="nutrition-number">
-                        03 · SIMPLE
-                    </span>
+                    <span>03 · SIMPLE</span>
 
                     <h3>
                         Keep It Simple
@@ -1096,15 +1597,21 @@
 
                 </article>
 
-
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- COMMON MISTAKES -->
+    <!-- COMMON MISTAKES -->
 
-        <section class="mistakes">
+    <section class="mistakes np-section">
+
+        <div class="mistakes-bg np-section-bg"></div>
+        <div class="mistakes-overlay np-overlay"></div>
+
+        <div class="np-content">
 
             <div class="nutrition-heading">
 
@@ -1126,12 +1633,9 @@
 
             <div class="mistake-grid">
 
-
                 <article class="mistake">
 
-                    <span>
-                        01 · EXTREME DIETS
-                    </span>
+                    <span>01 · EXTREME DIETS</span>
 
                     <h3>
                         Don't Crash Diet
@@ -1148,9 +1652,7 @@
 
                 <article class="mistake">
 
-                    <span>
-                        02 · ONE FOOD
-                    </span>
+                    <span>02 · ONE FOOD</span>
 
                     <h3>
                         Don't Chase Magic Foods
@@ -1166,9 +1668,7 @@
 
                 <article class="mistake">
 
-                    <span>
-                        03 · SUPPLEMENTS
-                    </span>
+                    <span>03 · SUPPLEMENTS</span>
 
                     <h3>
                         Food Comes First
@@ -1185,9 +1685,7 @@
 
                 <article class="mistake">
 
-                    <span>
-                        04 · PERFECTION
-                    </span>
+                    <span>04 · PERFECTION</span>
 
                     <h3>
                         Don't Aim For Perfect
@@ -1199,7 +1697,6 @@
                     </p>
 
                 </article>
-
 
             </div>
 
@@ -1220,76 +1717,76 @@
 
             </div>
 
-        </section>
-
-
-        <!-- FINAL CTA -->
-
-        <section class="nutrition-cta">
-
-            <p class="eyebrow">
-                YOUR NEXT STEP
-            </p>
-
-            <h2>
-                Eat Better.<br>
-                Train Better.
-            </h2>
-
-            <p>
-                Learn the fundamentals, build sustainable
-                habits and keep improving one step at a time.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="workouts.html" class="btn primary">
-                    Explore Workouts →
-                </a>
-
-                <a href="guides.html" class="btn secondary">
-                    Read Fitness Guides
-                </a>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-logo">
-            ROSHXLAB
         </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="nutrition-cta">
+
+        <p class="eyebrow">
+            YOUR NEXT STEP
+        </p>
+
+        <h2>
+            Eat Better.<br>
+            Train Better.
+        </h2>
 
         <p>
-            Build Better. Live Stronger.
+            Learn the fundamentals, build sustainable
+            habits and keep improving one step at a time.
         </p>
 
-        <div class="footer-links">
+        <div class="hero-buttons">
 
-            <a href="index.html">Home</a>
-            <a href="workouts.html">Workouts</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="guides.html">Guides</a>
-            <a href="blog.html">Blog</a>
-            <a href="videos.html">Videos</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="workouts.html" class="btn primary">
+                Explore Workouts →
+            </a>
+
+            <a href="guides.html" class="btn secondary">
+                Read Fitness Guides
+            </a>
 
         </div>
 
-        <p class="copyright">
-            © 2026 ROSHXLAB. All rights reserved.
-        </p>
+    </section>
 
-    </footer>
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        ROSHXLAB
+    </div>
+
+    <p>
+        Build Better. Live Stronger.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="guides.html">Guides</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 ROSHXLAB. All rights reserved.
+    </p>
+
+</footer>
 
 </body>
-
 </html>
