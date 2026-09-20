@@ -5,294 +5,820 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Learn about ROSHXLAB — a practical fitness platform focused on training, nutrition, recovery and better habits.">
+    <title>About ROSHXLAB — Practical Fitness, Training & Better Habits</title>
 
-    <title>About ROSHXLAB — Build Better. Live Stronger.</title>
+    <meta name="description"
+        content="Learn about ROSHXLAB, a practical fitness platform focused on workouts, nutrition, recovery, fitness education and building better everyday habits.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ROSHXLAB">
+
+    <link rel="canonical" href="about.html">
+
+    <meta property="og:title"
+        content="About ROSHXLAB — Practical Fitness, Training & Better Habits">
+    <meta property="og:description"
+        content="Discover the ROSHXLAB approach to practical training, balanced nutrition, recovery, fitness education and sustainable habits.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ROSHXLAB">
+    <meta property="og:image" content="images/about-front.jpg">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* ABOUT PAGE */
+        /* =========================================================
+           ROSHXLAB — PREMIUM ABOUT PAGE
+        ========================================================= */
 
-        .about-hero {
-            min-height: 72vh;
-            padding: 110px 7%;
+        .about-premium-page {
+            --ap-lime: #caff8a;
+            --ap-lime-soft: #dfffbc;
+            --ap-bg: #070807;
+            --ap-panel: #0d100d;
+            --ap-panel-2: #111511;
+            --ap-border: rgba(202, 255, 138, .14);
+            --ap-border-soft: rgba(255, 255, 255, .08);
+            --ap-muted: #8d938b;
+            --ap-white: #f4f6f1;
+            background: var(--ap-bg);
+        }
+
+        .about-premium-page *,
+        .about-premium-page *::before,
+        .about-premium-page *::after {
+            box-sizing: border-box;
+        }
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .about-premium-page nav a[href="about.html"] {
+            color: var(--ap-lime);
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .ap-hero {
+            position: relative;
+            min-height: 78vh;
+            padding: 90px 7% 80px;
             display: flex;
             align-items: center;
+            overflow: hidden;
             background:
-                radial-gradient(circle at 80% 30%, #242424 0%, transparent 32%),
-                linear-gradient(135deg, #101010, #060606);
-            border-bottom: 1px solid #222;
+                radial-gradient(circle at 78% 30%,
+                    rgba(202, 255, 138, .13),
+                    transparent 28%),
+                radial-gradient(circle at 20% 80%,
+                    rgba(202, 255, 138, .05),
+                    transparent 30%),
+                #070807;
+            border-bottom: 1px solid var(--ap-border-soft);
         }
 
-        .about-hero-content {
-            max-width: 900px;
+        .ap-hero::before {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            right: -170px;
+            top: -180px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .07);
+            filter: blur(100px);
+            pointer-events: none;
         }
 
-        .about-hero h1 {
-            font-size: clamp(55px, 8vw, 100px);
-            line-height: .94;
-            letter-spacing: -5px;
-            margin-bottom: 30px;
+        .ap-hero-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(360px, .75fr);
+            gap: 70px;
+            align-items: center;
         }
 
-        .about-hero h1 span {
-            color: #aaa;
-        }
-
-        .about-hero-text {
-            max-width: 700px;
-            color: #999;
-            font-size: 19px;
-        }
-
-        .about-section {
-            padding: 110px 7%;
-            border-bottom: 1px solid #202020;
-        }
-
-        .about-intro {
+        .ap-hero-content {
             max-width: 850px;
         }
 
-        .about-intro h2 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
+        .ap-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            color: var(--ap-lime);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
         }
 
-        .about-intro p {
-            color: #999;
+        .ap-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--ap-lime);
+            box-shadow: 0 0 12px rgba(202, 255, 138, .7);
+        }
+
+        .ap-hero h1 {
+            margin: 0 0 30px;
+            font-size: clamp(58px, 8vw, 112px);
+            line-height: .88;
+            letter-spacing: -6px;
+            font-weight: 900;
+            color: var(--ap-white);
+        }
+
+        .ap-hero h1 span {
+            display: inline-block;
+            color: transparent;
+            background: linear-gradient(90deg,
+                    var(--ap-lime),
+                    #ffffff 75%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .ap-hero-description {
+            max-width: 680px;
+            color: #a6aca4;
+            font-size: 19px;
+            line-height: 1.75;
+            margin-bottom: 34px;
+        }
+
+        .ap-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .ap-meta-pill {
+            padding: 11px 15px;
+            border: 1px solid var(--ap-border);
+            background: rgba(202, 255, 138, .035);
+            border-radius: 999px;
+            color: #b9c0b5;
+            font-size: 12px;
+            letter-spacing: .5px;
+        }
+
+        .ap-meta-pill strong {
+            color: var(--ap-lime);
+        }
+
+        .ap-hero-visual {
+            position: relative;
+            min-height: 540px;
+            border: 1px solid var(--ap-border);
+            border-radius: 28px;
+            overflow: hidden;
+            background: #0b0d0b;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .45),
+                0 0 70px rgba(202, 255, 138, .05);
+        }
+
+        .ap-hero-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                linear-gradient(180deg,
+                    rgba(5, 7, 5, .08),
+                    rgba(5, 7, 5, .65)),
+                linear-gradient(90deg,
+                    rgba(5, 7, 5, .25),
+                    transparent 60%);
+        }
+
+        .ap-hero-visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 540px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ap-image-label {
+            position: absolute;
+            z-index: 3;
+            left: 24px;
+            bottom: 24px;
+            padding: 13px 16px;
+            border: 1px solid rgba(255, 255, 255, .13);
+            border-radius: 12px;
+            background: rgba(8, 10, 8, .72);
+            backdrop-filter: blur(15px);
+            color: #e5e9e2;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           GENERAL SECTION
+        ========================================================= */
+
+        .ap-section {
+            position: relative;
+            padding: 115px 7%;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            overflow: hidden;
+        }
+
+        .ap-container {
+            width: 100%;
+            max-width: 1450px;
+            margin: 0 auto;
+        }
+
+        .ap-intro {
+            max-width: 900px;
+        }
+
+        .ap-intro h2,
+        .ap-section-title {
+            margin: 0 0 28px;
+            font-size: clamp(45px, 6vw, 76px);
+            line-height: .94;
+            letter-spacing: -4px;
+            font-weight: 900;
+            color: var(--ap-white);
+        }
+
+        .ap-intro h2 span,
+        .ap-section-title span {
+            color: transparent;
+            background: linear-gradient(90deg,
+                    var(--ap-lime),
+                    #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .ap-intro p {
+            max-width: 820px;
+            color: var(--ap-muted);
             font-size: 18px;
-            margin-bottom: 18px;
+            line-height: 1.8;
+            margin: 0 0 17px;
         }
 
-        /* VALUES */
+        /* =========================================================
+           PRINCIPLES
+        ========================================================= */
 
-        .values-grid {
+        .ap-principles {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-            margin-top: 55px;
+            margin-top: 60px;
         }
 
-        .value-card {
-            padding: 35px;
-            min-height: 270px;
-            background: #101010;
-            border: 1px solid #252525;
-            transition: .3s ease;
+        .ap-principle-card {
+            position: relative;
+            min-height: 310px;
+            padding: 34px;
+            border: 1px solid var(--ap-border-soft);
+            border-radius: 22px;
+            background:
+                linear-gradient(145deg,
+                    rgba(202, 255, 138, .045),
+                    rgba(255, 255, 255, .015)),
+                var(--ap-panel);
+            overflow: hidden;
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
         }
 
-        .value-card:hover {
-            transform: translateY(-7px);
-            border-color: #555;
-            background: #141414;
+        .ap-principle-card::after {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            right: -80px;
+            bottom: -80px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .08);
+            filter: blur(35px);
         }
 
-        .value-number {
-            color: #666;
-            font-size: 12px;
-            font-weight: 700;
+        .ap-principle-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(202, 255, 138, .35);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+        }
+
+        .ap-principle-number {
+            color: var(--ap-lime);
+            font-size: 11px;
+            font-weight: 800;
             letter-spacing: 2px;
         }
 
-        .value-card h3 {
-            font-size: 25px;
-            margin: 30px 0 14px;
+        .ap-principle-card h3 {
+            position: relative;
+            z-index: 2;
+            margin: 70px 0 14px;
+            font-size: 28px;
+            letter-spacing: -.8px;
+            color: var(--ap-white);
         }
 
-        .value-card p {
-            color: #888;
+        .ap-principle-card p {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            color: #858b83;
             font-size: 15px;
+            line-height: 1.75;
         }
 
-        /* APPROACH */
+        /* =========================================================
+           APPROACH
+        ========================================================= */
 
-        .about-dark {
-            background: #0d0d0d;
+        .ap-dark-section {
+            background:
+                radial-gradient(circle at 85% 30%,
+                    rgba(202, 255, 138, .06),
+                    transparent 25%),
+                #090b09;
         }
 
-        .approach-grid {
+        .ap-approach {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 100px;
             align-items: start;
         }
 
-        .approach-grid h2 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1;
-            letter-spacing: -3px;
+        .ap-approach-heading {
+            position: sticky;
+            top: 110px;
         }
 
-        .approach-content p {
-            color: #999;
+        .ap-approach-heading h2 {
+            margin: 0;
+            font-size: clamp(45px, 6vw, 76px);
+            line-height: .94;
+            letter-spacing: -4px;
+            color: var(--ap-white);
+        }
+
+        .ap-approach-heading h2 span {
+            color: transparent;
+            background: linear-gradient(90deg,
+                    var(--ap-lime),
+                    #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .ap-approach-content > p {
+            max-width: 720px;
+            margin: 0 0 38px;
+            color: var(--ap-muted);
             font-size: 17px;
-            margin-bottom: 25px;
+            line-height: 1.8;
         }
 
-        .approach-list {
-            border-top: 1px solid #292929;
+        .ap-approach-list {
+            border-top: 1px solid var(--ap-border-soft);
         }
 
-        .approach-item {
-            display: flex;
-            gap: 25px;
-            padding: 24px 0;
-            border-bottom: 1px solid #292929;
+        .ap-approach-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 20px;
+            padding: 27px 0;
+            border-bottom: 1px solid var(--ap-border-soft);
+            transition: padding-left .25s ease;
         }
 
-        .approach-item span {
-            color: #666;
-            font-size: 12px;
-            min-width: 35px;
+        .ap-approach-item:hover {
+            padding-left: 10px;
         }
 
-        .approach-item strong {
-            font-size: 16px;
+        .ap-approach-item span {
+            color: var(--ap-lime);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
         }
 
-        /* TOPICS */
+        .ap-approach-item strong {
+            color: #e9ece7;
+            font-size: 17px;
+            font-weight: 700;
+        }
 
-        .topic-grid {
+        /* =========================================================
+           TOPICS
+        ========================================================= */
+
+        .ap-topic-heading {
+            max-width: 800px;
+        }
+
+        .ap-topic-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-top: 50px;
+            margin-top: 55px;
         }
 
-        .topic-box {
-            padding: 30px 25px;
-            background: #101010;
-            border: 1px solid #242424;
-        }
-
-        .topic-box strong {
-            display: block;
-            font-size: 19px;
-            margin-bottom: 8px;
-        }
-
-        .topic-box span {
-            color: #777;
-            font-size: 13px;
-        }
-
-        /* TRUST */
-
-        .trust-box {
-            max-width: 900px;
-            padding: 45px;
-            margin-top: 50px;
-            background: #101010;
-            border: 1px solid #292929;
-        }
-
-        .trust-box h3 {
-            font-size: 27px;
-            margin-bottom: 15px;
-        }
-
-        .trust-box p {
-            color: #888;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        .trust-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* CTA */
-
-        .about-cta {
-            padding: 130px 7%;
-            text-align: center;
+        .ap-topic-card {
+            position: relative;
+            min-height: 190px;
+            padding: 28px;
+            border: 1px solid var(--ap-border-soft);
+            border-radius: 18px;
             background:
-                radial-gradient(circle at center, #202020 0%, transparent 45%),
-                #080808;
+                linear-gradient(145deg,
+                    rgba(255, 255, 255, .025),
+                    rgba(202, 255, 138, .025));
+            transition:
+                transform .3s ease,
+                background .3s ease,
+                border-color .3s ease;
         }
 
-        .about-cta h2 {
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: .95;
-            letter-spacing: -4px;
+        .ap-topic-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(202, 255, 138, .3);
+            background: rgba(202, 255, 138, .055);
+        }
+
+        .ap-topic-index {
+            color: #636960;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .ap-topic-card strong {
+            display: block;
+            margin: 38px 0 9px;
+            color: var(--ap-white);
+            font-size: 20px;
+        }
+
+        .ap-topic-card span {
+            display: block;
+            color: #7f857d;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        /* =========================================================
+           WHO IT'S FOR
+        ========================================================= */
+
+        .ap-who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .ap-who-copy p {
+            max-width: 720px;
+            color: var(--ap-muted);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .ap-who-panel {
+            padding: 38px;
+            border: 1px solid var(--ap-border);
+            border-radius: 22px;
+            background:
+                radial-gradient(circle at 80% 20%,
+                    rgba(202, 255, 138, .08),
+                    transparent 35%),
+                var(--ap-panel);
+        }
+
+        .ap-who-panel-title {
+            color: var(--ap-lime);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 25px;
         }
 
-        .about-cta > p:not(.eyebrow) {
-            max-width: 550px;
-            margin: 0 auto 30px;
-            color: #888;
+        .ap-who-list {
+            display: grid;
+            gap: 14px;
         }
 
-        /* MOBILE */
+        .ap-who-item {
+            display: flex;
+            gap: 13px;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+            color: #c6cbc3;
+            font-size: 14px;
+        }
 
-        @media (max-width: 850px) {
+        .ap-who-item:last-child {
+            border-bottom: 0;
+        }
 
-            .about-hero {
-                min-height: auto;
-                padding: 90px 6%;
+        .ap-who-item::before {
+            content: "✓";
+            display: grid;
+            place-items: center;
+            width: 22px;
+            height: 22px;
+            flex: 0 0 22px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .1);
+            color: var(--ap-lime);
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        /* =========================================================
+           RESPONSIBILITY
+        ========================================================= */
+
+        .ap-responsibility {
+            position: relative;
+            max-width: 1000px;
+            padding: 45px;
+            border: 1px solid var(--ap-border);
+            border-radius: 24px;
+            background:
+                linear-gradient(145deg,
+                    rgba(202, 255, 138, .055),
+                    rgba(255, 255, 255, .018)),
+                var(--ap-panel);
+            overflow: hidden;
+        }
+
+        .ap-responsibility::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            right: -120px;
+            top: -120px;
+            border-radius: 50%;
+            background: rgba(202, 255, 138, .08);
+            filter: blur(45px);
+        }
+
+        .ap-responsibility h3 {
+            position: relative;
+            z-index: 2;
+            margin: 0 0 17px;
+            font-size: 30px;
+            color: var(--ap-white);
+        }
+
+        .ap-responsibility p {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 0 16px;
+            color: #898f87;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .ap-responsibility p:last-child {
+            margin-bottom: 0;
+            color: #b7beb3;
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .ap-cta {
+            position: relative;
+            padding: 145px 7%;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 40%,
+                    rgba(202, 255, 138, .12),
+                    transparent 28%),
+                radial-gradient(circle at 50% 100%,
+                    rgba(202, 255, 138, .04),
+                    transparent 35%),
+                #070807;
+        }
+
+        .ap-cta h2 {
+            position: relative;
+            margin: 0 0 25px;
+            font-size: clamp(52px, 8vw, 100px);
+            line-height: .9;
+            letter-spacing: -5px;
+            color: var(--ap-white);
+        }
+
+        .ap-cta h2 span {
+            color: transparent;
+            background: linear-gradient(90deg,
+                    var(--ap-lime),
+                    #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .ap-cta > p:not(.ap-eyebrow) {
+            position: relative;
+            max-width: 570px;
+            margin: 0 auto 34px;
+            color: #898f87;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .ap-cta .hero-buttons {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .ap-hero-inner {
+                grid-template-columns: 1fr;
             }
 
-            .about-hero h1 {
+            .ap-hero-visual {
+                max-width: 720px;
+            }
+
+            .ap-principles {
+                grid-template-columns: 1fr;
+            }
+
+            .ap-topic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ap-approach {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .ap-approach-heading {
+                position: static;
+            }
+
+            .ap-who-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .ap-hero {
+                min-height: auto;
+                padding: 75px 6% 65px;
+            }
+
+            .ap-hero h1 {
                 font-size: 58px;
                 letter-spacing: -3px;
             }
 
-            .about-section {
+            .ap-hero-description {
+                font-size: 16px;
+            }
+
+            .ap-hero-visual {
+                min-height: 390px;
+                border-radius: 20px;
+            }
+
+            .ap-hero-visual img {
+                min-height: 390px;
+            }
+
+            .ap-section {
                 padding: 80px 6%;
             }
 
-            .values-grid {
+            .ap-intro h2,
+            .ap-section-title,
+            .ap-approach-heading h2 {
+                font-size: 48px;
+                letter-spacing: -3px;
+            }
+
+            .ap-principle-card {
+                min-height: 270px;
+            }
+
+            .ap-topic-grid {
                 grid-template-columns: 1fr;
             }
 
-            .approach-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .ap-topic-card {
+                min-height: 155px;
             }
 
-            .topic-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .ap-responsibility {
+                padding: 28px;
             }
 
-            .about-cta {
-                padding: 90px 6%;
+            .ap-cta {
+                padding: 95px 6%;
+            }
+
+            .ap-cta h2 {
+                font-size: 55px;
+                letter-spacing: -3px;
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 450px) {
 
-            .about-hero h1 {
+            .ap-hero {
+                padding-top: 65px;
+            }
+
+            .ap-hero h1 {
                 font-size: 48px;
             }
 
-            .topic-grid {
-                grid-template-columns: 1fr;
+            .ap-hero-visual,
+            .ap-hero-visual img {
+                min-height: 300px;
             }
 
-            .trust-box {
-                padding: 25px;
+            .ap-meta-pill {
+                font-size: 10px;
+                padding: 9px 12px;
             }
 
-            .about-cta h2 {
-                font-size: 50px;
+            .ap-intro h2,
+            .ap-section-title,
+            .ap-approach-heading h2 {
+                font-size: 42px;
+            }
+
+            .ap-principle-card {
+                padding: 27px;
+            }
+
+            .ap-principle-card h3 {
+                margin-top: 50px;
+                font-size: 24px;
+            }
+
+            .ap-approach-item {
+                grid-template-columns: 42px 1fr;
+            }
+
+            .ap-who-panel {
+                padding: 27px;
+            }
+
+            .ap-cta h2 {
+                font-size: 48px;
             }
         }
     </style>
 </head>
 
-<body>
+<body class="about-premium-page">
 
     <!-- NAVBAR -->
-
     <header>
-
-        <a href="index.html" class="logo">ROSHXLAB</a>
+        <a href="index.html" class="logo">
+            ROSHXLAB
+        </a>
 
         <nav>
             <a href="index.html">Home</a>
@@ -304,227 +830,251 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
-
     </header>
-
 
     <main>
 
-        <!-- HERO -->
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-        <section class="about-hero">
+        <section class="ap-hero">
 
-            <div class="about-hero-content">
+            <div class="ap-hero-inner">
 
-                <p class="eyebrow">
-                    ABOUT ROSHXLAB
-                </p>
+                <div class="ap-hero-content">
 
-                <h1>
-                    Fitness<br>
-                    <span>Made Practical.</span>
-                </h1>
-
-                <p class="about-hero-text">
-                    ROSHXLAB is built around a simple idea:
-                    fitness should be easier to understand,
-                    easier to apply and sustainable in real life.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- INTRO -->
-
-        <section class="about-section">
-
-            <div class="about-intro">
-
-                <p class="eyebrow">
-                    WHY ROSHXLAB
-                </p>
-
-                <h2>
-                    Less Confusion.<br>
-                    More Progress.
-                </h2>
-
-                <p>
-                    Fitness can feel complicated.
-                    There are endless workouts, diets,
-                    trends and conflicting advice.
-                </p>
-
-                <p>
-                    ROSHXLAB focuses on the fundamentals:
-                    training, nutrition, recovery and
-                    better everyday habits.
-                </p>
-
-                <p>
-                    The goal is not to chase shortcuts.
-                    It is to understand the basics,
-                    apply them consistently and improve
-                    over time.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- VALUES -->
-
-        <section class="about-section">
-
-            <p class="eyebrow">
-                OUR PRINCIPLES
-            </p>
-
-            <div class="values-grid">
-
-                <article class="value-card">
-
-                    <span class="value-number">
-                        01 · PRACTICAL
-                    </span>
-
-                    <h3>
-                        Keep It Useful
-                    </h3>
-
-                    <p>
-                        Fitness information should help you
-                        understand what to do and why it matters.
+                    <p class="ap-eyebrow">
+                        ABOUT ROSHXLAB
                     </p>
 
-                </article>
+                    <h1>
+                        Fitness<br>
+                        <span>Made Practical.</span>
+                    </h1>
 
-
-                <article class="value-card">
-
-                    <span class="value-number">
-                        02 · CONSISTENT
-                    </span>
-
-                    <h3>
-                        Progress Takes Time
-                    </h3>
-
-                    <p>
-                        Sustainable habits and gradual progress
-                        matter more than chasing quick results.
+                    <p class="ap-hero-description">
+                        ROSHXLAB is built around a simple idea:
+                        fitness should be easier to understand,
+                        easier to apply and sustainable in real life.
                     </p>
 
-                </article>
+                    <div class="ap-hero-meta">
 
+                        <span class="ap-meta-pill">
+                            <strong>01</strong> Training
+                        </span>
 
-                <article class="value-card">
+                        <span class="ap-meta-pill">
+                            <strong>02</strong> Nutrition
+                        </span>
 
-                    <span class="value-number">
-                        03 · FUNDAMENTALS
-                    </span>
+                        <span class="ap-meta-pill">
+                            <strong>03</strong> Recovery
+                        </span>
 
-                    <h3>
-                        Master The Basics
-                    </h3>
+                        <span class="ap-meta-pill">
+                            <strong>04</strong> Better Habits
+                        </span>
 
-                    <p>
-                        Good technique, balanced nutrition,
-                        recovery and consistency form the foundation.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- APPROACH -->
-
-        <section class="about-section about-dark">
-
-            <div class="approach-grid">
-
-                <div>
-
-                    <p class="eyebrow">
-                        THE ROSHXLAB APPROACH
-                    </p>
-
-                    <h2>
-                        Build Better.<br>
-                        Live Stronger.
-                    </h2>
+                    </div>
 
                 </div>
 
+                <div class="ap-hero-visual">
 
-                <div class="approach-content">
+                    <img src="images/about-front.jpg"
+                        alt="ROSHXLAB fitness training and strength workout">
 
-                    <p>
-                        We organize fitness into simple,
-                        understandable pieces so you can
-                        learn and apply them without unnecessary
-                        complexity.
+                    <div class="ap-image-label">
+                        ROSHXLAB · BUILD BETTER
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WHY ROSHXLAB
+        ====================================================== -->
+
+        <section class="ap-section">
+
+            <div class="ap-container">
+
+                <div class="ap-intro">
+
+                    <p class="ap-eyebrow">
+                        WHY ROSHXLAB
                     </p>
 
-                    <div class="approach-list">
+                    <h2>
+                        Less Confusion.<br>
+                        <span>More Progress.</span>
+                    </h2>
 
-                        <div class="approach-item">
+                    <p>
+                        Fitness can feel complicated.
+                        There are endless workouts, diets,
+                        trends and conflicting advice.
+                    </p>
 
-                            <span>01</span>
+                    <p>
+                        ROSHXLAB focuses on the fundamentals:
+                        training, nutrition, recovery and
+                        better everyday habits.
+                    </p>
 
-                            <strong>
-                                Learn the fundamentals
-                            </strong>
+                    <p>
+                        The goal is not to chase shortcuts.
+                        It is to understand the basics,
+                        apply them consistently and improve
+                        over time.
+                    </p>
 
-                        </div>
+                </div>
 
+            </div>
 
-                        <div class="approach-item">
-
-                            <span>02</span>
-
-                            <strong>
-                                Focus on good technique
-                            </strong>
-
-                        </div>
-
-
-                        <div class="approach-item">
-
-                            <span>03</span>
-
-                            <strong>
-                                Progress gradually
-                            </strong>
-
-                        </div>
+        </section>
 
 
-                        <div class="approach-item">
+        <!-- =====================================================
+             PRINCIPLES
+        ====================================================== -->
 
-                            <span>04</span>
+        <section class="ap-section">
 
-                            <strong>
-                                Give your body time to recover
-                            </strong>
+            <div class="ap-container">
 
-                        </div>
+                <p class="ap-eyebrow">
+                    OUR PRINCIPLES
+                </p>
+
+                <div class="ap-principles">
+
+                    <article class="ap-principle-card">
+
+                        <span class="ap-principle-number">
+                            01 · PRACTICAL
+                        </span>
+
+                        <h3>
+                            Keep It Useful
+                        </h3>
+
+                        <p>
+                            Fitness information should help you
+                            understand what to do and why it matters.
+                        </p>
+
+                    </article>
 
 
-                        <div class="approach-item">
+                    <article class="ap-principle-card">
 
-                            <span>05</span>
+                        <span class="ap-principle-number">
+                            02 · CONSISTENT
+                        </span>
 
-                            <strong>
-                                Stay consistent
-                            </strong>
+                        <h3>
+                            Progress Takes Time
+                        </h3>
+
+                        <p>
+                            Sustainable habits and gradual progress
+                            matter more than chasing quick results.
+                        </p>
+
+                    </article>
+
+
+                    <article class="ap-principle-card">
+
+                        <span class="ap-principle-number">
+                            03 · FUNDAMENTALS
+                        </span>
+
+                        <h3>
+                            Master The Basics
+                        </h3>
+
+                        <p>
+                            Good technique, balanced nutrition,
+                            recovery and consistency form the foundation.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             APPROACH
+        ====================================================== -->
+
+        <section class="ap-section ap-dark-section">
+
+            <div class="ap-container">
+
+                <div class="ap-approach">
+
+                    <div class="ap-approach-heading">
+
+                        <p class="ap-eyebrow">
+                            THE ROSHXLAB APPROACH
+                        </p>
+
+                        <h2>
+                            Build Better.<br>
+                            <span>Live Stronger.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="ap-approach-content">
+
+                        <p>
+                            We organize fitness into simple,
+                            understandable pieces so you can
+                            learn and apply them without unnecessary
+                            complexity.
+                        </p>
+
+                        <div class="ap-approach-list">
+
+                            <div class="ap-approach-item">
+                                <span>01</span>
+                                <strong>Learn the fundamentals</strong>
+                            </div>
+
+                            <div class="ap-approach-item">
+                                <span>02</span>
+                                <strong>Focus on good technique</strong>
+                            </div>
+
+                            <div class="ap-approach-item">
+                                <span>03</span>
+                                <strong>Progress gradually</strong>
+                            </div>
+
+                            <div class="ap-approach-item">
+                                <span>04</span>
+                                <strong>Give your body time to recover</strong>
+                            </div>
+
+                            <div class="ap-approach-item">
+                                <span>05</span>
+                                <strong>Stay consistent</strong>
+                            </div>
 
                         </div>
 
@@ -537,79 +1087,173 @@
         </section>
 
 
-        <!-- WHAT WE COVER -->
+        <!-- =====================================================
+             WHAT WE COVER
+        ====================================================== -->
 
-        <section class="about-section">
+        <section class="ap-section">
 
-            <p class="eyebrow">
-                WHAT YOU'LL FIND
-            </p>
+            <div class="ap-container">
 
-            <div class="about-intro">
+                <div class="ap-topic-heading">
 
-                <h2>
-                    One Place.<br>
-                    Multiple Paths.
-                </h2>
+                    <p class="ap-eyebrow">
+                        WHAT YOU'LL FIND
+                    </p>
 
-                <p>
-                    ROSHXLAB brings together practical resources
-                    for different parts of your fitness journey.
-                </p>
+                    <h2 class="ap-section-title">
+                        One Place.<br>
+                        <span>Multiple Paths.</span>
+                    </h2>
+
+                    <p class="ap-intro">
+                        ROSHXLAB brings together practical resources
+                        for different parts of your fitness journey.
+                    </p>
+
+                </div>
+
+
+                <div class="ap-topic-grid">
+
+                    <div class="ap-topic-card">
+
+                        <span class="ap-topic-index">
+                            01
+                        </span>
+
+                        <strong>
+                            Workouts
+                        </strong>
+
+                        <span>
+                            Training routines and exercise guidance.
+                        </span>
+
+                    </div>
+
+
+                    <div class="ap-topic-card">
+
+                        <span class="ap-topic-index">
+                            02
+                        </span>
+
+                        <strong>
+                            Nutrition
+                        </strong>
+
+                        <span>
+                            Simple information about balanced eating.
+                        </span>
+
+                    </div>
+
+
+                    <div class="ap-topic-card">
+
+                        <span class="ap-topic-index">
+                            03
+                        </span>
+
+                        <strong>
+                            Guides
+                        </strong>
+
+                        <span>
+                            Practical fitness education and fundamentals.
+                        </span>
+
+                    </div>
+
+
+                    <div class="ap-topic-card">
+
+                        <span class="ap-topic-index">
+                            04
+                        </span>
+
+                        <strong>
+                            Blog
+                        </strong>
+
+                        <span>
+                            Articles covering useful fitness topics.
+                        </span>
+
+                    </div>
+
+                </div>
 
             </div>
 
-
-            <div class="topic-grid">
-
-                <div class="topic-box">
-
-                    <strong>
-                        Workouts
-                    </strong>
-
-                    <span>
-                        Training routines and exercise guidance.
-                    </span>
-
-                </div>
+        </section>
 
 
-                <div class="topic-box">
+        <!-- =====================================================
+             WHO IT IS FOR
+        ====================================================== -->
 
-                    <strong>
-                        Nutrition
-                    </strong>
+        <section class="ap-section ap-dark-section">
 
-                    <span>
-                        Simple information about balanced eating.
-                    </span>
+            <div class="ap-container">
 
-                </div>
+                <div class="ap-who-grid">
+
+                    <div class="ap-who-copy">
+
+                        <p class="ap-eyebrow">
+                            WHO IS ROSHXLAB FOR?
+                        </p>
+
+                        <h2 class="ap-section-title">
+                            Start Where<br>
+                            <span>You Are.</span>
+                        </h2>
+
+                        <p>
+                            ROSHXLAB is designed for people who want
+                            to understand fitness and build healthier,
+                            more consistent habits.
+                        </p>
+
+                        <p>
+                            Whether you're completely new to training,
+                            working out at home or simply trying to
+                            improve your knowledge, the fundamentals
+                            remain the starting point.
+                        </p>
+
+                    </div>
 
 
-                <div class="topic-box">
+                    <div class="ap-who-panel">
 
-                    <strong>
-                        Guides
-                    </strong>
+                        <div class="ap-who-panel-title">
+                            A practical starting point
+                        </div>
 
-                    <span>
-                        Practical fitness education and fundamentals.
-                    </span>
+                        <div class="ap-who-list">
 
-                </div>
+                            <div class="ap-who-item">
+                                New to fitness
+                            </div>
 
+                            <div class="ap-who-item">
+                                Training at home
+                            </div>
 
-                <div class="topic-box">
+                            <div class="ap-who-item">
+                                Learning the fundamentals
+                            </div>
 
-                    <strong>
-                        Blog
-                    </strong>
+                            <div class="ap-who-item">
+                                Improving everyday habits
+                            </div>
 
-                    <span>
-                        Articles covering useful fitness topics.
-                    </span>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -618,90 +1262,65 @@
         </section>
 
 
-        <!-- WHO IT IS FOR -->
+        <!-- =====================================================
+             RESPONSIBILITY
+        ====================================================== -->
 
-        <section class="about-section about-dark">
+        <section class="ap-section">
 
-            <div class="about-intro">
+            <div class="ap-container">
 
-                <p class="eyebrow">
-                    WHO IS ROSHXLAB FOR?
+                <p class="ap-eyebrow">
+                    A RESPONSIBLE APPROACH
                 </p>
 
-                <h2>
-                    Start Where<br>
-                    You Are.
-                </h2>
+                <div class="ap-responsibility">
 
-                <p>
-                    ROSHXLAB is designed for people who want
-                    to understand fitness and build healthier,
-                    more consistent habits.
-                </p>
+                    <h3>
+                        Fitness Is Personal.
+                    </h3>
 
-                <p>
-                    Whether you're completely new to training,
-                    working out at home or simply trying to
-                    improve your knowledge, the fundamentals
-                    remain the starting point.
-                </p>
+                    <p>
+                        Exercise, nutrition and recovery can look
+                        different for different people.
+                        ROSHXLAB focuses on general educational
+                        information rather than promising identical
+                        results for everyone.
+                    </p>
+
+                    <p>
+                        When you have an injury, medical condition,
+                        unusual symptoms or questions about your
+                        individual health, qualified healthcare or
+                        fitness professionals can provide
+                        personalized guidance.
+                    </p>
+
+                    <p>
+                        No shortcuts. No magic fixes.
+                        Just useful fundamentals and consistent work.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- TRUST / RESPONSIBILITY -->
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
 
-        <section class="about-section">
+        <section class="ap-cta">
 
-            <p class="eyebrow">
-                A RESPONSIBLE APPROACH
-            </p>
-
-            <div class="trust-box">
-
-                <h3>
-                    Fitness Is Personal.
-                </h3>
-
-                <p>
-                    Exercise, nutrition and recovery can look
-                    different for different people.
-                    ROSHXLAB focuses on general educational
-                    information rather than promising identical
-                    results for everyone.
-                </p>
-
-                <p>
-                    When you have an injury, medical condition,
-                    unusual symptoms or questions about your
-                    individual health, qualified healthcare or
-                    fitness professionals can provide
-                    personalized guidance.
-                </p>
-
-                <p>
-                    No shortcuts. No magic fixes.
-                    Just useful fundamentals and consistent work.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-
-        <section class="about-cta">
-
-            <p class="eyebrow">
+            <p class="ap-eyebrow">
                 YOUR NEXT STEP
             </p>
 
             <h2>
                 Start Building<br>
-                Better.
+                <span>Better.</span>
             </h2>
 
             <p>
