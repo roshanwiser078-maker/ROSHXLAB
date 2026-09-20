@@ -16,6 +16,30 @@
     <style>
 
         /* =========================
+           ARTICLE PAGE NAVBAR FIX
+        ========================= */
+
+        .navbar .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .navbar .logo {
+            flex-shrink: 0;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 28px;
+            margin-left: auto;
+        }
+
+
+        /* =========================
            ARTICLE HERO
         ========================= */
 
@@ -35,6 +59,7 @@
 
         .article-hero .container {
             max-width: 1050px;
+            width: 100%;
         }
 
         .article-hero h1 {
@@ -289,6 +314,19 @@
 
         @media (max-width: 850px) {
 
+            .navbar .nav-inner {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+
+            .navbar .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                margin-left: 0;
+            }
+
             .article-hero {
                 min-height: auto;
                 padding: 90px 6%;
@@ -319,6 +357,11 @@
 
 
         @media (max-width: 500px) {
+
+            .navbar .nav-links {
+                gap: 12px;
+                font-size: 13px;
+            }
 
             .article-hero {
                 padding: 75px 6%;

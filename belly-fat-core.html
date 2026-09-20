@@ -14,96 +14,707 @@
 
     <style>
 
-        /* QUICK BOXES */
+        /* =========================================================
+           ROSHXLAB — BELLY FAT & CORE PREMIUM DESIGN
+           ========================================================= */
 
-        .fat-boxes {
+        .core-page {
+            background: #070707;
+            color: #fff;
+        }
+
+        .core-page main {
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+           PREMIUM HERO
+           ========================================================= */
+
+        .core-page .hero {
+            position: relative;
+            min-height: 86vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(3,3,3,.98) 0%,
+                    rgba(3,3,3,.92) 30%,
+                    rgba(3,3,3,.68) 55%,
+                    rgba(3,3,3,.25) 100%
+                ),
+                url("images/core-workout.jpg")
+                center / cover no-repeat;
+
+            border-bottom: 1px solid #252525;
+        }
+
+
+        .core-page .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 75% 40%,
+                    rgba(178,255,105,.20),
+                    transparent 27%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .core-page .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 55%,
+                    #070707 100%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .core-page .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 800px;
+        }
+
+
+        .core-page .hero-image {
+            display: none;
+        }
+
+
+        /* =========================================================
+           PREMIUM EYEBROW
+           ========================================================= */
+
+        .core-page .hero .eyebrow {
+            color: #baff87;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-shadow: 0 0 25px rgba(170,255,100,.15);
+        }
+
+
+        /* =========================================================
+           PREMIUM HERO TITLE
+           ========================================================= */
+
+        .core-page .hero h1 {
+            position: relative;
+
+            margin-top: 12px;
+
+            font-size: clamp(58px, 8vw, 112px);
+            line-height: .9;
+
+            letter-spacing: -5px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 15px 45px rgba(0,0,0,.75);
+        }
+
+
+        .core-page .hero h1 span {
+            display: inline-block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #d8ffb5 42%,
+                    #8fff4d 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            color: transparent;
+
+            text-shadow: none;
+
+            filter:
+                drop-shadow(
+                    0 0 25px rgba(150,255,80,.10)
+                );
+        }
+
+
+        /* =========================================================
+           NEW PREMIUM WORKOUT LABEL
+           ========================================================= */
+
+        .core-page .hero::marker {
+            display: none;
+        }
+
+
+        .core-page .hero-text {
+            max-width: 650px;
+            margin-top: 25px;
+
+            color: #bdbdbd;
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           PREMIUM BUTTONS
+           ========================================================= */
+
+        .core-page .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+
+        .core-page .btn {
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+
+        .core-page .btn.primary {
+            box-shadow:
+                0 12px 40px rgba(160,255,90,.10);
+        }
+
+
+        .core-page .btn.primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 18px 50px rgba(160,255,90,.20);
+        }
+
+
+        .core-page .btn.secondary:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================================================
+           PREMIUM QUICK BOXES
+           ========================================================= */
+
+        .core-page .fat-boxes {
+            position: relative;
+            z-index: 10;
+
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 45px;
+
+            gap: 16px;
+
+            max-width: 1180px;
+
+            margin: -70px auto 0;
+
+            padding: 0 24px;
         }
 
-        .fat-box {
+
+        .core-page .fat-box {
+            position: relative;
+            overflow: hidden;
+
             display: block;
-            padding: 28px;
-            background: #101010;
-            border: 1px solid #292929;
-            transition: 0.25s ease;
+
+            padding: 31px;
+
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(28,28,28,.95),
+                    rgba(8,8,8,.98)
+                );
+
+            border: 1px solid rgba(255,255,255,.10);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.40);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
         }
 
-        .fat-box:hover {
-            transform: translateY(-5px);
-            border-color: #666;
-            background: #151515;
+
+        .core-page .fat-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -100px;
+            top: -100px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(170,255,100,.17),
+                    transparent 68%
+                );
+
+            pointer-events: none;
         }
 
-        .fat-box span {
-            color: #666;
-            font-size: 12px;
-            font-weight: 700;
+
+        .core-page .fat-box:hover {
+            transform: translateY(-9px);
+
+            border-color:
+                rgba(190,255,130,.32);
+
+            box-shadow:
+                0 30px 85px rgba(0,0,0,.55);
+        }
+
+
+        .core-page .fat-box span {
+            color: #b5b5b5;
+
+            font-size: 11px;
+            font-weight: 800;
+
             letter-spacing: 2px;
         }
 
-        .fat-box h3 {
-            margin-top: 12px;
-            font-size: 20px;
+
+        .core-page .fat-box h3 {
+            margin-top: 13px;
+
+            font-size: 21px;
+
+            letter-spacing: -.6px;
         }
 
-        .fat-box p {
-            margin-top: 8px;
-            color: #777;
+
+        .core-page .fat-box p {
+            margin-top: 9px;
+
+            color: #858585;
+
             font-size: 14px;
+            line-height: 1.65;
         }
 
 
-        /* INFO PANEL */
+        /* =========================================================
+           SECTIONS
+           ========================================================= */
 
-        .info-panel {
-            padding: 35px;
-            background: #101010;
-            border: 1px solid #292929;
-            margin-top: 25px;
+        .core-page .section {
+            position: relative;
+            overflow: hidden;
         }
 
-        .info-panel h3 {
-            font-size: 24px;
+
+        .core-page .section::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                url("images/core-workout.jpg")
+                center / cover no-repeat;
+
+            opacity: .055;
+
+            pointer-events: none;
+        }
+
+
+        .core-page .section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .core-page .section-heading h2 {
+            letter-spacing: -2px;
+        }
+
+
+        /* =========================================================
+           PREMIUM CARDS
+           ========================================================= */
+
+        .core-page .cards {
+            gap: 15px;
+        }
+
+
+        .core-page .card {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25,25,25,.95),
+                    rgba(8,8,8,.98)
+                );
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 18px 55px rgba(0,0,0,.28);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+
+        .core-page .card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -100px;
+            top: -100px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(175,255,105,.13),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .core-page .card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(190,255,130,.27);
+
+            box-shadow:
+                0 27px 75px rgba(0,0,0,.48);
+        }
+
+
+        .core-page .card h3 {
+            letter-spacing: -.6px;
+        }
+
+
+        .core-page .card p {
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           INFO PANEL
+           ========================================================= */
+
+        .core-page .info-panel {
+            position: relative;
+            overflow: hidden;
+
+            padding: 40px;
+
+            margin-top: 28px;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    rgba(22,22,22,.96),
+                    rgba(7,7,7,.88)
+                );
+
+            border: 1px solid rgba(255,255,255,.10);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.32);
+        }
+
+
+        .core-page .info-panel::after {
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            right: -150px;
+            top: -180px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(170,255,100,.12),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .core-page .info-panel h3 {
+            position: relative;
+            z-index: 2;
+
+            font-size: 26px;
             margin-bottom: 15px;
         }
 
-        .info-panel p {
-            color: #888;
-            font-size: 16px;
+
+        .core-page .info-panel p {
+            position: relative;
+            z-index: 2;
+
             max-width: 850px;
+
+            color: #8d8d8d;
+
+            font-size: 16px;
+            line-height: 1.8;
         }
 
 
-        /* WATCH BUTTON */
+        /* =========================================================
+           WATCH BUTTON
+           ========================================================= */
 
-        .watch-link {
+        .core-page .watch-link {
             display: inline-block;
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: #0b0b0b;
+
+            margin-top: 15px;
+
+            padding: 11px 18px;
+
+            background: rgba(255,255,255,.035);
+
             color: #fff;
-            border: 1px solid #444;
+
+            border: 1px solid rgba(255,255,255,.13);
+
+            border-radius: 999px;
+
             font-size: 13px;
             font-weight: 700;
-            transition: 0.25s ease;
+
+            text-decoration: none;
+
+            transition:
+                .25s ease;
         }
 
-        .watch-link:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
+
+        .core-page .watch-link:hover {
+            background: #d9ffb7;
+
+            color: #050505;
+
+            border-color: #d9ffb7;
+
+            transform: translateY(-2px);
         }
 
 
-        /* MOBILE */
+        /* =========================================================
+           DARK SECTION
+           ========================================================= */
+
+        .core-page .dark-section {
+            background: #050505;
+        }
+
+
+        .core-page .dark-section::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 12% 20%,
+                    rgba(170,255,100,.055),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(170,255,100,.04),
+                    transparent 25%
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           PREMIUM CTA
+           ========================================================= */
+
+        .core-page .cta {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,4,4,.98),
+                    rgba(4,4,4,.72)
+                ),
+                url("images/core-workout.jpg")
+                center / cover no-repeat;
+
+            border-top: 1px solid #252525;
+        }
+
+
+        .core-page .cta::after {
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            right: -170px;
+            top: -210px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(170,255,100,.14),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .core-page .cta > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
 
         @media (max-width: 850px) {
 
-            .fat-boxes {
+            .core-page .hero {
+                min-height: 80vh;
+
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(3,3,3,.98),
+                        rgba(3,3,3,.74) 70%,
+                        rgba(3,3,3,.48)
+                    ),
+                    url("images/core-workout.jpg")
+                    62% center / cover no-repeat;
+            }
+
+
+            .core-page .hero h1 {
+                font-size: clamp(55px, 15vw, 82px);
+                letter-spacing: -3px;
+            }
+
+
+            .core-page .fat-boxes {
                 grid-template-columns: 1fr;
+
+                margin-top: -42px;
+
+                padding: 0 18px;
+            }
+
+
+            .core-page .fat-box:hover,
+            .core-page .card:hover {
+                transform: none;
+            }
+
+
+            .core-page .info-panel {
+                padding: 28px 22px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .core-page .hero {
+                min-height: 82vh;
+            }
+
+
+            .core-page .hero-buttons {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .core-page .hero-text {
+                font-size: 15px;
+            }
+
+
+            .core-page .fat-box {
+                padding: 25px;
+            }
+
+
+            .core-page .info-panel p {
+                font-size: 15px;
             }
 
         }
@@ -113,10 +724,12 @@
 </head>
 
 
-<body>
+<body class="core-page">
 
 
-<!-- NAVBAR -->
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
 
 <header>
 
@@ -143,7 +756,9 @@
 <main>
 
 
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
 <section class="hero">
 
@@ -154,8 +769,8 @@
         </p>
 
         <h1>
-            Stronger<br>
-            <span>Core.</span>
+            CORE<br>
+            <span>WORKOUT.</span>
         </h1>
 
         <p class="hero-text">
@@ -163,7 +778,6 @@
             and body-fat management while building a stronger,
             more capable core.
         </p>
-
 
         <div class="hero-buttons">
 
@@ -177,56 +791,13 @@
 
         </div>
 
+    </div>
 
-        <!-- QUICK BOXES -->
+    <div class="hero-image">
 
-        <div class="fat-boxes">
-
-            <a href="#approach" class="fat-box">
-
-                <span>01</span>
-
-                <h3>
-                    What Actually Works
-                </h3>
-
-                <p>
-                    Understand the basics of fat management.
-                </p>
-
-            </a>
-
-
-            <a href="#core-exercises" class="fat-box">
-
-                <span>02</span>
-
-                <h3>
-                    Core Exercises
-                </h3>
-
-                <p>
-                    Build strength and control through your core.
-                </p>
-
-            </a>
-
-
-            <a href="#mistakes" class="fat-box">
-
-                <span>03</span>
-
-                <h3>
-                    Common Mistakes
-                </h3>
-
-                <p>
-                    Avoid unrealistic shortcuts and extreme routines.
-                </p>
-
-            </a>
-
-        </div>
+        <img
+            src="images/core-workout.jpg"
+            alt="Core fitness workout">
 
     </div>
 
@@ -234,9 +805,63 @@
 
 
 
-<!-- ========================= -->
-<!-- WHAT ACTUALLY WORKS -->
-<!-- ========================= -->
+<!-- =========================================================
+     QUICK BOXES
+     ========================================================= -->
+
+<div class="fat-boxes">
+
+    <a href="#approach" class="fat-box">
+
+        <span>01</span>
+
+        <h3>
+            What Actually Works
+        </h3>
+
+        <p>
+            Understand the basics of fat management.
+        </p>
+
+    </a>
+
+
+    <a href="#core-exercises" class="fat-box">
+
+        <span>02</span>
+
+        <h3>
+            Core Exercises
+        </h3>
+
+        <p>
+            Build strength and control through your core.
+        </p>
+
+    </a>
+
+
+    <a href="#mistakes" class="fat-box">
+
+        <span>03</span>
+
+        <h3>
+            Common Mistakes
+        </h3>
+
+        <p>
+            Avoid unrealistic shortcuts and extreme routines.
+        </p>
+
+    </a>
+
+</div>
+
+
+
+<!-- =========================================================
+     WHAT ACTUALLY WORKS
+     ========================================================= -->
 
 <section class="section" id="approach">
 
@@ -262,7 +887,6 @@
 
 
     <div class="cards">
-
 
         <article class="card">
 
@@ -328,7 +952,6 @@
 
         </article>
 
-
     </div>
 
 
@@ -352,9 +975,9 @@
 
 
 
-<!-- ========================= -->
-<!-- CORE EXERCISES -->
-<!-- ========================= -->
+<!-- =========================================================
+     CORE EXERCISES
+     ========================================================= -->
 
 <section class="section dark-section" id="core-exercises">
 
@@ -380,8 +1003,6 @@
     <div class="cards">
 
 
-        <!-- 01 -->
-
         <article class="card">
 
             <span>CORE · 01</span>
@@ -405,8 +1026,6 @@
 
         </article>
 
-
-        <!-- 02 -->
 
         <article class="card">
 
@@ -432,8 +1051,6 @@
         </article>
 
 
-        <!-- 03 -->
-
         <article class="card">
 
             <span>CORE · 03</span>
@@ -457,8 +1074,6 @@
 
         </article>
 
-
-        <!-- 04 -->
 
         <article class="card">
 
@@ -484,8 +1099,6 @@
         </article>
 
 
-        <!-- 05 -->
-
         <article class="card">
 
             <span>CORE · 05</span>
@@ -509,8 +1122,6 @@
 
         </article>
 
-
-        <!-- 06 -->
 
         <article class="card">
 
@@ -536,8 +1147,6 @@
         </article>
 
 
-        <!-- 07 -->
-
         <article class="card">
 
             <span>CORE · 07</span>
@@ -562,8 +1171,6 @@
         </article>
 
 
-        <!-- 08 -->
-
         <article class="card">
 
             <span>CORE · 08</span>
@@ -587,16 +1194,15 @@
 
         </article>
 
-
     </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- SIMPLE WEEKLY APPROACH -->
-<!-- ========================= -->
+<!-- =========================================================
+     SIMPLE WEEKLY APPROACH
+     ========================================================= -->
 
 <section class="section" id="weekly">
 
@@ -621,7 +1227,6 @@
 
 
     <div class="cards">
-
 
         <article class="card">
 
@@ -670,16 +1275,15 @@
 
         </article>
 
-
     </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- MISTAKES -->
-<!-- ========================= -->
+<!-- =========================================================
+     MISTAKES
+     ========================================================= -->
 
 <section class="section dark-section" id="mistakes">
 
@@ -703,7 +1307,6 @@
 
 
     <div class="cards">
-
 
         <article class="card">
 
@@ -752,14 +1355,15 @@
 
         </article>
 
-
     </div>
 
 </section>
 
 
 
-<!-- FINAL CTA -->
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
 
 <section class="cta">
 
@@ -797,7 +1401,9 @@
 
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
 <footer>
 

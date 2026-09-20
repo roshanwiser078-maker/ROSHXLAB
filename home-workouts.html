@@ -6,38 +6,673 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="ROSHXLAB Home Workout Library — chest, back, shoulders, biceps, triceps, legs and core exercises.">
+        content="ROSHXLAB Home Workout Library — 42 exercises covering chest, back, shoulders, biceps, triceps, legs and core. Learn proper form, sets, reps and beginner-friendly variations.">
 
     <title>Home Workout Library — ROSHXLAB</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- WATCH HOW-TO BUTTON STYLE -->
     <style>
-        .watch-link {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: #0b0b0b;
-            color: #fff;
-            border: 1px solid #444;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.25s ease;
+        /* =========================================================
+           ROSHXLAB · PREMIUM HOME WORKOUT LIBRARY
+        ========================================================= */
+
+        body.home-library-premium {
+            background: #060606;
+            color: #f5f5f5;
         }
 
-        .watch-link:hover {
+        /* =========================================================
+           PREMIUM HERO
+        ========================================================= */
+
+        .home-library-premium .hero {
+            position: relative;
+            min-height: 82vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,4,4,.98) 0%,
+                    rgba(4,4,4,.90) 32%,
+                    rgba(4,4,4,.58) 65%,
+                    rgba(4,4,4,.18) 100%
+                ),
+                url("images/home-workout.jpg") center center / cover no-repeat;
+            border-bottom: 1px solid #252525;
+        }
+
+        .home-library-premium .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at 78% 42%,
+                    rgba(183,255,115,.15),
+                    transparent 27%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 55%,
+                    #060606 100%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 760px;
+            padding: 80px 0;
+        }
+
+        .home-library-premium .hero-image {
+            display: none;
+        }
+
+        .home-library-premium .hero h1 {
+            font-size: clamp(58px, 8vw, 108px);
+            line-height: .88;
+            letter-spacing: -5px;
+            margin-bottom: 28px;
+            text-shadow: 0 20px 60px rgba(0,0,0,.6);
+        }
+
+        .home-library-premium .hero h1 span {
+            color: #b9b9b9;
+        }
+
+        .home-library-premium .hero-text {
+            max-width: 600px;
+            font-size: 17px;
+            line-height: 1.75;
+            color: #c7c7c7;
+        }
+
+        .home-library-premium .eyebrow {
+            color: #c8ff91;
+        }
+
+        /* =========================================================
+           HERO BUTTONS
+        ========================================================= */
+
+        .home-library-premium .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .home-library-premium .btn {
+            transition: .25s ease;
+        }
+
+        .home-library-premium .btn.primary {
+            background: #d9ffb7;
+            color: #050505;
+            border-color: #d9ffb7;
+            box-shadow: 0 10px 35px rgba(183,255,115,.12);
+        }
+
+        .home-library-premium .btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 45px rgba(183,255,115,.2);
+        }
+
+        .home-library-premium .btn.secondary {
+            background: rgba(255,255,255,.04);
+            border-color: rgba(255,255,255,.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .home-library-premium .btn.secondary:hover {
+            background: #fff;
+            color: #050505;
+        }
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        .home-library-premium .section {
+            position: relative;
+            overflow: hidden;
+            padding-top: 95px;
+            padding-bottom: 95px;
+        }
+
+        .home-library-premium .section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(183,255,115,.055),
+                    transparent 25%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .section.dark-section {
+            background: #0a0a0a;
+        }
+
+        .home-library-premium .section-heading {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .home-library-premium .section-heading h2 {
+            font-size: clamp(42px, 5vw, 68px);
+            letter-spacing: -3px;
+            line-height: .95;
+        }
+
+        .home-library-premium .section-heading p:not(.eyebrow) {
+            color: #aaa;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           SUBTLE BACKGROUND IMAGE ON MUSCLE SECTIONS
+        ========================================================= */
+
+        .home-library-premium #chest::after,
+        .home-library-premium #back::after,
+        .home-library-premium #shoulders::after,
+        .home-library-premium #biceps::after,
+        .home-library-premium #triceps::after,
+        .home-library-premium #legs::after,
+        .home-library-premium #core::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(6,6,6,.97),
+                    rgba(6,6,6,.90)
+                ),
+                url("images/home-workout.jpg") center / cover no-repeat;
+            opacity: .12;
+            pointer-events: none;
+        }
+
+        .home-library-premium #back::after,
+        .home-library-premium #biceps::after,
+        .home-library-premium #legs::after {
+            opacity: .15;
+        }
+
+        /* =========================================================
+           INTRO SECTION
+        ========================================================= */
+
+        .home-library-premium .section:first-of-type {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(6,6,6,.97),
+                    rgba(6,6,6,.82)
+                ),
+                url("images/home-workout.jpg") center / cover no-repeat;
+            border-bottom: 1px solid #181818;
+        }
+
+        .home-library-premium .section:first-of-type .section-heading {
+            max-width: 850px;
+        }
+
+        /* =========================================================
+           EXERCISE GRID
+        ========================================================= */
+
+        .home-library-premium .cards {
+            position: relative;
+            z-index: 3;
+            gap: 16px;
+            margin-top: 42px;
+        }
+
+        .home-library-premium .card {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(29,29,29,.96),
+                    rgba(8,8,8,.98)
+                );
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 14px;
+            padding: 27px;
+            box-shadow:
+                0 18px 55px rgba(0,0,0,.28),
+                inset 0 1px 0 rgba(255,255,255,.025);
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease,
+                background .3s ease;
+        }
+
+        .home-library-premium .card::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            right: -100px;
+            top: -100px;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(190,255,130,.16),
+                    transparent 68%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: #caff9e;
+            transition: height .3s ease;
+        }
+
+        .home-library-premium .card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(190,255,130,.28);
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.48),
+                0 0 35px rgba(183,255,115,.035);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(34,34,34,.98),
+                    rgba(9,9,9,.99)
+                );
+        }
+
+        .home-library-premium .card:hover::after {
+            height: 100%;
+        }
+
+        .home-library-premium .card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .home-library-premium .card span {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            color: #b8ff84;
+        }
+
+        .home-library-premium .card h3 {
+            font-size: 22px;
+            letter-spacing: -.6px;
+            margin-bottom: 13px;
+        }
+
+        .home-library-premium .card p {
+            color: #aaa;
+            line-height: 1.65;
+        }
+
+        .home-library-premium .card p:first-of-type {
+            color: #e1e1e1;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           WATCH BUTTON
+        ========================================================= */
+
+        .home-library-premium .watch-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            margin-top: 14px;
+            padding: 11px 17px;
+            background: rgba(255,255,255,.035);
+            color: #fff;
+            border: 1px solid rgba(190,255,130,.22);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .2px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .home-library-premium .watch-link:hover {
+            background: #d9ffb7;
+            color: #050505;
+            border-color: #d9ffb7;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(183,255,115,.12);
+        }
+
+        /* =========================================================
+           HOW-TO SECTION
+        ========================================================= */
+
+        .home-library-premium .how-to-section {
+            display: none;
+            position: relative;
+            overflow: hidden;
+            padding: 95px 6%;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.97),
+                    rgba(5,5,5,.82)
+                ),
+                url("images/home-workout.jpg") center / cover no-repeat;
+            border-top: 1px solid #292929;
+        }
+
+        .home-library-premium .how-to-section.active {
+            display: block;
+        }
+
+        .home-library-premium .how-to-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at 75% 35%,
+                    rgba(183,255,115,.11),
+                    transparent 30%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .how-to-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .home-library-premium .how-to-header {
+            margin-bottom: 42px;
+        }
+
+        .home-library-premium .how-to-header h2 {
+            margin: 10px 0 15px;
+            font-size: clamp(42px, 5vw, 65px);
+            letter-spacing: -3px;
+        }
+
+        .home-library-premium .how-to-header p {
+            max-width: 720px;
+            color: #aaa;
+            line-height: 1.75;
+        }
+
+        .home-library-premium .how-to-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .home-library-premium .how-to-box {
+            position: relative;
+            overflow: hidden;
+            padding: 28px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(23,23,23,.9),
+                    rgba(7,7,7,.94)
+                );
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 14px;
+            box-shadow: 0 18px 50px rgba(0,0,0,.25);
+            backdrop-filter: blur(12px);
+        }
+
+        .home-library-premium .how-to-box::before {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            right: -65px;
+            top: -65px;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(183,255,115,.12),
+                    transparent 68%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .how-to-box span {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+            color: #b8ff84;
+        }
+
+        .home-library-premium .how-to-box h3 {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .home-library-premium .how-to-box p {
+            position: relative;
+            color: #aaa;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .home-library-premium .how-to-close {
+            display: inline-flex;
+            margin-top: 32px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,.04);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 800;
+            transition: .25s ease;
+        }
+
+        .home-library-premium .how-to-close:hover {
             background: #fff;
             color: #000;
             border-color: #fff;
             transform: translateY(-2px);
         }
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .home-library-premium .cta {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,4,4,.97),
+                    rgba(4,4,4,.74)
+                ),
+                url("images/home-workout.jpg") center / cover no-repeat;
+            border-top: 1px solid #252525;
+            border-bottom: 1px solid #252525;
+        }
+
+        .home-library-premium .cta::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            right: -180px;
+            top: -200px;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(183,255,115,.12),
+                    transparent 68%
+                );
+            pointer-events: none;
+        }
+
+        .home-library-premium .cta > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .home-library-premium .cta h2 {
+            font-size: clamp(45px, 6vw, 75px);
+            letter-spacing: -4px;
+            line-height: .95;
+        }
+
+        .home-library-premium .cta p:not(.eyebrow) {
+            color: #aaa;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .home-library-premium footer {
+            background: #040404;
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .home-library-premium .hero {
+                min-height: 78vh;
+                background-position: 64% center;
+            }
+
+            .home-library-premium .hero::before {
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(4,4,4,.98),
+                        rgba(4,4,4,.78) 70%,
+                        rgba(4,4,4,.45)
+                    );
+            }
+
+            .home-library-premium .hero-content {
+                padding: 70px 0;
+            }
+
+            .home-library-premium .hero h1 {
+                font-size: clamp(54px, 17vw, 80px);
+                letter-spacing: -4px;
+            }
+
+            .home-library-premium .hero-text {
+                font-size: 15px;
+                max-width: 90%;
+            }
+
+            .home-library-premium .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .home-library-premium .hero-buttons .btn {
+                text-align: center;
+            }
+
+            .home-library-premium .section {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+
+            .home-library-premium .section-heading h2 {
+                font-size: 43px;
+                letter-spacing: -2.5px;
+            }
+
+            .home-library-premium .cards {
+                grid-template-columns: 1fr;
+                gap: 13px;
+                margin-top: 32px;
+            }
+
+            .home-library-premium .card {
+                padding: 23px;
+            }
+
+            .home-library-premium .card:hover {
+                transform: none;
+            }
+
+            .home-library-premium .watch-link {
+                width: 100%;
+            }
+
+            .home-library-premium .how-to-section {
+                padding: 70px 5%;
+            }
+
+            .home-library-premium .how-to-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-library-premium .how-to-box {
+                padding: 23px;
+            }
+
+            .home-library-premium .how-to-header h2 {
+                font-size: 43px;
+                letter-spacing: -2.5px;
+            }
+
+            .home-library-premium .cta h2 {
+                font-size: 47px;
+                letter-spacing: -2.5px;
+            }
+        }
     </style>
 
 </head>
 
-<body>
+
+<body class="home-library-premium">
 
 <header>
     <a href="index.html" class="logo">ROSHXLAB</a>
@@ -57,13 +692,17 @@
 
 <main>
 
-    <!-- HERO -->
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
 
     <section class="hero">
 
         <div class="hero-content">
 
-            <p class="eyebrow">ROSHXLAB · HOME WORKOUT LIBRARY</p>
+            <p class="eyebrow">
+                ROSHXLAB · HOME WORKOUT LIBRARY
+            </p>
 
             <h1>
                 Train At<br>
@@ -89,16 +728,26 @@
 
         </div>
 
+        <div class="hero-image">
+            <img
+                src="images/home-workout.jpg"
+                alt="Home workout training">
+        </div>
+
     </section>
 
 
-    <!-- INTRO -->
+    <!-- =========================================================
+         INTRO
+    ========================================================= -->
 
     <section class="section">
 
         <div class="section-heading">
 
-            <p class="eyebrow">42 EXERCISES · 7 MUSCLE GROUPS</p>
+            <p class="eyebrow">
+                42 EXERCISES · 7 MUSCLE GROUPS
+            </p>
 
             <h2>
                 Train Every<br>
@@ -116,7 +765,9 @@
     </section>
 
 
-    <!-- CHEST -->
+    <!-- =========================================================
+         CHEST
+    ========================================================= -->
 
     <section class="section" id="chest">
 
@@ -140,7 +791,8 @@
                 <h3>Push-Ups</h3>
                 <p>3 sets · 6–15 reps</p>
                 <p>Keep your body aligned and lower yourself under control.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-pushups" class="watch-link"
+                    onclick="showHowTo('pushups'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -148,7 +800,8 @@
                 <h3>Incline Push-Ups</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Use a stable elevated surface and maintain good body alignment.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-incline-pushups" class="watch-link"
+                    onclick="showHowTo('incline-pushups'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -156,7 +809,8 @@
                 <h3>Wide Push-Ups</h3>
                 <p>3 sets · 6–12 reps</p>
                 <p>Keep the movement controlled throughout every repetition.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-wide-pushups" class="watch-link"
+                    onclick="showHowTo('wide-pushups'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -164,7 +818,8 @@
                 <h3>Diamond Push-Ups</h3>
                 <p>2–3 sets · 5–10 reps</p>
                 <p>Use an easier variation if maintaining form becomes difficult.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-diamond-pushups" class="watch-link"
+                    onclick="showHowTo('diamond-pushups'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -172,7 +827,8 @@
                 <h3>Decline Push-Ups</h3>
                 <p>2–3 sets · 6–12 reps</p>
                 <p>Place your feet on a stable surface and control the descent.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-decline-pushups" class="watch-link"
+                    onclick="showHowTo('decline-pushups'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -180,7 +836,8 @@
                 <h3>Dumbbell Floor Press</h3>
                 <p>3 sets · 8–12 reps</p>
                 <p>Use manageable dumbbells and press with controlled movement.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-floor-press" class="watch-link"
+                    onclick="showHowTo('floor-press'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -188,7 +845,9 @@
     </section>
 
 
-    <!-- BACK -->
+    <!-- =========================================================
+         BACK
+    ========================================================= -->
 
     <section class="section dark-section" id="back">
 
@@ -212,7 +871,8 @@
                 <h3>Backpack Rows</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Use a safely loaded backpack and pull it toward your torso.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-backpack-row" class="watch-link"
+                    onclick="showHowTo('backpack-row'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -220,7 +880,8 @@
                 <h3>Dumbbell Rows</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Keep your torso stable and avoid rushing the movement.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-dumbbell-row" class="watch-link"
+                    onclick="showHowTo('dumbbell-row'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -228,7 +889,8 @@
                 <h3>Superman</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Lift gently and avoid forcing your lower back.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-superman" class="watch-link"
+                    onclick="showHowTo('superman'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -236,7 +898,8 @@
                 <h3>Reverse Snow Angels</h3>
                 <p>2–3 sets · 8–15 reps</p>
                 <p>Move your arms slowly while keeping your torso controlled.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-snow-angels" class="watch-link"
+                    onclick="showHowTo('snow-angels'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -244,7 +907,8 @@
                 <h3>Prone Y-Raises</h3>
                 <p>2–3 sets · 10–15 reps</p>
                 <p>Raise your arms gently while keeping your neck relaxed.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-y-raises" class="watch-link"
+                    onclick="showHowTo('y-raises'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -252,7 +916,8 @@
                 <h3>Dumbbell Pullover</h3>
                 <p>2–3 sets · 8–12 reps</p>
                 <p>Use a light weight and maintain controlled shoulder movement.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-pullover" class="watch-link"
+                    onclick="showHowTo('pullover'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -260,7 +925,9 @@
     </section>
 
 
-    <!-- SHOULDERS -->
+    <!-- =========================================================
+         SHOULDERS
+    ========================================================= -->
 
     <section class="section" id="shoulders">
 
@@ -284,7 +951,8 @@
                 <h3>Dumbbell Shoulder Press</h3>
                 <p>3 sets · 8–12 reps</p>
                 <p>Use manageable weight and press without rushing.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-shoulder-press" class="watch-link"
+                    onclick="showHowTo('shoulder-press'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -292,7 +960,8 @@
                 <h3>Pike Push-Ups</h3>
                 <p>2–3 sets · 5–12 reps</p>
                 <p>Keep the movement controlled and comfortable.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-pike-pushups" class="watch-link"
+                    onclick="showHowTo('pike-pushups'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -300,7 +969,8 @@
                 <h3>Lateral Raises</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Raise the dumbbells smoothly without swinging.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-lateral-raises" class="watch-link"
+                    onclick="showHowTo('lateral-raises'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -308,7 +978,8 @@
                 <h3>Front Raises</h3>
                 <p>2–3 sets · 10–15 reps</p>
                 <p>Use light weight and keep the movement controlled.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-front-raises" class="watch-link"
+                    onclick="showHowTo('front-raises'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -316,7 +987,8 @@
                 <h3>Reverse Fly</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Keep your back stable and move the arms with control.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-reverse-fly" class="watch-link"
+                    onclick="showHowTo('reverse-fly'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -324,7 +996,8 @@
                 <h3>Shoulder Taps</h3>
                 <p>3 sets · 10–20 total</p>
                 <p>Keep your hips stable while alternating each tap.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-shoulder-taps" class="watch-link"
+                    onclick="showHowTo('shoulder-taps'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -332,7 +1005,9 @@
     </section>
 
 
-    <!-- BICEPS -->
+    <!-- =========================================================
+         BICEPS
+    ========================================================= -->
 
     <section class="section dark-section" id="biceps">
 
@@ -355,7 +1030,8 @@
                 <h3>Dumbbell Curl</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Keep your elbows steady and lower the weight slowly.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-dumbbell-curl" class="watch-link"
+                    onclick="showHowTo('dumbbell-curl'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -363,7 +1039,8 @@
                 <h3>Hammer Curl</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Keep your palms facing inward throughout the movement.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-hammer-curl" class="watch-link"
+                    onclick="showHowTo('hammer-curl'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -371,7 +1048,8 @@
                 <h3>Alternating Curl</h3>
                 <p>3 sets · 8–12 each side</p>
                 <p>Perform one arm at a time with controlled movement.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-alternating-curl" class="watch-link"
+                    onclick="showHowTo('alternating-curl'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -379,7 +1057,8 @@
                 <h3>Concentration Curl</h3>
                 <p>2–3 sets · 8–12 each side</p>
                 <p>Keep the working arm stable and avoid swinging.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-concentration-curl" class="watch-link"
+                    onclick="showHowTo('concentration-curl'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -387,7 +1066,8 @@
                 <h3>Cross-Body Hammer Curl</h3>
                 <p>2–3 sets · 8–12 each side</p>
                 <p>Move the dumbbell toward the opposite shoulder with control.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-cross-body-curl" class="watch-link"
+                    onclick="showHowTo('cross-body-curl'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -395,7 +1075,8 @@
                 <h3>Resistance Band Curl</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Maintain steady tension throughout the movement.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-band-curl" class="watch-link"
+                    onclick="showHowTo('band-curl'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -403,7 +1084,9 @@
     </section>
 
 
-    <!-- TRICEPS -->
+    <!-- =========================================================
+         TRICEPS
+    ========================================================= -->
 
     <section class="section" id="triceps">
 
@@ -427,7 +1110,8 @@
                 <h3>Close-Grip Push-Ups</h3>
                 <p>3 sets · 6–12 reps</p>
                 <p>Keep your elbows controlled as you lower your body.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-close-grip" class="watch-link"
+                    onclick="showHowTo('close-grip'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -435,7 +1119,8 @@
                 <h3>Overhead Triceps Extension</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Use manageable weight and keep your elbows controlled.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-overhead-extension" class="watch-link"
+                    onclick="showHowTo('overhead-extension'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -443,7 +1128,8 @@
                 <h3>Dumbbell Kickbacks</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Keep your upper arm stable while extending the elbow.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-kickbacks" class="watch-link"
+                    onclick="showHowTo('kickbacks'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -451,7 +1137,8 @@
                 <h3>Resistance Band Pushdown</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Keep your elbows close to your body throughout.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-band-pushdown" class="watch-link"
+                    onclick="showHowTo('band-pushdown'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -459,7 +1146,8 @@
                 <h3>Diamond Push-Ups</h3>
                 <p>2–3 sets · 5–10 reps</p>
                 <p>Use an easier variation if needed to maintain form.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-diamond-triceps" class="watch-link"
+                    onclick="showHowTo('diamond-triceps'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -467,7 +1155,8 @@
                 <h3>Single-Arm Extension</h3>
                 <p>2–3 sets · 8–12 each side</p>
                 <p>Move slowly and keep the working arm controlled.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-single-extension" class="watch-link"
+                    onclick="showHowTo('single-extension'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -475,7 +1164,9 @@
     </section>
 
 
-    <!-- LEGS -->
+    <!-- =========================================================
+         LEGS
+    ========================================================= -->
 
     <section class="section dark-section" id="legs">
 
@@ -499,7 +1190,8 @@
                 <h3>Bodyweight Squats</h3>
                 <p>3 sets · 8–15 reps</p>
                 <p>Use a comfortable range of motion and stay controlled.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-squats" class="watch-link"
+                    onclick="showHowTo('squats'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -507,7 +1199,8 @@
                 <h3>Reverse Lunges</h3>
                 <p>3 sets · 8–12 each side</p>
                 <p>Step back carefully and maintain your balance.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-reverse-lunges" class="watch-link"
+                    onclick="showHowTo('reverse-lunges'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -515,7 +1208,8 @@
                 <h3>Bulgarian Split Squats</h3>
                 <p>2–3 sets · 6–12 each side</p>
                 <p>Use a stable surface and start with a comfortable range.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-bulgarian" class="watch-link"
+                    onclick="showHowTo('bulgarian'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -523,7 +1217,8 @@
                 <h3>Glute Bridges</h3>
                 <p>3 sets · 10–15 reps</p>
                 <p>Pause briefly at the top while maintaining control.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-glute-bridges" class="watch-link"
+                    onclick="showHowTo('glute-bridges'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -531,7 +1226,8 @@
                 <h3>Calf Raises</h3>
                 <p>3 sets · 12–20 reps</p>
                 <p>Move slowly and use a stable position.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-calf-raises" class="watch-link"
+                    onclick="showHowTo('calf-raises'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -539,7 +1235,8 @@
                 <h3>Step-Ups</h3>
                 <p>3 sets · 8–12 each side</p>
                 <p>Use a stable platform and step up under control.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-step-ups" class="watch-link"
+                    onclick="showHowTo('step-ups'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -547,7 +1244,9 @@
     </section>
 
 
-    <!-- CORE -->
+    <!-- =========================================================
+         CORE
+    ========================================================= -->
 
     <section class="section" id="core">
 
@@ -571,7 +1270,8 @@
                 <h3>Plank</h3>
                 <p>2–3 sets · 20–45 seconds</p>
                 <p>Keep your body steady and breathe normally.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-plank" class="watch-link"
+                    onclick="showHowTo('plank'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -579,7 +1279,8 @@
                 <h3>Dead Bug</h3>
                 <p>2–3 sets · 8–12 each side</p>
                 <p>Move slowly while keeping your torso stable.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-dead-bug" class="watch-link"
+                    onclick="showHowTo('dead-bug'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -587,7 +1288,8 @@
                 <h3>Bird Dog</h3>
                 <p>2–3 sets · 8–12 each side</p>
                 <p>Extend opposite limbs while keeping your trunk controlled.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-bird-dog" class="watch-link"
+                    onclick="showHowTo('bird-dog'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -595,7 +1297,8 @@
                 <h3>Mountain Climbers</h3>
                 <p>3 sets · 20–30 seconds</p>
                 <p>Keep your movement controlled rather than rushing.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-mountain-climbers" class="watch-link"
+                    onclick="showHowTo('mountain-climbers'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -603,7 +1306,8 @@
                 <h3>Reverse Crunch</h3>
                 <p>2–3 sets · 8–15 reps</p>
                 <p>Move slowly and avoid using momentum.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-reverse-crunch" class="watch-link"
+                    onclick="showHowTo('reverse-crunch'); return false;">▶ Watch How-To →</a>
             </article>
 
             <article class="card">
@@ -611,7 +1315,8 @@
                 <h3>Side Plank</h3>
                 <p>2–3 sets · 15–40 seconds each side</p>
                 <p>Keep your body aligned and breathe normally.</p>
-                <a href="#" class="watch-link">▶️ Watch How-To →</a>
+                <a href="#howto-side-plank" class="watch-link"
+                    onclick="showHowTo('side-plank'); return false;">▶ Watch How-To →</a>
             </article>
 
         </div>
@@ -619,11 +1324,101 @@
     </section>
 
 
-    <!-- FINAL -->
+    <!-- =========================================================
+         HOW-TO
+    ========================================================= -->
+
+    <section class="how-to-section" id="howto">
+
+        <div class="how-to-inner">
+
+            <div class="how-to-header">
+
+                <p class="eyebrow" id="howto-category">
+                    ROSHXLAB · HOW-TO
+                </p>
+
+                <h2 id="howto-title">
+                    Exercise How-To.
+                </h2>
+
+                <p id="howto-intro">
+                    Learn the basic movement, focus on controlled
+                    technique and stop if something feels painful.
+                </p>
+
+            </div>
+
+            <div class="how-to-grid">
+
+                <div class="how-to-box">
+                    <span>STEP 01</span>
+                    <h3>Set Up</h3>
+                    <p id="howto-setup">
+                        Get into a stable starting position and prepare for the movement.
+                    </p>
+                </div>
+
+                <div class="how-to-box">
+                    <span>STEP 02</span>
+                    <h3>Perform</h3>
+                    <p id="howto-perform">
+                        Move through a comfortable range while staying controlled.
+                    </p>
+                </div>
+
+                <div class="how-to-box">
+                    <span>FORM TIP</span>
+                    <h3>Focus On</h3>
+                    <p id="howto-form">
+                        Prioritize smooth movement and consistent technique.
+                    </p>
+                </div>
+
+                <div class="how-to-box">
+                    <span>COMMON MISTAKE</span>
+                    <h3>Avoid This</h3>
+                    <p id="howto-mistake">
+                        Avoid rushing repetitions or using movement you cannot control.
+                    </p>
+                </div>
+
+                <div class="how-to-box">
+                    <span>BEGINNER OPTION</span>
+                    <h3>Make It Easier</h3>
+                    <p id="howto-beginner">
+                        Use a simpler variation or reduce the resistance if needed.
+                    </p>
+                </div>
+
+                <div class="how-to-box">
+                    <span>SAFETY</span>
+                    <h3>Train Smart</h3>
+                    <p id="howto-safety">
+                        Use a stable setup and stop if you feel sharp or unusual pain.
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="how-to-close" onclick="closeHowTo()">
+                ← Back To Exercises
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================= -->
 
     <section class="cta">
 
-        <p class="eyebrow">ROSHXLAB · KEEP BUILDING</p>
+        <p class="eyebrow">
+            ROSHXLAB · KEEP BUILDING
+        </p>
 
         <h2>
             Train Smart.<br>
@@ -652,8 +1447,600 @@
 </main>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-    <div class="footer-logo">ROSHXLAB</div>
+    <div class="footer-logo">
+        ROSHXLAB
+    </div>
 
-    <p>Build Better. Live Stronger.</p>
+    <p>
+        Build Better. Live Stronger.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     HOW-TO JAVASCRIPT
+========================================================= -->
+
+<script>
+
+const exercises = {
+
+    "pushups": {
+        category: "CHEST · 01",
+        title: "Push-Ups",
+        intro: "A simple bodyweight pressing movement that trains the chest, shoulders and triceps.",
+        setup: "Start in a plank position with your hands slightly wider than shoulder width.",
+        perform: "Lower your body under control, then press the floor away to return to the starting position.",
+        form: "Keep your body in a stable line and avoid letting your hips drop or rise excessively.",
+        mistake: "Avoid rushing the reps or shortening the movement just to complete more repetitions.",
+        beginner: "Use incline push-ups or another easier variation while learning the movement.",
+        safety: "Use a stable surface and stop if you feel sharp or unusual pain."
+    },
+
+    "incline-pushups": {
+        category: "CHEST · 02",
+        title: "Incline Push-Ups",
+        intro: "A beginner-friendly push-up variation using an elevated, stable surface.",
+        setup: "Place your hands on a sturdy elevated surface and position your body in a straight line.",
+        perform: "Bend your elbows to lower your chest toward the surface, then press back up.",
+        form: "Keep your core gently braced and maintain control throughout the movement.",
+        mistake: "Avoid using an unstable surface or allowing your body to fold at the hips.",
+        beginner: "Choose a higher stable surface to reduce difficulty.",
+        safety: "Make sure the surface cannot slide or tip before starting."
+    },
+
+    "wide-pushups": {
+        category: "CHEST · 03",
+        title: "Wide Push-Ups",
+        intro: "A push-up variation performed with a wider hand position.",
+        setup: "Start in a stable push-up position with your hands placed wider than usual.",
+        perform: "Lower your chest with control, then press back up while maintaining body alignment.",
+        form: "Keep the movement smooth and avoid dropping quickly into the bottom position.",
+        mistake: "Do not force an overly wide hand position if it feels uncomfortable.",
+        beginner: "Use regular or incline push-ups if this variation feels too difficult.",
+        safety: "Use a comfortable hand position and stop if your shoulders hurt."
+    },
+
+    "diamond-pushups": {
+        category: "CHEST · 04",
+        title: "Diamond Push-Ups",
+        intro: "A challenging close-hand push-up variation that places more demand on the triceps.",
+        setup: "Set your hands close together under your chest and establish a stable plank position.",
+        perform: "Lower yourself with control and press back up without losing body alignment.",
+        form: "Keep your elbows controlled and avoid letting them flare excessively.",
+        mistake: "Do not force the diamond hand position if it causes wrist or shoulder discomfort.",
+        beginner: "Switch to close-grip or incline push-ups if needed.",
+        safety: "Use an easier variation when you cannot maintain good form."
+    },
+
+    "decline-pushups": {
+        category: "CHEST · 05",
+        title: "Decline Push-Ups",
+        intro: "A more challenging push-up variation with the feet placed on a stable elevated surface.",
+        setup: "Place your feet on a stable platform and hands on the floor.",
+        perform: "Lower your chest toward the floor under control, then press back up.",
+        form: "Keep your body aligned and avoid excessive movement through the hips.",
+        mistake: "Avoid using a surface that is too high or unstable.",
+        beginner: "Return to standard or incline push-ups if needed.",
+        safety: "Only use a platform that is stable and secure."
+    },
+
+    "floor-press": {
+        category: "CHEST · 06",
+        title: "Dumbbell Floor Press",
+        intro: "A home-friendly dumbbell pressing movement performed from the floor.",
+        setup: "Lie on your back with your knees comfortable and dumbbells positioned beside your chest.",
+        perform: "Press the dumbbells upward, then lower them slowly until your upper arms gently contact the floor.",
+        form: "Keep the weights controlled and avoid bouncing your arms off the floor.",
+        mistake: "Avoid using more weight than you can control safely.",
+        beginner: "Start with lighter dumbbells and focus on smooth repetitions.",
+        safety: "Use manageable weights and a clear, stable training area."
+    },
+
+    "backpack-row": {
+        category: "BACK · 01",
+        title: "Backpack Rows",
+        intro: "A practical home pulling movement using a safely loaded backpack.",
+        setup: "Hold the backpack securely and hinge slightly at the hips while keeping your back stable.",
+        perform: "Pull the backpack toward your torso, then lower it slowly.",
+        form: "Keep your torso controlled and avoid using momentum to move the backpack.",
+        mistake: "Do not load the backpack so heavily that you lose control.",
+        beginner: "Start with a light load and practice the movement slowly.",
+        safety: "Check that the backpack straps and contents are secure."
+    },
+
+    "dumbbell-row": {
+        category: "BACK · 02",
+        title: "Dumbbell Rows",
+        intro: "A pulling movement that trains the back using a dumbbell.",
+        setup: "Support yourself in a stable position with your torso controlled and the dumbbell hanging below you.",
+        perform: "Pull the dumbbell toward your torso, then lower it under control.",
+        form: "Keep your shoulder and torso stable rather than twisting through every repetition.",
+        mistake: "Avoid jerking the weight upward or rotating your body excessively.",
+        beginner: "Use a lighter dumbbell until the movement feels controlled.",
+        safety: "Keep your support surface stable and use manageable weight."
+    },
+
+    "superman": {
+        category: "BACK · 03",
+        title: "Superman",
+        intro: "A bodyweight posterior-chain movement performed on the floor.",
+        setup: "Lie face down with your arms extended comfortably in front of you.",
+        perform: "Lift your arms and legs gently, pause briefly, then lower them with control.",
+        form: "Use a comfortable range and keep the movement smooth.",
+        mistake: "Avoid forcing a high lift or overextending your lower back.",
+        beginner: "Lift one arm and opposite leg at a time if needed.",
+        safety: "Keep the range comfortable and stop if your lower back feels painful."
+    },
+
+    "snow-angels": {
+        category: "BACK · 04",
+        title: "Reverse Snow Angels",
+        intro: "A controlled floor exercise for the upper back and shoulder area.",
+        setup: "Lie face down with your arms positioned comfortably beside or above you.",
+        perform: "Move your arms slowly through the snow-angel pattern while keeping your torso stable.",
+        form: "Focus on controlled shoulder movement rather than speed.",
+        mistake: "Avoid lifting your chest excessively or shrugging your shoulders.",
+        beginner: "Use a smaller range of motion.",
+        safety: "Keep the movement comfortable around your shoulders and neck."
+    },
+
+    "y-raises": {
+        category: "BACK · 05",
+        title: "Prone Y-Raises",
+        intro: "A controlled upper-back and shoulder exercise performed face down.",
+        setup: "Lie face down and position your arms in a Y shape.",
+        perform: "Raise your arms gently, pause briefly, then lower them slowly.",
+        form: "Keep your neck relaxed and avoid using momentum.",
+        mistake: "Do not force the range or shrug toward your ears.",
+        beginner: "Perform the movement without weights first.",
+        safety: "Use a comfortable range and keep your neck relaxed."
+    },
+
+    "pullover": {
+        category: "BACK · 06",
+        title: "Dumbbell Pullover",
+        intro: "A controlled dumbbell movement that trains the upper body through shoulder movement.",
+        setup: "Lie comfortably on your back and hold one light dumbbell securely above your chest.",
+        perform: "Move the dumbbell slowly behind your head, then bring it back above your chest.",
+        form: "Use a controlled range and keep the weight secure.",
+        mistake: "Avoid dropping the weight too far behind your head.",
+        beginner: "Start with a very light dumbbell.",
+        safety: "Use a weight you can control throughout the entire range."
+    },
+
+    "shoulder-press": {
+        category: "SHOULDERS · 01",
+        title: "Dumbbell Shoulder Press",
+        intro: "A dumbbell pressing movement for shoulder strength.",
+        setup: "Sit or stand in a stable position with dumbbells around shoulder level.",
+        perform: "Press the dumbbells upward, then lower them slowly to the starting position.",
+        form: "Keep your torso stable and avoid rushing the press.",
+        mistake: "Avoid using excessive weight that forces you to lean backward.",
+        beginner: "Use lighter dumbbells and focus on controlled reps.",
+        safety: "Keep the movement comfortable and use manageable weight."
+    },
+
+    "pike-pushups": {
+        category: "SHOULDERS · 02",
+        title: "Pike Push-Ups",
+        intro: "A bodyweight pressing variation that increases the shoulder demand of a push-up.",
+        setup: "Start with your hands on the floor and hips raised into a comfortable pike position.",
+        perform: "Bend your elbows to lower your upper body, then press back up.",
+        form: "Keep your movement controlled and your hands firmly planted.",
+        mistake: "Avoid rushing or forcing a deep range.",
+        beginner: "Use a shorter range or a higher starting position.",
+        safety: "Use a stable floor and comfortable shoulder range."
+    },
+
+    "lateral-raises": {
+        category: "SHOULDERS · 03",
+        title: "Lateral Raises",
+        intro: "A dumbbell isolation movement for the side of the shoulders.",
+        setup: "Stand tall with light dumbbells held beside your body.",
+        perform: "Raise your arms outward with control, then slowly lower them.",
+        form: "Use light resistance and avoid swinging.",
+        mistake: "Do not use momentum to throw the weights upward.",
+        beginner: "Start with very light dumbbells.",
+        safety: "Keep the range comfortable for your shoulders."
+    },
+
+    "front-raises": {
+        category: "SHOULDERS · 04",
+        title: "Front Raises",
+        intro: "A controlled shoulder exercise using light dumbbells.",
+        setup: "Stand tall with the dumbbells held in front of your thighs.",
+        perform: "Raise the weights forward with control, then lower them slowly.",
+        form: "Keep your torso stable throughout the movement.",
+        mistake: "Avoid swinging your body or using excessive weight.",
+        beginner: "Use very light dumbbells or no weight initially.",
+        safety: "Stop if the movement causes shoulder discomfort."
+    },
+
+    "reverse-fly": {
+        category: "SHOULDERS · 05",
+        title: "Reverse Fly",
+        intro: "A controlled movement targeting the rear shoulder and upper-back area.",
+        setup: "Hinge forward comfortably with your back stable and dumbbells hanging below you.",
+        perform: "Move the dumbbells outward, then return them slowly.",
+        form: "Keep the movement controlled and avoid shrugging.",
+        mistake: "Do not swing the dumbbells or use excessive weight.",
+        beginner: "Start with very light dumbbells.",
+        safety: "Use a comfortable range and stable stance."
+    },
+
+    "shoulder-taps": {
+        category: "SHOULDERS · 06",
+        title: "Shoulder Taps",
+        intro: "A bodyweight stability exercise combining core control and shoulder movement.",
+        setup: "Start in a stable plank position with your feet comfortably spaced.",
+        perform: "Lift one hand and tap the opposite shoulder, then switch sides.",
+        form: "Keep your hips as stable as possible.",
+        mistake: "Avoid rotating or rocking your body excessively.",
+        beginner: "Widen your feet for additional stability.",
+        safety: "Use a comfortable plank position and controlled movement."
+    },
+
+    "dumbbell-curl": {
+        category: "BICEPS · 01",
+        title: "Dumbbell Curl",
+        intro: "A basic dumbbell exercise for the biceps.",
+        setup: "Stand tall with dumbbells beside your body and elbows close to your sides.",
+        perform: "Curl the dumbbells upward, then lower them slowly.",
+        form: "Keep your elbows relatively stable and control the lowering phase.",
+        mistake: "Avoid swinging your torso to move the weights.",
+        beginner: "Use lighter dumbbells and focus on smooth reps.",
+        safety: "Use manageable resistance and controlled movement."
+    },
+
+    "hammer-curl": {
+        category: "BICEPS · 02",
+        title: "Hammer Curl",
+        intro: "A curl variation using a neutral hand position.",
+        setup: "Stand tall with your palms facing inward and elbows close to your sides.",
+        perform: "Curl the dumbbells upward while keeping your palms facing inward.",
+        form: "Keep your shoulders relaxed and control the lowering phase.",
+        mistake: "Avoid swinging or moving your elbows excessively.",
+        beginner: "Use lighter dumbbells.",
+        safety: "Keep the movement comfortable and controlled."
+    },
+
+    "alternating-curl": {
+        category: "BICEPS · 03",
+        title: "Alternating Curl",
+        intro: "A simple curl variation where each arm works separately.",
+        setup: "Stand tall with both dumbbells beside your body.",
+        perform: "Curl one dumbbell at a time while keeping the other arm controlled.",
+        form: "Focus on one clean repetition at a time.",
+        mistake: "Avoid rushing between sides.",
+        beginner: "Use lighter dumbbells.",
+        safety: "Maintain stable posture throughout."
+    },
+
+    "concentration-curl": {
+        category: "BICEPS · 04",
+        title: "Concentration Curl",
+        intro: "A supported curl variation that helps keep the working arm stable.",
+        setup: "Sit comfortably and support the working arm against your inner thigh.",
+        perform: "Curl the dumbbell upward and lower it slowly.",
+        form: "Keep the working arm stable throughout the repetition.",
+        mistake: "Avoid swinging or moving your shoulder.",
+        beginner: "Use a lighter dumbbell.",
+        safety: "Use a stable seated position."
+    },
+
+    "cross-body-curl": {
+        category: "BICEPS · 05",
+        title: "Cross-Body Hammer Curl",
+        intro: "A hammer-curl variation where the dumbbell travels toward the opposite shoulder.",
+        setup: "Stand tall with your palms facing inward.",
+        perform: "Curl one dumbbell diagonally toward the opposite shoulder, then lower it slowly.",
+        form: "Keep the movement controlled without rotating your whole body.",
+        mistake: "Avoid swinging your torso.",
+        beginner: "Use lighter dumbbells.",
+        safety: "Keep the movement comfortable for your elbows and shoulders."
+    },
+
+    "band-curl": {
+        category: "BICEPS · 06",
+        title: "Resistance Band Curl",
+        intro: "A resistance-band curl that maintains tension through the movement.",
+        setup: "Stand securely on the band and hold the handles or ends.",
+        perform: "Curl your hands upward against the band's resistance, then lower slowly.",
+        form: "Maintain steady tension and keep your elbows controlled.",
+        mistake: "Avoid letting the band snap back quickly.",
+        beginner: "Use a lighter band.",
+        safety: "Check the band for damage before use."
+    },
+
+    "close-grip": {
+        category: "TRICEPS · 01",
+        title: "Close-Grip Push-Ups",
+        intro: "A push-up variation that increases the triceps demand.",
+        setup: "Start in a stable push-up position with your hands closer together.",
+        perform: "Lower your body with control and press back up.",
+        form: "Keep your elbows controlled and your body aligned.",
+        mistake: "Avoid forcing an uncomfortable hand position.",
+        beginner: "Use incline push-ups with a closer hand position.",
+        safety: "Use a comfortable wrist and shoulder position."
+    },
+
+    "overhead-extension": {
+        category: "TRICEPS · 02",
+        title: "Overhead Triceps Extension",
+        intro: "A dumbbell movement targeting the triceps through elbow extension.",
+        setup: "Hold one manageable dumbbell above or behind your head.",
+        perform: "Bend your elbows to lower the weight, then extend your arms upward.",
+        form: "Keep your elbows controlled rather than allowing them to flare widely.",
+        mistake: "Avoid using excessive weight.",
+        beginner: "Start with a light dumbbell.",
+        safety: "Use a secure grip and controlled movement."
+    },
+
+    "kickbacks": {
+        category: "TRICEPS · 03",
+        title: "Dumbbell Kickbacks",
+        intro: "A controlled triceps exercise using light dumbbells.",
+        setup: "Hinge forward comfortably and keep your upper arms close to your torso.",
+        perform: "Extend your elbows backward, then slowly return to the starting position.",
+        form: "Keep your upper arms relatively still.",
+        mistake: "Avoid swinging the dumbbells.",
+        beginner: "Use light dumbbells.",
+        safety: "Maintain a stable stance."
+    },
+
+    "band-pushdown": {
+        category: "TRICEPS · 04",
+        title: "Resistance Band Pushdown",
+        intro: "A resistance-band triceps movement using controlled elbow extension.",
+        setup: "Secure the band safely above you and hold it with your elbows close to your sides.",
+        perform: "Push the band downward by extending your elbows, then return slowly.",
+        form: "Keep your elbows close to your body.",
+        mistake: "Avoid leaning heavily into the movement.",
+        beginner: "Use a lighter resistance band.",
+        safety: "Only use a secure anchor point."
+    },
+
+    "diamond-triceps": {
+        category: "TRICEPS · 05",
+        title: "Diamond Push-Ups",
+        intro: "A close-hand push-up variation that places greater demand on the triceps.",
+        setup: "Set your hands close together and establish a stable body position.",
+        perform: "Lower yourself under control and press back up.",
+        form: "Keep your elbows controlled and maintain alignment.",
+        mistake: "Avoid forcing the movement when technique breaks down.",
+        beginner: "Use incline diamond push-ups.",
+        safety: "Choose an easier variation if needed."
+    },
+
+    "single-extension": {
+        category: "TRICEPS · 06",
+        title: "Single-Arm Extension",
+        intro: "A single-arm triceps extension performed with controlled resistance.",
+        setup: "Position yourself comfortably and hold a manageable weight in one hand.",
+        perform: "Bend and extend the elbow slowly through a comfortable range.",
+        form: "Keep the working arm controlled.",
+        mistake: "Avoid using momentum.",
+        beginner: "Use very light resistance.",
+        safety: "Keep the movement comfortable for the elbow and shoulder."
+    },
+
+    "squats": {
+        category: "LEGS · 01",
+        title: "Bodyweight Squats",
+        intro: "A fundamental lower-body movement that can be performed without equipment.",
+        setup: "Stand with your feet in a comfortable position and brace your torso gently.",
+        perform: "Bend your knees and hips to lower yourself, then stand back up under control.",
+        form: "Keep your feet stable and move through a comfortable range.",
+        mistake: "Avoid rushing or forcing a depth you cannot control.",
+        beginner: "Use a chair or reduce the range of motion if needed.",
+        safety: "Use a stable surface and comfortable movement range."
+    },
+
+    "reverse-lunges": {
+        category: "LEGS · 02",
+        title: "Reverse Lunges",
+        intro: "A lower-body movement performed by stepping backward into a lunge.",
+        setup: "Stand tall with your feet stable and core gently braced.",
+        perform: "Step one foot backward, lower under control, then return to standing.",
+        form: "Keep your balance and control the step.",
+        mistake: "Avoid rushing the backward step.",
+        beginner: "Hold onto a stable support if needed.",
+        safety: "Use clear floor space."
+    },
+
+    "bulgarian": {
+        category: "LEGS · 03",
+        title: "Bulgarian Split Squats",
+        intro: "A single-leg-focused lower-body movement using a stable elevated surface.",
+        setup: "Place the rear foot on a stable surface and position the front foot comfortably.",
+        perform: "Lower the body under control and push through the front leg to return.",
+        form: "Keep the front foot stable and use a comfortable range.",
+        mistake: "Avoid using an unstable surface.",
+        beginner: "Practice regular split squats first.",
+        safety: "Use a secure support and controlled movement."
+    },
+
+    "glute-bridges": {
+        category: "LEGS · 04",
+        title: "Glute Bridges",
+        intro: "A simple floor exercise for the glutes and hips.",
+        setup: "Lie on your back with knees bent and feet comfortably planted.",
+        perform: "Lift your hips, pause briefly, then lower them slowly.",
+        form: "Keep the movement controlled rather than arching your back excessively.",
+        mistake: "Avoid pushing into an uncomfortable range.",
+        beginner: "Use bodyweight only.",
+        safety: "Train on a stable surface."
+    },
+
+    "calf-raises": {
+        category: "LEGS · 05",
+        title: "Calf Raises",
+        intro: "A simple lower-leg exercise performed from a stable standing position.",
+        setup: "Stand tall with your feet stable and hold a support if needed.",
+        perform: "Raise your heels, pause briefly, then lower them slowly.",
+        form: "Use a controlled range instead of bouncing.",
+        mistake: "Avoid rushing through the repetitions.",
+        beginner: "Use a wall or stable support for balance.",
+        safety: "Keep your footing secure."
+    },
+
+    "step-ups": {
+        category: "LEGS · 06",
+        title: "Step-Ups",
+        intro: "A practical lower-body exercise using a stable platform.",
+        setup: "Stand in front of a secure platform that is comfortable for your level.",
+        perform: "Step up under control, stand tall, then step down carefully.",
+        form: "Focus on controlled steps and stable balance.",
+        mistake: "Avoid using a platform that is too high or unstable.",
+        beginner: "Choose a lower platform.",
+        safety: "Make sure the platform cannot move or tip."
+    },
+
+    "plank": {
+        category: "CORE · 01",
+        title: "Plank",
+        intro: "A basic core stability exercise performed by holding a strong body position.",
+        setup: "Place your forearms or hands on the floor and establish a stable plank.",
+        perform: "Hold the position while breathing normally and keeping your body controlled.",
+        form: "Keep your hips from dropping or lifting excessively.",
+        mistake: "Avoid holding your breath or sacrificing position to last longer.",
+        beginner: "Use a shorter hold.",
+        safety: "Stop if you feel unusual pain."
+    },
+
+    "dead-bug": {
+        category: "CORE · 02",
+        title: "Dead Bug",
+        intro: "A controlled core exercise that challenges coordination and trunk stability.",
+        setup: "Lie on your back and position your arms and legs comfortably above you.",
+        perform: "Slowly extend opposite arm and leg, then return and switch sides.",
+        form: "Keep your torso stable throughout the movement.",
+        mistake: "Avoid moving so quickly that your lower back loses control.",
+        beginner: "Move one limb at a time.",
+        safety: "Use a comfortable floor position."
+    },
+
+    "bird-dog": {
+        category: "CORE · 03",
+        title: "Bird Dog",
+        intro: "A stability exercise combining controlled arm and leg movement.",
+        setup: "Start on your hands and knees with your back stable.",
+        perform: "Extend one arm and the opposite leg, then return and switch sides.",
+        form: "Keep your trunk steady while moving the limbs.",
+        mistake: "Avoid twisting your hips.",
+        beginner: "Move one limb at a time.",
+        safety: "Use a stable surface."
+    },
+
+    "mountain-climbers": {
+        category: "CORE · 04",
+        title: "Mountain Climbers",
+        intro: "A dynamic bodyweight movement combining core control with active leg movement.",
+        setup: "Start in a stable high-plank position.",
+        perform: "Bring one knee forward, return it, then alternate sides in a controlled rhythm.",
+        form: "Keep your hands stable and torso controlled.",
+        mistake: "Avoid rushing so much that your form breaks down.",
+        beginner: "Slow the movement down.",
+        safety: "Use a clear, non-slip surface."
+    },
+
+    "reverse-crunch": {
+        category: "CORE · 05",
+        title: "Reverse Crunch",
+        intro: "A controlled core movement focused on bringing the lower body toward the torso.",
+        setup: "Lie on your back with your knees bent and feet positioned comfortably.",
+        perform: "Curl your hips gently upward, then lower them with control.",
+        form: "Use slow movement and avoid relying on momentum.",
+        mistake: "Do not swing your legs.",
+        beginner: "Use a smaller range.",
+        safety: "Keep the movement comfortable for your back."
+    },
+
+    "side-plank": {
+        category: "CORE · 06",
+        title: "Side Plank",
+        intro: "A core stability exercise performed from a side-supported position.",
+        setup: "Support yourself on one forearm or hand and position your body in a stable side line.",
+        perform: "Hold the position while breathing normally, then switch sides.",
+        form: "Keep your hips controlled rather than letting them drop.",
+        mistake: "Avoid holding your breath.",
+        beginner: "Bend your knees for an easier variation.",
+        safety: "Use a comfortable support position."
+    }
+
+};
+
+
+function showHowTo(exercise) {
+
+    const data = exercises[exercise];
+
+    if (!data) {
+        return;
+    }
+
+    document.getElementById("howto-category").textContent =
+        "ROSHXLAB · " + data.category;
+
+    document.getElementById("howto-title").textContent =
+        data.title;
+
+    document.getElementById("howto-intro").textContent =
+        data.intro;
+
+    document.getElementById("howto-setup").textContent =
+        data.setup;
+
+    document.getElementById("howto-perform").textContent =
+        data.perform;
+
+    document.getElementById("howto-form").textContent =
+        data.form;
+
+    document.getElementById("howto-mistake").textContent =
+        data.mistake;
+
+    document.getElementById("howto-beginner").textContent =
+        data.beginner;
+
+    document.getElementById("howto-safety").textContent =
+        data.safety;
+
+    const section = document.getElementById("howto");
+
+    section.classList.add("active");
+
+    section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+function closeHowTo() {
+
+    const section = document.getElementById("howto");
+
+    section.classList.remove("active");
+
+    document.getElementById("chest").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

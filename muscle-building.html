@@ -2,109 +2,804 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="ROSHXLAB Muscle Building Library — practical exercises, training principles and progression guidance for building muscle.">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ROSHXLAB Muscle Building Library — practical exercises, training principles and progression guidance for building muscle."
+    >
 
     <title>Muscle Building — ROSHXLAB</title>
 
     <link rel="stylesheet" href="style.css">
 
+
     <style>
 
-        /* MUSCLE BUILDING BOXES */
+        /* =====================================================
+           ROSHXLAB · MUSCLE BUILDING PREMIUM
+        ===================================================== */
+
+        .muscle-page {
+            background: #070707;
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           PREMIUM HERO
+        ===================================================== */
+
+        .muscle-page .hero {
+            position: relative;
+            min-height: 88vh;
+            overflow: hidden;
+            isolation: isolate;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,4,4,.98) 0%,
+                    rgba(4,4,4,.92) 34%,
+                    rgba(4,4,4,.60) 68%,
+                    rgba(4,4,4,.25) 100%
+                ),
+                url("images/muscle-building.png")
+                center/cover no-repeat;
+
+            border-bottom: 1px solid #242424;
+        }
+
+
+        .muscle-page .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 78% 40%,
+                    rgba(184,255,116,.15),
+                    transparent 28%
+                );
+
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        .muscle-page .hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 38%;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    #070707
+                );
+
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        .muscle-page .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+
+        .muscle-page .hero h1 {
+            font-size: clamp(60px, 8vw, 112px);
+            line-height: .88;
+            letter-spacing: -6px;
+            text-shadow:
+                0 15px 55px rgba(0,0,0,.65);
+        }
+
+
+        .muscle-page .hero h1 span {
+            color: #b8b8b8;
+        }
+
+
+        .muscle-page .hero-text {
+            max-width: 650px;
+            color: #aaa;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        .muscle-page .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+
+        /* =====================================================
+           HERO STAT BOXES
+        ===================================================== */
 
         .muscle-boxes {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 12px;
             margin-top: 45px;
-            width: 100%;
+            max-width: 800px;
         }
+
 
         .muscle-box {
+            position: relative;
+            overflow: hidden;
+
             display: block;
-            padding: 28px;
-            background: #101010;
-            border: 1px solid #292929;
-            transition: 0.25s ease;
+
+            min-height: 150px;
+
+            padding: 23px;
+
+            box-sizing: border-box;
+
+            color: #fff;
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(28,28,28,.94),
+                    rgba(9,9,9,.96)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(0,0,0,.28);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease,
+                background .3s ease;
         }
+
+
+        .muscle-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+            height: 170px;
+
+            right: -90px;
+            top: -90px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(184,255,116,.16),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
 
         .muscle-box:hover {
-            transform: translateY(-5px);
-            border-color: #666;
-            background: #151515;
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(194,255,143,.30);
+
+            box-shadow:
+                0 28px 70px
+                rgba(0,0,0,.42);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(35,35,35,.97),
+                    rgba(10,10,10,.99)
+                );
         }
 
+
         .muscle-box span {
-            color: #666;
-            font-size: 12px;
-            font-weight: 700;
+            position: relative;
+
+            color: #b9ff7a;
+
+            font-size: 11px;
+            font-weight: 800;
+
             letter-spacing: 2px;
         }
 
+
         .muscle-box h3 {
-            margin-top: 12px;
-            font-size: 20px;
-            line-height: 1.2;
+            position: relative;
+
+            margin:
+                13px 0 0;
+
+            font-size: 19px;
+            line-height: 1.25;
+
+            letter-spacing: -.4px;
         }
+
 
         .muscle-box p {
-            margin-top: 8px;
+            position: relative;
+
+            margin:
+                9px 0 0;
+
             color: #777;
-            font-size: 14px;
-        }
 
-        /* WATCH BUTTON */
-
-        .watch-link {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: #0b0b0b;
-            color: #fff;
-            border: 1px solid #444;
             font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.25s ease;
+            line-height: 1.5;
         }
 
-        .watch-link:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-            transform: translateY(-2px);
+
+        /* =====================================================
+           HERO IMAGE ELEMENT
+        ===================================================== */
+
+        .muscle-page .hero-image {
+            display: none;
         }
 
-        /* TRAINING NOTE */
+
+        /* =====================================================
+           PREMIUM SECTIONS
+        ===================================================== */
+
+        .muscle-page .section {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .muscle-page .section-heading {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .muscle-page .section-heading h2 {
+            letter-spacing: -2px;
+        }
+
+
+        .muscle-page .section-heading > p:last-child {
+            max-width: 700px;
+        }
+
+
+        /* subtle background */
+
+        .muscle-page #upper-body::before,
+        .muscle-page #lower-body::before,
+        .muscle-page #all-exercises::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(7,7,7,.92),
+                    rgba(7,7,7,.98)
+                ),
+                url("images/muscle-building.png")
+                center/cover no-repeat;
+
+            opacity: .30;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           GROWTH NOTE
+        ===================================================== */
 
         .growth-note {
-            padding: 35px;
-            background: #101010;
-            border: 1px solid #292929;
+            position: relative;
+            z-index: 2;
+
+            padding: 34px;
+
             margin-top: 25px;
+
+            max-width: 850px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(27,27,27,.96),
+                    rgba(10,10,10,.98)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,.28);
+
+            overflow: hidden;
         }
+
+
+        .growth-note::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background: #baff7d;
+        }
+
+
+        .growth-note::after {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            right: -110px;
+            top: -110px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(184,255,116,.13),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
 
         .growth-note h3 {
+            position: relative;
+            z-index: 1;
+
             font-size: 24px;
-            margin-bottom: 15px;
+
+            margin:
+                0 0 15px;
         }
 
+
         .growth-note p {
+            position: relative;
+            z-index: 1;
+
+            margin: 0;
+
             color: #888;
-            font-size: 16px;
+
+            font-size: 15px;
+            line-height: 1.75;
+
             max-width: 750px;
         }
 
-        /* MOBILE */
+
+        /* =====================================================
+           PREMIUM EXERCISE CARDS
+        ===================================================== */
+
+        .muscle-page .cards {
+            position: relative;
+            z-index: 2;
+
+            gap: 14px;
+        }
+
+
+        .muscle-page .card {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25,25,25,.96),
+                    rgba(9,9,9,.98)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(0,0,0,.28);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease,
+                background .3s ease;
+        }
+
+
+        .muscle-page .card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -95px;
+            top: -100px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(184,255,116,.13),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .muscle-page .card::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 0;
+
+            background: #baff7d;
+
+            transition:
+                height .3s ease;
+        }
+
+
+        .muscle-page .card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(190,255,130,.26);
+
+            box-shadow:
+                0 27px 72px
+                rgba(0,0,0,.45);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(30,30,30,.98),
+                    rgba(10,10,10,1)
+                );
+        }
+
+
+        .muscle-page .card:hover::after {
+            height: 100%;
+        }
+
+
+        .muscle-page .card > span {
+            position: relative;
+            z-index: 1;
+
+            color: #b8ff7a;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+        }
+
+
+        .muscle-page .card h3 {
+            position: relative;
+            z-index: 1;
+
+            margin-top: 12px;
+
+            letter-spacing: -.5px;
+        }
+
+
+        .muscle-page .card p {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+           WATCH BUTTON
+        ===================================================== */
+
+        .muscle-page .watch-link {
+            position: relative;
+            z-index: 2;
+
+            display: inline-flex;
+            align-items: center;
+
+            margin-top: 15px;
+
+            padding: 10px 17px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid
+                rgba(190,255,130,.22);
+
+            color: #eee;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            text-decoration: none;
+
+            transition:
+                background .25s ease,
+                color .25s ease,
+                border-color .25s ease,
+                transform .25s ease;
+        }
+
+
+        .muscle-page .watch-link:hover {
+            background: #d9ffb7;
+
+            color: #050505;
+
+            border-color: #d9ffb7;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           TRAINING PRINCIPLES
+        ===================================================== */
+
+        .muscle-page .dark-section {
+            position: relative;
+        }
+
+
+        /* =====================================================
+           ALL EXERCISES
+        ===================================================== */
+
+        .muscle-page #all-exercises {
+            min-height: 430px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.97),
+                    rgba(5,5,5,.78)
+                ),
+                url("images/muscle-building.png")
+                center/cover no-repeat;
+        }
+
+
+        .muscle-page #all-exercises::before {
+            display: none;
+        }
+
+
+        /* =====================================================
+           PREMIUM CTA
+        ===================================================== */
+
+        .muscle-page .cta {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.97),
+                    rgba(5,5,5,.76)
+                ),
+                url("images/muscle-building.png")
+                center/cover no-repeat;
+
+            border-top: 1px solid #242424;
+        }
+
+
+        .muscle-page .cta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 360px;
+            height: 360px;
+
+            right: -110px;
+            top: -190px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(183,255,115,.14),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .muscle-page .cta > * {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
 
         @media (max-width: 850px) {
 
+            .muscle-page .hero {
+                min-height: 850px;
+
+                padding:
+                    70px 6%;
+
+                align-items: flex-end;
+
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(4,4,4,.25) 0%,
+                        rgba(4,4,4,.70) 42%,
+                        rgba(4,4,4,.97) 82%,
+                        #070707 100%
+                    ),
+                    url("images/muscle-building.png")
+                    center/cover no-repeat;
+            }
+
+
+            .muscle-page .hero h1 {
+                font-size:
+                    clamp(56px, 15vw, 78px);
+
+                letter-spacing: -4px;
+            }
+
+
+            .muscle-page .hero-text {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+
             .muscle-boxes {
                 grid-template-columns: 1fr;
+
+                gap: 10px;
+
+                margin-top: 32px;
+            }
+
+
+            .muscle-box {
+                min-height: auto;
+
+                padding: 19px;
+            }
+
+
+            .muscle-page .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+
+            .muscle-page .hero-buttons .btn {
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+
+            .muscle-page .card:hover {
+                transform: none;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            .muscle-page .hero {
+                min-height: 880px;
+
+                padding:
+                    62px 6%;
+
+                background-position:
+                    62% center;
+            }
+
+
+            .muscle-page .hero h1 {
+                font-size: 55px;
+                letter-spacing: -3px;
+            }
+
+
+            .muscle-page .hero-text {
+                font-size: 14px;
+            }
+
+
+            .muscle-box h3 {
+                font-size: 17px;
+            }
+
+
+            .growth-note {
+                padding: 25px;
             }
 
         }
@@ -114,10 +809,12 @@
 </head>
 
 
-<body>
+<body class="muscle-page">
 
 
-<!-- NAVBAR -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <header>
 
@@ -128,12 +825,19 @@
     <nav>
 
         <a href="index.html">Home</a>
+
         <a href="workouts.html">Workouts</a>
+
         <a href="nutrition.html">Nutrition</a>
+
         <a href="guides.html">Guides</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="videos.html">Videos</a>
+
         <a href="about.html">About</a>
+
         <a href="contact.html">Contact</a>
 
     </nav>
@@ -144,7 +848,9 @@
 <main>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -168,11 +874,17 @@
 
         <div class="hero-buttons">
 
-            <a href="#upper-body" class="btn primary">
+            <a
+                href="#upper-body"
+                class="btn primary"
+            >
                 Upper Body →
             </a>
 
-            <a href="#lower-body" class="btn secondary">
+            <a
+                href="#lower-body"
+                class="btn secondary"
+            >
                 Lower Body
             </a>
 
@@ -183,8 +895,10 @@
 
         <div class="muscle-boxes">
 
-
-            <a href="#upper-body" class="muscle-box">
+            <a
+                href="#upper-body"
+                class="muscle-box"
+            >
 
                 <span>01</span>
 
@@ -199,7 +913,10 @@
             </a>
 
 
-            <a href="#lower-body" class="muscle-box">
+            <a
+                href="#lower-body"
+                class="muscle-box"
+            >
 
                 <span>02</span>
 
@@ -214,7 +931,10 @@
             </a>
 
 
-            <a href="#all-exercises" class="muscle-box">
+            <a
+                href="#all-exercises"
+                class="muscle-box"
+            >
 
                 <span>03</span>
 
@@ -228,16 +948,19 @@
 
             </a>
 
-
         </div>
 
     </div>
 
+
+    <!-- Background image is handled by CSS -->
+
 </section>
 
 
-
-<!-- INTRO -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
 <section class="section">
 
@@ -280,12 +1003,14 @@
 </section>
 
 
+<!-- =====================================================
+     UPPER BODY
+===================================================== -->
 
-<!-- ========================= -->
-<!-- UPPER BODY -->
-<!-- ========================= -->
-
-<section class="section dark-section" id="upper-body">
+<section
+    class="section dark-section"
+    id="upper-body"
+>
 
     <div class="section-heading">
 
@@ -644,12 +1369,14 @@
 </section>
 
 
+<!-- =====================================================
+     LOWER BODY
+===================================================== -->
 
-<!-- ========================= -->
-<!-- LOWER BODY -->
-<!-- ========================= -->
-
-<section class="section" id="lower-body">
+<section
+    class="section"
+    id="lower-body"
+>
 
     <div class="section-heading">
 
@@ -1008,10 +1735,9 @@
 </section>
 
 
-
-<!-- ========================= -->
-<!-- TRAINING PRINCIPLES -->
-<!-- ========================= -->
+<!-- =====================================================
+     TRAINING PRINCIPLES
+===================================================== -->
 
 <section class="section dark-section">
 
@@ -1090,12 +1816,14 @@
 </section>
 
 
+<!-- =====================================================
+     ALL EXERCISES
+===================================================== -->
 
-<!-- ========================= -->
-<!-- ALL EXERCISES -->
-<!-- ========================= -->
-
-<section class="section" id="all-exercises">
+<section
+    class="section"
+    id="all-exercises"
+>
 
     <div class="section-heading">
 
@@ -1119,8 +1847,9 @@
 </section>
 
 
-
-<!-- CTA -->
+<!-- =====================================================
+     CTA
+===================================================== -->
 
 <section class="cta">
 
@@ -1141,11 +1870,17 @@
 
     <div class="hero-buttons">
 
-        <a href="workouts.html" class="btn primary">
+        <a
+            href="workouts.html"
+            class="btn primary"
+        >
             More Workouts →
         </a>
 
-        <a href="nutrition.html" class="btn secondary">
+        <a
+            href="nutrition.html"
+            class="btn secondary"
+        >
             Explore Nutrition
         </a>
 
@@ -1157,8 +1892,9 @@
 </main>
 
 
-
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1174,12 +1910,19 @@
     <div class="footer-links">
 
         <a href="index.html">Home</a>
+
         <a href="workouts.html">Workouts</a>
+
         <a href="nutrition.html">Nutrition</a>
+
         <a href="guides.html">Guides</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="videos.html">Videos</a>
+
         <a href="about.html">About</a>
+
         <a href="contact.html">Contact</a>
 
     </div>
@@ -1193,4 +1936,5 @@
 
 
 </body>
+
 </html>

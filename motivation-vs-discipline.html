@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Motivation vs discipline explained. Learn how routines and small habits can make fitness more consistent.">
+
+    <title>Motivation vs Discipline — ROSHXLAB</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, .94);
+            border-bottom: 1px solid #202020;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 26px;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            font-size: .95rem;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 110px 0 75px;
+            text-align: center;
+            border-bottom: 1px solid #1d1d1d;
+            background:
+                radial-gradient(circle at 75% 25%, #202020 0%, transparent 35%),
+                linear-gradient(135deg, #101010, #060606);
+        }
+
+        .eyebrow {
+            color: #777;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #999;
+            font-size: 18px;
+        }
+
+        /* ARTICLE */
+
+        .article {
+            max-width: 820px;
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 65px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #aaa;
+            margin-bottom: 18px;
+        }
+
+        .section ul {
+            color: #aaa;
+            padding-left: 22px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+        }
+
+        /* CARDS */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .card {
+            padding: 25px;
+            background: #101010;
+            border: 1px solid #252525;
+            border-radius: 18px;
+            transition: .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #444;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 15px;
+            color: #999;
+        }
+
+        /* INFO */
+
+        .info {
+            margin: 28px 0;
+            padding: 28px;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 18px;
+        }
+
+        .info h3 {
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            margin: 0;
+            color: #999;
+        }
+
+        /* CTA */
+
+        .cta {
+            margin-top: 25px;
+            padding: 45px 30px;
+            text-align: center;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 22px;
+        }
+
+        .cta h2 {
+            margin-bottom: 14px;
+        }
+
+        .cta p {
+            max-width: 620px;
+            margin: 0 auto 25px;
+            color: #999;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            background: #fff;
+            color: #080808;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: .9;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #202020;
+            padding: 35px 0;
+            text-align: center;
+            color: #777;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .nav-inner {
+                flex-direction: column;
+                gap: 14px;
+                padding: 18px 0;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 18px;
+                margin-left: 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0 55px;
+            }
+
+            .article {
+                padding: 55px 0;
+            }
+
+            .section {
+                margin-bottom: 50px;
+            }
+
+            .section h2 {
+                font-size: 1.65rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <a href="index.html" class="logo">
+                ROSHXLAB
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="guides.html">Guides</a>
+                <a href="blog.html">Blog</a>
+                <a href="videos.html">Videos</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                MINDSET · HABITS
+            </p>
+
+            <h1>
+                Motivation vs Discipline.
+            </h1>
+
+            <p>
+                Motivation can change from day to day.
+                Building simple routines can make it easier
+                to keep moving even when motivation is low.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <main class="article">
+
+
+        <section class="section">
+
+            <h2>
+                Motivation Doesn't Stay The Same
+            </h2>
+
+            <p>
+                Some days you may feel excited to train.
+                Other days, school, work, stress or simply
+                being tired can make exercise feel less appealing.
+            </p>
+
+            <p>
+                That variation is normal. A sustainable routine
+                should not depend entirely on feeling motivated.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>
+                What Is Discipline?
+            </h2>
+
+            <p>
+                In fitness, discipline can simply mean following
+                a routine you have chosen even when you are not
+                particularly excited about it.
+            </p>
+
+            <div class="info">
+
+                <h3>
+                    Discipline Is Not About Going Hard Every Day.
+                </h3>
+
+                <p>
+                    It can also mean knowing when to train,
+                    when to recover and when to adjust your routine.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>
+                Build Systems Instead Of Waiting For Motivation
+            </h2>
+
+            <p>
+                One useful approach is to make your routine
+                easier to repeat.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>
+                        Set A Regular Time
+                    </h3>
+
+                    <p>
+                        A predictable training time can remove
+                        some of the daily decision-making.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Keep The Routine Simple
+                    </h3>
+
+                    <p>
+                        A manageable routine is easier to maintain
+                        than an unnecessarily complicated one.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Prepare In Advance
+                    </h3>
+
+                    <p>
+                        Having your workout space and equipment
+                        ready can make starting easier.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Focus On The Next Step
+                    </h3>
+
+                    <p>
+                        Instead of thinking about the entire month,
+                        focus on completing today's planned task.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>
+                Consistency Is More Useful Than Perfection
+            </h2>
+
+            <p>
+                Missing a workout does not mean your routine
+                has failed. Life can interrupt plans.
+            </p>
+
+            <p>
+                The important part is returning to your normal
+                routine rather than trying to compensate with
+                excessive training.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>
+                Know When To Step Back
+            </h2>
+
+            <p>
+                Discipline does not mean ignoring fatigue,
+                illness or pain. Recovery is part of a healthy
+                training routine.
+            </p>
+
+            <ul>
+                <li>Respect your need for recovery.</li>
+                <li>Do not train through significant pain.</li>
+                <li>Adjust your routine when circumstances change.</li>
+                <li>Give yourself time to recover after demanding sessions.</li>
+            </ul>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>
+                Make Fitness Fit Your Life
+            </h2>
+
+            <p>
+                The most useful routine is one that fits around
+                your actual responsibilities, schedule and energy.
+            </p>
+
+            <div class="info">
+
+                <h3>
+                    ROSHXLAB Note
+                </h3>
+
+                <p>
+                    You do not need to feel motivated every day.
+                    Build a routine that is realistic enough
+                    to keep repeating.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="cta">
+
+            <h2>
+                Build Better Habits.
+            </h2>
+
+            <p>
+                Learn how consistency can turn small actions
+                into a sustainable fitness routine.
+            </p>
+
+            <a href="consistency-habits.html" class="button">
+                Read About Consistency →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container">
+
+            <strong>
+                ROSHXLAB
+            </strong>
+
+            <p>
+                Build Better. Live Stronger.
+            </p>
+
+            <p>
+                © 2026 ROSHXLAB. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

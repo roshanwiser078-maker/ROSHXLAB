@@ -2,100 +2,547 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="ROSHXLAB Strength Training Library — strength-focused exercises with and without equipment, designed for progressive training.">
+    <meta
+        name="description"
+        content="ROSHXLAB Strength Training Library — strength-focused exercises with and without equipment, designed for progressive training."
+    >
 
     <title>Strength Training — ROSHXLAB</title>
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* STRENGTH TRAINING NAVIGATION BOXES */
+
+        /* =====================================================
+           ROSHXLAB · STRENGTH TRAINING PREMIUM
+        ===================================================== */
+
+        .strength-page {
+            background: #070707;
+            overflow-x: hidden;
+        }
+
+        /* =====================================================
+           PREMIUM HERO
+        ===================================================== */
+
+        .strength-hero {
+            position: relative;
+            min-height: 88vh;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 90px 6%;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+            isolation: isolate;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,4,4,.98) 0%,
+                    rgba(4,4,4,.92) 34%,
+                    rgba(4,4,4,.60) 68%,
+                    rgba(4,4,4,.28) 100%
+                ),
+                url("images/strength-training.jpg") center/cover no-repeat;
+            border-bottom: 1px solid #222;
+        }
+
+        .strength-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(
+                    circle at 78% 42%,
+                    rgba(181,255,112,.14),
+                    transparent 28%
+                );
+            pointer-events: none;
+        }
+
+        .strength-hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 35%;
+            z-index: -1;
+            background: linear-gradient(
+                transparent,
+                #070707
+            );
+            pointer-events: none;
+        }
+
+        .strength-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .strength-hero h1 {
+            margin: 0 0 25px;
+            font-size: clamp(58px, 8vw, 112px);
+            line-height: .88;
+            letter-spacing: -6px;
+            text-shadow: 0 15px 50px rgba(0,0,0,.6);
+        }
+
+        .strength-hero h1 span {
+            color: #b5b5b5;
+        }
+
+        .strength-hero-text {
+            max-width: 620px;
+            margin: 0 0 32px;
+            color: #aaa;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .strength-hero .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* =====================================================
+           HERO TRAINING BOXES
+        ===================================================== */
 
         .training-boxes {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
             margin-top: 45px;
-            width: 100%;
+            max-width: 780px;
         }
 
         .training-box {
+            position: relative;
+            overflow: hidden;
             display: block;
-            padding: 28px;
-            background: #101010;
-            border: 1px solid #292929;
-            transition: 0.25s ease;
+            padding: 23px;
+            min-height: 150px;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: #fff;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(28,28,28,.92),
+                    rgba(9,9,9,.94)
+                );
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 14px;
+            box-shadow: 0 15px 45px rgba(0,0,0,.25);
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .training-box::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            right: -80px;
+            top: -80px;
+            background: radial-gradient(
+                circle,
+                rgba(184,255,116,.16),
+                transparent 68%
+            );
+            pointer-events: none;
         }
 
         .training-box:hover {
-            transform: translateY(-5px);
-            border-color: #666;
-            background: #151515;
+            transform: translateY(-7px);
+            border-color: rgba(194,255,143,.30);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(34,34,34,.96),
+                    rgba(11,11,11,.98)
+                );
+            box-shadow: 0 25px 65px rgba(0,0,0,.4);
         }
 
         .training-box span {
-            color: #666;
-            font-size: 12px;
-            font-weight: 700;
+            position: relative;
+            color: #b9ff78;
+            font-size: 11px;
+            font-weight: 800;
             letter-spacing: 2px;
         }
 
         .training-box h3 {
-            margin-top: 12px;
-            font-size: 20px;
-            line-height: 1.2;
+            position: relative;
+            margin: 13px 0 0;
+            font-size: 19px;
+            line-height: 1.25;
         }
 
         .training-box p {
-            margin-top: 8px;
+            position: relative;
+            margin: 9px 0 0;
             color: #777;
-            font-size: 14px;
-        }
-
-        /* WATCH HOW-TO BUTTON */
-
-        .watch-link {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: #0b0b0b;
-            color: #fff;
-            border: 1px solid #444;
             font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.25s ease;
+            line-height: 1.5;
         }
 
-        .watch-link:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
+        /* =====================================================
+           PREMIUM SECTIONS
+        ===================================================== */
+
+        .strength-page .section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strength-page .section-heading {
+            position: relative;
+            z-index: 2;
+        }
+
+        .strength-page .section-heading h2 {
+            letter-spacing: -2px;
+        }
+
+        .strength-page .section-heading > p:last-child {
+            max-width: 680px;
+        }
+
+        /* subtle background image */
+
+        .strength-page #equipment::before,
+        .strength-page #no-equipment::before,
+        .strength-page #all-exercises::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    rgba(7,7,7,.92),
+                    rgba(7,7,7,.97)
+                ),
+                url("images/strength-training.jpg") center/cover no-repeat;
+            opacity: .35;
+            pointer-events: none;
+        }
+
+        /* =====================================================
+           PREMIUM EXERCISE CARDS
+        ===================================================== */
+
+        .strength-page .cards {
+            position: relative;
+            z-index: 2;
+            gap: 14px;
+        }
+
+        .strength-page .card {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25,25,25,.96),
+                    rgba(9,9,9,.98)
+                );
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 14px;
+            box-shadow: 0 18px 55px rgba(0,0,0,.28);
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease,
+                background .3s ease;
+        }
+
+        .strength-page .card::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            top: -100px;
+            right: -90px;
+            background: radial-gradient(
+                circle,
+                rgba(181,255,112,.13),
+                transparent 68%
+            );
+            pointer-events: none;
+        }
+
+        .strength-page .card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: #baff7d;
+            transition: height .3s ease;
+        }
+
+        .strength-page .card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(190,255,130,.25);
+            box-shadow: 0 26px 70px rgba(0,0,0,.44);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(30,30,30,.98),
+                    rgba(10,10,10,1)
+                );
+        }
+
+        .strength-page .card:hover::after {
+            height: 100%;
+        }
+
+        .strength-page .card > span {
+            position: relative;
+            z-index: 1;
+            color: #b8ff7a;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+        }
+
+        .strength-page .card h3 {
+            position: relative;
+            z-index: 1;
+            margin-top: 12px;
+            letter-spacing: -.5px;
+        }
+
+        .strength-page .card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =====================================================
+           WATCH BUTTON
+        ===================================================== */
+
+        .strength-page .watch-link {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px 17px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(190,255,130,.22);
+            color: #eee;
+            font-size: 12px;
+            font-weight: 800;
+            text-decoration: none;
+            transition:
+                background .25s ease,
+                color .25s ease,
+                border-color .25s ease,
+                transform .25s ease;
+        }
+
+        .strength-page .watch-link:hover {
+            background: #d9ffb7;
+            color: #050505;
+            border-color: #d9ffb7;
             transform: translateY(-2px);
         }
 
-        /* MOBILE */
+        /* =====================================================
+           ALL EXERCISES SECTION
+        ===================================================== */
 
-        @media (max-width: 850px) {
+        .strength-page #all-exercises {
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.97),
+                    rgba(5,5,5,.78)
+                ),
+                url("images/strength-training.jpg") center/cover no-repeat;
+        }
+
+        .strength-page #all-exercises::before {
+            display: none;
+        }
+
+        /* =====================================================
+           PREMIUM CTA
+        ===================================================== */
+
+        .strength-page .cta {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.97),
+                    rgba(5,5,5,.76)
+                ),
+                url("images/strength-training.jpg") center/cover no-repeat;
+            border-top: 1px solid #242424;
+        }
+
+        .strength-page .cta::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            right: -100px;
+            top: -180px;
+            background: radial-gradient(
+                circle,
+                rgba(183,255,115,.13),
+                transparent 68%
+            );
+            pointer-events: none;
+        }
+
+        .strength-page .cta > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .strength-hero {
+                min-height: auto;
+                padding: 90px 5%;
+                background-position: 65% center;
+            }
 
             .training-boxes {
-                grid-template-columns: 1fr;
+                max-width: 100%;
             }
 
         }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .strength-hero {
+                min-height: 820px;
+                padding: 75px 6%;
+                align-items: flex-end;
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(4,4,4,.30) 0%,
+                        rgba(4,4,4,.72) 42%,
+                        rgba(4,4,4,.97) 82%,
+                        #070707 100%
+                    ),
+                    url("images/strength-training.jpg") center/cover no-repeat;
+            }
+
+            .strength-hero-content {
+                width: 100%;
+            }
+
+            .strength-hero h1 {
+                font-size: clamp(55px, 15vw, 78px);
+                letter-spacing: -4px;
+            }
+
+            .strength-hero-text {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .training-boxes {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                margin-top: 32px;
+            }
+
+            .training-box {
+                min-height: auto;
+                padding: 19px;
+            }
+
+            .strength-page .card:hover {
+                transform: none;
+            }
+
+        }
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            .strength-hero {
+                min-height: 850px;
+                padding: 65px 6%;
+                background-position: 63% center;
+            }
+
+            .strength-hero h1 {
+                font-size: 55px;
+                letter-spacing: -3px;
+            }
+
+            .strength-hero-text {
+                font-size: 14px;
+            }
+
+            .strength-hero .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .strength-hero .hero-buttons .btn {
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .training-box h3 {
+                font-size: 17px;
+            }
+
+        }
+
     </style>
 
 </head>
 
 
-<body>
+<body class="strength-page">
 
 
-<!-- NAVBAR -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <header>
 
@@ -104,12 +551,19 @@
     <nav>
 
         <a href="index.html">Home</a>
+
         <a href="workouts.html">Workouts</a>
+
         <a href="nutrition.html">Nutrition</a>
+
         <a href="guides.html">Guides</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="videos.html">Videos</a>
+
         <a href="about.html">About</a>
+
         <a href="contact.html">Contact</a>
 
     </nav>
@@ -117,41 +571,45 @@
 </header>
 
 
-
 <main>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section class="hero">
+<section class="strength-hero">
 
-    <div class="hero-content">
+    <div class="strength-hero-content">
 
         <p class="eyebrow">
             ROSHXLAB · STRENGTH TRAINING
         </p>
-
 
         <h1>
             Build<br>
             <span>Strength.</span>
         </h1>
 
-
-        <p class="hero-text">
+        <p class="strength-hero-text">
             Learn strength-focused movements and build
             a stronger foundation using equipment or
             your own bodyweight.
         </p>
 
-
         <div class="hero-buttons">
 
-            <a href="#equipment" class="btn primary">
+            <a
+                href="#equipment"
+                class="btn primary"
+            >
                 With Equipment →
             </a>
 
-            <a href="#no-equipment" class="btn secondary">
+            <a
+                href="#no-equipment"
+                class="btn secondary"
+            >
                 Without Equipment
             </a>
 
@@ -162,8 +620,10 @@
 
         <div class="training-boxes">
 
-
-            <a href="#equipment" class="training-box">
+            <a
+                href="#equipment"
+                class="training-box"
+            >
 
                 <span>01</span>
 
@@ -178,8 +638,10 @@
             </a>
 
 
-
-            <a href="#no-equipment" class="training-box">
+            <a
+                href="#no-equipment"
+                class="training-box"
+            >
 
                 <span>02</span>
 
@@ -194,8 +656,10 @@
             </a>
 
 
-
-            <a href="#all-exercises" class="training-box">
+            <a
+                href="#all-exercises"
+                class="training-box"
+            >
 
                 <span>03</span>
 
@@ -209,7 +673,6 @@
 
             </a>
 
-
         </div>
 
     </div>
@@ -217,8 +680,9 @@
 </section>
 
 
-
-<!-- INTRO -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
 <section class="section">
 
@@ -244,10 +708,14 @@
 </section>
 
 
+<!-- =====================================================
+     WITH EQUIPMENT
+===================================================== -->
 
-<!-- WITH EQUIPMENT -->
-
-<section class="section dark-section" id="equipment">
+<section
+    class="section dark-section"
+    id="equipment"
+>
 
     <div class="section-heading">
 
@@ -297,7 +765,6 @@
         </article>
 
 
-
         <!-- 02 -->
 
         <article class="card">
@@ -322,7 +789,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 03 -->
@@ -351,7 +817,6 @@
         </article>
 
 
-
         <!-- 04 -->
 
         <article class="card">
@@ -376,7 +841,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 05 -->
@@ -405,7 +869,6 @@
         </article>
 
 
-
         <!-- 06 -->
 
         <article class="card">
@@ -430,7 +893,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 07 -->
@@ -459,7 +921,6 @@
         </article>
 
 
-
         <!-- 08 -->
 
         <article class="card">
@@ -486,7 +947,6 @@
         </article>
 
 
-
         <!-- 09 -->
 
         <article class="card">
@@ -511,7 +971,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 10 -->
@@ -545,10 +1004,14 @@
 </section>
 
 
+<!-- =====================================================
+     WITHOUT EQUIPMENT
+===================================================== -->
 
-<!-- WITHOUT EQUIPMENT -->
-
-<section class="section" id="no-equipment">
+<section
+    class="section"
+    id="no-equipment"
+>
 
     <div class="section-heading">
 
@@ -598,7 +1061,6 @@
         </article>
 
 
-
         <!-- 02 -->
 
         <article class="card">
@@ -623,7 +1085,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 03 -->
@@ -652,7 +1113,6 @@
         </article>
 
 
-
         <!-- 04 -->
 
         <article class="card">
@@ -677,7 +1137,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 05 -->
@@ -706,7 +1165,6 @@
         </article>
 
 
-
         <!-- 06 -->
 
         <article class="card">
@@ -731,7 +1189,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 07 -->
@@ -760,7 +1217,6 @@
         </article>
 
 
-
         <!-- 08 -->
 
         <article class="card">
@@ -787,7 +1243,6 @@
         </article>
 
 
-
         <!-- 09 -->
 
         <article class="card">
@@ -812,7 +1267,6 @@
             </a>
 
         </article>
-
 
 
         <!-- 10 -->
@@ -846,10 +1300,14 @@
 </section>
 
 
+<!-- =====================================================
+     ALL EXERCISES
+===================================================== -->
 
-<!-- ALL EXERCISES MARKER -->
-
-<section class="section dark-section" id="all-exercises">
+<section
+    class="section dark-section"
+    id="all-exercises"
+>
 
     <div class="section-heading">
 
@@ -874,8 +1332,9 @@
 </section>
 
 
-
-<!-- FINAL CTA -->
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
 
 <section class="cta">
 
@@ -895,11 +1354,17 @@
 
     <div class="hero-buttons">
 
-        <a href="home-workouts.html" class="btn primary">
+        <a
+            href="home-workouts.html"
+            class="btn primary"
+        >
             Home Workouts →
         </a>
 
-        <a href="nutrition.html" class="btn secondary">
+        <a
+            href="nutrition.html"
+            class="btn secondary"
+        >
             Explore Nutrition
         </a>
 
@@ -911,8 +1376,9 @@
 </main>
 
 
-
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -928,12 +1394,19 @@
     <div class="footer-links">
 
         <a href="index.html">Home</a>
+
         <a href="workouts.html">Workouts</a>
+
         <a href="nutrition.html">Nutrition</a>
+
         <a href="guides.html">Guides</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="videos.html">Videos</a>
+
         <a href="about.html">About</a>
+
         <a href="contact.html">Contact</a>
 
     </div>
@@ -947,4 +1420,5 @@
 
 
 </body>
+
 </html>

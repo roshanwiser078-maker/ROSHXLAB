@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rest Days & Recovery — ROSHXLAB</title>
+    <meta name="description" content="Learn why rest days matter, how recovery supports training, and how to recognize when your body needs a break.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.94);
+            border-bottom: 1px solid #202020;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 26px;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            color: #bdbdbd;
+            font-size: 0.95rem;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* HERO */
+
+        .article-hero {
+            padding: 110px 0 75px;
+            text-align: center;
+            border-bottom: 1px solid #181818;
+        }
+
+        .eyebrow {
+            color: #999;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .article-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #aaa;
+            font-size: 1.08rem;
+        }
+
+        /* ARTICLE */
+
+        .article {
+            max-width: 820px;
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .article-section {
+            margin-bottom: 65px;
+        }
+
+        .article-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .article-section p {
+            color: #bdbdbd;
+            margin-bottom: 18px;
+        }
+
+        .article-section ul {
+            padding-left: 22px;
+            color: #bdbdbd;
+        }
+
+        .article-section li {
+            margin-bottom: 12px;
+        }
+
+        /* INFO BOX */
+
+        .info-box {
+            background: #101010;
+            border: 1px solid #252525;
+            border-radius: 18px;
+            padding: 28px;
+            margin: 28px 0;
+        }
+
+        .info-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+
+        .recovery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .recovery-card {
+            background: #101010;
+            border: 1px solid #242424;
+            border-radius: 18px;
+            padding: 24px;
+            transition: 0.25s ease;
+        }
+
+        .recovery-card:hover {
+            transform: translateY(-4px);
+            border-color: #3a3a3a;
+        }
+
+        .recovery-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .recovery-card p {
+            margin: 0;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+
+        .article-cta {
+            margin-top: 30px;
+            padding: 45px 30px;
+            background: linear-gradient(145deg, #111, #0b0b0b);
+            border: 1px solid #292929;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .article-cta h2 {
+            margin-bottom: 14px;
+        }
+
+        .article-cta p {
+            color: #aaa;
+            max-width: 650px;
+            margin: 0 auto 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 10px;
+            background: #fff;
+            color: #080808;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #202020;
+            padding: 35px 0;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .recovery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav-inner {
+                flex-direction: column;
+                gap: 14px;
+                padding: 18px 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+                margin-left: 0;
+            }
+
+            .article-hero {
+                padding: 80px 0 55px;
+            }
+
+            .article {
+                padding: 55px 0;
+            }
+
+            .article-section {
+                margin-bottom: 50px;
+            }
+
+            .article-section h2 {
+                font-size: 1.65rem;
+            }
+
+            .info-box,
+            .recovery-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+        <div class="container nav-inner">
+
+            <a href="index.html" class="logo">
+                ROSHXLAB
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="guides.html">Guides</a>
+                <a href="blog.html">Blog</a>
+                <a href="videos.html">Videos</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="article-hero">
+        <div class="container">
+
+            <div class="eyebrow">
+                RECOVERY · REST
+            </div>
+
+            <h1>
+                Rest Days Matter.
+            </h1>
+
+            <p>
+                Training is only one part of getting stronger.
+                Recovery gives your body time to adapt, rebuild,
+                and be ready for your next session.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- ARTICLE -->
+
+    <main class="article">
+
+
+        <!-- SECTION 1 -->
+
+        <section class="article-section">
+
+            <h2>
+                Why Rest Days Matter
+            </h2>
+
+            <p>
+                It can be tempting to think that training every day
+                means making faster progress. But your body also needs
+                time away from hard training.
+            </p>
+
+            <p>
+                Rest allows your muscles, joints, nervous system and
+                overall energy levels to recover between demanding
+                sessions.
+            </p>
+
+            <div class="info-box">
+
+                <h3>
+                    Training creates the challenge. Recovery gives you time to adapt.
+                </h3>
+
+                <p>
+                    A balanced routine includes both productive training
+                    and enough recovery to support it.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 2 -->
+
+        <section class="article-section">
+
+            <h2>
+                What Happens During Recovery?
+            </h2>
+
+            <p>
+                Recovery is more than simply doing nothing. Your body
+                continues working after a workout.
+            </p>
+
+            <div class="recovery-grid">
+
+                <div class="recovery-card">
+                    <h3>Muscle Recovery</h3>
+                    <p>
+                        Muscles get time to recover from the stress
+                        created during training.
+                    </p>
+                </div>
+
+                <div class="recovery-card">
+                    <h3>Energy Restoration</h3>
+                    <p>
+                        Rest, food and sleep help restore the energy
+                        needed for future activity.
+                    </p>
+                </div>
+
+                <div class="recovery-card">
+                    <h3>Movement Quality</h3>
+                    <p>
+                        Recovery can help you return to training with
+                        better energy and movement quality.
+                    </p>
+                </div>
+
+                <div class="recovery-card">
+                    <h3>Overall Readiness</h3>
+                    <p>
+                        Good recovery helps you stay consistent without
+                        constantly pushing through exhaustion.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 3 -->
+
+        <section class="article-section">
+
+            <h2>
+                How To Know You Need More Recovery
+            </h2>
+
+            <p>
+                Everyone has different recovery needs. Pay attention
+                to how you feel instead of following a rigid schedule.
+            </p>
+
+            <ul>
+                <li>Unusual or persistent tiredness</li>
+                <li>Your normal workout feels much harder than usual</li>
+                <li>Your performance keeps dropping</li>
+                <li>You feel unusually sore or uncomfortable</li>
+                <li>You are struggling to stay focused or motivated</li>
+                <li>You are not sleeping well</li>
+            </ul>
+
+            <p>
+                These signs do not automatically mean something is
+                wrong, but they can be useful signals to reduce training
+                stress and prioritize recovery.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 4 -->
+
+        <section class="article-section">
+
+            <h2>
+                Rest Day vs Light Activity
+            </h2>
+
+            <p>
+                A rest day does not always have to mean spending the
+                entire day sitting still.
+            </p>
+
+            <p>
+                Depending on how you feel, light movement such as an
+                easy walk, gentle mobility work or normal daily activity
+                can be a comfortable alternative to a hard workout.
+            </p>
+
+            <div class="info-box">
+
+                <h3>
+                    The goal is recovery, not another hidden workout.
+                </h3>
+
+                <p>
+                    If an activity leaves you feeling more tired,
+                    it may be more training rather than recovery.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 5 -->
+
+        <section class="article-section">
+
+            <h2>
+                Sleep Is Part Of Training
+            </h2>
+
+            <p>
+                Sleep plays an important role in physical and mental
+                recovery. It is one of the simplest parts of a routine
+                to overlook.
+            </p>
+
+            <p>
+                A consistent sleep schedule, enough sleep and a relaxing
+                bedtime routine can support your ability to train,
+                learn and function well during the day.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 6 -->
+
+        <section class="article-section">
+
+            <h2>
+                How To Return After A Rest Day
+            </h2>
+
+            <p>
+                You do not need to compensate for a rest day by doing
+                extra workouts the next day.
+            </p>
+
+            <p>
+                Simply return to your normal routine and focus on
+                good technique, controlled movement and steady progress.
+            </p>
+
+            <div class="recovery-grid">
+
+                <div class="recovery-card">
+                    <h3>Warm Up</h3>
+                    <p>
+                        Give yourself time to prepare before harder
+                        movements.
+                    </p>
+                </div>
+
+                <div class="recovery-card">
+                    <h3>Start Controlled</h3>
+                    <p>
+                        Focus on technique instead of rushing through
+                        your first sets.
+                    </p>
+                </div>
+
+                <div class="recovery-card">
+                    <h3>Listen To Your Body</h3>
+                    <p>
+                        Adjust the session if you feel unusually tired
+                        or uncomfortable.
+                    </p>
+                </div>
+
+                <div class="recovery-card">
+                    <h3>Keep Progress Gradual</h3>
+                    <p>
+                        You do not need to suddenly increase training
+                        because you had a day off.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 7 -->
+
+        <section class="article-section">
+
+            <h2>
+                Common Recovery Mistakes
+            </h2>
+
+            <ul>
+                <li>Thinking every day must be a hard workout</li>
+                <li>Ignoring persistent fatigue</li>
+                <li>Using rest days to justify extra training later</li>
+                <li>Skipping sleep and expecting training alone to compensate</li>
+                <li>Returning too aggressively after feeling run down</li>
+            </ul>
+
+        </section>
+
+
+        <!-- SECTION 8 -->
+
+        <section class="article-section">
+
+            <h2>
+                A Better Way To Think About Rest
+            </h2>
+
+            <p>
+                Rest is not the opposite of progress. It is part of
+                a sustainable training routine.
+            </p>
+
+            <p>
+                The goal is not to see how much training you can survive.
+                The goal is to build a routine you can follow consistently
+                while giving your body enough opportunity to recover.
+            </p>
+
+        </section>
+
+
+        <!-- ROSHXLAB NOTE -->
+
+        <section class="article-section">
+
+            <div class="info-box">
+
+                <h3>
+                    ROSHXLAB Note
+                </h3>
+
+                <p>
+                    Train with purpose. Recover with purpose.
+                    Your routine should support your overall health,
+                    strength and consistency — not just the number
+                    of workouts you complete.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="article-cta">
+
+            <h2>
+                Ready To Train Smarter?
+            </h2>
+
+            <p>
+                Explore beginner-friendly workouts and build your
+                routine around good technique, consistency and recovery.
+            </p>
+
+            <a href="beginner-workout.html" class="cta-button">
+                Explore Beginner Workouts →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            © 2026 ROSHXLAB. Build Better. Live Stronger.
+        </div>
+    </footer>
+
+</body>
+</html>
