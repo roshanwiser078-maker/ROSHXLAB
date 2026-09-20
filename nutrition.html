@@ -12,16 +12,12 @@
 
     <meta name="robots" content="index, follow">
     <meta name="author" content="ROSHXLAB">
-
     <link rel="canonical" href="nutrition.html">
 
-    <!-- Open Graph -->
     <meta property="og:title"
         content="Nutrition — Protein, Macros & Healthy Eating | ROSHXLAB">
-
     <meta property="og:description"
         content="Practical nutrition guides covering protein, carbohydrates, healthy fats, hydration, balanced meals and training nutrition.">
-
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ROSHXLAB">
     <meta property="og:image" content="images/nutrition-hero.webp">
@@ -31,14 +27,17 @@
     <style>
         /* =========================================================
            ROSHXLAB NUTRITION — PREMIUM V2
+           IMAGE FIX:
+           All nutrition background images now use real <img>
+           elements with object-fit: contain so they NEVER crop.
         ========================================================= */
 
         .nutrition-page {
             --np-bg: #070707;
-            --np-panel: rgba(16,16,16,.78);
-            --np-panel-strong: rgba(12,12,12,.92);
-            --np-border: rgba(255,255,255,.10);
-            --np-border-hover: rgba(196,255,150,.30);
+            --np-panel: rgba(16, 16, 16, .78);
+            --np-panel-strong: rgba(12, 12, 12, .92);
+            --np-border: rgba(255, 255, 255, .10);
+            --np-border-hover: rgba(196, 255, 150, .30);
             --np-text: #f4f4f4;
             --np-muted: #969696;
             --np-soft: #c2c2c2;
@@ -62,14 +61,28 @@
             border-bottom: 1px solid #242424;
         }
 
+        /* =========================================================
+           IMPORTANT IMAGE FIX
+        ========================================================= */
+
         .nutrition-page .np-section-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            background: #080808;
             pointer-events: none;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nutrition-page .np-section-bg img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            object-position: center center;
         }
 
         .nutrition-page .np-overlay {
@@ -84,7 +97,9 @@
             z-index: 2;
         }
 
-        /* HERO */
+        /* =========================================================
+           HERO
+        ========================================================= */
 
         .nutrition-page .nutrition-hero {
             position: relative;
@@ -94,14 +109,26 @@
             align-items: center;
             overflow: hidden;
             border-bottom: 1px solid #292929;
+            background: #070707;
         }
 
         .nutrition-page .nutrition-hero-bg {
             position: absolute;
             inset: 0;
-            background: url("images/nutrition-hero.webp") center right / cover no-repeat;
-            transform: scale(1.03);
             z-index: 0;
+            background: #070707;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .nutrition-page .nutrition-hero-bg img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            object-position: center center;
         }
 
         .nutrition-page .nutrition-hero-overlay {
@@ -109,18 +136,22 @@
             inset: 0;
             z-index: 1;
             background:
-                radial-gradient(circle at 78% 42%, rgba(190,255,130,.13), transparent 25%),
+                radial-gradient(
+                    circle at 78% 42%,
+                    rgba(190, 255, 130, .13),
+                    transparent 25%
+                ),
                 linear-gradient(
                     90deg,
-                    rgba(4,4,4,.99) 0%,
-                    rgba(4,4,4,.95) 28%,
-                    rgba(4,4,4,.70) 57%,
-                    rgba(4,4,4,.28) 100%
+                    rgba(4, 4, 4, .99) 0%,
+                    rgba(4, 4, 4, .95) 28%,
+                    rgba(4, 4, 4, .70) 57%,
+                    rgba(4, 4, 4, .28) 100%
                 ),
                 linear-gradient(
                     180deg,
-                    rgba(0,0,0,.18),
-                    rgba(0,0,0,.76)
+                    rgba(0, 0, 0, .18),
+                    rgba(0, 0, 0, .76)
                 );
         }
 
@@ -151,7 +182,7 @@
             letter-spacing: -6px;
             font-weight: 900;
             text-transform: uppercase;
-            text-shadow: 0 20px 60px rgba(0,0,0,.55);
+            text-shadow: 0 20px 60px rgba(0, 0, 0, .55);
         }
 
         .nutrition-page .nutrition-hero h1 span {
@@ -167,7 +198,9 @@
             line-height: 1.75;
         }
 
-        /* BUTTONS */
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
 
         .nutrition-page .hero-buttons {
             display: flex;
@@ -196,35 +229,37 @@
             color: #050505;
             background: var(--np-accent);
             border: 1px solid var(--np-accent);
-            box-shadow: 0 10px 35px rgba(180,255,120,.12);
+            box-shadow: 0 10px 35px rgba(180, 255, 120, .12);
         }
 
         .nutrition-page .hero-buttons .btn.primary:hover {
             background: #e1ffc4;
             border-color: #e1ffc4;
-            box-shadow: 0 14px 40px rgba(180,255,120,.20);
+            box-shadow: 0 14px 40px rgba(180, 255, 120, .20);
         }
 
         .nutrition-page .hero-buttons .btn.secondary {
             color: #ddd;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.15);
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .15);
             backdrop-filter: blur(10px);
         }
 
         .nutrition-page .hero-buttons .btn.secondary:hover {
             color: #fff;
-            background: rgba(255,255,255,.08);
-            border-color: rgba(255,255,255,.28);
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(255, 255, 255, .28);
         }
 
-        /* HERO DATA */
+        /* =========================================================
+           HERO DATA
+        ========================================================= */
 
         .nutrition-page .nutrition-side {
             margin-top: 65px;
             max-width: 760px;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
         }
 
@@ -234,12 +269,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: linear-gradient(145deg,rgba(24,24,24,.82),rgba(7,7,7,.72));
-            border: 1px solid rgba(255,255,255,.12);
+            background: linear-gradient(
+                145deg,
+                rgba(24, 24, 24, .82),
+                rgba(7, 7, 7, .72)
+            );
+            border: 1px solid rgba(255, 255, 255, .12);
             border-radius: 14px;
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 20px 55px rgba(0,0,0,.30);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, .30);
             transition:
                 background .25s ease,
                 border-color .25s ease,
@@ -247,9 +286,13 @@
         }
 
         .nutrition-page .nutrition-box:hover {
-            background: linear-gradient(145deg,rgba(35,35,35,.88),rgba(8,8,8,.78));
+            background: linear-gradient(
+                145deg,
+                rgba(35, 35, 35, .88),
+                rgba(8, 8, 8, .78)
+            );
             border-color: var(--np-border-hover);
-            box-shadow: 0 24px 65px rgba(0,0,0,.42);
+            box-shadow: 0 24px 65px rgba(0, 0, 0, .42);
         }
 
         .nutrition-page .nutrition-box strong {
@@ -264,13 +307,15 @@
             letter-spacing: 2px;
         }
 
-        /* QUICK NAV */
+        /* =========================================================
+           QUICK NAV
+        ========================================================= */
 
         .nutrition-page .nutrition-nav {
             position: relative;
             z-index: 5;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             background: #090909;
             border-bottom: 1px solid #292929;
         }
@@ -296,14 +341,16 @@
             background: #111;
         }
 
-        /* INTRO */
+        /* =========================================================
+           INTRO
+        ========================================================= */
 
         .nutrition-page .nutrition-intro {
             padding: 125px 7%;
             background:
                 radial-gradient(
                     circle at 78% 45%,
-                    rgba(190,255,130,.055),
+                    rgba(190, 255, 130, .055),
                     transparent 30%
                 ),
                 #080808;
@@ -317,7 +364,7 @@
 
         .nutrition-page .nutrition-intro h2 {
             margin: 18px 0 26px;
-            font-size: clamp(44px,6vw,72px);
+            font-size: clamp(44px, 6vw, 72px);
             line-height: .94;
             letter-spacing: -4px;
             text-transform: uppercase;
@@ -330,7 +377,9 @@
             line-height: 1.85;
         }
 
-        /* HEADINGS */
+        /* =========================================================
+           HEADINGS
+        ========================================================= */
 
         .nutrition-page .nutrition-heading {
             max-width: 780px;
@@ -341,7 +390,7 @@
 
         .nutrition-page .nutrition-heading h2 {
             margin: 17px 0 20px;
-            font-size: clamp(45px,6vw,72px);
+            font-size: clamp(45px, 6vw, 72px);
             line-height: .94;
             letter-spacing: -4px;
             text-transform: uppercase;
@@ -353,22 +402,20 @@
             line-height: 1.75;
         }
 
-        /* MACROS */
+        /* =========================================================
+           MACROS
+        ========================================================= */
 
         .nutrition-page .nutrition-section {
             padding: 125px 7%;
             border-bottom: 1px solid #292929;
         }
 
-        .nutrition-page .nutrition-section-bg {
-            background: url("images/nutrition-macros.webp") center / cover no-repeat;
-        }
-
         .nutrition-page .nutrition-section-overlay {
             background: linear-gradient(
                 180deg,
-                rgba(4,4,4,.92),
-                rgba(4,4,4,.79)
+                rgba(4, 4, 4, .92),
+                rgba(4, 4, 4, .79)
             );
         }
 
@@ -376,7 +423,7 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 14px;
         }
 
@@ -387,14 +434,14 @@
             overflow: hidden;
             background: linear-gradient(
                 145deg,
-                rgba(22,22,22,.88),
-                rgba(7,7,7,.82)
+                rgba(22, 22, 22, .88),
+                rgba(7, 7, 7, .82)
             );
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid rgba(255, 255, 255, .10);
             border-radius: 16px;
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            box-shadow: 0 20px 55px rgba(0,0,0,.24);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, .24);
             transition:
                 background .25s ease,
                 border-color .25s ease,
@@ -410,7 +457,7 @@
             top: -90px;
             background: radial-gradient(
                 circle,
-                rgba(200,255,150,.13),
+                rgba(200, 255, 150, .13),
                 transparent 68%
             );
             pointer-events: none;
@@ -419,11 +466,11 @@
         .nutrition-page .nutrition-card:hover {
             background: linear-gradient(
                 145deg,
-                rgba(29,29,29,.94),
-                rgba(8,8,8,.87)
+                rgba(29, 29, 29, .94),
+                rgba(8, 8, 8, .87)
             );
             border-color: var(--np-border-hover);
-            box-shadow: 0 25px 70px rgba(0,0,0,.38);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .38);
         }
 
         .nutrition-page .nutrition-number {
@@ -456,23 +503,21 @@
             margin-bottom: 7px;
         }
 
-        /* FOUNDATION */
+        /* =========================================================
+           FOUNDATION
+        ========================================================= */
 
         .nutrition-page .nutrition-foundation {
             padding: 125px 7%;
             border-bottom: 1px solid #292929;
         }
 
-        .nutrition-page .foundation-bg {
-            background: url("images/nutrition-balanced.webp") center / cover no-repeat;
-        }
-
         .nutrition-page .foundation-overlay {
             background: linear-gradient(
                 90deg,
-                rgba(4,4,4,.97),
-                rgba(4,4,4,.79) 60%,
-                rgba(4,4,4,.48)
+                rgba(4, 4, 4, .97),
+                rgba(4, 4, 4, .79) 60%,
+                rgba(4, 4, 4, .48)
             );
         }
 
@@ -490,7 +535,7 @@
         .nutrition-page .foundation-content h2,
         .nutrition-page .nutrition-feature h2 {
             margin: 18px 0 25px;
-            font-size: clamp(46px,6vw,72px);
+            font-size: clamp(46px, 6vw, 72px);
             line-height: .94;
             letter-spacing: -4px;
             text-transform: uppercase;
@@ -515,10 +560,10 @@
             padding: 25px;
             background: linear-gradient(
                 145deg,
-                rgba(12,12,12,.86),
-                rgba(5,5,5,.75)
+                rgba(12, 12, 12, .86),
+                rgba(5, 5, 5, .75)
             );
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid rgba(255, 255, 255, .10);
             border-radius: 14px;
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -531,8 +576,8 @@
         .nutrition-page .meal-item:hover {
             background: linear-gradient(
                 145deg,
-                rgba(26,26,26,.92),
-                rgba(7,7,7,.80)
+                rgba(26, 26, 26, .92),
+                rgba(7, 7, 7, .80)
             );
             border-color: var(--np-border-hover);
         }
@@ -558,23 +603,21 @@
             line-height: 1.65;
         }
 
-        /* BALANCED MEALS */
+        /* =========================================================
+           BALANCED MEALS
+        ========================================================= */
 
         .nutrition-page .nutrition-feature {
             padding: 125px 7%;
             border-bottom: 1px solid #292929;
         }
 
-        .nutrition-page .feature-bg {
-            background: url("images/nutrition-balanced.webp") center / cover no-repeat;
-        }
-
         .nutrition-page .feature-overlay {
             background: linear-gradient(
                 90deg,
-                rgba(4,4,4,.98),
-                rgba(4,4,4,.82) 50%,
-                rgba(4,4,4,.48)
+                rgba(4, 4, 4, .98),
+                rgba(4, 4, 4, .82) 50%,
+                rgba(4, 4, 4, .48)
             );
         }
 
@@ -604,22 +647,20 @@
             font-size: 14px;
         }
 
-        /* TRAINING */
+        /* =========================================================
+           TRAINING
+        ========================================================= */
 
         .nutrition-page .training-nutrition {
             padding: 115px 7%;
             border-bottom: 1px solid #292929;
         }
 
-        .nutrition-page .training-bg {
-            background: url("images/nutrition-training-fuel.webp") center / cover no-repeat;
-        }
-
         .nutrition-page .training-overlay {
             background: linear-gradient(
                 180deg,
-                rgba(4,4,4,.94),
-                rgba(4,4,4,.80)
+                rgba(4, 4, 4, .94),
+                rgba(4, 4, 4, .80)
             );
         }
 
@@ -627,7 +668,7 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 14px;
         }
 
@@ -636,10 +677,10 @@
             padding: 32px;
             background: linear-gradient(
                 145deg,
-                rgba(17,17,17,.89),
-                rgba(6,6,6,.82)
+                rgba(17, 17, 17, .89),
+                rgba(6, 6, 6, .82)
             );
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid rgba(255, 255, 255, .10);
             border-radius: 16px;
             backdrop-filter: blur(13px);
             -webkit-backdrop-filter: blur(13px);
@@ -651,8 +692,8 @@
         .nutrition-page .training-card:hover {
             background: linear-gradient(
                 145deg,
-                rgba(28,28,28,.94),
-                rgba(7,7,7,.85)
+                rgba(28, 28, 28, .94),
+                rgba(7, 7, 7, .85)
             );
             border-color: var(--np-border-hover);
         }
@@ -668,22 +709,20 @@
             line-height: 1.7;
         }
 
-        /* HYDRATION */
+        /* =========================================================
+           HYDRATION
+        ========================================================= */
 
         .nutrition-page .hydration-section {
             padding: 125px 7%;
             border-bottom: 1px solid #292929;
         }
 
-        .nutrition-page .hydration-bg {
-            background: url("images/nutrition-hydration.webp") center / cover no-repeat;
-        }
-
         .nutrition-page .hydration-overlay {
             background: linear-gradient(
                 90deg,
-                rgba(4,4,4,.97),
-                rgba(4,4,4,.76)
+                rgba(4, 4, 4, .97),
+                rgba(4, 4, 4, .76)
             );
         }
 
@@ -691,7 +730,7 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 14px;
         }
 
@@ -700,10 +739,10 @@
             padding: 35px;
             background: linear-gradient(
                 145deg,
-                rgba(10,10,10,.88),
-                rgba(5,5,5,.76)
+                rgba(10, 10, 10, .88),
+                rgba(5, 5, 5, .76)
             );
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid rgba(255, 255, 255, .10);
             border-radius: 16px;
             backdrop-filter: blur(13px);
             -webkit-backdrop-filter: blur(13px);
@@ -715,8 +754,8 @@
         .nutrition-page .hydration-card:hover {
             background: linear-gradient(
                 145deg,
-                rgba(27,27,27,.92),
-                rgba(6,6,6,.82)
+                rgba(27, 27, 27, .92),
+                rgba(6, 6, 6, .82)
             );
             border-color: var(--np-border-hover);
         }
@@ -732,22 +771,20 @@
             line-height: 1.7;
         }
 
-        /* MISTAKES */
+        /* =========================================================
+           MISTAKES
+        ========================================================= */
 
         .nutrition-page .mistakes {
             padding: 115px 7%;
             border-bottom: 1px solid #292929;
         }
 
-        .nutrition-page .mistakes-bg {
-            background: url("images/nutrition-mistakes.webp") center / cover no-repeat;
-        }
-
         .nutrition-page .mistakes-overlay {
             background: linear-gradient(
                 180deg,
-                rgba(4,4,4,.95),
-                rgba(4,4,4,.84)
+                rgba(4, 4, 4, .95),
+                rgba(4, 4, 4, .84)
             );
         }
 
@@ -755,7 +792,7 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 14px;
         }
 
@@ -764,10 +801,10 @@
             padding: 30px;
             background: linear-gradient(
                 145deg,
-                rgba(16,16,16,.90),
-                rgba(6,6,6,.80)
+                rgba(16, 16, 16, .90),
+                rgba(6, 6, 6, .80)
             );
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid rgba(255, 255, 255, .10);
             border-radius: 16px;
             backdrop-filter: blur(13px);
             -webkit-backdrop-filter: blur(13px);
@@ -779,8 +816,8 @@
         .nutrition-page .mistake:hover {
             background: linear-gradient(
                 145deg,
-                rgba(28,28,28,.94),
-                rgba(7,7,7,.85)
+                rgba(28, 28, 28, .94),
+                rgba(7, 7, 7, .85)
             );
             border-color: var(--np-border-hover);
         }
@@ -796,15 +833,17 @@
             line-height: 1.7;
         }
 
-        /* NOTE */
+        /* =========================================================
+           NOTE
+        ========================================================= */
 
         .nutrition-page .nutrition-note {
             position: relative;
             z-index: 2;
             margin-top: 35px;
             padding: 27px;
-            background: rgba(10,10,10,.80);
-            border: 1px solid rgba(255,255,255,.11);
+            background: rgba(10, 10, 10, .80);
+            border: 1px solid rgba(255, 255, 255, .11);
             border-left: 2px solid var(--np-accent);
             border-radius: 13px;
             backdrop-filter: blur(14px);
@@ -822,7 +861,9 @@
             line-height: 1.7;
         }
 
-        /* CTA */
+        /* =========================================================
+           CTA
+        ========================================================= */
 
         .nutrition-page .nutrition-cta {
             position: relative;
@@ -833,7 +874,7 @@
             background:
                 radial-gradient(
                     circle at center,
-                    rgba(190,255,130,.12),
+                    rgba(190, 255, 130, .12),
                     transparent 28%
                 ),
                 #080808;
@@ -846,10 +887,10 @@
             height: 500px;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             background: radial-gradient(
                 circle,
-                rgba(190,255,130,.08),
+                rgba(190, 255, 130, .08),
                 transparent 68%
             );
             pointer-events: none;
@@ -862,7 +903,7 @@
 
         .nutrition-page .nutrition-cta h2 {
             margin: 18px 0 25px;
-            font-size: clamp(52px,7vw,88px);
+            font-size: clamp(52px, 7vw, 88px);
             line-height: .90;
             letter-spacing: -5px;
             text-transform: uppercase;
@@ -880,9 +921,12 @@
             justify-content: center;
         }
 
-        /* RESPONSIVE */
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
 
-        @media (max-width:1050px) {
+        @media (max-width: 1050px) {
+
             .nutrition-page .nutrition-hero {
                 min-height: auto;
                 padding-top: 105px;
@@ -896,24 +940,28 @@
             }
 
             .nutrition-page .mistake-grid {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width:850px) {
+        @media (max-width: 850px) {
+
             .nutrition-page .nutrition-hero {
                 padding: 85px 6% 70px;
             }
 
-            .nutrition-page .nutrition-hero-bg {
-                background-position: 65% center;
+            /* NO CROP ON TABLETS */
+            .nutrition-page .nutrition-hero-bg img,
+            .nutrition-page .np-section-bg img {
+                object-fit: contain;
+                object-position: center center;
             }
 
             .nutrition-page .nutrition-hero-overlay {
                 background: linear-gradient(
                     180deg,
-                    rgba(4,4,4,.91),
-                    rgba(4,4,4,.80)
+                    rgba(4, 4, 4, .91),
+                    rgba(4, 4, 4, .80)
                 );
             }
 
@@ -932,7 +980,7 @@
             }
 
             .nutrition-page .nutrition-nav {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .nutrition-page .nutrition-grid,
@@ -958,13 +1006,29 @@
             }
         }
 
-        @media (max-width:550px) {
+        @media (max-width: 550px) {
+
             .nutrition-page .nutrition-hero {
                 padding: 72px 6% 65px;
             }
 
+            /* =====================================================
+               MOBILE IMAGE FIX
+               FULL IMAGE VISIBLE — ZERO CROPPING
+            ===================================================== */
+
             .nutrition-page .nutrition-hero-bg {
-                background-position: 62% center;
+                position: absolute;
+                inset: 0;
+                background: #070707;
+            }
+
+            .nutrition-page .nutrition-hero-bg img,
+            .nutrition-page .np-section-bg img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain !important;
+                object-position: center center !important;
             }
 
             .nutrition-page .nutrition-hero h1 {
@@ -1051,10 +1115,16 @@
 <main>
 
     <!-- HERO -->
-
     <section class="nutrition-hero">
 
-        <div class="nutrition-hero-bg"></div>
+        <div class="nutrition-hero-bg">
+            <img
+                src="images/nutrition-hero.webp"
+                alt=""
+                loading="eager"
+            >
+        </div>
+
         <div class="nutrition-hero-overlay"></div>
 
         <div class="nutrition-hero-content">
@@ -1111,12 +1181,10 @@
             </div>
 
         </div>
-
     </section>
 
 
     <!-- QUICK NAV -->
-
     <section class="nutrition-nav">
 
         <a href="#nutrition-basics">
@@ -1139,7 +1207,6 @@
 
 
     <!-- INTRO -->
-
     <section class="nutrition-intro">
 
         <div class="nutrition-intro-inner">
@@ -1168,10 +1235,16 @@
 
 
     <!-- MACROS -->
-
     <section class="nutrition-section np-section" id="macros">
 
-        <div class="nutrition-section-bg np-section-bg"></div>
+        <div class="nutrition-section-bg np-section-bg">
+            <img
+                src="images/nutrition-macros.webp"
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
         <div class="nutrition-section-overlay np-overlay"></div>
 
         <div class="np-content">
@@ -1270,17 +1343,21 @@
                 </article>
 
             </div>
-
         </div>
-
     </section>
 
 
     <!-- NUTRITION BASICS -->
-
     <section class="nutrition-foundation np-section" id="nutrition-basics">
 
-        <div class="foundation-bg np-section-bg"></div>
+        <div class="foundation-bg np-section-bg">
+            <img
+                src="images/nutrition-balanced.webp"
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
         <div class="foundation-overlay np-overlay"></div>
 
         <div class="foundation-grid np-content">
@@ -1354,15 +1431,20 @@
             </div>
 
         </div>
-
     </section>
 
 
     <!-- BALANCED MEALS -->
-
     <section class="nutrition-feature np-section" id="balanced-meals">
 
-        <div class="feature-bg np-section-bg"></div>
+        <div class="feature-bg np-section-bg">
+            <img
+                src="images/nutrition-balanced.webp"
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
         <div class="feature-overlay np-overlay"></div>
 
         <div class="nutrition-feature-grid np-content">
@@ -1394,45 +1476,65 @@
             <div class="meal-list">
 
                 <div class="meal-item">
+
                     <strong>Protein</strong>
+
                     <span>
                         Eggs, dal, beans, paneer, soy foods
                     </span>
+
                 </div>
 
+
                 <div class="meal-item">
+
                     <strong>Carbohydrates</strong>
+
                     <span>
                         Rice, roti, oats, potatoes, fruit
                     </span>
+
                 </div>
 
+
                 <div class="meal-item">
+
                     <strong>Vegetables & Fruit</strong>
+
                     <span>
                         Add variety and different colours
                     </span>
+
                 </div>
 
+
                 <div class="meal-item">
+
                     <strong>Healthy Fats</strong>
+
                     <span>
                         Nuts, seeds, peanuts and suitable oils
                     </span>
+
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
 
     <!-- TRAINING FUEL -->
-
     <section class="training-nutrition np-section" id="training-fuel">
 
-        <div class="training-bg np-section-bg"></div>
+        <div class="training-bg np-section-bg">
+            <img
+                src="images/nutrition-training-fuel.webp"
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
         <div class="training-overlay np-overlay"></div>
 
         <div class="np-content">
@@ -1512,15 +1614,20 @@
             </div>
 
         </div>
-
     </section>
 
 
     <!-- HYDRATION -->
-
     <section class="hydration-section np-section">
 
-        <div class="hydration-bg np-section-bg"></div>
+        <div class="hydration-bg np-section-bg">
+            <img
+                src="images/nutrition-hydration.webp"
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
         <div class="hydration-overlay np-overlay"></div>
 
         <div class="np-content">
@@ -1600,15 +1707,20 @@
             </div>
 
         </div>
-
     </section>
 
 
     <!-- COMMON MISTAKES -->
-
     <section class="mistakes np-section">
 
-        <div class="mistakes-bg np-section-bg"></div>
+        <div class="mistakes-bg np-section-bg">
+            <img
+                src="images/nutrition-mistakes.webp"
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
         <div class="mistakes-overlay np-overlay"></div>
 
         <div class="np-content">
@@ -1718,12 +1830,10 @@
             </div>
 
         </div>
-
     </section>
 
 
     <!-- CTA -->
-
     <section class="nutrition-cta">
 
         <p class="eyebrow">
@@ -1758,7 +1868,6 @@
 
 
 <!-- FOOTER -->
-
 <footer>
 
     <div class="footer-logo">
