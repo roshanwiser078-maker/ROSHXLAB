@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page Not Found | ROSHXLAB</title>
+
+    <meta name="description"
+          content="The page you're looking for could not be found. Explore ROSHXLAB workouts, nutrition guides and fitness resources.">
+
+    <meta name="robots" content="noindex, follow">
+    <meta name="author" content="ROSHXLAB">
+    <meta name="theme-color" content="#070908">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(44, 255, 121, 0.08),
+                    transparent 32%
+                ),
+                #070908;
+
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(7,9,8,0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .nav-inner {
+            max-width: 1180px;
+            margin: auto;
+            padding: 20px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #39ff78;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: #b8c0bb;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #39ff78;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 80px 24px;
+        }
+
+        .error-container {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+        }
+
+        .error-number {
+            font-size: clamp(100px, 20vw, 220px);
+            line-height: 0.85;
+            font-weight: 950;
+            letter-spacing: -12px;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 45px rgba(57,255,120,0.08);
+        }
+
+        .error-number span {
+            color: #39ff78;
+        }
+
+        .error-label {
+            margin-top: 30px;
+
+            display: inline-block;
+
+            padding: 8px 14px;
+
+            border: 1px solid rgba(57,255,120,0.25);
+            border-radius: 999px;
+
+            color: #39ff78;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            background: rgba(57,255,120,0.05);
+        }
+
+        h1 {
+            margin-top: 22px;
+
+            font-size: clamp(30px, 5vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -1.8px;
+        }
+
+        .description {
+            max-width: 610px;
+            margin: 20px auto 0;
+
+            color: #9da69f;
+
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .actions {
+            margin-top: 34px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 50px;
+
+            padding: 0 24px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
+
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #39ff78;
+            color: #061008;
+        }
+
+        .btn-primary:hover {
+            background: #61ff92;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.14);
+            background: rgba(255,255,255,0.04);
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(57,255,120,0.4);
+            background: rgba(57,255,120,0.06);
+        }
+
+        /* =========================
+           QUICK LINKS
+        ========================= */
+
+        .quick-links {
+            margin: 55px auto 0;
+
+            max-width: 760px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .quick-card {
+            padding: 18px 14px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.045),
+                    rgba(255,255,255,0.015)
+                );
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-3px);
+
+            border-color: rgba(57,255,120,0.28);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(57,255,120,0.07),
+                    rgba(255,255,255,0.02)
+                );
+        }
+
+        .quick-icon {
+            font-size: 22px;
+            margin-bottom: 9px;
+        }
+
+        .quick-card strong {
+            display: block;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .quick-card small {
+            display: block;
+
+            margin-top: 4px;
+
+            color: #777f79;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            padding: 22px 24px;
+
+            text-align: center;
+
+            color: #6f7771;
+
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #b8c0bb;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .nav-inner {
+                padding: 18px 18px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .nav-links a:nth-child(n+3) {
+                display: none;
+            }
+
+            main {
+                padding: 65px 18px;
+            }
+
+            .error-number {
+                letter-spacing: -7px;
+            }
+
+            .error-label {
+                margin-top: 25px;
+            }
+
+            h1 {
+                margin-top: 18px;
+            }
+
+            .description {
+                font-size: 15px;
+                line-height: 1.65;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 330px;
+            }
+
+            .quick-links {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 40px;
+            }
+
+            .quick-card {
+                padding: 16px 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .error-number {
+                font-size: 100px;
+                letter-spacing: -6px;
+            }
+
+            .quick-links {
+                gap: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+        <div class="nav-inner">
+
+            <a href="index.html" class="logo">
+                ROSHX<span>LAB</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="guides.html">Guides</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         404 CONTENT
+    ========================== -->
+
+    <main>
+
+        <section class="error-container">
+
+            <div class="error-number">
+                4<span>0</span>4
+            </div>
+
+            <div class="error-label">
+                Page Not Found
+            </div>
+
+            <h1>
+                Looks like you missed a rep.
+            </h1>
+
+            <p class="description">
+                The page you're looking for doesn't exist or may have been moved.
+                Don't worry — your fitness journey doesn't have to stop here.
+            </p>
+
+            <div class="actions">
+
+                <a href="index.html" class="btn btn-primary">
+                    ← Back to Home
+                </a>
+
+                <a href="workouts.html" class="btn btn-secondary">
+                    Explore Workouts
+                </a>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="quick-links">
+
+                <a href="workouts.html" class="quick-card">
+                    <div class="quick-icon">🏋️</div>
+                    <strong>Workouts</strong>
+                    <small>Train smarter</small>
+                </a>
+
+                <a href="nutrition.html" class="quick-card">
+                    <div class="quick-icon">🥗</div>
+                    <strong>Nutrition</strong>
+                    <small>Eat better</small>
+                </a>
+
+                <a href="guides.html" class="quick-card">
+                    <div class="quick-icon">📚</div>
+                    <strong>Fitness Guides</strong>
+                    <small>Learn more</small>
+                </a>
+
+                <a href="blog.html" class="quick-card">
+                    <div class="quick-icon">📝</div>
+                    <strong>Fitness Blog</strong>
+                    <small>Read & improve</small>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <strong>ROSHXLAB</strong> — Build Better. Live Stronger.
+    </footer>
+
+</body>
+</html>
