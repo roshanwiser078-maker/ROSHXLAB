@@ -1,11 +1,12 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-        <link rel="icon" type="image/png" href="images/favicon.png">
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- =========================
          SEO
@@ -17,9 +18,7 @@
         content="Learn how to start a home workout routine for beginners with simple exercises, sets, reps, rest, progression and practical training tips from ROSHXLAB.">
 
     <meta name="robots" content="index, follow">
-
     <meta name="author" content="ROSHXLAB">
-
     <meta name="theme-color" content="#070908">
 
     <link rel="canonical"
@@ -346,6 +345,81 @@
 
         .article-content strong {
             color: var(--green);
+        }
+
+        /* =========================
+           INLINE ARTICLE LINKS
+        ========================= */
+
+        .article-link {
+            color: var(--green);
+            font-weight: 700;
+            border-bottom: 1px solid rgba(184,255,61,0.35);
+            transition: 0.25s ease;
+        }
+
+        .article-link:hover {
+            color: #d5ff91;
+            border-bottom-color: var(--green);
+        }
+
+        /* =========================
+           RELATED GUIDES
+        ========================= */
+
+        .related-guides {
+            margin: 45px 0 10px;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(184,255,61,0.07),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(184,255,61,0.16);
+            border-radius: 22px;
+        }
+
+        .related-guides h3 {
+            margin: 0 0 8px;
+            font-size: 24px;
+        }
+
+        .related-guides > p {
+            margin-bottom: 22px;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .related-link {
+            display: block;
+
+            padding: 15px 16px;
+
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            color: #d2d7d2;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.25s ease;
+        }
+
+        .related-link:hover {
+            color: var(--green);
+            border-color: rgba(184,255,61,0.35);
+            transform: translateY(-2px);
         }
 
         /* =========================
@@ -730,6 +804,14 @@
                 padding: 20px 25px;
             }
 
+            .related-guides {
+                padding: 22px;
+            }
+
+            .related-links {
+                grid-template-columns: 1fr;
+            }
+
             .article-cta {
                 width: 88%;
                 padding: 38px 22px;
@@ -774,8 +856,7 @@
 
     <header class="article-hero">
 
-            <link rel="icon" type="image/png" href="images/favicon.png">
-<div class="hero-content">
+        <div class="hero-content">
 
             <div class="eyebrow">
                 ROSHXLAB FITNESS GUIDE
@@ -832,6 +913,14 @@
                 Starting a workout routine is less about doing everything at once
                 and more about learning the basics. Focus on controlled movements,
                 manageable training volume and consistency.
+            </p>
+
+            <p>
+                If you're completely new to training, our
+                <a href="how-to-start-working-out.html" class="article-link">
+                    guide on how to start working out
+                </a>
+                can help you understand the first steps before building your routine.
             </p>
 
             <p>
@@ -947,6 +1036,14 @@
                 stay consistent.
             </p>
 
+            <p>
+                For a deeper look at recovery, read our
+                <a href="rest-days.html" class="article-link">
+                    guide to rest days
+                </a>
+                and learn why recovery is part of the training process.
+            </p>
+
 
             <h2>Sets, Reps and Rest</h2>
 
@@ -970,6 +1067,13 @@
 
             </ul>
 
+            <p>
+                You can learn more about choosing training volume in the
+                <a href="sets-reps.html" class="article-link">
+                    ROSHXLAB sets and reps guide
+                </a>.
+            </p>
+
 
             <h2>How to Progress</h2>
 
@@ -983,6 +1087,22 @@
                 repetitions, adding a set, improving your technique, slowing down
                 the movement or eventually adding resistance such as dumbbells or
                 resistance bands.
+            </p>
+
+            <p>
+                Once you're ready to understand progression in more detail,
+                explore our
+                <a href="progressive-overload.html" class="article-link">
+                    progressive overload guide
+                </a>.
+            </p>
+
+            <p>
+                If you want to add weights at home, our
+                <a href="dumbbell-training.html" class="article-link">
+                    dumbbell training guide
+                </a>
+                explains how dumbbells can be used for home training.
             </p>
 
 
@@ -1029,6 +1149,67 @@
                 Your first workout does not need to be perfect.
             </p>
 
+            <p>
+                Sleep and recovery also matter when you're building a sustainable
+                routine. Read the
+                <a href="sleep-recovery.html" class="article-link">
+                    sleep and recovery guide
+                </a>
+                for more practical information.
+            </p>
+
+
+            <!-- =========================
+                 RELATED GUIDES
+            ========================= -->
+
+            <section class="related-guides">
+
+                <h3>Continue Learning</h3>
+
+                <p>
+                    Once you've learned the basics, these related ROSHXLAB guides
+                    can help you build a more complete training routine.
+                </p>
+
+                <div class="related-links">
+
+                    <a href="how-to-start-working-out.html" class="related-link">
+                        How to Start Working Out →
+                    </a>
+
+                    <a href="sets-reps.html" class="related-link">
+                        Sets & Reps Guide →
+                    </a>
+
+                    <a href="dumbbell-training.html" class="related-link">
+                        Dumbbell Training →
+                    </a>
+
+                    <a href="strength-training.html" class="related-link">
+                        Strength Training →
+                    </a>
+
+                    <a href="progressive-overload.html" class="related-link">
+                        Progressive Overload →
+                    </a>
+
+                    <a href="rest-days.html" class="related-link">
+                        Rest Days & Recovery →
+                    </a>
+
+                    <a href="sleep-recovery.html" class="related-link">
+                        Sleep & Recovery →
+                    </a>
+
+                    <a href="nutrition.html" class="related-link">
+                        Nutrition Basics →
+                    </a>
+
+                </div>
+
+            </section>
+
 
             <h2>What Should You Do Next?</h2>
 
@@ -1039,15 +1220,15 @@
 
             <p>
                 You can continue with the
-                <a href="workouts.html" style="color:#b8ff3d;">
+                <a href="workouts.html" class="article-link">
                     ROSHXLAB workout library
                 </a>,
                 learn more through the
-                <a href="guides.html" style="color:#b8ff3d;">
+                <a href="guides.html" class="article-link">
                     fitness guides
                 </a>,
                 or improve your food choices with the
-                <a href="nutrition.html" style="color:#b8ff3d;">
+                <a href="nutrition.html" class="article-link">
                     nutrition section
                 </a>.
             </p>
@@ -1075,12 +1256,68 @@
                         Explore Workouts →
                     </a>
 
-                    <a href="guides.html">
-                        Fitness Guides →
+                    <a href="how-to-start-working-out.html">
+                        How to Start Working Out →
+                    </a>
+
+                    <a href="sets-reps.html">
+                        Learn Sets & Reps →
                     </a>
 
                     <a href="nutrition.html">
                         Learn Nutrition →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Build Your Training</h3>
+
+                <p>
+                    Ready to progress? Learn about strength, dumbbells and
+                    progressive overload.
+                </p>
+
+                <div class="sidebar-links">
+
+                    <a href="strength-training.html">
+                        Strength Training →
+                    </a>
+
+                    <a href="dumbbell-training.html">
+                        Dumbbell Training →
+                    </a>
+
+                    <a href="progressive-overload.html">
+                        Progressive Overload →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <h3>Don't Forget Recovery</h3>
+
+                <p>
+                    Training is only one part of fitness. Recovery helps you
+                    stay consistent.
+                </p>
+
+                <div class="sidebar-links">
+
+                    <a href="rest-days.html">
+                        Rest Days →
+                    </a>
+
+                    <a href="sleep-recovery.html">
+                        Sleep & Recovery →
                     </a>
 
                 </div>
@@ -1127,6 +1364,11 @@
             <a href="guides.html"
                 class="cta-btn cta-secondary">
                 Read More Guides
+            </a>
+
+            <a href="nutrition.html"
+                class="cta-btn cta-secondary">
+                Explore Nutrition
             </a>
 
         </div>
