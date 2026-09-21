@@ -1,19 +1,69 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-        <link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="canonical" href="https://roshanwiser078-maker.github.io/ROSHXLAB/how-to-start-working-out.html">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>How To Start Working Out at Home — Beginner Guide | ROSHXLAB</title>
+
     <meta name="description"
-        content="Learn how to start working out with simple training principles, exercise technique, consistency and recovery.">
+        content="Learn how to start working out at home with simple exercises, proper technique, consistency, recovery and gradual progression. A practical beginner guide from ROSHXLAB.">
 
-    <title>How To Start Working Out — ROSHXLAB</title>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ROSHXLAB">
+    <meta name="theme-color" content="#070908">
 
+    <link rel="canonical"
+        href="https://roshanwiser078-maker.github.io/ROSHXLAB/how-to-start-working-out.html">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="How To Start Working Out at Home — Beginner Guide | ROSHXLAB">
+    <meta property="og:description"
+        content="A simple beginner guide to starting workouts at home, learning exercises, building consistency and recovering properly.">
+    <meta property="og:type" content="article">
+    <meta property="og:url"
+        content="https://roshanwiser078-maker.github.io/ROSHXLAB/how-to-start-working-out.html">
+    <meta property="og:site_name" content="ROSHXLAB">
+    <meta property="og:image"
+        content="https://roshanwiser078-maker.github.io/ROSHXLAB/images/home-workout.png">
+    <meta property="og:image:alt" content="ROSHXLAB home workout training">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="How To Start Working Out at Home — Beginner Guide | ROSHXLAB">
+    <meta name="twitter:description"
+        content="Learn the basics of starting a workout routine at home and building sustainable fitness habits.">
+    <meta name="twitter:image"
+        content="https://roshanwiser078-maker.github.io/ROSHXLAB/images/home-workout.png">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How To Start Working Out at Home",
+        "description": "A practical beginner guide to starting workouts at home, learning exercise technique, building consistency and improving gradually.",
+        "image": "https://roshanwiser078-maker.github.io/ROSHXLAB/images/home-workout.png",
+        "author": {
+            "@type": "Organization",
+            "name": "ROSHXLAB"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ROSHXLAB"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://roshanwiser078-maker.github.io/ROSHXLAB/how-to-start-working-out.html"
+        }
+    }
+    </script>
 
     <style>
         .article-hero {
@@ -40,7 +90,7 @@
         }
 
         .article-intro {
-            max-width: 700px;
+            max-width: 720px;
             color: #999;
             font-size: 18px;
             line-height: 1.8;
@@ -48,7 +98,7 @@
 
         .article-meta-bar {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             margin-top: 35px;
             color: #666;
             font-size: 13px;
@@ -58,7 +108,7 @@
         .article-content {
             max-width: 850px;
             margin: auto;
-            padding: 100px 7%;
+            padding: 90px 7%;
         }
 
         .article-content h2 {
@@ -97,12 +147,13 @@
             padding: 30px;
             background: #101010;
             border: 1px solid #292929;
-            border-left: 2px solid #666;
+            border-left: 2px solid #777;
         }
 
         .article-box strong {
             display: block;
             margin-bottom: 10px;
+            color: #fff;
         }
 
         .article-box p {
@@ -138,6 +189,43 @@
             font-size: 15px;
         }
 
+        .related-links {
+            display: grid;
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .related-links a {
+            display: block;
+            padding: 18px 20px;
+            background: #101010;
+            border: 1px solid #292929;
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .25s ease;
+        }
+
+        .related-links a:hover {
+            border-color: #666;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid #252525;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 10px;
+            font-size: 21px;
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
         .article-cta {
             margin-top: 80px;
             padding: 60px 35px;
@@ -155,19 +243,24 @@
             margin: 0 auto 25px;
         }
 
-        .back-blog {
+        .article-button {
             display: inline-block;
-            margin-top: 25px;
-            color: #aaa;
-            font-size: 14px;
+            margin: 7px;
+            padding: 14px 22px;
+            border: 1px solid #555;
+            color: #fff;
+            text-decoration: none;
             font-weight: 700;
+            transition: .25s ease;
         }
 
-        .back-blog:hover {
-            color: #fff;
+        .article-button:hover {
+            background: #fff;
+            color: #000;
         }
 
         @media (max-width: 600px) {
+
             .article-hero {
                 padding: 85px 6% 65px;
             }
@@ -176,17 +269,29 @@
                 letter-spacing: -3px;
             }
 
+            .article-intro {
+                font-size: 16px;
+            }
+
             .article-meta-bar {
                 flex-direction: column;
                 gap: 8px;
             }
 
             .article-content {
-                padding: 70px 6%;
+                padding: 65px 6%;
+            }
+
+            .article-content p {
+                font-size: 16px;
             }
 
             .article-box {
                 padding: 25px;
+            }
+
+            .article-cta {
+                padding: 45px 22px;
             }
         }
     </style>
@@ -195,11 +300,8 @@
 <body>
 
     <!-- NAVBAR -->
-
     <header>
-
-            <link rel="icon" type="image/png" href="images/favicon.png">
-<a href="index.html" class="logo">
+        <a href="index.html" class="logo">
             ROSHXLAB
         </a>
 
@@ -213,16 +315,12 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
-
     </header>
-
 
     <main>
 
         <!-- HERO -->
-
         <section class="article-hero">
-
             <div class="article-hero-content">
 
                 <p class="eyebrow">
@@ -235,24 +333,22 @@
                 </h1>
 
                 <p class="article-intro">
-                    Starting a workout routine doesn't need to be complicated.
-                    Learn the basics of choosing exercises, training with good
-                    technique, building consistency and allowing your body to recover.
+                    Starting a workout routine does not need to be complicated.
+                    Learn how to choose basic exercises, train with good technique,
+                    build consistency and give your body enough time to recover.
                 </p>
 
                 <div class="article-meta-bar">
                     <span>BEGINNER</span>
                     <span>·</span>
-                    <span>5 MIN READ</span>
+                    <span>7 MIN READ</span>
                 </div>
 
             </div>
-
         </section>
 
 
         <!-- ARTICLE -->
-
         <article class="article-content">
 
             <p class="eyebrow">
@@ -260,41 +356,38 @@
             </p>
 
             <h2>
-                You Don't Need A Perfect Plan.
+                You Do Not Need A Perfect Plan.
             </h2>
 
             <p>
-                When you're starting out, the goal isn't to do everything at once.
-                A useful routine should be simple enough to repeat and flexible
-                enough to fit your life.
+                When you are starting out, the goal is not to do everything at once.
+                A useful workout routine should be simple enough to repeat and flexible
+                enough to fit your daily life.
             </p>
 
             <p>
                 Focus on learning basic movements, using manageable resistance,
-                paying attention to technique and giving yourself enough time
-                to recover.
+                practicing good technique and allowing your body enough time to recover.
             </p>
 
-
             <div class="article-box">
-
                 <strong>ROSHXLAB Principle</strong>
 
                 <p>
                     Build a routine you can repeat consistently before trying
                     to make it more complicated.
                 </p>
-
             </div>
 
 
+            <!-- SECTION 1 -->
             <h2>
                 1. Start With Basic Movements
             </h2>
 
             <p>
-                A beginner routine can be built around a small number of
-                fundamental movement patterns.
+                A beginner workout can be built around a small number of fundamental
+                movement patterns. You do not need dozens of exercises in every session.
             </p>
 
             <ul>
@@ -306,119 +399,117 @@
             </ul>
 
             <p>
-                You don't need dozens of exercises in one workout. Learning
-                a few movements properly can give you a strong foundation.
+                Learning a few movements properly gives you a foundation that you can
+                build on as your training experience improves.
             </p>
 
 
+            <!-- SECTION 2 -->
             <h2>
                 2. Learn Technique First
             </h2>
 
             <p>
-                Exercise quality matters. Before trying to increase resistance
-                or volume, spend time learning how each movement should feel
-                and how to perform it with control.
+                Exercise quality matters, especially when you are new to training.
+                Before trying to increase resistance or workout volume, spend time
+                learning how each movement should be performed.
             </p>
 
             <div class="article-steps">
 
                 <div class="step">
-
                     <span>STEP 01</span>
-
                     <h3>Control The Movement</h3>
 
                     <p>
-                        Avoid rushing through repetitions. Use a controlled
-                        range of motion that you can manage safely.
+                        Avoid rushing through repetitions. Use a controlled range of
+                        motion that you can manage comfortably.
                     </p>
-
                 </div>
 
-
                 <div class="step">
-
                     <span>STEP 02</span>
-
                     <h3>Use Manageable Resistance</h3>
 
                     <p>
-                        Start with resistance that allows you to maintain
-                        good technique throughout the exercise.
+                        Start with resistance that allows you to maintain good technique
+                        throughout the exercise.
                     </p>
-
                 </div>
 
-
                 <div class="step">
-
                     <span>STEP 03</span>
-
                     <h3>Learn Before You Progress</h3>
 
                     <p>
-                        Once your movement becomes consistent, you can gradually
-                        make your training more challenging.
+                        Once your movement becomes consistent, gradually make your
+                        training more challenging.
                     </p>
-
                 </div>
 
             </div>
 
 
+            <!-- SECTION 3 -->
             <h2>
                 3. Keep Your Routine Simple
             </h2>
 
             <p>
-                Beginners often make the mistake of creating an extremely
-                complicated routine. More exercises and longer workouts
-                aren't automatically better.
+                Beginners often make the mistake of creating an extremely complicated
+                routine. More exercises and longer workouts are not automatically better.
             </p>
 
             <p>
-                A simple full-body routine can be a practical starting point.
-                Choose a few movements that train different areas of the body
-                and perform them with good technique.
+                A simple full-body routine can be a practical starting point. Choose
+                movements that train different areas of your body and perform them
+                with controlled technique.
             </p>
 
+            <div class="article-box">
+                <strong>Simple Is Sustainable</strong>
 
+                <p>
+                    If your workout is so complicated that you constantly avoid it,
+                    the plan needs to become simpler.
+                </p>
+            </div>
+
+
+            <!-- SECTION 4 -->
             <h2>
                 4. Build Consistency
             </h2>
 
             <p>
-                Progress comes from repeating useful habits over time.
-                Instead of relying on motivation every day, create a routine
-                that fits your schedule.
+                Progress comes from repeating useful habits over time. Instead of
+                depending on motivation every day, create a routine that fits your
+                schedule.
             </p>
 
             <p>
-                If you miss a workout, don't treat it as failure. Simply return
-                to your normal routine at the next reasonable opportunity.
+                If you miss a workout, do not treat it as failure. Return to your
+                normal routine at the next reasonable opportunity.
             </p>
 
-
             <div class="article-box">
-
                 <strong>Remember</strong>
 
                 <p>
-                    One missed workout doesn't define your progress.
+                    One missed workout does not define your progress.
                     Your overall pattern of training matters much more.
                 </p>
-
             </div>
 
 
+            <!-- SECTION 5 -->
             <h2>
                 5. Give Your Body Time To Recover
             </h2>
 
             <p>
-                Training is only one part of getting better. Rest and recovery
-                are also important parts of a sustainable routine.
+                Training is only one part of getting better. Rest, sleep, nutrition
+                and recovery are also important parts of a sustainable fitness routine.
             </p>
 
             <ul>
@@ -429,20 +520,28 @@
                 <li>Avoid trying to train hard every day.</li>
             </ul>
 
+            <p>
+                You can learn more about recovery in the
+                <a href="rest-days.html">ROSHXLAB Rest Days Guide</a>
+                and
+                <a href="sleep-recovery.html">Sleep & Recovery Guide</a>.
+            </p>
 
+
+            <!-- SECTION 6 -->
             <h2>
-                6. How To Progress
+                6. Learn How To Progress
             </h2>
 
             <p>
-                Once you become comfortable with an exercise, you can gradually
-                make your training more challenging.
+                Once you become comfortable with an exercise, you can gradually make
+                your training more challenging.
             </p>
 
             <p>
-                This might mean improving technique, adding a few repetitions,
-                increasing resistance or gradually increasing the amount of
-                work you perform.
+                Progress may involve improving your technique, performing a few more
+                repetitions, increasing resistance or gradually increasing the amount
+                of work you perform.
             </p>
 
             <p>
@@ -450,7 +549,13 @@
                 everything at once.
             </p>
 
+            <p>
+                For a deeper explanation, read the
+                <a href="progressive-overload.html">Progressive Overload Guide</a>.
+            </p>
 
+
+            <!-- SIMPLE STARTING APPROACH -->
             <h2>
                 A Simple Starting Approach
             </h2>
@@ -458,34 +563,28 @@
             <div class="article-steps">
 
                 <div class="step">
-
                     <span>01 · LEARN</span>
 
                     <h3>Choose Basic Exercises</h3>
 
                     <p>
-                        Start with movements you can perform with control.
+                        Start with movements you can perform with control and
+                        understand how each exercise works.
                     </p>
-
                 </div>
 
-
                 <div class="step">
-
                     <span>02 · TRAIN</span>
 
                     <h3>Practice Consistently</h3>
 
                     <p>
-                        Follow a manageable routine instead of constantly
-                        changing your exercises.
+                        Follow a manageable routine instead of constantly changing
+                        your exercises.
                     </p>
-
                 </div>
 
-
                 <div class="step">
-
                     <span>03 · RECOVER</span>
 
                     <h3>Respect Rest</h3>
@@ -493,40 +592,146 @@
                     <p>
                         Give your body time to recover between challenging sessions.
                     </p>
-
                 </div>
 
-
                 <div class="step">
-
                     <span>04 · PROGRESS</span>
 
                     <h3>Improve Gradually</h3>
 
                     <p>
-                        Increase the challenge slowly as your ability improves.
+                        Increase the challenge slowly as your ability and experience
+                        improve.
                     </p>
-
                 </div>
 
             </div>
 
 
-            <div class="article-box">
+            <!-- BEGINNER SAFETY -->
+            <h2>
+                Beginner Training Tips
+            </h2>
 
-                <strong>For Beginners</strong>
+            <p>
+                Starting slowly can help you learn your exercises and build a routine
+                that you can maintain.
+            </p>
+
+            <ul>
+                <li>Warm up before challenging exercise.</li>
+                <li>Learn proper technique before increasing resistance.</li>
+                <li>Stop if an exercise causes sharp or unusual pain.</li>
+                <li>Increase training difficulty gradually.</li>
+                <li>Give your body enough recovery time.</li>
+                <li>Focus on consistency instead of trying to do everything at once.</li>
+            </ul>
+
+
+            <!-- WHAT TO DO NEXT -->
+            <h2>
+                What Should You Do Next?
+            </h2>
+
+            <p>
+                Once you understand the basics, the next step is choosing a workout
+                that matches your current experience and available equipment.
+            </p>
+
+            <div class="related-links">
+
+                <a href="home-workout-for-beginners.html">
+                    Beginner Home Workout Guide →
+                </a>
+
+                <a href="home-workouts.html">
+                    Explore Home Workouts →
+                </a>
+
+                <a href="dumbbell-training.html">
+                    Dumbbell Training Guide →
+                </a>
+
+                <a href="strength-training.html">
+                    Strength Training Guide →
+                </a>
+
+                <a href="nutrition.html">
+                    Learn Basic Nutrition →
+                </a>
+
+            </div>
+
+
+            <!-- FAQ -->
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="faq-item">
+                <h3>How should a beginner start working out?</h3>
 
                 <p>
-                    If you're new to exercise, start at a level appropriate
-                    for your experience and focus on learning rather than
-                    pushing yourself to exhaustion.
+                    Start with simple exercises, manageable training sessions and
+                    controlled technique. Focus on building a routine that you can
+                    repeat consistently.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I start working out at home?</h3>
+
+                <p>
+                    Yes. Many basic movements can be performed at home using
+                    bodyweight, resistance bands or dumbbells.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How often should a beginner exercise?</h3>
+
+                <p>
+                    The right frequency depends on your experience, recovery and
+                    schedule. Beginners should prioritize manageable training and
+                    adequate recovery rather than trying to exercise hard every day.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do I need expensive equipment to start?</h3>
+
+                <p>
+                    No. A beginner can start with bodyweight exercises. As you gain
+                    experience, simple equipment such as resistance bands or dumbbells
+                    can provide additional training options.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Should I train until I am completely exhausted?</h3>
+
+                <p>
+                    No. Especially when you are learning, focus on controlled
+                    repetitions and good technique rather than trying to exhaust
+                    yourself every workout.
+                </p>
+            </div>
+
+
+            <!-- FINAL BOX -->
+            <div class="article-box">
+
+                <strong>ROSHXLAB Takeaway</strong>
+
+                <p>
+                    Start simple. Learn the movements. Train consistently.
+                    Recover properly. Then improve gradually.
                 </p>
 
             </div>
 
 
             <!-- CTA -->
-
             <div class="article-cta">
 
                 <p class="eyebrow">
@@ -538,18 +743,20 @@
                 </h2>
 
                 <p>
-                    Explore beginner-friendly workouts and build your
-                    training foundation one step at a time.
+                    Explore beginner-friendly workouts and build your training
+                    foundation one step at a time.
                 </p>
 
-                <a href="beginner-workout.html" class="btn primary">
-                    Explore Beginner Workout →
+                <a href="home-workout-for-beginners.html" class="article-button">
+                    Beginner Workout →
                 </a>
 
-                <br>
+                <a href="workouts.html" class="article-button">
+                    Explore Workouts →
+                </a>
 
-                <a href="blog.html" class="back-blog">
-                    ← Back To ROSHXLAB Blog
+                <a href="nutrition.html" class="article-button">
+                    Nutrition →
                 </a>
 
             </div>
@@ -560,34 +767,33 @@
 
 
     <!-- FOOTER -->
-
     <footer>
+        <div class="footer-content">
 
-        <div class="footer-logo">
-            ROSHXLAB
+            <div>
+                <a href="index.html" class="logo">
+                    ROSHXLAB
+                </a>
+
+                <p>
+                    Build Better. Live Stronger.
+                </p>
+            </div>
+
+            <div>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="guides.html">Guides</a>
+                <a href="blog.html">Blog</a>
+            </div>
+
         </div>
 
-        <p>
-            Build Better. Live Stronger.
-        </p>
-
-        <div class="footer-links">
-
-            <a href="index.html">Home</a>
-            <a href="workouts.html">Workouts</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="guides.html">Guides</a>
-            <a href="blog.html">Blog</a>
-            <a href="videos.html">Videos</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-
+        <div class="footer-bottom">
+            <p>
+                © 2026 ROSHXLAB. All rights reserved.
+            </p>
         </div>
-
-        <p class="copyright">
-            © 2026 ROSHXLAB. All rights reserved.
-        </p>
-
     </footer>
 
 </body>
